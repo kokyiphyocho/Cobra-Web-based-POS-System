@@ -108,9 +108,7 @@ var POSTransactionManager = (function () {
                     clLowerBoundDays = Number(clStaffPermissionSettingConfig.receiptadjustlimitdays || '1');
                     clUpperBoundDays = 0;
                 }
-            }
-
-            if (clAdminMode)
+            }            
             
             clLowerBoundDate = moment().add((!isNaN(clLowerBoundDays) ? -1 * clLowerBoundDays : -7), 'days');
             clUpperBoundDate = moment().add((!isNaN(clUpperBoundDays) ? clUpperBoundDays : 0), 'days');

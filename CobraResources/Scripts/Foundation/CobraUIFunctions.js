@@ -251,9 +251,9 @@ var FormManager = (function () {
                     if (clFormProtocolList)
                     {
                         var lcProtocol = clFormProtocolList['*'] || window.location.protocol;
-                     
+                        
                         if (clFormProtocolList[paFormName.toLowerCase()]) lcProtocol = clFormProtocolList[paFormName.toLowerCase()];
-
+                        
                         return (lcProtocol + '//' + window.location.host + '/');
                     }
 
