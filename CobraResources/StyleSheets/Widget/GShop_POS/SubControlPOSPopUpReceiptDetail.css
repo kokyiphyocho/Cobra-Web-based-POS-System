@@ -1,0 +1,378 @@
+﻿.SubControlPOSPopUpReceiptDetailComposite *,
+.SubControlPOSPopUpReceiptDetailComposite *:after,
+.SubControlPOSPopUpReceiptDetailComposite *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2vh cobrasystemfont;     
+}
+
+.SubControlPOSPopUpReceiptDetailComposite
+{
+    position:fixed;
+    top:100vh;
+    left:0vw;
+    width:100vw;
+    height:100vh;
+    background:rgba(80,80,80,0.6);
+    z-index:999;
+    overflow:hidden;
+
+    -webkit-transition: top 0.2s;
+    -moz-transition:    top 0.2s;
+    -o-transition:      top 0.2s;
+    -ms-transition:     top 0.2s;
+    transition:         top 0.2s; 
+}
+
+[sa-elementtype=control][fa-activepopup=sale] .SubControlPOSPopUpReceiptDetailComposite[ea-type=sale],
+[sa-elementtype=control][fa-activepopup=shortsell] .SubControlPOSPopUpReceiptDetailComposite[ea-type=shortsell],
+[sa-elementtype=control][fa-activepopup=purchase] .SubControlPOSPopUpReceiptDetailComposite[ea-type=purchase],
+[sa-elementtype=control][fa-activepopup=stockin] .SubControlPOSPopUpReceiptDetailComposite[ea-type=stockin],
+[sa-elementtype=control][fa-activepopup=stockout] .SubControlPOSPopUpReceiptDetailComposite[ea-type=stockout],
+[sa-elementtype=control][fa-activepopup=cancel] .SubControlPOSPopUpReceiptDetailComposite[ea-type=cancel]
+{
+    top:0vh;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail
+{
+    width: 96vw;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-left: 2vw;
+
+    background: rgba(242,242,242,1);
+    background: -moz-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(242,242,242,1)), color-stop(19%, rgba(240,240,240,1)), color-stop(47%, rgba(247,247,247,1)), color-stop(71%, rgba(250,250,250,1)), color-stop(100%, rgba(242,242,242,1)));
+    background: -webkit-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#f2f2f2', GradientType=1 );
+
+    /*-moz-box-shadow: 0.5vh 0.8vh 1vh rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0.5vh 0.8vh 1vh rgba(0,0,0,0.4);
+	box-shadow: 0.5vh 0.8vh 1vh rgba(0,0,0,0.4);*/
+
+    -moz-box-shadow: 0vh 0vh 2vh #fff;
+	-webkit-box-shadow: 0vh 0vh 2vh #fff;
+	box-shadow: 0vh 0vh 2vh #fff;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Title
+{
+    position: relative;
+    height: 5vh;
+    background: #ffffff;
+    color: #555;
+    margin-bottom: 0.5vh;
+    border-bottom: 0.2vh solid #888;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Title span
+{
+    color: #888;
+    text-shadow: 0.2vh 0.2vh 0vh #e7e7e7;
+    line-height: 200%;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 5vh;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Title  a
+{
+    position:absolute;
+    top:0;
+    right:0;
+    padding-right:2vw;
+    overflow:hidden;
+
+    display: block;
+    float: right;
+    text-decoration: none;
+    color: #555;
+    width: 5vh;
+    height: 5vh;
+    font: 3vh fontawesome;
+    line-height: 150%;
+    text-align: right;
+    text-shadow: 0.25vh 0.25vh 0.5vh #fff;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Title  a:active
+{
+    background:#000;
+    color:#fff;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container
+{
+    width:100%;
+    height:84vh;
+    overflow:auto;
+    padding-bottom:5vh;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock
+{
+    width:100%;    
+    height:auto;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockHeader
+{
+    width: 100%;
+    height: 5vh;
+    padding: 0.5vh 2vw;
+    overflow: hidden;    
+    background:#888;
+    color: #eee;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockHeader .ReceiptNoDiv
+{
+    width: 30vw;
+    height: 4vh;    
+    float: left;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockHeader .NameDiv
+{
+    width: 60vw;
+    height: 5vh;    
+    float: left;
+    clear: right;    
+    overflow-x:hidden;
+    overflow-y:auto;
+    white-space:nowrap;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter
+{
+    width: 100%;
+    height: 5vh;
+    padding: 0.5vh 2vw;
+    background: #fff;
+    overflow: hidden;
+    border-top: 0.2vh solid #ddd;
+    border-bottom: 0.2vh solid #ddd;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer
+{
+    width : 100%;
+    padding:0vh 2vw;
+    height:auto;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow
+{
+    width:100%;
+    height:8vh;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite:not([ea-mode=profitloss])  .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow,
+.SubControlPOSPopUpReceiptDetailComposite:not([ea-type=sale]) .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow
+{
+    height:5vh;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Description
+{
+    position:relative;
+    width:100%;
+    height:4vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    color:#999;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite:not([ea-mode=profitloss]) .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Description,
+.SubControlPOSPopUpReceiptDetailComposite:not([ea-type=sale]) .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Description
+{
+    width:60vw;
+    float:left;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .SellPrice,
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .SellPrice
+{
+    position:relative;
+    width:25vw;
+    height:4vh;
+    float:left;
+    text-align:right;
+    overflow-x:hidden;
+    overflow-y:auto;    
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Cost,
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .Cost
+{
+    position:relative;
+    width:25vw;
+    height:4vh;
+    float:left;
+    text-align:right;
+    overflow-x:hidden;
+    overflow-y:auto;
+    margin-left:5vw;    
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Cost::before,
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .Cost::before
+{
+    content: '-';
+    position: absolute;
+    left: 0;
+    color:#888;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Profit,
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .Profit
+{
+    position:relative;
+    width:25vw;
+    height:4vh;
+    float:right;
+    text-align:right;
+    overflow-x:hidden;
+    overflow-y:auto;    
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Profit::before,
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .Profit::before
+{
+    content: '=';
+    position: absolute;
+    left: 0;
+    color:#888;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .SellPrice,
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .SellPrice
+{
+    color:#555;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Cost,
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .Cost
+{
+    color:#a00;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Profit[ea-status=negative],
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .Profit[ea-status=negative]
+{
+    color:#a00;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow .Profit[ea-status=positive],
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .BlockFooter .Profit[ea-status=positive]
+{
+    color:#0a0;
+}
+
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow[ea-appearance=shortsell] .Description,
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow[ea-appearance=shortsell] .Profit,
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow[ea-appearance=shortsell] .Cost,
+.SubControlPOSPopUpReceiptDetailComposite[ea-type=sale] .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow[ea-appearance=shortsell] .SellPrice
+{
+    color: #ff6565;
+}
+
+.SubControlPOSPopUpReceiptDetailComposite .SubControlPOSPopUpReceiptDetail .Container .ReceiptBlock .ItemContainer .EntryRow[ea-appearance=shortsell] .Description::before
+{
+    width: auto;
+    height: auto;
+    content: '\f06a';
+    color: #ff6565;
+    font: 2vh fontawesome;
+}
+
+
+/*.POSDailySummary .DetailPopUp 
+{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.5);
+    top: 0vh;
+    left:0vw;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSDailySummary .DetailPopUp .DetailPanel
+{
+    width: 96vw;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-left: 2vw;
+
+    background: rgba(242,242,242,1);
+    background: -moz-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(242,242,242,1)), color-stop(19%, rgba(240,240,240,1)), color-stop(47%, rgba(247,247,247,1)), color-stop(71%, rgba(250,250,250,1)), color-stop(100%, rgba(242,242,242,1)));
+    background: -webkit-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    background: linear-gradient(45deg, rgba(242,242,242,1) 0%, rgba(240,240,240,1) 19%, rgba(247,247,247,1) 47%, rgba(250,250,250,1) 71%, rgba(242,242,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#f2f2f2', GradientType=1 );
+
+    -moz-box-shadow: 0.5vh 0.8vh 1vh rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0.5vh 0.8vh 1vh rgba(0,0,0,0.4);
+	box-shadow: 0.5vh 0.8vh 1vh rgba(0,0,0,0.4);
+}
+
+.POSDailySummary .DetailPopUp .DetailPanel .DetailPopUpTitle
+{
+    position:relative;
+    height:5vh;
+    background:#888;
+    color:#fff;
+}
+
+.POSDailySummary .DetailPopUp .DetailPanel .DetailPopUpTitle span
+{
+    color: #fff;
+    text-shadow: 0vh 0vh 1vh #555;
+    line-height: 200%;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 5vh;
+}
+
+.POSDailySummary .DetailPopUp .DetailPanel .DetailPopUpTitle .ButtonPanel
+{
+    position:absolute;
+    width:15vw;
+    height:5vh;
+    top:0;
+    right:0;
+    padding-right:2vw;
+    overflow:hidden;
+}
+
+.POSDailySummary .DetailPopUp .DetailPanel .DetailPopUpTitle .ButtonPanel a
+{
+    display: block;
+    float: right;
+    text-decoration: none;
+    color: #fff;
+    width: 5vh;
+    height: 5vh;
+    font: 3vh fontawesome;
+    line-height: 150%;
+    text-align: right;
+    text-shadow: 0.25vh 0.25vh 0.5vh #555;
+}*/

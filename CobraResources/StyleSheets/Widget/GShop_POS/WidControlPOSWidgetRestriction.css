@@ -1,0 +1,448 @@
+﻿.POSWidgetRestriction 
+{    
+    /*background: url('images/background/blue_butterfly_3_sparkling.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/    
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction *,
+.POSWidgetRestriction .WidControlPOSWidgetRestriction *:after,
+.POSWidgetRestriction .WidControlPOSWidgetRestriction *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction
+{
+    width:100vw;
+    height:94vh;
+    overflow:auto;               
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container]
+{
+    width: 100vw;
+    height: 94vh;
+    overflow: hidden;
+    position:relative;
+    background: #c7c7c7;
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock
+{   
+    width: 100vw;
+    max-height: 85vh;        
+    background: #fcfcfc;
+
+    -webkit-transition: left 0.5s ease;
+    -moz-transition:    left 0.5s ease;
+    -o-transition:      left 0.5s ease;
+    -ms-transition:     left 0.5s ease;
+    transition:         left 0.5s ease;
+
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .Title
+{
+    width: 100vw;
+    height: 6vh;
+    overflow:hidden; 
+    text-align:center;
+    color:#777;
+    padding-top:1vh;
+
+    background: rgba(176,176,176,1);
+    background: -moz-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(176,176,176,1)), color-stop(5%, rgba(246,246,246,1)), color-stop(50%, rgba(224,224,224,1)), color-stop(95%, rgba(246,246,246,1)), color-stop(100%, rgba(107,107,107,1)));
+    background: -webkit-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -o-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -ms-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: linear-gradient(to bottom, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0b0b0', endColorstr='#6b6b6b', GradientType=0 );
+}
+
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .UserList
+{
+    width:100vw;
+    max-height:88vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .UserList .UserRow
+{
+    width:100vw;
+    height:7vh;
+    padding-left:10vw;
+    padding-top:1.5vh;
+    position:relative;
+    color :#296c16;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    overflow:hidden;    
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .UserList .UserRow:nth-child(even)
+{
+    background : #e5e5e5;
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .UserList .UserRow::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    left: 0;
+    font: 2.5vh fontawesome;
+    content: '\f007';
+    padding-left: 3vw;
+    padding-top: 0.75vh;
+    color: #8ea687;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;    
+}
+
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .UserList .UserRow::after
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    right: 0;
+    font: 2.5vh fontawesome;
+    content: '\f054';
+    padding-left: 3vw;
+    padding-top: 0.75vh;
+    color: #8ea687;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;    
+}
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .UserList .UserRow[ea-type=superadmin]::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 5vh;
+    left: 0;
+    font: 2.5vh fontawesome;
+    content: '\f005';
+    padding-left: 3vw;
+    padding-top: 0.75vh;
+    color: #8ea687;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;    
+}
+
+
+.POSWidgetRestriction .WidControlPOSWidgetRestriction [sa-elementtype=container] .UserListBlock .UserList .UserRow span
+{
+    width: 70vw;
+    display: inline-block;
+    overflow-y: hidden;
+    padding-left:1vw;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay
+{
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    background: rgba(0,0,0,0.6);
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+
+    -webkit-transition: left 0.5s;
+    -moz-transition:    left 0.5s;
+    -o-transition:      left 0.5s;
+    -ms-transition:     left 0.5s;
+    transition:         left 0.5s;  
+}
+
+.POSWidgetRestriction[fa-showpopup] [sa-elementtype=overlay].PopUpOverlay
+{
+    left:0vw;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup]
+{
+    height:90vh;
+    width:90vw;
+    background:#eee;
+    margin-left: 5vw;
+    margin-top: 5vh;
+
+    -moz-box-shadow:0vh 0vh 2vh #fff;
+	-webkit-box-shadow:0vh 0vh 2vh #fff;
+	box-shadow:0vh 0vh 2vh #fff;
+
+    overflow:hidden;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle
+{
+    position: relative;
+    width: 100%;
+    height: 5.5vh;
+    color: #6b6b6b;
+    text-shadow: 0.2vh 0.2vh #eaeaea;
+    border-bottom: 0.4vh solid #ccc;
+    margin-bottom:0.5vh;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle span
+{
+    font-size: 2.8vh;
+    text-align: left;
+    padding: 0.5vh 2vw;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle a[ea-command="@cmd%popup.close"]
+{
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    top: 0;
+    right: 0;
+    display: block;
+    text-decoration: none;
+    font: 3vh fontawesome;
+    padding-top: 1vh;
+    text-align: center;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList
+{
+    display:block;
+    width: 100%; 
+    height: 75vh;
+    overflow:auto;    
+    margin-bottom:1vh;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow
+{
+    width:100%;
+    height:10.5vh;    
+    padding:0.75vh 2vw;
+    position:relative;
+    color :#296c16;
+    background:#e5e5e5;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    border-bottom: 0.2vh solid #ccc;
+
+    overflow:hidden;    
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow img
+{
+    position:relative;
+    display:block;
+    float:left;
+    width : 9vh;
+    height: 9vh;
+
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow span
+{
+    display: block;
+    float: left;
+    width: 50vw;
+    padding: 2.7vh 2vw;
+    color: #555;
+    overflow-y:hidden;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[disabled] span
+{
+    color : #999;    
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow span br
+{
+    display:none;
+}
+
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[ea-type="#admin"]::after,
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[value=false]::after
+{
+    position: absolute;
+    top: 0.75vh;
+    left: 2vw;
+    display: block;
+    float: left;
+    width: 9vh;
+    height: 9vh;
+    background: rgba(100,100,100,0.5);
+    content: '';
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+}
+
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow .ToggleSwitch
+{
+    position:relative;
+    width:5vh;
+    height:3vh;
+    background:#fff;
+    margin-top:2.5vh;
+    border:0.15vh solid #ccc;
+
+     -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    overflow:hidden;    
+
+    float:right;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow .ToggleSwitch div[ea-type=leftbar]
+{
+    width:0vh;
+    height:3vh;
+    float:left;
+
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;  
+
+    background:#008aff;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[value=true] .ToggleSwitch div[ea-type=leftbar]
+{
+    width:5vh;    
+    background:#008aff;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow .ToggleSwitch div[ea-type=key]
+{
+    position:absolute;
+    left:0.2vh;
+    top:0.18vh;
+    width:2.3vh;
+    height:2.3vh;
+
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    border:0.15vh solid #ddd;
+
+    background:#fff;
+
+    -webkit-transition: left 0.5s;
+    -moz-transition:    left 0.5s;
+    -o-transition:      left 0.5s;
+    -ms-transition:     left 0.5s;
+    transition:         left 0.5s;  
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[value=true] .ToggleSwitch div[ea-type=key]
+{    
+    left:2.2vh;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[ea-type="#admin"] .ToggleSwitch div[ea-type=key],
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[disabled] .ToggleSwitch div[ea-type=key]
+{
+    background : #eee;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[ea-type="#admin"] .ToggleSwitch,
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[ea-type="#admin"] .ToggleSwitch div[ea-type=leftbar],
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[disabled] .ToggleSwitch,
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .WidgetList .WidgetRow[disabled] .ToggleSwitch div[ea-type=leftbar]
+{
+    background : #ccc;
+}
+
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel
+{
+    width: 100%;
+    height: 8vh;
+    background: #ff5000;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a
+{
+    display: inline-block;
+    font-size: 2.5vh;
+    color: #eee;
+    overflow-y:hidden;
+    overflow-x:auto;
+    text-align:center;
+    padding-top:1.5vh;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.update"]
+{
+    width: 60%;
+    height: 100%;
+    border-right: 0.2vh solid#ddd;
+}
+
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.cancel"]
+{
+    width:40%;
+    height:100%;
+    background:#aaa;
+}
+
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.update"]:active,
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.cancel"]:active,
+.POSWidgetRestriction [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle a[ea-command="@cmd%popup.close"]:active
+{
+    background:#000;
+    color:#fff;
+}
+
+
+
+

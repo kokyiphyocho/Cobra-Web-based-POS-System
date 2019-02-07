@@ -1,0 +1,121 @@
+﻿2018-10-07
+Data Change
+Widget Table
+ComponentSubscription
+
+
+Add Column
+EData_ItemCatalouge
+- EntryAttribute varchar(50) default '' after EntryType
+
+
+ELog_ItemCatalouge
+- EntryAttribute varchar(50) default '' after EntryType
+
+
+Setting Value
+EPOS	POS.SystemItemCodeMode	TRUE
+EPOS00001	POS.SystemItemCodeMode	FALSE
+EPOS00003	POS.SystemItemCodeMode	FALSE
+ERES VALUES
+
+StoreProcedureChanged
+ES_POSUpdateItemRecord
+
+Dynamic Query Changed
+UpdateItemRecord
+
+Setting
+Add RES Related Setting
+
+Admin_Message
+Put all in *
+
+Add Column Log_Action in following Tables
+ELog_StockIncoming
+Elog_StockOutgoing
+
+Add New Table
+ELog_Unit
+
+
+Add Column
+Add Remark Column in EData_receipt and ELog_Receipt
+
+Add FlagIcon Column in Admin_LanguageTable
+
+Add Setting Key
+_SystemTableGroupLimit
+_SystemTableLimit
+
+ReceiptTable
+Add TaxPercent Decimal(18,2)
+
+Elog_receipt
+Change Column Name TaxExclusive to TaxInclusive
+
+
+STEPS
+ALTER TABLE EDATA_ITEMCATALOGUE ADD [EntryAttribute] [varchar](50)  NOT NULL CONSTRAINT [DF_EData_ItemCatalogue_EntryAttribute]  DEFAULT ('') WITH VALUES;
+ALTER TABLE ELOG_ITEMCATALOGUE ADD [EntryAttribute] [varchar](50) NOT NULL CONSTRAINT [DF_ELog_ItemCatalogue_EntryAttribute]  DEFAULT ('') WITH VALUES;
+Rearrange Column after EntryType using Management Studio
+
+sp_Rename 'ELog_Receipt.TaxExclusive','TaxInclusive','COLUMN';
+
+ALTER TABLE ELOG_STOCKINCOMING ADD [Log_Action] [varchar](50) NOT NULL CONSTRAINT [DF_ELog_StockIncoming_Log_Action]  DEFAULT ('') WITH VALUES;
+ALTER TABLE ELOG_STOCKOUTGOING ADD [Log_Action] [varchar](50) NOT NULL CONSTRAINT [DF_ELog_StockOutgoing_Log_Action]  DEFAULT ('') WITH VALUES;
+Rearrange Column after Log_AccessInfo using Management Studio
+
+ALTER TABLE EDATA_RECEIPT ADD [TaxPercent] [decimal](18,2) NOT NULL CONSTRAINT [DF_EData_Receipt_TaxPercent]  DEFAULT (0) WITH VALUES;
+ALTER TABLE ELOG_RECEIPT ADD [TaxPercent] [decimal](18,2) NOT NULL CONSTRAINT [DF_ELog_Receipt_TaxPercent]  DEFAULT (0) WITH VALUES;
+ALTER TABLE EDATA_RECEIPT ADD [Remark] [nvarchar](500) NOT NULL CONSTRAINT [DF_EData_Receipt_Remark]  DEFAULT ('') WITH VALUES;
+ALTER TABLE ELOG_RECEIPT ADD [Remark] [nvarchar](500) NOT NULL CONSTRAINT [DF_ELog_Receipt_Remark]  DEFAULT ('') WITH VALUES;
+
+ALTER TABLE EDATA_RECEIPT ADD [ServiceChargePercent] [decimal](18,2) NOT NULL CONSTRAINT [DF_EData_Receipt_ServiceChargePercent]  DEFAULT (0) WITH VALUES;
+ALTER TABLE ELOG_RECEIPT ADD [ServiceChargePercent] [decimal](18,2) NOT NULL CONSTRAINT [DF_ELog_Receipt_ServiceChargePercent]  DEFAULT (0) WITH VALUES;
+ALTER TABLE EDATA_RECEIPT ADD [ServiceCharge] [decimal](18,2) NOT NULL CONSTRAINT [DF_EData_Receipt_ServiceCharge]  DEFAULT (0) WITH VALUES;
+ALTER TABLE ELOG_RECEIPT ADD [ServiceCharge] [decimal](18,2) NOT NULL CONSTRAINT [DF_ELog_Receipt_ServiceCharge]  DEFAULT (0) WITH VALUES;
+ALTER TABLE EDATA_RECEIPT ADD [Change] [decimal](18,2) NOT NULL CONSTRAINT [DF_EData_Receipt_Change]  DEFAULT (0) WITH VALUES;
+ALTER TABLE ELOG_RECEIPT ADD [Change] [decimal](18,2) NOT NULL CONSTRAINT [DF_ELog_Receipt_Change]  DEFAULT (0) WITH VALUES;
+ALTER TABLE EDATA_RECEIPT ADD [PaymentETransfer] [decimal](18,2) NOT NULL CONSTRAINT [DF_EData_Receipt_PaymentETransfer]  DEFAULT (0) WITH VALUES;
+ALTER TABLE ELOG_RECEIPT ADD [PaymentETransfer] [decimal](18,2) NOT NULL CONSTRAINT [DF_ELog_Receipt_PaymentETransfer]  DEFAULT (0) WITH VALUES;
+ALTER TABLE EDATA_RECEIPT ADD [PaymentCreditCard] [decimal](18,2) NOT NULL CONSTRAINT [DF_EData_Receipt_PaymentCreditCard]  DEFAULT (0) WITH VALUES;
+ALTER TABLE ELOG_RECEIPT ADD [PaymentCreditCard] [decimal](18,2) NOT NULL CONSTRAINT [DF_ELog_Receipt_PaymentCreditCard]  DEFAULT (0) WITH VALUES;
+Change ELog_Receipt Reference Column to nvarchar
+
+
+ALTER TABLE EDATA_ITEMCATALOGUE ADD [UPCCode] [varchar](50) NOT NULL CONSTRAINT [DF_EData_ItemCatalogue_UPCCode]  DEFAULT ('') WITH VALUES;
+ALTER TABLE ELOG_ITEMCATALOGUE ADD [UPCCode] [varchar](50) NOT NULL CONSTRAINT [DF_ELog_ItemCatalogue_UPCCode]  DEFAULT ('') WITH VALUES;
+
+Rearrange Column after ReceiptDate using Management Studio
+
+ALTER TABLE Data_EService DROP COLUMN EntriesLimit;
+ALTER TABLE Data_EService DROP COLUMN SpaceLimit;
+ALTER TABLE Data_EService DROP COLUMN ToolBarConfig;
+
+MANUAL DROP
+ALTER TABLE Data_Subscription DROP COLUMN ToolBarConfig;
+ALTER TABLE Log_Subscription DROP COLUMN ToolBarConfig;
+
+Create ELog_Unit Table
+
+Change Admin_Setting.Value to navarchar(4000)
+Change Log_Setting.Value to navarchar(4000)
+
+Remove UPCCode from ItemCatatlouge and Elog_ItemCatalogue
+
+AddTimeZone Table
+
+set / infront of icon path in appmanifest table.
+
+Create Log_Appmanifest Table
+
+DROP COLUMN DATA_SUBSCRIPTION
+DROP LOG_SUBSCRIPTION
+WallPaper
+SubscriptionTitle
+DROP COLUMN ADMIN_FORMINFO
+TitleText
+
+<!FORMDESKTOP::ribbonblue;;FORMPOSLOGIN::/images/background/wallpaper05.jpg;;!>
+<!FORMDESKTOP::ribbonblue;;FORMPOSLOGIN::/images/background/wallpaper05.jpg;;!>

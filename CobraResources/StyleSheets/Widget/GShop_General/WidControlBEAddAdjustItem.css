@@ -1,0 +1,325 @@
+﻿.BEAddAdjustItem 
+{    
+    background: url('images/background/blue_butterfly_3_sparkling.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem *,
+.BEAddAdjustItem .WidControlBEAddAdjustItem *:after,
+.BEAddAdjustItem .WidControlBEAddAdjustItem *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem
+{
+    width:100vw;
+    height:94vh;
+    overflow:auto;               
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=container]
+{
+    height:25vh;
+    overflow:auto;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem[ea-controlmode=category] [sa-elementtype=container]
+{
+    height:40vh;
+    overflow:auto;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=container] [sa-elementtype=inputblock]
+{
+    overflow:hidden;
+    margin-bottom:0.5vh;
+    padding-bottom:2vh;    
+
+    background: rgba(216,225,231,0.95);
+    background: -moz-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(216,225,231,0.95)), color-stop(93%, rgba(181,198,208,0.9)), color-stop(100%, rgba(130,130,130,0.9)));
+    background: -webkit-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -o-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -ms-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: linear-gradient(to bottom, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e1e7', endColorstr='#828282', GradientType=0 );
+}
+
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem div[sa-elementtype=inputtitle]
+{
+    width:100vw;
+    height:4.5vh;
+    margin-bottom:0.5vh;
+    text-shadow:0.15vh 0.15vh 0vh #fff;
+    padding:0vh 2vw;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(6%, rgba(222,222,222,1)), color-stop(92%, rgba(204,204,204,1)), color-stop(100%, rgba(133,133,133,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#858585', GradientType=0 );
+}
+
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem div[sa-elementtype=inputtitle],
+.BEAddAdjustItem .WidControlBEAddAdjustItem div[sa-elementtype=inputrow]
+{
+    width:100vw;
+    min-height:4.5vh;
+    margin-bottom:1vh;
+    padding:0vh 2vw;    
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem input[type=text],
+.BEAddAdjustItem .WidControlBEAddAdjustItem input[type=password]
+{
+    width:50vw;
+    height:4.5vh;          
+    float:left;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:0vh 2vw;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem input[type=text][readonly],
+.BEAddAdjustItem .WidControlBEAddAdjustItem input[type=password][readonly]
+{
+    background : rgba(210,210,210,0.5) !important;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem div[sa-elementtype=inputlabel]
+{
+    width:45vw;    
+    height:4.5vh;
+    float:left;
+    white-space:nowrap;    
+    overflow-x:auto;
+    overflow-y:hidden;        
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputblock][ea-appearance=hidden]
+{
+    display : none;
+}
+
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem select
+{    
+    width:50vw;
+    height:4.5vh;          
+    float:left;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:0vh 2vw;
+    font : 2.3vh pyidaungsu;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem select option
+{
+    font: 2.3vh pyidaungsu;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem input[type=text]:focus,
+.BEAddAdjustItem .WidControlBEAddAdjustItem textarea:focus
+{
+ background: rgba(150,231,255,1);
+background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect 
+{
+    width : 50vw;
+    height : 4vh;       
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect > .CaptionCont
+{
+    height  : 4.5vh;    
+    padding : 0.5vh 2vw;
+    outline : none;
+    font    : 2.3vh pyidaungsu;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect > .CaptionCont span
+{
+    font : inherit;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect > .CaptionCont:focus
+{
+    outline : none;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect.open > .optWrapper
+{
+    top:4.5vh;
+    font-size    : 2px;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect > .optWrapper > .options li.opt
+{
+    padding : 0.5vh 1vw;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect > .CaptionCont > label
+{
+    width:4vh;
+    height:4vh;    
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem [sa-elementtype=inputrow] .SumoSelect > .CaptionCont > label > i
+{
+    width:4vh;
+    height:4vh;
+    background-size:2vh 2vh;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem .ButtonPanel
+{
+    width:100vw;
+    height:8vh;
+    margin-top:2vh;
+    text-align:center;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem .AddButton 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;	
+
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem .AddButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem .AddButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem .CloseButton
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem .CloseButton:hover
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.BEAddAdjustItem .WidControlBEAddAdjustItem .CloseButton:active
+{
+	position:relative;
+	top:0.2vh;
+}

@@ -1,0 +1,414 @@
+﻿.UpdateContent 
+{    
+    background: url('images/background/grey_wave.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.UpdateContent .WidControlUpdateContent *,
+.UpdateContent .WidControlUpdateContent *:after,
+.UpdateContent .WidControlUpdateContent *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.UpdateContent .WidControlUpdateContent
+{
+    width:100vw;
+    height:94vh;
+    overflow:auto;               
+}
+
+.UpdateContent .WidControlUpdateContent [sa-elementtype=container]
+{
+    height:80vh;
+    overflow:auto;
+}
+
+.UpdateContent .WidControlUpdateContent [sa-elementtype=container] [sa-elementtype=inputblock]
+{
+    overflow:hidden;
+    margin-bottom:0.5vh;
+    padding-bottom:1vh;    
+
+    background: rgba(216,225,231,0.95);
+    background: -moz-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(216,225,231,0.95)), color-stop(93%, rgba(181,198,208,0.9)), color-stop(100%, rgba(130,130,130,0.9)));
+    background: -webkit-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -o-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -ms-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: linear-gradient(to bottom, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e1e7', endColorstr='#828282', GradientType=0 );
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=inputtitle]
+{
+    width:100vw;
+    height:6vh;
+    margin-bottom:0.5vh;
+    text-shadow:0.15vh 0.15vh 0vh #fff;
+    padding:0.7vh 2vw;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(6%, rgba(222,222,222,1)), color-stop(92%, rgba(204,204,204,1)), color-stop(100%, rgba(133,133,133,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#858585', GradientType=0 );
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=inputrow]
+{
+    width:100vw;
+    min-height:5vh;
+    margin-bottom:2vh;
+    padding:0vh 2vw;    
+}
+
+/*.UpdateContent .WidControlUpdateContent .BasicPanel div[sa-elementtype=inputlabel],
+.UpdateContent .WidControlUpdateContent .ContactPanel div[sa-elementtype=inputlabel]
+{
+    width:45vw;    
+    height:4.5vh;
+    float:left;
+    white-space:nowrap;    
+    overflow-x:auto;
+    overflow-y:hidden;        
+}
+
+.UpdateContent .WidControlUpdateContent .BasicPanel input[type=text],
+.UpdateContent .WidControlUpdateContent .ContactPanel input[type=text]
+{
+    width:50vw;
+    height:4.5vh;          
+    float:left;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:0vh 2vw;
+}*/
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=inputlabel]
+{
+    width:96vw;    
+    height:5vh;
+    float:none;
+    white-space:nowrap;    
+    overflow-x:auto;
+    overflow-y:hidden;        
+    font-size:2.5vh;
+}
+
+.UpdateContent .WidControlUpdateContent textarea,
+.UpdateContent .WidControlUpdateContent input[type=text]
+{
+    width:96vw;        
+    font-size:2.5vh;
+}
+
+.UpdateContent .WidControlUpdateContent input[type=text]
+{
+    height:auto;
+    font-size:2.5vh;
+    padding:1vh 2vw;
+}
+
+.UpdateContent .WidControlUpdateContent textarea
+{
+    height:20vh;
+    font-size:2.5vh;
+    padding:1vh 2vw;
+}
+
+.UpdateContent .WidControlUpdateContent select
+{
+    font             : 2.3vh Pyidaungsu;     
+    height:5vh;
+    width : 50vw;
+    padding:0vh 2vw;
+    font-size:2.5vh;
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=slideselectioncontrol],
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=colorslideselectioncontrol]
+{
+    position:relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 50vw;
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=slideselectioncontrol] input[type=text],
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=colorslideselectioncontrol] input[type=text]
+{
+    
+    width:50vw;
+    border:0.15vh solid #ddd;
+    padding:0.25vh 2vw;
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=slideselectioncontrol]::after,
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=colorslideselectioncontrol]::after
+{
+    position: absolute;
+    display: block;
+    right: 2vw;
+    top: 0.8vh;
+    padding-top: 0.35vh;
+    width: 6vw;
+    height: 3vh;
+    text-align: center;
+    background: #ddd;
+    color: #888;    
+    font: 2.2vh fontawesome;
+    content: '\f141';
+    -moz-box-shadow:0vh 0vh 0.3vh #555;
+	-webkit-box-shadow:0vh 0vh 0.3vh #555;
+	box-shadow:0vh 0vh 0.3vh #555;
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=imageslideselectioncontrol]
+{
+    position:relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 15vh; /* Purposely use vh*/
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=imageslideselectioncontrol] img
+{    
+    width:10vh;
+    height:10vh;
+    border:0.15vh solid #ddd;
+    padding:0vh 0vw;
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=imageslideselectioncontrol] input
+{
+    display:none;
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=imageslideselectioncontrol]::after
+{
+    position: absolute;
+    display: block;
+    right: 2vw;
+    top: 0.2vh;
+    padding-top: 0.35vh;
+    width: 6vw;
+    height: 3vh;
+    text-align: center;
+    background: #ddd;
+    color: #888;    
+    font: 2.2vh fontawesome;
+    content: '\f141';
+    -moz-box-shadow:0vh 0vh 0.3vh #555;
+	-webkit-box-shadow:0vh 0vh 0.3vh #555;
+	box-shadow:0vh 0vh 0.3vh #555;
+}
+
+/*.UpdateContent .WidControlUpdateContent .ServicePanel input[type=text]
+{
+    height:4.5vh;          
+}
+
+.UpdateContent .WidControlUpdateContent .ServicePanel textarea
+{
+    height:12vh;
+}
+.UpdateContent .WidControlUpdateContent .ServicePanel input[type=text],
+.UpdateContent .WidControlUpdateContent .ServicePanel textarea
+{
+    width:96vw;    
+    float:none;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:0vh 2vw;
+}*/
+
+.UpdateContent .WidControlUpdateContent textarea:focus,
+.UpdateContent .WidControlUpdateContent input[type=text]:focus,
+.UpdateContent .WidControlUpdateContent input[type=password]:focus
+{
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+/*.UpdateContent .WidControlUpdateContent .ConfirmationTitle
+{    
+    width : 100vw;
+    height : 5vh;       
+    padding : 0.5vh 2vw;
+    text-align : center;
+    color:#fff;
+    text-shadow:0.1vh 0.1vh 0 rgba(255,255,255,0.3);
+    display:block;
+    
+    background: rgba(255,153,135,1);
+    background: -moz-linear-gradient(top, rgba(255,153,135,1) 0%, rgba(255,28,3,0.6) 10%, rgba(252,30,10,0.8) 90%, rgba(166,14,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,153,135,1)), color-stop(10%, rgba(255,28,3,0.6)), color-stop(90%, rgba(252,30,10,0.8)), color-stop(100%, rgba(166,14,0,1)));
+    background: -webkit-linear-gradient(top, rgba(255,153,135,1) 0%, rgba(255,28,3,0.6) 10%, rgba(252,30,10,0.8) 90%, rgba(166,14,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,153,135,1) 0%, rgba(255,28,3,0.6) 10%, rgba(252,30,10,0.8) 90%, rgba(166,14,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,153,135,1) 0%, rgba(255,28,3,0.6) 10%, rgba(252,30,10,0.8) 90%, rgba(166,14,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,153,135,1) 0%, rgba(255,28,3,0.6) 10%, rgba(252,30,10,0.8) 90%, rgba(166,14,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9987', endColorstr='#a60e00', GradientType=0 );
+}*/
+
+.UpdateContent .WidControlUpdateContent [sa-elementtype=inputblock][ea-appearance=hidden]
+{
+    display:none;
+}
+
+.UpdateContent .WidControlUpdateContent[fa-showpanel=city] [sa-elementtype=popup][ea-type=city] [sa-elementtype=overlay],
+.UpdateContent .WidControlUpdateContent[fa-showpanel=township] [sa-elementtype=popup][ea-type=township] [sa-elementtype=overlay],
+.UpdateContent .WidControlUpdateContent[fa-showpanel=backgroundcolor] [sa-elementtype=popup][ea-type=backgroundcolor] [sa-elementtype=overlay],
+.UpdateContent .WidControlUpdateContent[fa-showpanel=frontendicon] [sa-elementtype=popup][ea-type=frontendicon] [sa-elementtype=overlay],
+.UpdateContent .WidControlUpdateContent[fa-showpanel=backendicon] [sa-elementtype=popup][ea-type=backendicon] [sa-elementtype=overlay]
+{
+    width:100vw;
+}
+
+.UpdateContent .WidControlUpdateContent .ButtonPanel
+{
+    width:100vw;
+    height:8vh;
+    margin-top:2vh;
+    text-align:center;
+}
+
+.UpdateContent .WidControlUpdateContent .UpdateButton 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;
+	    
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 10vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.UpdateContent .WidControlUpdateContent .UpdateButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.UpdateContent .WidControlUpdateContent .UpdateButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.UpdateContent .WidControlUpdateContent .CancelButton
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 10vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.UpdateContent .WidControlUpdateContent .CancelButton:hover
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.UpdateContent .WidControlUpdateContent .CancelButton:active
+{
+	position:relative;
+	top:0.2vh;
+}
+

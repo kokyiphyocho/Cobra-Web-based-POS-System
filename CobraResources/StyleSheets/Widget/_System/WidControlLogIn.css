@@ -1,0 +1,332 @@
+﻿.StandardLogIn 
+{    
+    background: url('images/background/wallpaper18.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.StandardLogIn .WidControlLogIn *,
+.StandardLogIn .WidControlLogIn *:after,
+.StandardLogIn .WidControlLogIn *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+}
+
+.StandardLogIn .WidControlLogIn
+{
+    /* Size & position */
+    width: 60vw;
+    margin: auto;
+    margin-top:20vh;
+    padding: 1vh;
+    position: relative; /* For the submit button positioning */
+
+    /* Styles */
+    -moz-box-shadow:   
+        0 0 1px rgba(0, 0, 0, 0.3), 
+        0 3px 7px rgba(0, 0, 0, 0.3), 
+        inset 0 1px rgba(255,255,255,1),
+        inset 0 -3px 2px rgba(0,0,0,0.25);
+
+    -webkit-box-shadow: 
+        0 0 1px rgba(0, 0, 0, 0.3), 
+        0 3px 7px rgba(0, 0, 0, 0.3), 
+        inset 0 1px rgba(255,255,255,1),
+        inset 0 -3px 2px rgba(0,0,0,0.25);
+
+    box-shadow: 
+        0 0 1px rgba(0, 0, 0, 0.3), 
+        0 3px 7px rgba(0, 0, 0, 0.3), 
+        inset 0 1px rgba(255,255,255,1),
+        inset 0 -3px 2px rgba(0,0,0,0.25);
+        
+    -webkit-border-radius: 0.3vh;
+    -moz-border-radius: 0.3vh;
+    -ms-border-radius: 0.3vh;
+    -o-border-radius: 0.3vh;
+    border-radius: 0.3vh;
+
+    background: white; /* Fallback */
+    background: -moz-linear-gradient(#eeefef, #ffffff 10%);
+    background: -ms-linear-gradient(#eeefef, #ffffff 10%);
+    background: -o-linear-gradient(#eeefef, #ffffff 10%);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#eeefef), color-stop(0.1, #ffffff));
+    background: -webkit-linear-gradient(#eeefef, #ffffff 10%);
+    background: linear-gradient(#eeefef, #ffffff 10%);
+}
+
+.StandardLogIn .WidControlLogIn .Field 
+{
+    position: relative; /* For the icon positioning */
+}
+
+.StandardLogIn .WidControlLogIn .Field div 
+{
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    height: 6vh;
+    width: 10vw;
+    padding-top:1vh;
+    font: 3vh "FontAwesome";
+
+    /* Line */
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.7);
+
+    /* Styles */
+    color: #777777;
+    text-align: center;
+    line-height: 4.5vh;
+    
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    pointer-events: none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+
+.StandardLogIn .WidControlLogIn input[type=text],
+.StandardLogIn .WidControlLogIn input[type=password] 
+{    
+    font: 2.5vh cobrasystemfont;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    /* Size and position */
+    width: 100%;
+    padding: 1vh 8.2vw 1vh 12vw;
+
+    /* Styles */
+    border: none; /* Remove the default border */
+    
+    -moz-box-shadow: 
+        inset 0 0 5px rgba(0,0,0,0.1),
+        inset 0 3px 2px rgba(0,0,0,0.1);
+
+    -webkit-box-shadow:
+        inset 0 0 5px rgba(0,0,0,0.1),
+        inset 0 3px 2px rgba(0,0,0,0.1);
+
+    box-shadow: 
+        inset 0 0 5px rgba(0,0,0,0.1),
+        inset 0 3px 2px rgba(0,0,0,0.1);
+            
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+
+    background: #f9f9f9;
+    color: #777;
+    -webkit-transition: color 0.3s ease-out;
+    -moz-transition: color 0.3s ease-out;
+    -ms-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
+}
+
+.StandardLogIn .WidControlLogIn input[type=text] 
+{
+    margin-bottom: 1vh;
+}
+
+.StandardLogIn .WidControlLogIn input[type=text]:hover,
+.StandardLogIn .WidControlLogIn input[type=password]:hover
+{
+    color: #52cfeb;
+}
+
+.StandardLogIn .WidControlLogIn input[type=text]:focus,
+.StandardLogIn .WidControlLogIn input[type=password]:focus  
+{
+    color: #42A2BC;
+	background :#fafad2;
+}
+
+.StandardLogIn .WidControlLogIn input[type=text]:focus,
+.StandardLogIn .WidControlLogIn input[type=password]:focus,
+.StandardLogIn .WidControlLogIn button[type=button]:focus 
+{
+    outline: none;
+}
+
+.StandardLogIn .WidControlLogIn .LogInButtonDiv 
+{
+    /* Size and position */
+    width: 7vh;
+    height: 7vh;
+    position: absolute;
+    top: 4vh;
+    right: -3vh; /* Must be in Pixel, cannot vh or vw*/
+    padding: 0.5vh;
+    z-index: 2;
+
+    /* Styles */
+    background: #ffffff;
+        
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    
+    -moz-box-shadow:   
+        0 0 2px rgba(0,0,0,0.1),
+        0 3px 2px rgba(0,0,0,0.1),
+        inset 0 -3px 2px rgba(0,0,0,0.2);
+
+    -webkit-box-shadow: 
+        0 0 2px rgba(0,0,0,0.1),
+        0 3px 2px rgba(0,0,0,0.1),
+        inset 0 -3px 2px rgba(0,0,0,0.2);
+
+    box-shadow: 
+        0 0 2px rgba(0,0,0,0.1),
+        0 3px 2px rgba(0,0,0,0.1),
+        inset 0 -3px 2px rgba(0,0,0,0.2);
+}
+
+.StandardLogIn .WidControlLogIn .LogInButtonDiv button 
+{
+    /* Size and position */
+    width: 100%;
+    height: 100%;
+    margin-top: -0.05vh;
+    
+    font: 4vh "FontAwesome";
+
+    /* Icon styles */    
+    /* line-height: 1.75; */
+    color: white;
+
+    /* Styles */
+    border: none; /* Remove the default border */
+    
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+    border-radius: inherit;
+
+    background: #52cfeb; /* Fallback */
+    background: -moz-linear-gradient(#52cfeb, #42A2BC);
+    background: -ms-linear-gradient(#52cfeb, #42A2BC);
+    background: -o-linear-gradient(#52cfeb, #42A2BC);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#52cfeb), to(#42A2BC));
+    background: -webkit-linear-gradient(#52cfeb, #42A2BC);
+    background: linear-gradient(#52cfeb, #42A2BC);
+    
+    
+    -moz-box-shadow:    
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        0 1px 2px rgba(0,0,0,0.35),
+        inset 0 3px 2px rgba(255,255,255,0.2),
+        inset 0 -3px 2px rgba(0,0,0,0.1);
+
+    -webkit-box-shadow:  
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        0 1px 2px rgba(0,0,0,0.35),
+        inset 0 3px 2px rgba(255,255,255,0.2),
+        inset 0 -3px 2px rgba(0,0,0,0.1);
+    
+    box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        0 1px 2px rgba(0,0,0,0.35),
+        inset 0 3px 2px rgba(255,255,255,0.2),
+        inset 0 -3px 2px rgba(0,0,0,0.1);
+
+    cursor: pointer;
+}
+
+.StandardLogIn .WidControlLogIn .LogInButtonDiv button:hover,
+.StandardLogIn .WidControlLogIn .LogInButtonDiv button[type=button]:focus 
+{
+    background: #52cfeb;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.StandardLogIn .WidControlLogIn .LogInButtonDiv button:active 
+{
+    background: #42A2BC;
+
+    -moz-box-shadow: 
+        inset 0 0 5px rgba(0,0,0,0.3),
+        inset 0 3px 4px rgba(0,0,0,0.3);
+
+    -webkit-box-shadow: 
+        inset 0 0 5px rgba(0,0,0,0.3),
+        inset 0 3px 4px rgba(0,0,0,0.3);
+
+    box-shadow: 
+        inset 0 0 5px rgba(0,0,0,0.3),
+        inset 0 3px 4px rgba(0,0,0,0.3);    
+}
+
+.StandardLogIn .WidControlLogIn .StatusDiv
+{
+    position    : absolute;
+    font-size   : 1.5vh;
+    color       : #fff;    
+    margin-top : 2vh;
+    margin-left:-1vw;
+    padding-left:1vw;
+    width       : 100%;
+    text-shadow : 1px 1px 5px #000;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background  : rgba(255,0,0,0.5);
+}
+
+.StandardLogIn .WidControlLogIn .CreateAccountButton
+{
+    position: absolute;
+    margin-top: 10vh;
+    padding: 0.5vh;
+    color: #142fff;
+    text-shadow: 0.2vh 0.2vh #ddd;
+    font-size: 2vh;
+    width: 60vw;
+    min-height:5vh;
+    background: rgba(255,255,255,0.8);
+    text-align: center;
+    text-decoration : none;
+    letter-spacing:0.2vw;
+    cursor:pointer;
+    border:0.5vh solid rgba(0,0,0,0.1);
+
+    -moz-box-shadow:    0.8vh 0.8vh 0.5vh rgba(0,0,0,0.2);
+   -webkit-box-shadow: 0.8vh 0.8vh 0.5vh rgba(0,0,0,0.2);
+    box-shadow: 0.8vh 0.8vh 0.5vh rgba(0,0,0,0.2);
+}
+
+
+

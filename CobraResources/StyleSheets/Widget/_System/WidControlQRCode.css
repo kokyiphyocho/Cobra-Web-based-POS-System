@@ -1,0 +1,67 @@
+﻿.QRCode
+{    
+    background: url('images/background/blue_wave_white.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.QRCode .WidControlQRCode *,
+.QRCode .WidControlQRCode *:after,
+.QRCode .WidControlQRCode *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.1vh cobrasystemfont;     
+}
+
+.QRCode .WidControlQRCode
+{
+    width:100vw;
+    height:75vh;
+    overflow:auto;       
+    padding : 2vh 2vw 2vh 2vw;
+}
+
+.QRCode .WidControlQRCode .ElementDiv
+{
+    width       : 96vw;
+    display     : none;
+    overflow    : hidden;
+}
+
+.QRCode .WidControlQRCode .TextDiv
+{
+    width: 100%;
+    height: 6vh;
+    text-align: center;
+    background: #ddd;    
+    font-size: 3vh;
+    padding-top: 0.5vh;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.QRCode .WidControlQRCode .Image
+{
+    width       : 96vw;
+}
+
+.QRCode .WidControlQRCode[ea-attribute=andriodfrontend] .ElementDiv[ea-type=andriodfrontend],
+.QRCode .WidControlQRCode[ea-attribute=andriodbackend] .ElementDiv[ea-type=andriodbackend],
+.QRCode .WidControlQRCode[ea-attribute=iosfrontend] .ElementDiv[ea-type=iosfrontend],
+.QRCode .WidControlQRCode[ea-attribute=iosbackend] .ElementDiv[ea-type=iosbackend]
+{
+    display : block;
+}

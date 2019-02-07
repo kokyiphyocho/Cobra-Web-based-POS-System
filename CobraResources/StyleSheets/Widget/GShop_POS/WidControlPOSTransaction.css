@@ -1,0 +1,422 @@
+﻿.POSTransaction
+{    
+    /*background: url('images/background/blue_butterfly_3_sparkling.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/    
+    background:#fff;
+}
+
+.POSTransaction .WidControlPOSTransaction *,
+.POSTransaction .WidControlPOSTransaction *:after,
+.POSTransaction .WidControlPOSTransaction *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSTransaction .WidControlPOSTransaction
+{
+    width:100vw;
+    height:100vh;
+    overflow:auto;               
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar
+{
+    width:100vw;
+    height:5vh;  
+    padding-top: 0.5vh;    
+    position:relative;
+}
+
+/*.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol]
+{
+    position: absolute;
+    top: 0.5vh;
+    left: 1vw;
+    width: 5vh;
+    height: calc(100% - 1vh);
+    background: rgb(134, 134, 134);
+    border: 0.2vh solid #eee;    
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-errorstate=none]
+{
+    background: rgb(155, 255, 189);
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-errorstate=warning]
+{
+    background: rgb(255, 254, 0);
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-errorstate=error]
+{
+    background: rgb(249, 99, 99);
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-errorstate=error]::after
+{
+    position: absolute;
+    font: 2vh fontawesome;
+    content: '\f06a';
+    top: 0vh;
+    right: 0vw;
+    color: #fffe00;    
+    text-shadow: 0.2vh 0.2vh 0.1vh #bababa;   
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol] img
+{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: auto;
+}*/
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol]
+{
+    position: absolute;
+    top: 0.5vh;
+    left: 1vw;
+    width: 5vh;
+    height: calc(100% - 1vh);
+    background: rgb(250, 250, 250);
+    border: 0.2vh solid #eee;    
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-status=success]
+{
+    background: rgb(155, 255, 189);
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-status=warning]
+{
+    background: rgb(255, 254, 0);
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-status=error]
+{
+    background: rgb(249, 99, 99);
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-status=error]::after
+{
+    position: absolute;
+    font: 2vh fontawesome;
+    content: '\f06a';
+    top: 0vh;
+    right: 0vw;
+    color: #fffe00;    
+    text-shadow: 0.2vh 0.2vh 0.1vh #bababa;   
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol] img[ea-type=icon]
+{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol] img[ea-type=ajax]
+{
+    position: absolute;
+    top: 2.5vh;
+    width: 4.5vh;
+    height: auto;
+    left: 0;
+    display: none;
+    margin: auto;    
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar div[sa-elementtype=statuscontrol][fa-status=connecting] img[ea-type=ajax]
+{
+    display : block;
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar span
+{
+    display: block;
+    width: 100vw;
+    text-align: center;
+    color: #eee; 
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar a
+{    
+    position: absolute;
+    font: 3vh fontawesome;
+    top: 0vh;
+    right: 0;
+    height: 100%;
+    width: 10vw;
+    padding-left: 2vw;
+    line-height: 160%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.POSTransaction .WidControlPOSTransaction[ea-mode=sale] .TitleBar,
+.POSTransaction .WidControlPOSTransaction[ea-mode=stockin] .TitleBar
+{    
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,196,65,1) 10%, rgba(28,122,59,1) 90%, rgba(1,66,11,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(0,196,65,1)), color-stop(90%, rgba(28,122,59,1)), color-stop(100%, rgba(1,66,11,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,196,65,1) 10%, rgba(28,122,59,1) 90%, rgba(1,66,11,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,196,65,1) 10%, rgba(28,122,59,1) 90%, rgba(1,66,11,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,196,65,1) 10%, rgba(28,122,59,1) 90%, rgba(1,66,11,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(0,196,65,1) 10%, rgba(28,122,59,1) 90%, rgba(1,66,11,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#01420b', GradientType=0 ); 
+}
+
+.POSTransaction .WidControlPOSTransaction[ea-mode=purchase] .TitleBar,
+.POSTransaction .WidControlPOSTransaction[ea-mode=stockout] .TitleBar
+{
+    background: rgba(252,139,119,1);
+    background: -moz-linear-gradient(top, rgba(252,139,119,1) 0%, rgba(242,20,0,1) 10%, rgba(181,12,0,1) 90%, rgba(120,10,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,139,119,1)), color-stop(10%, rgba(242,20,0,1)), color-stop(90%, rgba(181,12,0,1)), color-stop(100%, rgba(120,10,0,1)));
+    background: -webkit-linear-gradient(top, rgba(252,139,119,1) 0%, rgba(242,20,0,1) 10%, rgba(181,12,0,1) 90%, rgba(120,10,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(252,139,119,1) 0%, rgba(242,20,0,1) 10%, rgba(181,12,0,1) 90%, rgba(120,10,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(252,139,119,1) 0%, rgba(242,20,0,1) 10%, rgba(181,12,0,1) 90%, rgba(120,10,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(252,139,119,1) 0%, rgba(242,20,0,1) 10%, rgba(181,12,0,1) 90%, rgba(120,10,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc8b77', endColorstr='#780a00', GradientType=0 );
+}
+
+.POSTransaction .WidControlPOSTransaction[ea-mode=sale][gpos-transactionstate=pending] .TitleBar
+{ 
+    background: rgba(255,229,163,1);
+    background: -moz-linear-gradient(top, rgba(255,229,163,1) 0%, rgba(227,163,0,1) 10%, rgba(194,140,4,1) 90%, rgba(138,99,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,229,163,1)), color-stop(10%, rgba(227,163,0,1)), color-stop(90%, rgba(194,140,4,1)), color-stop(100%, rgba(138,99,0,1)));
+    background: -webkit-linear-gradient(top, rgba(255,229,163,1) 0%, rgba(227,163,0,1) 10%, rgba(194,140,4,1) 90%, rgba(138,99,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,229,163,1) 0%, rgba(227,163,0,1) 10%, rgba(194,140,4,1) 90%, rgba(138,99,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,229,163,1) 0%, rgba(227,163,0,1) 10%, rgba(194,140,4,1) 90%, rgba(138,99,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,229,163,1) 0%, rgba(227,163,0,1) 10%, rgba(194,140,4,1) 90%, rgba(138,99,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe5a3', endColorstr='#8a6300', GradientType=0 );
+}
+
+.POSTransaction .WidControlPOSTransaction[ea-mode=sale][gpos-transactionstate=settlement] .TitleBar
+{
+    background: rgba(252,179,236,1);
+    background: -moz-linear-gradient(top, rgba(252,179,236,1) 0%, rgba(240,79,202,1) 12%, rgba(204,0,156,1) 90%, rgba(128,0,92,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,179,236,1)), color-stop(12%, rgba(240,79,202,1)), color-stop(90%, rgba(204,0,156,1)), color-stop(100%, rgba(128,0,92,1)));
+    background: -webkit-linear-gradient(top, rgba(252,179,236,1) 0%, rgba(240,79,202,1) 12%, rgba(204,0,156,1) 90%, rgba(128,0,92,1) 100%);
+    background: -o-linear-gradient(top, rgba(252,179,236,1) 0%, rgba(240,79,202,1) 12%, rgba(204,0,156,1) 90%, rgba(128,0,92,1) 100%);
+    background: -ms-linear-gradient(top, rgba(252,179,236,1) 0%, rgba(240,79,202,1) 12%, rgba(204,0,156,1) 90%, rgba(128,0,92,1) 100%);
+    background: linear-gradient(to bottom, rgba(252,179,236,1) 0%, rgba(240,79,202,1) 12%, rgba(204,0,156,1) 90%, rgba(128,0,92,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb3ec', endColorstr='#80005c', GradientType=0 );
+}
+
+.POSTransaction .WidControlPOSTransaction[ea-mode=sale][gpos-transactionstate=pending] .TitleBar span::before
+{
+    font:1.8vh fontawesome;
+    content:'\f006';
+    margin-right:2vw;
+}
+
+.POSTransaction .WidControlPOSTransaction[ea-mode=sale][gpos-transactionstate=settlement] .TitleBar span::before
+{
+    font:1.8vh fontawesome;
+    content:'\f005';
+    margin-right:2vw;
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar
+{
+    width:100vw;
+    height:5vh;    
+    padding-top:1vh;
+    color:#555;
+    text-align:center;
+
+    background: rgba(235,233,249,1);
+    background: -moz-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 10%, rgba(206,199,236,1) 94%, rgba(123,122,150,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,233,249,1)), color-stop(10%, rgba(216,208,239,1)), color-stop(94%, rgba(206,199,236,1)), color-stop(100%, rgba(123,122,150,1)));
+    background: -webkit-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 10%, rgba(206,199,236,1) 94%, rgba(123,122,150,1) 100%);
+    background: -o-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 10%, rgba(206,199,236,1) 94%, rgba(123,122,150,1) 100%);
+    background: -ms-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 10%, rgba(206,199,236,1) 94%, rgba(123,122,150,1) 100%);
+    background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 10%, rgba(206,199,236,1) 94%, rgba(123,122,150,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#7b7a96', GradientType=0 );
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .ReceiptNoDiv
+{
+    position:relative;
+    float:left;    
+    width:auto;    
+    height:3.5vh;
+    font-size:2vh;
+    line-height:150%;
+    padding-left:5vw;    
+    margin-right:2vw;
+    overflow:hidden;    
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .ReceiptNoDiv::before
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:5vw;
+    font:2vh fontawesome;    
+    padding-top:0.5vh;
+    content:'\f292';
+    text-align:left;
+    padding-left:1vw;
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .DateDiv
+{
+    position:relative;
+    float:right;    
+    width:auto;    
+    height:3.5vh;
+    font-size:2vh;
+    line-height:150%;
+    padding-left:5vw;    
+    margin-right:2vw;
+    overflow:hidden;    
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .DateDiv::before
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:5vw;
+    font:2vh fontawesome;
+    padding-top:0.5vh;
+    content:'\f073';    
+    padding-left:0vw;
+}
+
+
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .CustomerDiv
+{
+    position:relative;
+    display:inline-block;  
+    width:38vw;    
+    height:3.5vh;
+    font-size:2vh;
+    line-height:150%;
+    padding-left:5vw;    
+    margin-right:2vw;
+    overflow:hidden;    
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .CustomerDiv span[ea-columnname=codeno]
+{
+    display:none;
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .CustomerDiv span[ea-columnname=name]
+{   
+    display:block;  
+    width:33vw;    
+    height:3.5vh;
+    font-size:2vh;
+    line-height:150%;
+    padding:0vw;        
+    overflow:auto;    
+    white-space:nowrap;
+    padding-top:0.25vh;
+    text-align:left;
+}
+
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .CustomerDiv::before
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:5vw;
+    font:2vh fontawesome;    
+    padding-top:0.5vh;
+    content:'\f007';
+    text-align:left;
+    padding-left:0vw;
+}
+
+.POSTransaction .WidControlPOSTransaction[ea-mode=stockin] .HeaderBar .CustomerDiv,
+.POSTransaction .WidControlPOSTransaction[ea-mode=stockout] .HeaderBar .CustomerDiv
+{
+    display:none;
+}
+
+.POSTransaction .WidControlPOSTransaction .HeaderBar .DateDiv:active,
+.POSTransaction .WidControlPOSTransaction .HeaderBar .CustomerDiv:active
+{
+    background:#888;
+    color:#fff;
+}
+
+
+.POSTransaction .WidControlPOSTransaction .MasterBlock[sa-elementtype=container]
+{
+    display:none;
+}
+/*.POSTransaction .WidControlPOSTransaction .HeaderBar .DateDiv input[type=text]
+{
+    width:10vw;
+    font-size:2vh;
+}*/
+
+
+
+.POSTransaction .SubControlPopUpInputOverlay .SubControlPopUpInput input[type=text]
+{
+    float : left;
+    margin-right:1vw;
+}
+
+
+.POSTransaction .SubControlPopUpInputOverlay .SubControlPopUpInput[sa-elementtype=inputrow] .SideButton 
+{
+	-moz-box-shadow:inset 0vh 0.1vh 0vh 0vh #ffffff;
+	-webkit-box-shadow:inset 0.1vh 1vh 0vh 0vh #ffffff;
+	box-shadow:inset 0vh 0.1vh 0vh 0vh #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+	background:-moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
+	background-color:#ededed;
+	-moz-border-radius:0.2vh;
+	-webkit-border-radius:0.2vh;
+	border-radius:0.2vh;
+	border:0.15vh solid #dcdcdc;
+	display:none;
+	cursor:pointer;
+	color:#777777;
+	font-family:fontawesome;
+	font-size:1.5vh;
+	font-weight:bold;
+	padding:1.4vh 2.5vw;
+	text-decoration:none;
+	text-shadow:0vh 0.15vh 0vh #ffffff;
+}
+
+.POSTransaction .WidControlPOSTransaction .TitleBar a:active
+{
+    background: #000;
+    color: #fff;
+}
+
+.POSTransaction .SubControlPopUpInputOverlay .SubControlPopUpInput .SideButton:active 
+{
+    background:#fff;
+	position:relative;
+	top:1px;
+}

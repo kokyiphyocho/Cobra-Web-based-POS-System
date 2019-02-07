@@ -1,0 +1,142 @@
+﻿.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay
+{    
+    height : 100vh;
+    width:0vw;
+    position:fixed;
+    z-index:9999;
+    top:0;
+    right:0;
+    background-color: rgba(100,100,100,0.5);
+    overflow : hidden;  
+
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;     
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay[fa-showpopup=true]
+{
+    width:100vw;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel
+{
+    height : 80vh;
+    width:90vw;
+    margin:8vh auto;           
+    padding-top:1vh;
+    background-color: rgba(255,255,255,0.95);
+    overflow-x: hidden;
+    position:relative;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .PanelTitleBar
+{
+    width : 100%;
+    height: 5.5vh;
+    border-bottom : 0.15vh solid #989898;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .PanelTitleBar .PanelHeader
+{
+    margin-left: 3vw;
+    font-size: 2.8vh;
+    font-weight: bold;
+    letter-spacing: 0.3vw;
+    float: left;
+    white-space: nowrap;
+    width: 72vw;
+    overflow: auto;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .PanelTitleBar .CloseButton
+{
+    display:block;    
+    float:right;
+    font : 2.5vh fontawesome;
+    color:#989898;
+    padding:0.8vh 3vw;
+    text-decoration:none;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .ContentArea
+{
+    width:100%;
+    height:73vh;
+    overflow:auto;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .ContentArea .MapPanel
+{
+    width: 82vw;
+    height: 30vh;
+    overflow: hidden;    
+    margin-left: 2vw;
+    margin-top: 1vh;
+    border: 1vh solid rgba(255,255,255,0.8);
+    
+    -moz-box-shadow:0vh 0vh 1vh rgba(100,100,100,0.9);
+	-webkit-box-shadow:0vh 0vh 1vh rgba(100,100,100,0.9);
+	box-shadow:0vh 0vh 1vh rgba(100,100,100,0.9);
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .ContentArea .MapPanel [sa-elementtype=googlemap]
+{
+    width:100%;
+    height:30vh;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .ContentArea .DetailInfoPanel
+{
+    width: 84vw;
+    height : 35vh;
+    margin-left: 2vw;
+    padding-top: 2vh;
+    padding-left: 2vw;   
+    margin-top: 2vh;
+    background: rgba(255,255,255,0.8);
+
+    -moz-box-shadow:0vh 0vh 1vh rgba(100,100,100,0.9);
+	-webkit-box-shadow:0vh 0vh 1vh rgba(100,100,100,0.9);
+	box-shadow:0vh 0vh 1vh rgba(100,100,100,0.9);
+}
+
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .ContentArea .DetailInfoPanel .InfoIcon
+{
+    display:inline-block;
+    float:left;
+    clear:left;
+    font:3vh fontawesome;
+    width:10vw;
+    line-height:100%;
+    color:#666;
+    margin-bottom:2vh;
+    text-shadow: 0.15vh 0.15vh #fff;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .SubControlMobileStoreFrontStoreInfo .PanelOverlay .StoreInfoPanel .ContentArea .DetailInfoPanel .InfoText
+{
+    display:inline-block;
+    float:left;
+    font:2vh cobrasystemfont;
+    color:#666;
+    width:70vw;
+    height:auto;
+    margin-bottom:2vh;
+    text-shadow: 0.15vh 0.15vh #fff;
+}
+
+
+.MobileStoreFront .WidControlMobileStoreFront[fa-showpopup=storeinfo] .SubControlMobileStoreFrontStoreInfo .PanelOverlay[ea-type=storeinfo]
+{
+    width : 100vw;
+}

@@ -1,0 +1,585 @@
+﻿.POSAppearanceSetting
+{    
+    /*background: url('images/background/blue_butterfly_3_sparkling.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/    
+
+    background: rgba(216,208,239,1);
+    background: -moz-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(216,208,239,1)), color-stop(18%, rgba(235,233,249,1)), color-stop(40%, rgba(219,213,245,1)), color-stop(61%, rgba(238,235,250,1)), color-stop(89%, rgba(214,209,235,1)), color-stop(100%, rgba(216,215,242,1)));
+    background: -webkit-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d0ef', endColorstr='#d8d7f2', GradientType=1 );
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting *,
+.POSAppearanceSetting .WidControlPOSAppearanceSetting *:after,
+.POSAppearanceSetting .WidControlPOSAppearanceSetting *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting
+{
+    width:100vw;
+    height:85vh;
+    overflow:auto;               
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .Container
+{
+    width:100vw;
+    height:83vh;
+    overflow-y : auto;
+    overflow-x : hidden;
+  /*  border-bottom: 0.2vh solid #ccc; */
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup
+{
+    width:100vw;
+    height:auto;
+    background:rgba(255, 255, 255, 0.25);
+
+    -moz-box-shadow: 0vh 0vh 2vh rgba(180,180,180,0.25);
+	-webkit-box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+	box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup .SectionHeader
+{
+    width:100vw;
+    height:6vh;
+    padding : 0.75vh 2vw;
+    color: #646464;
+    text-shadow: 0.1vh 0.1vh #fff;
+    overflow:hidden;
+    margin-bottom:0.5vh;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(212,212,212,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,128,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#808080', GradientType=0 );
+}
+
+/*.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitchContainer
+{
+    position: relative;
+    width: 5vh;
+    height: 3vh;
+    display: block;
+    float: right;
+    margin-right: 5vh;
+}*/
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch
+{
+    position:relative;
+    width:5vh;
+    height:3vh;
+    background:#fff;
+    margin-top:0.5vh;
+    border:0.15vh solid #ccc;
+
+     -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    overflow:hidden;
+        
+    float:right;
+}
+
+/*.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitchContainer:before
+{
+    position: absolute;
+    display: inline-block;
+    background-image: url(/images/language/mmflag.jpg);
+    background-size: 4.45vh 2.5vh;
+    content: '';
+    left: -5vh;
+    top: 0.75vh;
+    width: 4.46vh;
+    height: 2.5vh;
+    opacity: 0.2;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitchContainer:after
+{
+    position: absolute;
+    display: inline-block;
+    background-image: url(/images/language/ukflag.jpg);
+    background-size: 4.46vh 2.5vh;
+    content: '';
+    top: 0.75vh;
+    width: 4.46vh;
+    height: 2.5vh;
+    left: 5.5vh;
+    opacity: 0.2;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitchContainer[value=false]::before
+{
+    opacity:1;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitchContainer[value=true]::after
+{
+    opacity:1;
+}*/
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch div[ea-type=leftbar]
+{
+    width:0vh;
+    height:3vh;
+    float:left;
+
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;  
+
+    background:#008aff;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch[value=true] div[ea-type=leftbar]
+{
+    width:5vh;    
+    background:#008aff;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch div[ea-type=key]
+{
+    position:absolute;
+    left:0.2vh;
+    top:0.18vh;
+    width:2.3vh;
+    height:2.3vh;
+
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    border:0.15vh solid #ddd;
+
+    background:#fff;
+
+    -webkit-transition: left 0.5s;
+    -moz-transition:    left 0.5s;
+    -o-transition:      left 0.5s;
+    -ms-transition:     left 0.5s;
+    transition:         left 0.5s;  
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch[value=true] div[ea-type=key]
+{    
+    left:2.2vh;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch[disabled] div[ea-type=key]
+{
+    background : #eee;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch[disabled],
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .ToggleSwitch[disabled] div[ea-type=leftbar]
+{
+    background : #ccc;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow]
+{
+    width: 100vw;
+    padding: 0.5vh 2vw;
+    height: 6vh;
+    color: #555;
+    border-bottom: 0.2vh solid #fff
+}
+
+/*.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=input]
+{
+    height:11.5vh
+}*/
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=image]
+{
+    height:17.5vh
+}
+
+/*.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow][disabled]
+{
+    color:#ccc;
+}*/
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow] div[sa-elementtype=inputlabel]
+{
+    width: 75vw;
+    overflow-y:hidden;
+    overflow-x:auto;
+    white-space:nowrap;
+    float: left;
+    margin-bottom: 1vh;
+    padding: 0vh 1vh;
+}
+
+/*.POSAppearanceSetting .WidControlPOSAppearanceSetting div[sa-elementtype=inputrow] input[sa-elementtype=inputbox]
+{
+    width:96vw;
+    text-align:left;      
+    border:0.15vh solid #ccc;
+    padding:0vh 2vw;
+    height:5vh;
+}*/
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=image] div[sa-elementtype=inputlabel]
+{
+    width:60vw;
+}
+
+/*.POSAppearanceSetting .WidControlPOSAppearanceSetting div[sa-elementtype=inputrow] [sa-elementtype=inputbox]:focus
+{
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}*/
+
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow] .ImageContainer 
+{
+    display:block;
+    float:right;
+    width:auto;
+    height:16vh;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow] .ImageContainer::after
+{
+    width:4.5vh;
+    height:4vh;    
+    display: inline-block;
+    margin-top: 0.5vh;
+    margin-left: 2vh;
+    color: #888;
+    font: 2.5vh fontawesome;
+    padding-top: 1vh;
+    text-align: center;
+    text-shadow: 0.2vw 0.1vh #eee;
+    content:'\f141';
+    background: rgba(254,254,254,1);
+    background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(219,219,219,1) 7%, rgba(204,204,204,1) 92%, rgba(166,166,166,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(7%, rgba(219,219,219,1)), color-stop(92%, rgba(204,204,204,1)), color-stop(100%, rgba(166,166,166,1)));
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(219,219,219,1) 7%, rgba(204,204,204,1) 92%, rgba(166,166,166,1) 100%);
+    background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(219,219,219,1) 7%, rgba(204,204,204,1) 92%, rgba(166,166,166,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(219,219,219,1) 7%, rgba(204,204,204,1) 92%, rgba(166,166,166,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(219,219,219,1) 7%, rgba(204,204,204,1) 92%, rgba(166,166,166,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#a6a6a6', GradientType=0 );
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .SettingGroup div[sa-elementtype=inputrow] .ImageContainer img
+{
+    height:15vh;
+    width:auto;
+    float:left;
+    margin-top:0.5vh;
+    display:block;    
+
+    -moz-box-shadow:0.2vh 0.2vh 0.5vh #555;
+	-webkit-box-shadow:0.2vh 0.2vh 0.5vh #555;
+	box-shadow:0.2vh 0.2vh 0.5vh #555;
+}
+
+/*.POSAppearanceSetting .WidControlPOSAppearanceSetting .ButtonPanel
+{
+    width:100vw;
+    height:8vh;
+    margin-top:3vh;
+    text-align:center;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .UpdateButton 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;	
+
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .UpdateButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .UpdateButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .CloseButton
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .CloseButton:hover
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.POSAppearanceSetting .WidControlPOSAppearanceSetting .CloseButton:active
+{
+	position:relative;
+	top:0.2vh;
+}*/
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay
+{
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    background: rgba(0,0,0,0.6);
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+
+    -webkit-transition: left 0.5s;
+    -moz-transition:    left 0.5s;
+    -o-transition:      left 0.5s;
+    -ms-transition:     left 0.5s;
+    transition:         left 0.5s;  
+}
+
+.POSAppearanceSetting[fa-showpopup] [sa-elementtype=overlay].PopUpOverlay
+{
+    left:0vw;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup]
+{
+    height:90vh;
+    width:90vw;
+    background:#eee;
+    margin-left: 5vw;
+    margin-top: 5vh;
+
+    -moz-box-shadow:0vh 0vh 2vh #fff;
+	-webkit-box-shadow:0vh 0vh 2vh #fff;
+	box-shadow:0vh 0vh 2vh #fff;
+
+    overflow:hidden;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle
+{
+    position: relative;
+    width: 100%;
+    height: 5.5vh;
+    color: #6b6b6b;
+    text-shadow: 0.2vh 0.2vh #eaeaea;
+    border-bottom: 0.2vh solid #ccc;
+    margin-bottom:0.5vh;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle span
+{
+    font-size: 2.8vh;
+    text-align: left;
+    padding: 0.5vh 2vw;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle a[ea-command="@cmd%popup.close"]
+{
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    top: 0;
+    right: 0;
+    display: block;
+    text-decoration: none;
+    font: 3vh fontawesome;
+    padding-top: 1vh;
+    text-align: center;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ImageListContainer
+{
+    display:block;
+    width: 101%; /* Intentionally 101% */
+    height: 75vh;
+    overflow:auto;    
+    margin-bottom:1vh;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ImageListContainer img
+{
+    height: auto;
+    width: 26.5%;
+    margin: 1vh 2vw 1vh 2vw;
+    display: inline-block;
+    border: 0.5vh solid #eee;
+    
+    -moz-box-shadow:0vh 0vh 0.2vh #888;
+	-webkit-box-shadow:0vh 0vh 0.2vh #888;
+	box-shadow:0vh 0vh 0.2vh #888;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ImageListContainer img[fa-active]
+{
+    border: 0.5vh solid #e00;
+
+    -moz-box-shadow:0vh 0vh 1vh #ff0f0f;
+	-webkit-box-shadow:0vh 0vh 1vh #ff0f0f;
+	box-shadow:0vh 0vh 1vh #ff0f0f;
+    
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel
+{
+    width: 100%;
+    height: 8vh;
+    background: #ff5000;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a
+{
+    display: inline-block;
+    font-size: 2.5vh;
+    color: #eee;
+    overflow-y:hidden;
+    overflow-x:auto;
+    text-align:center;
+    padding-top:1.5vh;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.choose"]
+{
+    width: 60%;
+    height: 100%;
+    border-right: 0.2vh solid#ddd;
+}
+
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.cancel"]
+{
+    width:40%;
+    height:100%;
+    background:#aaa;
+}
+
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.choose"]:active,
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .ButtonPanel a[ea-command="@cmd%popup.cancel"]:active,
+.POSAppearanceSetting [sa-elementtype=overlay].PopUpOverlay [sa-elementtype=popup] .PopUpTitle a[ea-command="@cmd%popup.close"]:active
+{
+    background:#000;
+    color:#fff;
+}

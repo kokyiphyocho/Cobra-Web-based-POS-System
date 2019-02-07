@@ -1,0 +1,124 @@
+﻿.SubControlImageUploader *,
+.SubControlImageUploader *:after,
+.SubControlImageUploader *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2vh cobrasystemfont;     
+}
+
+.SubControlImageUploaderComposite
+{
+    position:fixed;
+    top:0vh;
+    left:0vw;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.6);
+    overflow:hidden;
+
+    -webkit-transition: top 0.2s;
+    -moz-transition:    top 0.2s;
+    -o-transition:      top 0.2s;
+    -ms-transition:     top 0.2s;
+    transition:         top 0.2s; 
+}
+
+.SubControlImageUploaderComposite[fa-show]
+{
+    top:0vh
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader
+{
+    position: relative;
+    width : 100vw;
+    height : 90vh;
+    background:#eee;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader .TitleBar
+{
+    width:100vw;
+    height:5vh;  
+    padding-top: 0.5vh;    
+    position:relative;
+
+    background: rgba(242,242,242,1);
+    background: -moz-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(191,191,191,1) 10%, rgba(186,186,186,1) 90%, rgba(105,105,105,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,242,242,1)), color-stop(10%, rgba(191,191,191,1)), color-stop(90%, rgba(186,186,186,1)), color-stop(100%, rgba(105,105,105,1)));
+    background: -webkit-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(191,191,191,1) 10%, rgba(186,186,186,1) 90%, rgba(105,105,105,1) 100%);
+    background: -o-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(191,191,191,1) 10%, rgba(186,186,186,1) 90%, rgba(105,105,105,1) 100%);
+    background: -ms-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(191,191,191,1) 10%, rgba(186,186,186,1) 90%, rgba(105,105,105,1) 100%);
+    background: linear-gradient(to bottom, rgba(242,242,242,1) 0%, rgba(191,191,191,1) 10%, rgba(186,186,186,1) 90%, rgba(105,105,105,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#696969', GradientType=0 );
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader .TitleBar span
+{
+    display: block;
+    width: 100vw;
+    text-align: center;
+    color: #eee; 
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader .TitleBar a
+{
+    position: absolute;
+    font: 3vh fontawesome;
+    top: 0vh;
+    right: 0;
+    height: 100%;
+    width: 10vw;
+    text-align:center;    
+    line-height: 160%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader .ButtonBar
+{
+    width:100vw;
+    height:8vh;
+    padding-top : 0.25vh;
+
+    background: rgba(242,246,248,1);
+    background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(8%, rgba(216,225,231,0.54)), color-stop(92%, rgba(181,198,208,1)), color-stop(93%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
+    background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
+    
+    overflow:hidden;
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader .ButtonIcon
+{
+    position:relative;
+    height : 7vh;
+    width  :auto;
+    margin : 0.3vh 2vw;
+    opacity : 0.8;
+    float:left;
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader .ButtonIcon .ButtonIconImage
+{
+    height : 7vh;
+    width  :auto;
+}
+
+.SubControlImageUploaderComposite .SubControlImageUploader .TitleBar a:active,
+.SubControlImageUploaderComposite .SubControlImageUploader .ButtonIcon:active
+{
+    background : rgba(0,0,0,0.25);
+}

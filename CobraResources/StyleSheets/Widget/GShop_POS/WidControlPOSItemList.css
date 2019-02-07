@@ -1,0 +1,367 @@
+﻿.POSItemList 
+{    
+    background: rgba(222,222,222,1);
+    background: -moz-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(222,222,222,1)), color-stop(22%, rgba(246,246,246,1)), color-stop(51%, rgba(235,235,235,1)), color-stop(80%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#ededed', GradientType=1 );
+}
+
+.POSItemList .WidControlPOSItemList *,
+.POSItemList .WidControlPOSItemList *:after,
+.POSItemList .WidControlPOSItemList *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSItemList .WidControlPOSItemList
+{
+    width:100vw;
+    height:85vh;
+    overflow:auto;               
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .NoTransition 
+{
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container]
+{
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+    position:relative;
+    background: #c7c7c7;
+}
+
+.POSItemList .WidControlPOSItemList[ea-attribute=readonly],
+.POSItemList .WidControlPOSItemList[ea-attribute=readonly] [sa-elementtype=container]
+{
+    height: 94vh;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock
+{
+    position:absolute;
+    top:0;
+    left:100vw;
+    width: 100vw;
+    max-height: 85vh;        
+    background: #fcfcfc;
+
+    -webkit-transition: left 0.5s ease;
+    -moz-transition:    left 0.5s ease;
+    -o-transition:      left 0.5s ease;
+    -ms-transition:     left 0.5s ease;
+    transition:         left 0.5s ease;
+
+}
+
+.POSItemList .WidControlPOSItemList[ea-attribute=readonly] [sa-elementtype=container] .CategoryBlock
+{
+    max-height: 94vh;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock[ea-group="0"]
+{
+    left:0vw;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock[fa-position=middle]
+{
+    left:0;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock[fa-position=left]
+{
+    left:-100vw;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .CategoryTitle 
+{
+    width: 100vw;
+    height: 6vh;
+    overflow:hidden;
+    position:relative;
+
+    background: rgba(176,176,176,1);
+    background: -moz-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(176,176,176,1)), color-stop(5%, rgba(246,246,246,1)), color-stop(50%, rgba(224,224,224,1)), color-stop(95%, rgba(246,246,246,1)), color-stop(100%, rgba(107,107,107,1)));
+    background: -webkit-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -o-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -ms-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: linear-gradient(to bottom, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0b0b0', endColorstr='#6b6b6b', GradientType=0 );
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .CategoryTitle .TitleText
+{
+    width:100vw;
+    text-align:center;
+    color:#777;
+    padding-top:1vh;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .CategoryTitle .HomeButtonDiv,
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .CategoryTitle .UpButtonDiv
+{
+    position: absolute;
+    top: 0;
+    width: 6vh;
+    height: 6vh;
+    padding-top: 0.9vh;
+    color: #888;
+    font: 4vh fontawesome;    
+    text-align: center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .CategoryTitle .HomeButtonDiv
+{
+    left:0;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .CategoryTitle .UpButtonDiv
+{
+    font-size:3vh;
+    padding-top: 1.5vh;
+    right:0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock
+{
+    width:100vw;
+    max-height:79vh;
+    overflow:auto;
+}
+
+.POSItemList .WidControlPOSItemList[ea-attribute=readonly] [sa-elementtype=container] .CategoryBlock .ItemListBlock
+{
+    max-height:88vh;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow
+{
+    width:100vw;
+    height:7vh;
+    padding-left:10vw;
+    padding-top:1.5vh;
+    position:relative;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow:nth-child(even)
+{
+    background : #e5e5e5;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=category]
+{
+    color :#296c16;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=item]
+{
+    color :#e12d00;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=staticitem]
+{
+    color :#bf0e00;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=service]
+{
+    color:#0f4b9a;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=category]::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    left: 0;
+    font: 2.5vh fontawesome;
+    content: '\f0e8';
+    padding-left: 3vw;
+    padding-top: 0.9vh;
+    color: #8ea687;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=category]::after
+{
+    position: absolute;
+    width: 5vw;
+    height: 7vh;
+    left: 80vw;
+    font: 2.5vh fontawesome;
+    content: '\f0da';    
+    padding-left: 3vw;
+    padding-top: 0.9vh;
+    color: #8ea687;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=item]::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    left: 0;
+    font: 2.5vh fontawesome;
+    content: '\f02b';
+    padding-left: 3vw;
+    padding-top: 0.9vh;
+    color: #ff8e71;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=staticitem]::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    left: 0;
+    font: 2.5vh fontawesome;
+    content: '\f0e7';
+    padding-left: 3vw;
+    padding-top: 0.9vh;
+    color: #bf0e00;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow[ea-type=service]::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    left: 0;
+    font: 2.5vh fontawesome;
+    content: '\f21d';
+    padding-left: 3vw;
+    padding-top: 0.9vh;
+    color: #0f4b9a;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow span[sa-elementtype=label]
+{
+    width: 55vw;
+    display: inline-block;
+    overflow-y: hidden;
+    padding-left:1vw;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow span[sa-elementtype=figure]
+{
+    width: 20vw;
+    display: inline-block;
+    overflow-y: hidden;
+    padding-left: 1vw;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: right;
+    color: #999;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel
+{    
+    display: block;
+    float: right;        
+    height: 5vh; 
+    margin-right: 2vw;
+    margin-top: -0.5vh;  
+    overflow:hidden;    
+    width:4.8vh;    
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel .EditButtonDiv,
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel .DeleteButtonDiv
+{    
+    display: inline-block;     
+    float: right;       
+    overflow:hidden;    
+    width:0vw;
+    
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;
+}
+
+.POSItemList .WidControlPOSItemList [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel img
+{ 
+    display:block;
+    width: 4.5vh;    
+    margin-left:0;
+
+    -webkit-transition: margin-left 0.5s;
+    -moz-transition:    margin-left 0.5s;
+    -o-transition:      margin-left 0.5s;
+    -ms-transition:     margin-left 0.5s;
+    transition:         margin-left 0.5s;
+}
+
+.POSItemList .WidControlPOSItemList[fa-mode=editmode] [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel .EditButtonDiv,
+.POSItemList .WidControlPOSItemList[fa-mode=deletemode] [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel .DeleteButtonDiv
+{   
+   width:4.8vh;     
+}
+
+.POSItemList .WidControlPOSItemList[fa-mode=editmode] [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel img[href="@cmd%edit"],
+.POSItemList .WidControlPOSItemList[fa-mode=deletemode] [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel img[href="@cmd%delete"]
+{
+    float:left;
+    margin-left:0vh;
+}
+
+.POSItemList .WidControlPOSItemList[fa-mode=editmode] [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel img[href="@cmd%delete"],
+.POSItemList .WidControlPOSItemList[fa-mode=deletemode] [sa-elementtype=container] .CategoryBlock .ItemListBlock .ItemRow .ButtonPanel img[href="@cmd%edit"]
+{
+    display:none;
+}
+
+
+

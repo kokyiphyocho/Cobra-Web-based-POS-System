@@ -1,0 +1,91 @@
+﻿.FEBasicStoreLocation 
+{    
+    background: url('images/background/grey_wave.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation *,
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation *:after,
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 1.8vh cobrasystemfont;     
+}
+
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation
+{
+    width:100vw;
+    height:84vh;
+    overflow:auto;           
+}
+
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation .MapPanel
+{    
+    width: 90vw;
+    height: 50vh;
+    overflow: hidden;    
+    margin-left: 5vw;
+    margin-top: 1vh;
+    border: 1vh solid rgba(255,255,255,0.8);
+    
+    -moz-box-shadow:1vh 1vh 1vh rgba(100,100,100,0.9);
+	-webkit-box-shadow:1vh 1vh 1vh rgba(100,100,100,0.9);
+	box-shadow:1vh 1vh 1vh rgba(100,100,100,0.9);
+}
+
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation .MapPanel [sa-elementtype=googlemap]
+{
+    width  : 90vw;
+    height : 50vh;
+}
+
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation .InfoPanel
+{
+    width: 90vw;
+    height : 30vh;
+    margin-left: 5vw;
+    padding-top: 2vh;
+    padding-left: 9vw;   
+    margin-top: 2vh;
+    background: rgba(255,255,255,0.8);
+
+    -moz-box-shadow:1vh 1vh 1vh rgba(100,100,100,0.9);
+	-webkit-box-shadow:1vh 1vh 1vh rgba(100,100,100,0.9);
+	box-shadow:1vh 1vh 1vh rgba(100,100,100,0.9);
+}
+
+
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation .InfoPanel .InfoIcon
+{
+    display:inline-block;
+    float:left;
+    clear:left;
+    font:3vh fontawesome;
+    width:10vw;
+    line-height:100%;
+    color:#666;
+    margin-bottom:2vh;
+    text-shadow: 0.15vh 0.15vh #fff;
+}
+
+.FEBasicStoreLocation .WidControlFEBasicStoreLocation .InfoPanel .InfoText
+{
+    display:inline-block;
+    float:left;
+    font:2vh cobrasystemfont;
+    color:#666;
+    width:65vw;
+    height:auto;
+    margin-bottom:2vh;
+    text-shadow: 0.15vh 0.15vh #fff;
+}

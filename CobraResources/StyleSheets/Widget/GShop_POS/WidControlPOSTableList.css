@@ -1,0 +1,317 @@
+﻿.POSTableList 
+{    
+    background: rgba(222,222,222,1);
+    background: -moz-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(222,222,222,1)), color-stop(22%, rgba(246,246,246,1)), color-stop(51%, rgba(235,235,235,1)), color-stop(80%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#ededed', GradientType=1 );
+}
+
+.POSTableList .WidControlPOSTableList *,
+.POSTableList .WidControlPOSTableList *:after,
+.POSTableList .WidControlPOSTableList *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSTableList .WidControlPOSTableList
+{
+    width:100vw;
+    height:85vh;
+    overflow:auto;               
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .NoTransition 
+{
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container]
+{
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+    position:relative;
+    background: #c7c7c7;
+}
+
+.POSTableList .WidControlPOSTableList[ea-attribute=readonly],
+.POSTableList .WidControlPOSTableList[ea-attribute=readonly] [sa-elementtype=container]
+{
+    height: 94vh;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock
+{
+    position:absolute;
+    top:0;
+    left:100vw;
+    width: 100vw;
+    max-height: 85vh;        
+    background: #fcfcfc;
+
+    -webkit-transition: left 0.5s ease;
+    -moz-transition:    left 0.5s ease;
+    -o-transition:      left 0.5s ease;
+    -ms-transition:     left 0.5s ease;
+    transition:         left 0.5s ease;
+
+}
+
+.POSTableList .WidControlPOSTableList[ea-attribute=readonly] [sa-elementtype=container] .TableGroupBlock
+{
+    max-height: 94vh;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock[ea-group="0"]
+{
+    left:0vw;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock[fa-position=middle]
+{
+    left:0;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock[fa-position=left]
+{
+    left:-100vw;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableGroupTitle 
+{
+    width: 100vw;
+    height: 6vh;
+    overflow:hidden;
+    position:relative;
+
+    background: rgba(176,176,176,1);
+    background: -moz-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(176,176,176,1)), color-stop(5%, rgba(246,246,246,1)), color-stop(50%, rgba(224,224,224,1)), color-stop(95%, rgba(246,246,246,1)), color-stop(100%, rgba(107,107,107,1)));
+    background: -webkit-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -o-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -ms-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: linear-gradient(to bottom, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0b0b0', endColorstr='#6b6b6b', GradientType=0 );
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .TitleText
+{
+    width:100vw;
+    text-align:center;
+    color:#777;
+    padding-top:1vh;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .HomeButtonDiv,
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .UpButtonDiv
+{
+    position: absolute;
+    top: 0;
+    width: 6vh;
+    height: 6vh;
+    padding-top: 0.9vh;
+    color: #888;
+    font: 4vh fontawesome;    
+    text-align: center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .HomeButtonDiv
+{
+    left:0;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .UpButtonDiv
+{
+    font-size:3vh;
+    padding-top: 1.5vh;
+    right:0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock
+{
+    width:100vw;
+    max-height:79vh;
+    overflow:auto;
+}
+
+.POSTableList .WidControlPOSTableList[ea-attribute=readonly] [sa-elementtype=container] .TableGroupBlock .TableListBlock
+{
+    max-height:88vh;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow
+{
+    width:100vw;
+    height:7vh;
+    padding-left:10vw;
+    padding-top:1.5vh;
+    position:relative;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow:nth-child(even)
+{
+    background : #e5e5e5;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow[ea-type=group]
+{
+    color :#296c16;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow[ea-type=table]
+{
+    color :#e12d00;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow[ea-type=group]::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    left: 0;
+    font: 2.5vh fontawesome;
+    content: '\f0e8';
+    padding-left: 3vw;
+    padding-top: 0.9vh;
+    color: #8ea687;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow[ea-type=group]::after
+{
+    position: absolute;
+    width: 5vw;
+    height: 7vh;
+    left: 80vw;
+    font: 2.5vh fontawesome;
+    content: '\f0da';    
+    padding-left: 3vw;
+    padding-top: 0.9vh;
+    color: #8ea687;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow[ea-type=table]::before
+{
+    position: absolute;
+    width: 10vw;
+    height: 7vh;
+    left: 0;
+    font: 1.5vh fontawesome;
+    content: '\f111';
+    padding-left: 3vw;
+    padding-top: 1.4vh;
+    color: #ff8e71;
+    text-shadow: 0.15vh 0.15vh 0.15vh #f1f1f1;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow span
+{
+    width: 70vw;
+    display: inline-block;
+    overflow-y: hidden;
+    padding-left:1vw;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel
+{    
+    display: block;
+    float: right;        
+    height: 5vh; 
+    margin-right: 2vw;
+    margin-top: -0.5vh;  
+    overflow:hidden;    
+    width:4.8vh;    
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel .EditButtonDiv,
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel .DeleteButtonDiv
+{    
+    display: inline-block;     
+    float: right;       
+    overflow:hidden;    
+    width:0vw;
+    
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;
+}
+
+.POSTableList .WidControlPOSTableList [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel img
+{ 
+    display:block;
+    width: 4.5vh;    
+    margin-left:0;
+
+    -webkit-transition: margin-left 0.5s;
+    -moz-transition:    margin-left 0.5s;
+    -o-transition:      margin-left 0.5s;
+    -ms-transition:     margin-left 0.5s;
+    transition:         margin-left 0.5s;
+}
+
+.POSTableList .WidControlPOSTableList[fa-mode=editmode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel .EditButtonDiv,
+.POSTableList .WidControlPOSTableList[fa-mode=deletemode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel .DeleteButtonDiv
+{   
+   width:4.8vh;     
+}
+
+.POSTableList .WidControlPOSTableList[fa-mode=editmode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel img[href="@cmd%edit"],
+.POSTableList .WidControlPOSTableList[fa-mode=deletemode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel img[href="@cmd%delete"]
+{
+    float:left;
+    margin-left:0vh;
+}
+
+.POSTableList .WidControlPOSTableList[fa-mode=editmode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel img[href="@cmd%delete"],
+.POSTableList .WidControlPOSTableList[fa-mode=deletemode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableRow .ButtonPanel img[href="@cmd%edit"]
+{
+    display:none;
+}
+
+
+

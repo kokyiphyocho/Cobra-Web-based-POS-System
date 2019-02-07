@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CF4609F-5F5B-4027-832C-4FA3BE5B986D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CobraStandardControls</RootNamespace>
+    <AssemblyName>CobraStandardControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Widget\Admin\WidControlActivateSubscription.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSLanguageSetting.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSReceiptLayoutSetting.cs" />
+    <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSItemPanel.cs" />
+    <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSPaymentPanel.cs" />
+    <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSReceiptOutput.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSAddAdjustTable.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSAppearanceSetting.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSChangePassword.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSMonthlyTransaction.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSPrinterSetting.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSQRCode.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSGeneralSetting.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSStaffPermissionSetting.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSTransactionSetting.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSTableList.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSTableManager.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSUpdateSubscriberInfo.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSLogIn.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSAddAdjustUser.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSDailyStockBalance.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSDailyReceipt.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSReceiptList.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSResetPassword.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSUserList.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSSubscriptionInfo.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSWidgetRestriction.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSStaticCostList.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSStaticCostEditor.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSControlPanel.cs" />
+    <Compile Include="Widget\_System\SubControlCalendar.cs" />
+    <Compile Include="Widget\_System\SubControlImageUploader.cs" />
+    <Compile Include="Widget\_System\SubControlPopUpInput.cs" />
+    <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSTransactionList.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSAddAdjustItem.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSAddAdjustUnit.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSTransaction.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSUnitList.cs" />
+    <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSKeyPad.cs" />
+    <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSPopUpReceiptDetail.cs" />
+    <Compile Include="Widget\_System\SubControlWidgetGroup.cs" />
+    <Compile Include="Widget\_System\WidControlError.cs" />
+    <Compile Include="Widget\_System\WidControlImageUploader.cs" />
+    <Compile Include="Widget\_System\SubControlGoogleMap.cs" />
+    <Compile Include="Widget\GShop_General\WidControlBEAddAdjustItem.cs" />
+    <Compile Include="Widget\GShop_General\WidControlBEItemList.cs" />
+    <Compile Include="Widget\GShop_General\WidControlBEOrderList.cs" />
+    <Compile Include="Widget\GShop_POS\WidControlPOSItemList.cs" />
+    <Compile Include="Widget\_System\SubControlSelectionPanel.cs" />
+    <Compile Include="Widget\GShop_Mobile\SubControlMobileStoreFrontGridItem.cs" />
+    <Compile Include="Widget\GShop_Mobile\SubControlMobileStoreFrontStoreInfo.cs" />
+    <Compile Include="Widget\GShop_Mobile\SubControlMobileStoreFrontOptionPanel.cs" />
+    <Compile Include="Widget\GShop_Mobile\WidControlMobileStoreAddAdjustInventory.cs" />
+    <Compile Include="Widget\GShop_Mobile\WidControlMobileStoreFront.cs" />
+    <Compile Include="Widget\GShop_Mobile\WidControlMobileStoreInventoryList.cs" />
+    <Compile Include="Widget\_System\WidControlCreateUser.cs" />
+    <Compile Include="Widget\GShop_General\WidControlFEBasicStore.cs" />
+    <Compile Include="Widget\GShop_General\WidControlFEBasicStoreLocation.cs" />
+    <Compile Include="Widget\GShop_General\WidControlFEOrderList.cs" />
+    <Compile Include="Widget\_System\WidControlMessage.cs" />
+    <Compile Include="Widget\_System\WidControlQRCode.cs" />
+    <Compile Include="Widget\_System\WidControlUpdateContent.cs" />
+    <Compile Include="Widget\_System\WidControlLogIn.cs" />
+    <Compile Include="Widget\_System\SubControlWidgetIcon.cs" />
+    <Compile Include="Widget\_System\WidControlSubscription.cs" />
+    <Compile Include="Widget\GShop_Mobile\WidControlUpdatePriceList.cs" />
+    <Compile Include="Widget\_System\WidControlWidgetPanel.cs" />
+    <Compile Include="Widget\_TestComposite.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CobraBusinessFrame\CobraBusinessFrame.csproj">
+      <Project>{efa265ee-0c62-46b0-87b1-d024b9463004}</Project>
+      <Name>CobraBusinessFrame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobraFoundation\CobraFoundation.csproj">
+      <Project>{0c307e42-c253-447d-b7e1-cde38992790c}</Project>
+      <Name>CobraFoundation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobraFrame\CobraFrame.csproj">
+      <Project>{dcd4246b-aca7-4d61-8c16-b32963ecc635}</Project>
+      <Name>CobraFrame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobraResources\CobraResources.csproj">
+      <Project>{55996836-871e-4c44-aba5-f27b607693eb}</Project>
+      <Name>CobraResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobraWebFrame\CobraWebFrame.csproj">
+      <Project>{9f0b1ecc-903c-4d3b-964d-c1b8affa1bee}</Project>
+      <Name>CobraWebFrame</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

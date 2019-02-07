@@ -1,0 +1,30 @@
+﻿.StandardIconList 
+{    
+    /*background: url('images/background/wallpaper17.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+}
+
+.StandardIconList .WidControlWidgetPanel *,
+.StandardIconList .WidControlWidgetPanel *:after,
+.StandardIconList .WidControlWidgetPanel *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.StandardIconList .WidControlWidgetPanel 
+{
+    height: 93vh;
+    width: 94vw;
+    padding: 0.5vh 3vw;
+    overflow: auto;
+}

@@ -1,0 +1,436 @@
+﻿.SubControlPOSItemPanel *,
+.SubControlPOSItemPanel *:after,
+.SubControlPOSItemPanel *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2vh cobrasystemfont;     
+}
+
+.SubControlPOSItemPanelComposite
+{
+    position:fixed;
+    top:0px;
+    left:100vw;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.6);
+    overflow:hidden;
+
+    -webkit-transition: left 0.2s;
+    -moz-transition:    left 0.2s;
+    -o-transition:      left 0.2s;
+    -ms-transition:     left 0.2s;
+    transition:         left 0.2s; 
+}
+
+.SubControlPOSItemPanelComposite[fa-show]
+{
+    left:0vw;
+}
+
+
+.SubControlPOSItemPanel
+{
+    width:95vw;
+    height:90vh;
+    margin-top:5vh;
+    margin-left:2.55vw;
+    background:#f5f5f5;
+
+    -moz-box-shadow: 0 0 2vh #fff;
+	-webkit-box-shadow: 0 0 2vh #fff;
+	box-shadow: 0 0 2vh #fff;
+
+}
+
+.SubControlPOSItemPanel .HeaderBar
+{
+    width:95vw;
+    height:5vh;
+    background:#ddd;
+    border-bottom:0.15vh solid #bbb;    
+    line-height:100%;
+    overflow:hidden;
+}
+
+.SubControlPOSItemPanel .HeaderBar a
+{
+    display:block;
+    height:5vh;
+    width:15vw;
+    font:3vh fontawesome;
+    padding-top:1vh;
+    text-align:center;
+    line-height:100%;
+    float:left;    
+    text-decoration:none;
+    color:#555;
+}
+
+.SubControlPOSItemPanel .HeaderBar a[ea-command="@cmd%editfavourite"]::after
+{
+    line-height:100%;    
+    font:1.5vh fontawesome;
+    content:'\f040';
+}
+
+.SubControlPOSItemPanel .HeaderBar a[ea-command="@cmd%close"]
+{
+    float:right;
+}
+
+.SubControlPOSItemPanel[ea-mode=list]:not([fa-editing]) a[ea-command="@cmd%list"],
+.SubControlPOSItemPanel[ea-mode=favourite]:not([fa-editing]) a[ea-command="@cmd%favourite"],
+.SubControlPOSItemPanel[fa-editing] a[ea-command="@cmd%editfavourite"]
+{
+    color:#ff5000;
+    background:#eee;
+    border-bottom:0.15vh solid #bbb;   
+}
+
+.SubControlPOSItemPanelComposite[ea-mode=purchase] .SubControlPOSItemPanel a[ea-command="@cmd%switchview"]
+{
+    display:none;
+}
+
+.SubControlPOSItemPanel[ea-displaymode=price]:not([fa-editing]) a[ea-command="@cmd%switchview"]::before
+{
+    font:2.5vh fontawesome;
+    content:'\f292';
+}
+
+.SubControlPOSItemPanel[ea-displaymode=itemcode]:not([fa-editing]) a[ea-command="@cmd%switchview"]::before
+{
+    font:2.5vh fontawesome;
+    content:'\f155';
+}
+
+.SubControlPOSItemPanel[fa-editing] a[ea-command="@cmd%list"],
+.SubControlPOSItemPanel[fa-editing] a[ea-command="@cmd%favourite"],
+.SubControlPOSItemPanel[fa-editing] .CategoryTitle a[ea-command="@cmd%rootcategory"],
+.SubControlPOSItemPanel[fa-editing] .CategoryTitle a[ea-command="@cmd%parentcategory"]
+{
+    color:#c5c5c5;
+}
+
+.SubControlPOSItemPanel .CategoryTitle
+{
+    position: relative;    
+    width: 95vw;    
+    height: 6vh;
+    margin-top: 1vh;
+    color: #6b6b6b;
+    line-height: 210%;
+    border-bottom: 0.15vh solid #ccc;
+    border-top: 0.15vh solid #ccc;
+    box-shadow: 0 0vh 2vh #ccc;
+    text-align:center;    
+}
+
+
+.SubControlPOSItemPanel .CategoryTitle a[ea-command="@cmd%rootcategory"]
+{
+    float:left;
+    padding-top:0.5vh;
+    height:5vh;
+    width:10vw;
+    font:4.5vh fontawesome;
+    text-align:center;
+    text-decoration:none;
+    color:#888;
+}
+
+.SubControlPOSItemPanel .CategoryTitle a[ea-command="@cmd%parentcategory"]
+{
+    float:right;
+    padding-top:0.8vh;
+    height:5vh;
+    width:10vw;
+    font:4vh fontawesome;
+    text-align:center;
+    text-decoration:none;
+    color:#888;
+}
+
+.SubControlPOSItemPanel[ea-group="0"] .CategoryTitle a[ea-command="@cmd%rootcategory"],
+.SubControlPOSItemPanel[ea-group="0"] .CategoryTitle a[ea-command="@cmd%parentcategory"],
+.SubControlPOSItemPanel[ea-mode=favourite] .CategoryTitle a[ea-command="@cmd%rootcategory"],
+.SubControlPOSItemPanel[ea-mode=favourite] .CategoryTitle a[ea-command="@cmd%parentcategory"]
+{
+    display:none;
+}
+
+
+.SubControlPOSItemPanel .CategoryTitle .TitleText
+{
+    display:inline-block;
+    width:70vw;    
+    height:5vh;
+    font-size:2.5vh;
+    text-align:center;
+    line-height:220%;
+}
+
+.SubControlPOSItemPanel .CategoryTitle .FavouriteTitle
+{
+    display:none;
+    width:70vw;    
+    height:5vh;
+    font-size:2.5vh;
+    text-align:center;
+    line-height:220%;    
+}
+
+.SubControlPOSItemPanel[ea-mode=favourite] .CategoryTitle
+{
+    color:#eee;
+    background:#ff5000;
+}
+.SubControlPOSItemPanel[ea-mode=favourite] .CategoryTitle .FavouriteTitle
+{
+    display :inline-block;
+}
+
+.SubControlPOSItemPanel[ea-mode=favourite] .CategoryTitle .TitleText
+{
+    display : none;
+}
+
+.SubControlPOSItemPanel .ComponentContainer
+{
+    height: 85vh;
+    overflow: hidden;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer
+{ 
+    height: 78vh;    
+    overflow:auto;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block]
+{
+    width:100%;
+    height:auto;
+    clear:left;
+    text-align:left;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a
+{
+    display: none;
+    position:relative;
+    float: left;
+    text-decoration: none;
+    color: #888;
+    width: 45vw;
+    height: 8vh;
+    padding: 0.5vh 2vw;  
+    
+    margin-left: 1.5vw;
+    margin-right: 1vw;    
+    margin-top: 0.8vh;
+
+    border: 0.15vh solid #ddd;
+
+    -webkit-border-radius: 1vh;
+    -moz-border-radius: 1vh;
+    -ms-border-radius: 1vh;
+    -o-border-radius: 1vh;
+    border-radius: 1vh;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemName
+{
+    width:38vw;
+    height:7vh;
+    display:block;
+    overflow:auto;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo
+{
+    position: absolute;
+    width: 100%;
+    height: 3.5vh;
+    display: block;
+    overflow: auto;
+    padding:0vh 2vw;
+    bottom: 0;
+    left: 0;    
+}
+
+.SubControlPOSItemPanel[fa-editing] .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo
+{
+    display:none;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .ItemCode
+{
+    position:relative;
+    display:block;
+    width:20vw;
+    float:left;
+    font:1.8vh cobrasystemfont;    
+    color:#777;
+    display:none;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .ItemCode::before
+{    
+    content:'\f292';
+    font:1.3vh fontawesome;
+    margin-right:1vw;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .MajorPrice,
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .MinorPrice
+{
+    display:block;
+    width:20vw;
+    float:left;
+    font:1.8vh cobrasystemfont;
+    text-align:left;    
+    color:#777;
+    display:none;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .MinorPrice
+{
+    float:right;
+    text-align:right;    
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .MinorPrice::before,
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .MajorPrice::before
+{
+    font-size:1.2vh;
+    content:'MMK';
+    margin-right:1vw;
+}
+
+.SubControlPOSItemPanel[ea-displaymode=itemcode] .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .ItemCode,
+.SubControlPOSItemPanel[ea-displaymode=price] .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .MajorPrice,
+.SubControlPOSItemPanel[ea-displaymode=price] .ComponentContainer .BlockContainer [sa-elementtype=block] a .ItemInfo .MinorPrice
+{
+    display:block;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a[gpos-entrytype=category]
+{
+    color:#639167;
+    border: 0.15vh solid #639167;
+
+    -moz-box-shadow: 0 0 0.25vh #639167;
+	-webkit-box-shadow: 0 0 0.25vh #639167;
+	box-shadow: 0 0 0.25vh #639167;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a[gpos-entrytype=item]
+{
+    height:10vh;
+   color:#ff986a;
+   border: 0.15vh solid #ff9260;
+
+   -moz-box-shadow: 0 0 0.25vh #ff9260;
+	-webkit-box-shadow: 0 0 0.25vh #ff9260;
+	box-shadow: 0 0 0.25vh #ff9260;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a[gpos-entrytype=service]
+{
+   height:10vh;
+   color:#778bd2;
+   border: 0.15vh solid #7282bf;   
+   -moz-box-shadow: 0 0 0.25vh #7282bf;
+	-webkit-box-shadow: 0 0 0.25vh #7282bf;
+	box-shadow: 0 0 0.25vh #7282bf;
+    
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a[gpos-entrytype=category] .ItemName::after
+{    
+    position: absolute;
+    content: '\f0da';
+    font: 3vh fontawesome;
+    top: 2.2vh;
+    right: 1vw;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block] a[gpos-attribute=favourite]::after
+{
+    position: absolute;
+    content: '\f005';
+    font: 1.2vh fontawesome;
+    top: 0.5vh;
+    right: 1vw;
+    width: 2vw;
+    text-align: right;
+    color: rgba(255,80,0,0.5);
+}
+
+.SubControlPOSItemPanel[fa-editing] .ComponentContainer .BlockContainer [sa-elementtype=block] a[gpos-entrytype=category] .ItemName::after
+{
+    content:'';
+}
+
+.SubControlPOSItemPanel[fa-editing] .ComponentContainer .BlockContainer [sa-elementtype=block] a::after
+{
+    position: absolute;
+    content:'\f096';
+    font:2.5vh fontawesome;
+    top:0.5vh;
+    right:1vw;
+    width:4vw;
+    text-align:left;
+    color:#ff5000;
+}
+
+.SubControlPOSItemPanel[fa-editing] .ComponentContainer .BlockContainer [sa-elementtype=block] a[fa-favourite=true]::after
+{
+    position: absolute;
+    content:'\f046';
+    font:2.5vh fontawesome;
+    top:0.5vh;
+    right:1vw;
+    width:4vw;
+    text-align:left;
+    color:#ff5000;
+}
+
+.SubControlPOSItemPanel .ComponentContainer .BlockContainer .TerminatingBar
+{
+    width: 95vw;    
+    height:0.5vh;
+    display: inline-block;
+    margin-top: 2vh;
+    border-top: 0.3vh dashed #ff7070;
+}
+
+.SubControlPOSItemPanel:not([ea-mode=favourite]) .ComponentContainer .BlockContainer [sa-elementtype=block] a[fa-show=true]
+{
+    display:inline-block;
+}
+
+.SubControlPOSItemPanel[ea-mode=favourite] .ComponentContainer .BlockContainer [sa-elementtype=block] a[fa-favourite]
+{
+    display:inline-block;
+}
+
+[sa-elementtype=container][ea-type=externalcomponent][ea-mode=stockin] .SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block][ea-type=service],
+[sa-elementtype=container][ea-type=externalcomponent][ea-mode=stockout] .SubControlPOSItemPanel .ComponentContainer .BlockContainer [sa-elementtype=block][ea-type=service]
+{
+    display : none;
+}

@@ -1,0 +1,564 @@
+﻿.POSTableManager 
+{    
+    background: rgba(222,222,222,1);
+    background: -moz-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(222,222,222,1)), color-stop(22%, rgba(246,246,246,1)), color-stop(51%, rgba(235,235,235,1)), color-stop(80%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(45deg, rgba(222,222,222,1) 0%, rgba(246,246,246,1) 22%, rgba(235,235,235,1) 51%, rgba(246,246,246,1) 80%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#ededed', GradientType=1 );
+}
+
+.POSTableManager .WidControlPOSTableManager *,
+.POSTableManager .WidControlPOSTableManager *:after,
+.POSTableManager .WidControlPOSTableManager *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSTableManager .WidControlPOSTableManager
+{
+    width:100vw;
+    height:94vh;
+    overflow:auto;               
+}
+
+/*.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .NoTransition 
+{
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+    */
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container]
+{
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+    position:relative;
+    background: #c7c7c7;
+}
+
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock
+{
+    position:absolute;
+    top:0;
+    left:100vw;    
+    width: 100vw;
+    max-height: 85vh;        
+    background: #fcfcfc;
+}
+
+.POSTableManager .WidControlPOSTableManager:not([fa-noanimation]) [sa-elementtype=container] .TableGroupBlock
+{
+    -webkit-transition: left 0.5s ease;
+    -moz-transition:    left 0.5s ease;
+    -o-transition:      left 0.5s ease;
+    -ms-transition:     left 0.5s ease;
+    transition:         left 0.5s ease;
+}
+
+.POSTableManager .WidControlPOSTableManager[ea-attribute=readonly] [sa-elementtype=container] .TableGroupBlock
+{
+    max-height: 94vh;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock[fa-position=middle]
+{
+    left:0;        
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock[fa-position=left]
+{
+    left    : -100vw;    
+}
+
+/*.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock[fa-position=left]
+{
+    left:-100vw;
+}*/
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableGroupTitle 
+{
+    width: 100vw;
+    text-align:center;
+    height: 6vh;
+    overflow:hidden;
+    position:relative;
+
+    background: rgba(176,176,176,1);
+    background: -moz-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(176,176,176,1)), color-stop(5%, rgba(246,246,246,1)), color-stop(50%, rgba(224,224,224,1)), color-stop(95%, rgba(246,246,246,1)), color-stop(100%, rgba(107,107,107,1)));
+    background: -webkit-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -o-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: -ms-linear-gradient(top, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    background: linear-gradient(to bottom, rgba(176,176,176,1) 0%, rgba(246,246,246,1) 5%, rgba(224,224,224,1) 50%, rgba(246,246,246,1) 95%, rgba(107,107,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0b0b0', endColorstr='#6b6b6b', GradientType=0 );
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .RefreshButtonDiv
+{
+    position    : absolute;
+    left        : 0;
+    
+    z-index     : 1;
+
+    width       : 10vw;
+    height      : 100%;
+
+    -webkit-transition: left 0.5s ease-in-out;
+    -moz-transition:    left 0.5s ease-in-out;
+    -o-transition:      left 0.5s ease-in-out;
+    -ms-transition:     left 0.5s ease-in-out;
+    transition:         left 0.5s ease-in-out;  
+}
+
+.POSTableManager .WidControlPOSTableManager[fa-movemode] [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .RefreshButtonDiv
+{
+    left:-10vw;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .RefreshButtonDiv div[ea-command="@cmd%refresh"]
+{
+    font: 3vh fontawesome;
+    color: #00734f;
+    text-shadow: 0.2vh 0.2vh 0vh #fff;
+    width: 100%;
+    height: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableGroupTitle .TitleText
+{
+    position:relative;
+    width:70vw;
+    height:6vh;
+
+    text-align:center;
+    color:#777;
+    padding-top:1vh;
+    
+    display:inline-block;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    overflow-x :auto;
+    overflow-y :hidden;
+    white-space:nowrap;    
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock[ea-group="0"] .TableGroupTitle .TitleText::after
+{
+    position: relative;        
+    font: 2vh fontawesome;
+    content: '\f111';
+}
+
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock
+{
+    width:100vw;
+    height:79vh;
+    overflow:auto;
+
+    background: rgba(235,233,249,1);
+    background: -moz-linear-gradient(45deg, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 24%, rgba(206,199,236,1) 47%, rgba(207,204,237,1) 64%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(235,233,249,1)), color-stop(24%, rgba(216,208,239,1)), color-stop(47%, rgba(206,199,236,1)), color-stop(64%, rgba(207,204,237,1)), color-stop(82%, rgba(206,199,236,1)), color-stop(100%, rgba(193,191,234,1)));
+    background: -webkit-linear-gradient(45deg, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 24%, rgba(206,199,236,1) 47%, rgba(207,204,237,1) 64%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 24%, rgba(206,199,236,1) 47%, rgba(207,204,237,1) 64%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 24%, rgba(206,199,236,1) 47%, rgba(207,204,237,1) 64%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: linear-gradient(45deg, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 24%, rgba(206,199,236,1) 47%, rgba(207,204,237,1) 64%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=1 );
+
+}
+
+.POSTableManager .WidControlPOSTableManager[ea-attribute=readonly] [sa-elementtype=container] .TableGroupBlock .TableListBlock
+{
+    max-height:88vh;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement
+{
+    width:40vw;
+    height:15vh;
+    padding:0;
+    background:#fff;
+
+    position:relative;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin : 2vh 5vw;
+
+    -webkit-border-radius   : 1vh;
+    -moz-border-radius      : 1vh;
+    -ms-border-radius       : 1vh;
+    -o-border-radius        : 1vh;
+    border-radius           : 1vh;    
+
+    border : 0.2vh solid #ccc;
+
+    -moz-box-shadow:0vh 0vh 2vh #a6a6a6;
+	-webkit-box-shadow:0vh 0vh 2vh #a6a6a6;
+	box-shadow:0vh 0vh 2vh #a6a6a6;
+
+    float:left;
+    overflow:hidden;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea
+{
+    width:100%;
+    height:100%;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .TableElementTitle
+{
+    width:100%;
+    height:5vh;
+    text-align:center;
+    background : #ddd;
+
+    border-bottom:0.2vh solid #ddd;
+    -webkit-border-radius   : 0.5vh 0.5vh 0 0;
+    -moz-border-radius      : 0.5vh 0.5vh 0 0;
+    -ms-border-radius       : 0.5vh 0.5vh 0 0;
+    -o-border-radius        : 0.5vh 0.5vh 0 0;
+    border-radius           : 0.5vh 0.5vh 0 0;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement[gpos-receiptid] .InnerArea .TableElementTitle
+{
+    position:relative;
+    background : #dbffe6;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .TableElementTitle span
+{
+    display:inline-block;
+    width:25vw;
+    margin-right:5vw;
+    overflow-y:hidden;
+    overflow-x:auto;
+    white-space:nowrap;
+    text-align:left;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .TableElementTitle div[ea-command="@cmd%addorder"]
+{
+    display:block;
+    position:absolute;
+    font: 3vh fontawesome;    
+    width: 10vw;
+    height: 5vh;
+    right:0;
+    top:0;
+    color: #050;
+    text-align: center;
+    padding-top: 1vh;
+
+    -webkit-transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    -moz-transition:    right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    -o-transition:      right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    -ms-transition:     right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition:         right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    opacity:1;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .TableElementTitle div[ea-command="@cmd%move"]
+{
+    position:absolute;
+    font: 2.5vh fontawesome;
+    display: block;
+    width: 10vw;
+    height: 5vh;
+    right:-10vw;
+    top:0;
+    color: #fff;
+    text-align: center;
+    padding-top: 1.25vh;
+    background  : rgba(0,0,0,0.5);
+
+    -webkit-transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    -moz-transition:    right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    -o-transition:      right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    -ms-transition:     right 0.5s ease-in-out, opacity 0.5s ease-in-out;    
+    transition:         right 0.5s ease-in-out, opacity 0.5s ease-in-out;    
+
+    opacity:0;
+}
+
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .TableElementContent
+{
+    display: block;
+    width: 100%;
+    margin-top:1.5vh;
+    height: 5vh;
+    text-align: center;  
+    
+    -webkit-transition: margin-top 0.5s ease-in-out;
+    -moz-transition:    margin-top 0.5s ease-in-out;
+    -o-transition:      margin-top 0.5s ease-in-out;
+    -ms-transition:     margin-top 0.5s ease-in-out;
+    transition:         margin-top 0.5s ease-in-out;  
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .TableElementContent [sa-elementtype=total]
+{
+    display:inline-block;
+    font-size:3vh;
+}
+
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .ButtonPanel 
+{
+    position    : absolute;
+    width       : 100%;
+    height      : 5vh;
+    bottom      : -5vh;
+    background  : rgba(0,0,0,0.5);
+    overflow    : hidden;    
+    white-space : nowrap;
+
+    -webkit-transition: bottom 0.5s ease-in-out;
+    -moz-transition:    bottom 0.5s ease-in-out;
+    -o-transition:      bottom 0.5s ease-in-out;
+    -ms-transition:     bottom 0.5s ease-in-out;
+    transition:         bottom 0.5s ease-in-out;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .ButtonPanel [sa-elementtype=button]
+{
+    display:block;
+    width:48%;
+    height:5vh;
+    float:left;
+    text-align:center;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .ButtonPanel [sa-elementtype=button]:first-child
+{
+    float : left;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .ButtonPanel [sa-elementtype=button]:last-child
+{
+    float : right;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .ButtonPanel [sa-elementtype=button] img
+{
+    display:inline-block;
+    height:4.5vh;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .ButtonPanel [sa-elementtype=button] img[ea-command="@cmd%deletebill"]
+{
+    margin-top:0.5vh;
+    height:3.8vh;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement[fa-active] .InnerArea .TableElementContent
+{
+    margin-top:0vh;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement[fa-active] .InnerArea .ButtonPanel 
+{
+    bottom : 0vh;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement[fa-active] .InnerArea .TableElementTitle div[ea-command="@cmd%addorder"],
+.POSTableManager .WidControlPOSTableManager[fa-movemode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea .TableElementTitle div[ea-command="@cmd%addorder"]
+{
+    right:-10vw;
+    opacity:0;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement[fa-active] .InnerArea .TableElementTitle div[ea-command="@cmd%move"]
+{
+    right:0vw;
+    opacity:1;
+}
+
+.POSTableManager .WidControlPOSTableManager [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea::after
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: rgba(255,255,255,0.5);
+    content: '\f140';
+    font: 7vh fontawesome;
+    color: rgb(5, 84, 0);
+    text-align: center;
+    padding-top: 3.8vh;
+    text-shadow: 0.2vh 0.2vh #fff;
+    opacity:0;
+
+    -webkit-transition: top 0.5s ease, opacity 0.5s ease-in-out;
+    -moz-transition:    top 0.5s ease, opacity 0.5s ease-in-out;
+    -o-transition:      top 0.5s ease, opacity 0.5s ease-in-out;
+    -ms-transition:     top 0.5s ease, opacity 0.5s ease-in-out;
+    transition:         top 0.5s ease, opacity 0.5s ease-in-out;
+}
+
+.POSTableManager .WidControlPOSTableManager[fa-movemode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement .InnerArea::after
+{    
+    top: 0%;    
+    opacity:1;
+}
+
+.POSTableManager .WidControlPOSTableManager[fa-movemode] [sa-elementtype=container] .TableGroupBlock .TableListBlock .TableElement[fa-movesource] .InnerArea::after
+{
+    content: '\f1cd';
+    font-size: 3vh;
+    text-align: right;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    color: #000000;
+ 
+    background  : rgba(80,80,80,0.5);
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar
+{    
+    width: 100%;
+    height: 9vh;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(219,219,219,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,121,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#807980', GradientType=0 );
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar [sa-elementtype=button]
+{    
+    position:relative;
+    font-size : 2.3vh;
+    width: 50vw;
+    height: 100%;
+    float: left;
+    text-align: center;
+    color: #888;
+    padding-top: 2.5vh;
+   /* margin-left:2vw;
+    margin-right:2vw;*/
+    white-space:nowrap;    
+    overflow:hidden;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(219,219,219,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,121,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 90%, rgba(128,121,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#807980', GradientType=0 );
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar [sa-elementtype=button][ea-group="0"]::before
+{
+    position    : relative;
+    top         : 0;
+    left        : 0;
+    width       : 100%;
+    font        : 2vh fontawesome;
+    content     : '\f111';
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar[ea-count="1"] [sa-elementtype=button]
+{    
+    width: 100vw;
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar[ea-count="2"] [sa-elementtype=button]
+{
+    width: 50vw;
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar[ea-count="3"] [sa-elementtype=button]
+{
+    width: 33.33vw;
+    font-size : 2vh;
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar[ea-count="4"] [sa-elementtype=button]
+{
+    width: 25vw;
+    font-size : 2vh;
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar[ea-count="5"] [sa-elementtype=button]
+{
+    width: 20vw;
+    font-size : 1.8vh;
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar[ea-count="6"] [sa-elementtype=button]
+{
+    width: 16.66vw;
+    font-size : 1.8vh;
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar [sa-elementtype=button]::after
+{
+    content: '';
+    height: 7.5vh;
+    border-left: 0.15vh solid #b9b9b9;
+    border-right: 0.15vh solid #e4e4e4;
+    position: absolute;
+    right: 0;
+    top: 0.75vh;    
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar [sa-elementtype=button]:last-child::after
+{
+    display:none;
+}
+
+.POSTableManager .WidControlPOSTableManager .NavigationBar [sa-elementtype=button][fa-active]
+{    
+    color: #fff;    
+    text-shadow: 0.1vh 0.1vh 0vh #888;
+    
+    background: rgba(169,227,242,1);
+    background: -moz-linear-gradient(top, rgba(169,227,242,1) 0%, rgba(117,189,209,1) 10%, rgba(0,159,199,1) 90%, rgba(0,114,145,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(169,227,242,1)), color-stop(10%, rgba(117,189,209,1)), color-stop(90%, rgba(0,159,199,1)), color-stop(100%, rgba(0,114,145,1)));
+    background: -webkit-linear-gradient(top, rgba(169,227,242,1) 0%, rgba(117,189,209,1) 10%, rgba(0,159,199,1) 90%, rgba(0,114,145,1) 100%);
+    background: -o-linear-gradient(top, rgba(169,227,242,1) 0%, rgba(117,189,209,1) 10%, rgba(0,159,199,1) 90%, rgba(0,114,145,1) 100%);
+    background: -ms-linear-gradient(top, rgba(169,227,242,1) 0%, rgba(117,189,209,1) 10%, rgba(0,159,199,1) 90%, rgba(0,114,145,1) 100%);
+    background: linear-gradient(to bottom, rgba(169,227,242,1) 0%, rgba(117,189,209,1) 10%, rgba(0,159,199,1) 90%, rgba(0,114,145,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e3f2', endColorstr='#007291', GradientType=0 );
+}
+
+

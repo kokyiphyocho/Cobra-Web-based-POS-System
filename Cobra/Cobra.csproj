@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{880BA5DB-B618-411C-AC2E-24DA36622AA7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cobra</RootNamespace>
+    <AssemblyName>Cobra</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BugList.txt" />
+    <Content Include="Change Log.txt" />
+    <Content Include="Fonts\fontawesome.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Pyidaungsu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\zawgyi-one.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Images\AppIcons\Cart-01.png" />
+    <Content Include="Images\AppIcons\Food-01.png" />
+    <Content Include="Images\AppIcons\Food-02.png" />
+    <Content Include="Images\AppIcons\Food-03.png" />
+    <Content Include="Images\AppIcons\gfood.png" />
+    <Content Include="Images\AppIcons\gstock.png" />
+    <Content Include="Images\AppIcons\Shop-01.png" />
+    <Content Include="Images\AppIcons\Shop-02.png" />
+    <Content Include="Images\AppIcons\Shop-03.png" />
+    <Content Include="Images\AppIcons\Shop-04.png" />
+    <Content Include="Images\AppIcons\Shop-05.png" />
+    <Content Include="Images\AppIcons\Shop-06.png" />
+    <Content Include="Images\AppIcons\Shop-07.png" />
+    <Content Include="Images\AppIcons\Shop-08.png" />
+    <Content Include="Images\AppIcons\Shop-09.png" />
+    <Content Include="Images\AppIcons\Table-01.png" />
+    <Content Include="Images\AppIcons\Water-01.png" />
+    <Content Include="Images\AppIcons\Water-02.png" />
+    <Content Include="Images\Background\transparent.png" />
+    <Content Include="Images\Background\wallpaper01.jpg" />
+    <Content Include="Images\Background\wallpaper02.jpg" />
+    <Content Include="Images\Background\wallpaper03.jpg" />
+    <Content Include="Images\Background\wallpaper04.jpg" />
+    <Content Include="Images\Background\wallpaper05.jpg" />
+    <Content Include="Images\Background\wallpaper06.jpg" />
+    <Content Include="Images\Background\wallpaper07.jpg" />
+    <Content Include="Images\Background\wallpaper08.jpg" />
+    <Content Include="Images\Background\wallpaper09.jpg" />
+    <Content Include="Images\Background\wallpaper10.jpg" />
+    <Content Include="Images\Background\wallpaper11.jpg" />
+    <Content Include="Images\Background\wallpaper12.jpg" />
+    <Content Include="Images\Background\wallpaper13.jpg" />
+    <Content Include="Images\Background\wallpaper14.jpg" />
+    <Content Include="Images\Background\wallpaper15.jpg" />
+    <Content Include="Images\Background\wallpaper16.jpg" />
+    <Content Include="Images\Background\wallpaper17.jpg" />
+    <Content Include="Images\Background\wallpaper18.jpg" />
+    <Content Include="Images\Background\wallpaper19.jpg" />
+    <Content Include="Images\Background\wallpaper20.jpg" />
+    <Content Include="Images\Background\wallpaper21.jpg" />
+    <Content Include="Images\Background\wallpaper22.jpg" />
+    <Content Include="Images\Background\wallpaper23.jpg" />
+    <Content Include="Images\Background\wallpaper24.jpg" />
+    <Content Include="Images\Background\wallpaper25.jpg" />
+    <Content Include="Images\Background\wallpaper26.jpg" />
+    <Content Include="Images\Background\wallpaper27.jpg" />
+    <Content Include="Images\Background\wallpaper28.jpg" />
+    <Content Include="Images\Background\wallpaper29.jpg" />
+    <Content Include="Images\Background\wallpaper30.jpg" />
+    <Content Include="Images\Background\wallpaper31.jpg" />
+    <Content Include="Images\Background\wallpaper32.jpg" />
+    <Content Include="Images\Language\CNFlag.jpg" />
+    <Content Include="Images\Language\MMFlag.jpg" />
+    <Content Include="Images\Language\MYFlag.jpg" />
+    <Content Include="Images\Language\UKFlag.jpg" />
+    <Content Include="Images\Widget\Common\InstallerSetting.png" />
+    <Content Include="Images\Widget\Common\QRCode.png" />
+    <Content Include="Images\Widget\GSHOPMOBILE\Inventory.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\GSHOPMOBILE\Preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\Common\ChangePinCode.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\GSHOP\EditInventory.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\GSHOP\GShopManual.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\GSHOP\ProcessOrder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\Common\UpdateAccountInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\Common\UpdateShopInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\Common\UpdateSubscriptionInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\GSHOPMOBILE\UpdatePriceList.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\GSTOCK\POS_Appearance.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_ControlPanel.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_DailyReceipt.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_DailyStockBalance.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_EditInventory.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Widget\GSTOCK\POS_MonthlyTransaction.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_WeighingScale.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_Adjust.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_Purchase.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_Sale.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_StockIn.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_StockOut.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_UserManagement.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_SubscriptionInfo.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_UpdateSubscriberInfo.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_WidgetRestriction.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_StaticCostList.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_TableList.png" />
+    <Content Include="Images\Widget\GSTOCK\POS_TableManager.png" />
+    <Content Include="Site.Master" />
+    <Content Include="Fonts\fontawesome.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\fontawesome.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\fontawesome.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\fontawesome.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Pyidaungsu.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Pyidaungsu.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Pyidaungsu.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Pyidaungsu.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\zawgyi-one.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\zawgyi-one.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\zawgyi-one.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pdf\GShopUserGuide.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\zawgyi-one.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\FileSystem.pubxml" />
+    <Content Include="Templates\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\webclip.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Upload\11111111-1111-1111-1111-111111111111\ReceiptLogo.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CobraApplicationFrame\CobraApplicationFrame.csproj">
+      <Project>{130bac21-2c8a-455c-8709-4e2060062115}</Project>
+      <Name>CobraApplicationFrame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobraFrame\CobraFrame.csproj">
+      <Project>{dcd4246b-aca7-4d61-8c16-b32963ecc635}</Project>
+      <Name>CobraFrame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobraWebControls\CobraWebControls.csproj">
+      <Project>{a1b118e3-6c9b-4ce0-acac-3f489ba215d0}</Project>
+      <Name>CobraWebControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobraWebFrame\CobraWebFrame.csproj">
+      <Project>{9f0b1ecc-903c-4d3b-964d-c1b8affa1bee}</Project>
+      <Name>CobraWebFrame</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>17355</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17225/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1098 @@
+﻿.FEBasicStore 
+{    
+    background: url('images/background/grey_wave.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.FEBasicStore .WidControlFEBasicStore *,
+.FEBasicStore .WidControlFEBasicStore *:after,
+.FEBasicStore .WidControlFEBasicStore *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+    font             : 1.8vh cobrasystemfont;     
+}
+
+.FEBasicStore .WidControlFEBasicStore
+{
+    width:100vw;
+    height:84vh;
+    overflow:auto;           
+}
+
+.FEBasicStore .WidControlFEBasicStore .CategoryTitle
+{
+    width:100vw;
+    height:4.5vh;
+    margin-bottom:0.5vh;
+    text-shadow:0.15vh 0.15vh 0vh #fff;
+    padding:0vh 2vw;
+    line-height:230%;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(6%, rgba(222,222,222,1)), color-stop(92%, rgba(204,204,204,1)), color-stop(100%, rgba(133,133,133,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#858585', GradientType=0 );
+}
+
+.FEBasicStore .WidControlFEBasicStore[ea-controlmode=duallevel] .Container[ea-type=category]
+{
+    position:relative;
+    width:100vw;
+    height:83vh;
+    margin:0.5vh 0vw;        
+    overflow:auto; 
+    line-height:100%;   
+}
+
+.FEBasicStore .WidControlFEBasicStore[ea-controlmode=singlelevel] .Container[ea-type=item],
+.FEBasicStore .WidControlFEBasicStore[ea-controlmode=duallevel] .Container[ea-type=item]
+{
+    position:relative;
+    width:100vw;
+    height:83vh;
+    margin:0.5vh 0vw;        
+    overflow:auto; 
+    line-height:100%;       
+}
+
+.FEBasicStore .WidControlFEBasicStore[ea-controlmode=duallevel] .Container[ea-type=item]
+{    
+    height:77vh; 
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock,
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock
+{
+    position:relative;
+    width:100vw;
+    height:auto; 
+    margin:0;   
+    margin-bottom:0.5vh;
+    padding:0.5vh 2vw;
+    overflow:hidden;
+
+    background    : rgba(230,230,230,1);
+    border-bottom : 0.3vh solid #aaa;
+    
+    line-height:100%;   
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock
+{
+    margin-left:3vw;
+    width:94vw;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .ItemName,
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .ItemName
+{
+    display:inline-block;
+    width:85vw;
+    height:4.5vh; 
+    margin:0;        
+    overflow:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    color:#666;
+    text-shadow:0.15vh 0.15vh #eee;
+    font-size:2vh;
+    line-height:150%;       
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .ItemName
+{       
+    color:#ff2f00;
+    text-shadow:0.1vh 0.1vh #aaa;    
+    margin-bottom:0vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .ItemName::after
+{
+    display: block;
+    position: absolute;
+    left: 2vw;
+    top: 2.7vh;
+    border-bottom: 0.15vh solid rgba(44,44,44,0.29);
+    width: 80vw;
+    height: 2vh;
+    content: '';
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .RemarkButton 
+{
+    display:none;
+    float:right;
+    width:auto;
+    height:auto;
+    margin-top:-0.5vh;    
+    overflow:hidden;    
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .RemarkButton img[href="@cmd%showremark"],
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .RemarkButton img[href="@cmd%hideremark"]
+{    
+    margin-top:0.2vh;
+    width:4vh;
+    height:auto;
+    float:right;  
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock[fa-remarkopen] .RemarkButton img[href="@cmd%hideremark"],
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .RemarkButton img[href="@cmd%showremark"]
+{
+    display:block;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock[fa-remarkopen] .RemarkButton img[href="@cmd%showremark"],
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .RemarkButton img[href="@cmd%hideremark"]
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .RemarkBox
+{
+    display:none;
+    height: 4vh;
+    margin-bottom: 2vh;
+    width: 90vw;
+    margin-top: -0.5vh;
+    padding:0vh 2vw;
+    background : #f9f9f9;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock[fa-remarkopen] .RemarkBox
+{
+    display:block;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .RemarkBox:focus,
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .ItemButtonPanel input[type=text]:focus,
+.FEBasicStore .WidControlFEBasicStore .OrderRemarkPanel .OrderRemarkBox:focus
+{    
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+.FEBasicStore .WidControlFEBasicStore[ea-controlmode=duallevel] .Container[ea-type=item]
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore[ea-controlmode=duallevel] .Container[ea-type=item] .ItemBlock
+{
+    display:none;
+}
+
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .ItemButtonPanel,
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .CategoryButtonPanel
+{
+    display:block;
+    float:right;
+    width:auto;
+    height:auto;
+    margin-top:-0.5vh;    
+    overflow:hidden;    
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .ItemButtonPanel img,
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .CategoryButtonPanel img
+{    
+    width:4vh;
+    height:auto;
+    float:right;  
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .CategoryButtonPanel img
+{
+    margin-top:0.5vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .CategoryButtonPanel img[href="@cmd%hidechild"]
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .ItemButtonPanel input[type=text]
+{
+    width:10vw;
+    height:4vh;
+    float:right;
+    font:inherit;
+    font-size:3vh;
+    padding:0vh 1vw;
+    margin:-0.2vh 2vw;    
+    text-align:right;
+    background:#f8f8f8;
+}
+
+.FEBasicStore .WidControlFEBasicStore:not([fa-confirmationmode]) .Container .ItemBlock .ItemButtonPanel:not([fa-hasquantity]) input[type=text],
+.FEBasicStore .WidControlFEBasicStore:not([fa-confirmationmode]) .Container .ItemBlock .ItemButtonPanel:not([fa-hasquantity]) img[href="@cmd%subquantity"]
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .CartIconPanel
+{    
+    height:5vh;
+    position: absolute;
+    right: 0;
+    opacity: 0.6;
+    padding-right: 1.5vh;    
+    bottom: 0;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .CartIconPanel img
+{
+    width:3vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock:not([fa-hasquantity]) .CartIconPanel
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock .Description
+{
+    display:inline-block;
+    width:85vw;
+    height:4.7vh;
+    font-size:1.6vh;    
+    color:#666;
+    line-height:150%;  
+    overflow:auto;
+    padding-top:0vh;    
+}
+
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .PricePanel
+{
+    float : left;
+    width : 58vw;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .UnitPricePanel 
+{
+    float:left;
+    color:#ff2f00;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .TotalPanel 
+{
+    display:none;
+    float:right;    
+    color:#ff2f00;    
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .PricePanel .PrefixSymbol,
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .PricePanel .Suffixymbol,
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .TotalPanel .PrefixSymbol,
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .TotalPanel .Suffixymbol
+{
+    display:inline-block;
+    width:8vw;
+    height:3vh;
+    font-size:1.5vh;    
+    padding-top:1vh;
+    
+    line-height:100%;  
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .PricePanel .Price,
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock .TotalPanel .Price
+{
+    display:inline-block;
+    width:auto;
+    height:3vh;
+    font-size:3vh;        
+    line-height:100%;  
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar
+{
+    display:none;
+    width: 94vw;
+    height: auto;
+    min-height:8vh;
+    margin-left: 3vw;
+    padding: 1vh 2vw;
+    border-top : 1vh solid rgba(255,255,255,0.5);
+    border-bottom: 1vh solid rgba(155,155,155,0.5);
+    background: rgba(143,143,143,1);
+    background: -moz-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(143,143,143,1)), color-stop(10%, rgba(255,255,255,1)), color-stop(90%, rgba(230,230,230,1)), color-stop(100%, rgba(84,84,84,1)));
+    background: -webkit-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: -o-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: -ms-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: linear-gradient(to bottom, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f8f8f', endColorstr='#545454', GradientType=0 );
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalQuantityDiv
+{
+    width: 35vw;
+    float: left;
+    color:#666;    
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalQuantityDiv .TotalQuantityLabel
+{
+    display: inline-block;
+    font-size: 2vh;
+    max-width: 25vw;
+    overflow: hidden;
+    height:4vh;         
+    line-height:200%;   
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalQuantityDiv .TotalQuantityBox
+{
+    display: block;    
+    float:right;
+    font-size: 3vh;
+    width: 8vw;
+    height: 4vh;
+    line-height:150%;
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalPriceDiv
+{    
+    width: 50vw;
+    float: right;  
+    color:#666;          
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalPriceDiv .TotalPriceLabel
+{
+    display: inline-block;    
+    height:4vh;    
+    font-size: 2vh;
+    max-width: 28vw;
+    overflow: hidden;   
+    line-height:200%;
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalPriceDiv .PricePanel
+{
+    display: block;    
+    float:right;
+    color:#ff2f00;    
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalPriceDiv .PricePanel .Price
+{
+    display:inline-block;
+    font-size: 3vh;    
+    height: 4vh;        
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalPriceDiv .PricePanel .PrefixSymbol,
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .TotalPriceDiv .PricePanel .SuffixSymbol
+{
+    display:inline-block;
+    text-align:left;
+    width:8vw;
+    height:3vh;
+    font-size:1.5vh;    
+    padding-top:1vh;
+    
+    line-height:100%;  
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+
+}
+
+.FEBasicStore .WidControlFEBasicStore .SummaryBar .OrderNote
+{
+    clear: both;
+    color: #800;
+    text-align: center;
+    text-shadow: 0.15vh 0.15vh #fff;
+    font: 1.8vh cobrasystemfont;
+    margin-bottom:0.5vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .ConfirmationTitle
+{
+    display     :none;
+    width       :100vw;
+    height      : 5vh;
+    padding-top : 0.5vh;
+    font-size   : 2.5vh;
+    text-align  : center;
+    color       : #fff;    
+    text-shadow: 0.2vh 0.2vh 0.4vh #555;
+
+    background: rgba(255,148,173,1);
+    background: -moz-linear-gradient(top, rgba(255,148,173,1) 0%, rgba(143,2,34,1) 7%, rgba(230,5,61,1) 94%, rgba(109,0,25,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,148,173,1)), color-stop(7%, rgba(143,2,34,1)), color-stop(94%, rgba(230,5,61,1)), color-stop(100%, rgba(109,0,25,1)));
+    background: -webkit-linear-gradient(top, rgba(255,148,173,1) 0%, rgba(143,2,34,1) 7%, rgba(230,5,61,1) 94%, rgba(109,0,25,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,148,173,1) 0%, rgba(143,2,34,1) 7%, rgba(230,5,61,1) 94%, rgba(109,0,25,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,148,173,1) 0%, rgba(143,2,34,1) 7%, rgba(230,5,61,1) 94%, rgba(109,0,25,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,148,173,1) 0%, rgba(143,2,34,1) 7%, rgba(230,5,61,1) 94%, rgba(109,0,25,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff94ad', endColorstr='#6d0019', GradientType=0 );
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;  
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .DeliveryOverlay
+{
+    display:none;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.75);
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo
+{
+    position:relative;
+    display:none;
+    z-index: 100;
+    margin-top: 2vh;
+    width: 94vw;
+    margin-left: 3vw;
+    height: auto;
+
+    box-shadow: 1vh 1vh 1vh #000;
+    -moz-box-shadow:1vh 1vh 1vh #000;
+	-webkit-box-shadow:1vh 1vh 1vh #000;
+
+    padding-bottom:1vh;
+    background: rgba(255,255,255,0.5);    
+    background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,0.99) 5%, rgba(226,226,226,0.88) 49%, rgba(209,209,209,0.76) 95%, rgba(254,254,254,0.75) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(5%, rgba(219,219,219,0.99)), color-stop(49%, rgba(226,226,226,0.88)), color-stop(95%, rgba(209,209,209,0.76)), color-stop(100%, rgba(254,254,254,0.75)));
+    background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,0.99) 5%, rgba(226,226,226,0.88) 49%, rgba(209,209,209,0.76) 95%, rgba(254,254,254,0.75) 100%);
+    background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,0.99) 5%, rgba(226,226,226,0.88) 49%, rgba(209,209,209,0.76) 95%, rgba(254,254,254,0.75) 100%);
+    background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,0.99) 5%, rgba(226,226,226,0.88) 49%, rgba(209,209,209,0.76) 95%, rgba(254,254,254,0.75) 100%);
+    background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,0.99) 5%, rgba(226,226,226,0.88) 49%, rgba(209,209,209,0.76) 95%, rgba(254,254,254,0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .DeliveryTitle
+{
+    width: 94vw;
+    height: 6vh;
+    line-height: 250%;
+    text-align: center;
+    font-size: 2.2vh;
+
+    background: rgba(242,246,248,1);
+    background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 10%, rgba(181,198,208,1) 90%, rgba(224,239,249,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(10%, rgba(216,225,231,1)), color-stop(90%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
+    background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 10%, rgba(181,198,208,1) 90%, rgba(224,239,249,1) 100%);
+    background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 10%, rgba(181,198,208,1) 90%, rgba(224,239,249,1) 100%);
+    background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 10%, rgba(181,198,208,1) 90%, rgba(224,239,249,1) 100%);
+    background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 10%, rgba(181,198,208,1) 90%, rgba(224,239,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .DeliveryInfoButton
+{
+    position: absolute;
+    top: 1vh;
+    right: 3vw;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .DeliveryInfoButton img
+{
+    width:4vh;
+    height:auto;
+    float:right;  
+    margin-left:4vw;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .DeliveryInfoButton img[href="@cmd%updateaddress"],
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .DeliveryInfoButton img[href="@cmd%canceladdress"]
+{
+    display : none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .StaticInfo
+{
+    font-size: 2.2vh;
+    text-align: left;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 1vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .StaticInfo .StaticLabel
+{
+    clear: left;
+    display: block;
+    float: left;
+    font-size: inherit;
+    width: 25vw;
+    margin-left: 2vw;
+    color: #000;
+    text-shadow: 0.2vh 0.2vh rgba(255, 255, 255, 0.5);
+    margin-bottom:0.8vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .StaticInfo .StaticData
+{    
+    display: block;
+    float: left;
+    font-size: inherit;
+    width: 65vw;
+    color: #000;
+    text-shadow: 0.2vh 0.2vh rgba(255, 255, 255, 0.5);
+    margin-bottom:0.8vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .EditPanel
+{
+    display : none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo [sa-elementtype=inputblock] [sa-elementtype=inputrow]
+{
+    margin-top:1vh;
+    margin-bottom:1vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo [sa-elementtype=inputblock] [sa-elementtype=inputrow] [sa-elementtype=inputlabel]
+{
+    display: inline-block;
+    clear: left;
+    width: 37vw;
+    margin-left: 2vw;
+    color:#555;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo [sa-elementtype=inputblock] [sa-elementtype=inputrow] input[type=text]
+{    
+    display: inline-block;
+    height: 3.8vh;
+    padding: 0.5vh 2vw;
+    color:#555;
+    border:1px solid #dedede;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo [sa-elementtype=inputblock] [sa-elementtype=inputrow] select
+{
+    font:2vh Pyidaungsu;
+    padding: 0.5vh 2vw;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo [sa-elementtype=inputblock][ea-appearance=hidden]
+{
+    display : none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo [sa-elementtype=inputblock] [sa-elementtype=inputrow] input[type=text]:focus,
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo [sa-elementtype=inputblock] [sa-elementtype=inputrow] select:focus
+{    
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .EditPanel div[sa-elementtype=slideselectioncontrol]
+{
+    position:relative;
+    display: inline-block;    
+    width: 40vw;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .EditPanel div[sa-elementtype=slideselectioncontrol] input[type=text]
+{
+    
+    width:40vw;
+    border:0.15vh solid #ddd;
+    padding:0.25vh 2vw;
+    height:4.5vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .EditPanel div[sa-elementtype=slideselectioncontrol]::after
+{
+    position: absolute;
+    display: block;
+    right: 2vw;
+    top: 0.7vh;
+    padding-top: 0.35vh;
+    width: 6vw;
+    height: 3vh;
+    text-align: center;
+    background: #ddd;
+    color: #888;    
+    font: 2.2vh fontawesome;
+    content: '\f141';
+    -moz-box-shadow:0vh 0vh 0.3vh #555;
+	-webkit-box-shadow:0vh 0vh 0.3vh #555;
+	box-shadow:0vh 0vh 0.3vh #555;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .EditPanel[fa-showpanel=city] [sa-elementtype=popup][ea-type=city] [sa-elementtype=overlay],
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo .EditPanel[fa-showpanel=township] [sa-elementtype=popup][ea-type=township] [sa-elementtype=overlay]
+{
+    width:100vw;
+}
+
+
+
+/*.FEBasicStore .WidControlFEBasicStore .ButtonPanel
+{
+    width:100vw;
+    height:auto; 
+    margin:0;   
+    margin-bottom:0.5vh;
+    padding:0;
+    overflow:hidden;
+
+    background:#9c9c9c;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+}
+
+.FEBasicStore .WidControlFEBasicStore .ButtonPanel .Button
+{
+    display:block;
+    width:100vw;
+    height:6vh;
+    font-size:3vh;
+    color: #ffffff;
+    border-top:0.3vh solid #aaa;
+    border-bottom:0.3vh solid #000;
+
+    text-align:center;
+    text-decoration:none;
+    line-height:200%;
+    text-shadow:0.2vh 0.2vh #888;
+}*/
+
+.FEBasicStore .WidControlFEBasicStore .OrderRemarkPanel
+{
+    display:none;
+    margin-top:2vh;
+    width:94vw;
+    margin-left :3vw;
+    height:auto;
+}
+
+.FEBasicStore .WidControlFEBasicStore .OrderRemarkPanel .OrderRemarkTitle
+{
+    width: 94vw;
+    height: 5vh;
+    padding: 0.5vh 2vw;
+    text-align: left;
+    text-shadow:0.2vh 0.2vh #eee;    
+    line-height:220%;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(5%, rgba(219,219,219,1)), color-stop(95%, rgba(209,209,209,1)), color-stop(100%, rgba(138,138,138,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#8a8a8a', GradientType=0 );
+}
+
+.FEBasicStore .WidControlFEBasicStore .OrderRemarkPanel .OrderRemarkBox
+{
+    height:5vh;
+    width: 94vw;
+    padding: 0.5vh 2vw;
+    background:#eee;
+}
+
+.FEBasicStore .WidControlFEBasicStore .ButtonPanel
+{
+    display:none;
+    width : 94vw;
+    height : 4vh;       
+    margin-top:2vh;
+    text-align:center;
+}
+
+.FEBasicStore .WidControlFEBasicStore .OrderButton 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 10vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.FEBasicStore .WidControlFEBasicStore .OrderButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.FEBasicStore .WidControlFEBasicStore .OrderButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .BackButton 
+{   
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f9eca0;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f9eca0;
+	box-shadow:inset 0 0.3vh 0 0 #f9eca0;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e));
+	background:-moz-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-webkit-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+	background-color:#f0c911;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #e65f44;
+	display:inline-block;
+	cursor:pointer;
+	color:#c92200;
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #ded17c;
+    margin:0 10vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.FEBasicStore .WidControlFEBasicStore .BackButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911));
+	background:-moz-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-webkit-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-o-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-ms-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911',GradientType=0);
+	background-color:#f2ab1e;
+}
+
+.FEBasicStore .WidControlFEBasicStore .BackButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo[fa-addressediting] .EditPanel,
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo[fa-addressediting] .DeliveryOverlay
+{
+    display:block;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo[fa-addressediting] .StaticInfo
+{
+    display:none;
+}
+
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo[fa-addressediting] .DeliveryInfoButton img[href="@cmd%updateaddress"],
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo[fa-addressediting] .DeliveryInfoButton img[href="@cmd%canceladdress"]
+{
+    display : block;
+}
+
+.FEBasicStore .WidControlFEBasicStore .DeliveryInfo[fa-addressediting] .DeliveryInfoButton img[href="@cmd%editaddress"]
+{
+    display : none;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-categorylisting] .Container[ea-type=category]
+{
+    height:4.5vh;
+}
+
+
+.FEBasicStore .WidControlFEBasicStore[fa-categorylisting] .Container[ea-type=category] .CategoryBlock[fa-selected]
+{
+    height:4.5vh;
+    background:#fff;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-categorylisting] .Container[ea-type=category] .CategoryBlock:not([fa-selected])
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-categorylisting] .Container[ea-type=item]
+{
+    display:block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-categorylisting] .Container[ea-type=item] .ItemBlock[fa-visible]
+{
+    display:block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-categorylisting] .Container .CategoryBlock .CartIconPanel
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock[fa-selected] .CategoryButtonPanel img[href="@cmd%showchild"],
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock[fa-selected] .Description
+{
+    display:none;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock[fa-selected] .CategoryButtonPanel
+{
+    margin-top:-0.5vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .CategoryBlock[fa-selected] .CategoryButtonPanel img[href="@cmd%hidechild"]
+{
+    margin-top:0.1vh;
+    display:block;
+}
+
+.FEBasicStore .WidControlFEBasicStore .Container .ItemBlock[fa-show]
+{
+    display:block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode]
+{
+    height : 90vh;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode]  .ConfirmationTitle
+{
+    display : block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=category]
+{
+    display : none;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item]
+{
+    display : block;
+    height:auto;
+    max-height : 30vh;
+
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock:not([fa-enlisted])
+{
+    display : none;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock
+{
+    display : block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock .ItemButtonPanel
+{
+    float:left;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock .PricePanel
+{
+    float:right;        
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock .PricePanel .UnitPricePanel
+{    
+    color:#666;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock .PricePanel .TotalPanel
+{    
+    display:block;    
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock .ItemName
+{
+    width:80vw;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .Container[ea-type=item] .ItemBlock .RemarkButton
+{
+    display : block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .SummaryBar
+{
+    display : block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .DeliveryInfo
+{
+    display : block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .ButtonPanel
+{
+    display : block;
+}
+
+.FEBasicStore .WidControlFEBasicStore[fa-confirmationmode] .OrderRemarkPanel
+{
+    display : block;
+}
+
+
+/*.FEBasicStore .WidControlFEBasicStore .Button 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;
+	-moz-border-radius:0.5vh;
+	-webkit-border-radius:0.5vh;
+	border-radius:0.5vh;
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 10vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.FEBasicStore .WidControlFEBasicStore .Button:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.FEBasicStore .WidControlPaymentList .Button:active 
+{
+	position:relative;
+	top:0.2vh;
+}*/
+

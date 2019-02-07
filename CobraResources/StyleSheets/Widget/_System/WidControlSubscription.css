@@ -1,0 +1,243 @@
+﻿.Subscription 
+{    
+    background: url('images/background/blue_abstract.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.Subscription .WidControlSubscription *,
+.Subscription .WidControlSubscription *:after,
+.Subscription .WidControlSubscription *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.Subscription .WidControlSubscription p, 
+.Subscription .WidControlSubscription ul, 
+.Subscription .WidControlSubscription li,
+.Subscription .WidControlSubscription b,
+.Subscription .WidControlSubscription strong,
+.Subscription .WidControlSubscription em
+{
+    font             : inherit;
+}
+
+.Subscription .WidControlSubscription
+{
+    width:100vw;
+    height:94vh;
+    overflow:auto;           
+}
+
+.Subscription .WidControlSubscription .TitlePanel
+{
+    width:100vw;
+    height:11vh;
+    overflow:hidden;           
+    background:rgba(255,255,255,0.85);
+
+    border-top: 0.3vh solid #fff;    
+    border-bottom: 0.3vh solid #888;    
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.Subscription .WidControlSubscription .TitlePanel .ImageContainer
+{
+    width:10vh;
+    height:10vh;
+    overflow:hidden;           
+    float:left; 
+    margin-left:2vw;
+}
+
+.Subscription .WidControlSubscription .TitlePanel .ImageContainer .Image
+{
+    width: 9vh;
+    height:9vh;
+    margin-top:0.85vh;
+    display:inline-block;
+
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+}
+
+.Subscription .WidControlSubscription .TitlePanel .TextContainer
+{
+    width:80vw;
+    height:10vh;
+    margin-top:0.5vh;
+    float:right;
+}
+
+.Subscription .WidControlSubscription .TitlePanel .TextContainer .NameDiv
+{   
+    width:76vw; 
+    height:4vh;
+    overflow:hidden;      
+    font-weight:bold;
+    text-shadow:1px 1px 2px #fff;         
+}
+
+.Subscription .WidControlSubscription .TitlePanel .TextContainer .BriefDiv
+{
+    width:76vw;
+    height:6vh;
+    line-height:150%;
+    font-size:1.8vh;
+    color:#444;
+    overflow:hidden;               
+}
+
+.Subscription .WidControlSubscription .DescriptionDiv
+{
+    width:99vw;
+    height:55vh;
+    font-size:1.9vh;
+    padding:1vh 2vw;
+    margin:0.5vh 0.5vw;
+    background:rgba(255,255,255,0.95);
+    text-align:justify;
+    overflow:auto;
+
+    border-top: 0.3vh solid #fff;
+    border-left: 0.3vh solid #fff;
+    border-right: 0.3vh solid #888;
+    border-bottom: 0.3vh solid #888;
+}
+
+.Subscription .WidControlSubscription .DescriptionDiv ul
+{
+    margin-left:4vw;
+}
+
+.Subscription .WidControlSubscription .PricingDiv
+{
+    width:99vw;
+    height:12vh;
+    font-size:1.9vh;
+    padding:1vh 2vw;
+    margin:0.5vh 0.5vw;
+    background:rgba(255,255,255,0.85);
+    overflow:hidden;
+
+    border-top: 0.3vh solid #fff;
+    border-left: 0.3vh solid #fff;
+    border-right: 0.3vh solid #888;
+    border-bottom: 0.3vh solid #888;
+}
+
+.Subscription .WidControlSubscription .PricingDiv .PriceLabelDiv
+{
+    width:60vw;
+    height:4vh;
+    float:left;
+    font-size:inherit;
+    white-space:nowrap;
+}
+
+.Subscription .WidControlSubscription .PricingDiv .AmountDiv
+{
+    width:30vw;
+    height:4vh;
+    float:right;
+    font-size:inherit;
+    white-space:nowrap;
+    text-align:right;
+}
+
+.Subscription .WidControlSubscription .PricingDiv .RemarkDiv
+{
+    width:95vw;
+    font-size:1.3vh;
+    color:#f00;
+    height:4vh;
+    clear:both;
+}
+
+.Subscription .WidControlSubscription .ButtonPanel
+{
+    width:100vw;
+    height:15vh;
+    margin-top:2vh;
+    text-align:center;
+}
+
+.Subscription .WidControlSubscription .ButtonPanel .Button
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 10vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.Subscription .WidControlSubscription .ButtonPanel .Button:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.Subscription .WidControlSubscription .ButtonPanel .Button:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+
+

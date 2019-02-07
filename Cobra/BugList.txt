@@ -1,0 +1,55 @@
+﻿- Order Detail Status not changed to 1 after read.
+- FEOrder List should add refresh feature
+- FE EDit User Account not working.
+- Check Concurrent Connection Issue.
+
+Bug Fixes
+
+-  To enable Full Screen Mode to hide address bar
+-  In Front End, User Account is unable to update
+-  After Clicking Refresh button, all timers stop running
+- Starting from 2 items, cannot remove items from order
+
+
+-  To enable Full Screen Mode to hide address bar
+-  In Front End, User Account Information is not able to Update. Show Error 'Unable to update data'.
+-  After Click 'Refresh' Button, all timers stop.
+- Timer count is faster and faster after one event finish from whatever button events. 
+-Cancel items while order receive (Back End). This bug is really touch and hidden bug and very hard to find. However, I tell you the step you are trying to stimulate then it will encounter error.
+
+         1. Order 2 Items
+                     item1                      1                X 
+                     item2                     1                X
+           
+           2. Remove item2         with     ကုန္သြားပါျပီ   or မရႏိုင္ေတာ့ပါ ....Start with this status. Then click 'Reject' then first time click, system don't do anything and close the window. then try second times same status choose then it will show 'Server ႏွင့္ခ်ိတ္စက္မရပါ' Error message encounter.... 
+
+
+Food Centre (04/04/2018)
+- Remove one of order items, system cancelled order for all items. By right, it should be cancelled for 1 items only.
+- In Front End, User Account Information is not able to Update. Show Error 'Unable to update data'.
+- Timer count is faster and faster after one event finish from whatever button events.
+- After Click 'Refresh' Button, all timers stop.
+- 'Please' Delete the Child Items First' Error come out when remove Category First before inside item delete. By right, should show meaningful Myanmar language rather than 'Please Delete the Child Items First'.
+- Cancel items while order receive (Back End). This bug is really touch and hidden bug and very hard to find. However, I tell you the step you are trying to stimulate then it will encounter error.
+
+         1. Order 2 Items
+                     Fried Rice                      1                X 
+                     Fried Noodle                  1                X
+           
+           2. Remove Fried Noodle         with     ကုန္သြားပါျပီ   or မရႏိုင္ေတာ့ပါ ....Start with this status. Then click 'Reject' then first time click, system don't do anything and close the window. then try second times same status choose then it will show 'Server ႏွင့္ခ်ိတ္စက္မရပါ' Error message encounter.... 
+
+- Items are visible across all stores
+   * add SubscriptionID in search query to filter base on the subscriptionID
+
+- Item can only cancel at Received Staged, once it move to other stages such as Process, Delivering or Delivered, it cannot cancelled
+   * it due to bug that status take from order and not from individual item, status of order and individual item may different. 
+     resolved by taking coressponding status for cancelling of whole order or individual item.  
+
+- User is not able to Logged Out
+  * User is not able to logged out and totally not able to log in as other user.
+    resolve by adding log-out buttons.
+
+- Timer issue, refresh timer is faster and faster over the time.
+  * This is due to timer events are continuously triggering even system is at busy state that that causes refresh timer become faster over the time.
+    resolve by stoping the timer when refreshing, secondly, checking system's actual seconds if system seconds not changed, refresh timer will not count down.
+

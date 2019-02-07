@@ -1,0 +1,50 @@
+﻿.UpdateContent .WidControlUpdateContent div[sa-elementtype=inputrow]
+{
+    
+}
+
+.UpdateContent .WidControlUpdateContent [sa-elementtype=container]
+{
+    height:30vh;
+}
+
+.UpdateContent .WidControlUpdateContent [sa-elementtype=inputblock] [sa-elementtype=inputtitle]
+{
+    margin-bottom : 2vh;
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=inputlabel]
+{
+    width:65vw;
+    float:left;   
+}
+
+.UpdateContent .WidControlUpdateContent textarea,
+.UpdateContent .WidControlUpdateContent input[type=text],
+.UpdateContent .WidControlUpdateContent input[type=password]
+{
+    width : 30vw;
+    padding: 0.25vh 2vw;   
+    font-size:2.5vh;
+}
+
+.UpdateContent .WidControlUpdateContent input[type=text][readonly],
+.UpdateContent .WidControlUpdateContent input[type=text][readonly]:focus
+{
+    background:#ddd;
+}
+
+.UpdateContent .WidControlUpdateContent input[type=text]
+{
+    
+}
+
+.UpdateContent .WidControlUpdateContent textarea
+{
+    
+}
+
+.UpdateContent .WidControlUpdateContent select
+{    
+}
+

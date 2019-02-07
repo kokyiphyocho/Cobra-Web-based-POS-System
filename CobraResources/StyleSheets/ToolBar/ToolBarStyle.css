@@ -1,0 +1,104 @@
+﻿.ToolBar
+{
+    width:100vw;
+    height:8vh;
+    padding-top : 1vh;
+
+    background: rgba(242,246,248,1);
+    background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(8%, rgba(216,225,231,0.54)), color-stop(92%, rgba(181,198,208,1)), color-stop(93%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
+    background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 8%, rgba(181,198,208,1) 92%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
+    
+    overflow:hidden;
+}
+
+.ToolBar .ToolIcon
+{
+    position:relative;
+    height : 7vh;
+    width  :auto;
+    margin : 0.3vh 2vw;
+    opacity : 0.8;
+    float:left;
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : portrait) { 
+
+    .ToolBar[ea-count="6"] .ToolIcon {
+        margin: 0.3vh 0.5vw;
+    }
+}
+
+.ToolBar .ToolIcon .ToolIconImage
+{
+    height : 7vh;
+    width  :auto;
+}
+
+.ToolBar .ToolIcon[fa-badge]:not([fa-current])::after
+{
+    position: absolute;
+    top: 4vh;
+    right:-10%;    
+    font-size: 1.2vh;
+    background: rgba(255, 255, 255, 0.75);
+    
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+
+    padding: 0.4vh 0.4vh;
+    min-width: 2.6vh;
+    content: attr(fa-badge);
+    text-align: center;
+}
+
+.ToolBar .ToolIcon[fa-active]
+{
+    background: rgba(255,255,255,0.5);
+    border-top: 0.2vh solid #fff;
+    border-left: 0.2vh solid #fff;
+    border-right: 0.2vh solid #888;
+    border-bottom: 0.2vh solid #888;    
+
+    -moz-box-shadow: 0vh 0vh 2vh #fff;
+	-webkit-box-shadow: 0vh 0vh 2vh #fff;
+	box-shadow: 0vh 0vh 2vh #fff;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+}
+
+.ToolBar .ToolIcon[fa-current]
+{
+    background : rgba(0,0,0,0.25);
+}
+
+
+.ToolBar .ToolIcon[fa-hide]
+{
+    display:none;
+}
+
+.ToolBar .ToolIcon:active
+{
+    background : rgba(0,0,0,0.25);
+}
+
+
+
+
+

@@ -1,0 +1,42 @@
+﻿.UpdateContent .WidControlUpdateContent
+{
+    height:84vh;
+}
+
+.UpdateContent .WidControlUpdateContent [sa-elementtype=container]
+{
+    height:75vh;
+}
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=inputrow]
+{
+    
+}
+
+.UpdateContent .WidControlUpdateContent div[sa-elementtype=inputlabel]
+{
+    width:30vw;
+    float:left;   
+}
+
+.UpdateContent .WidControlUpdateContent textarea,
+.UpdateContent .WidControlUpdateContent input[type=text]
+{
+    width : 65vw;
+    padding: 0.25vh 2vw;   
+}
+
+.UpdateContent .WidControlUpdateContent input[type=text]
+{
+    
+}
+
+.UpdateContent .WidControlUpdateContent textarea
+{
+    
+}
+
+.UpdateContent .WidControlUpdateContent select
+{
+    width : 65vw;
+}
+

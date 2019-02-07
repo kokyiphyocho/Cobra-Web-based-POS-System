@@ -1,0 +1,564 @@
+﻿.SubControlPOSKeyPad *,
+.SubControlPOSKeyPad *:after,
+.SubControlPOSKeyPad *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2vh cobrasystemfont;     
+}
+
+.SubControlPOSKeyPad
+{   
+    position:absolute;
+    left:0;
+    bottom:0;  
+    margin-bottom:0.5vh;
+}
+
+.SubControlPOSKeyPad[ea-type=poskeypad] .PrimaryPanel
+{  
+    width:100vw;
+    height:49vh;
+    overflow:hidden;    
+
+    -webkit-transition: height 0.5s;
+    -moz-transition:    height 0.5s;
+    -o-transition:      height 0.5s;
+    -ms-transition:     height 0.5s;
+    transition:         height 0.5s; 
+}
+
+.SubControlPOSKeyPad[ea-type=pospaymentkeypad] .PrimaryPanel
+{
+    width:100vw;
+    height:45vh;
+    overflow:hidden;    
+
+    -webkit-transition: height 0.5s;
+    -moz-transition:    height 0.5s;
+    -o-transition:      height 0.5s;
+    -ms-transition:     height 0.5s;
+    transition:         height 0.5s; 
+}
+
+.SubControlPOSKeyPad .LCDPanelBar
+{
+    width: 100vw;
+    height: 7vh;
+    overflow: hidden;
+    background: #ddd;
+
+    background: rgba(133,133,133,1);
+    background: -moz-linear-gradient(top, rgba(133,133,133,1) 0%, rgba(230,227,230,1) 5%, rgba(209,209,209,1) 95%, rgba(107,107,107,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(133,133,133,1)), color-stop(5%, rgba(230,227,230,1)), color-stop(95%, rgba(209,209,209,1)), color-stop(100%, rgba(107,107,107,1)));
+    background: -webkit-linear-gradient(top, rgba(133,133,133,1) 0%, rgba(230,227,230,1) 5%, rgba(209,209,209,1) 95%, rgba(107,107,107,1) 100%);
+    background: -o-linear-gradient(top, rgba(133,133,133,1) 0%, rgba(230,227,230,1) 5%, rgba(209,209,209,1) 95%, rgba(107,107,107,1) 100%);
+    background: -ms-linear-gradient(top, rgba(133,133,133,1) 0%, rgba(230,227,230,1) 5%, rgba(209,209,209,1) 95%, rgba(107,107,107,1) 100%);
+    background: linear-gradient(to bottom, rgba(133,133,133,1) 0%, rgba(230,227,230,1) 5%, rgba(209,209,209,1) 95%, rgba(107,107,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#858585', endColorstr='#6b6b6b', GradientType=0 );
+}
+
+.SubControlPOSKeyPad .LCDPanelBar .LCDPanel
+{
+    height: 6vh;
+    width: 100vw;
+    padding-top:0.5vh;
+}
+
+/*.SubControlPOSKeyPad .LCDPanel .LCDScreen
+{
+    width:40vw;
+    height:6vh;
+    margin:auto;
+    margin-top:0.5vh;   
+     
+    font-size: 3vh;
+    text-align: right;
+    padding: 0.5vh 2vw;
+    text-shadow: 0.15vh 0.15vh #fff;
+    color: #444;
+    background: #fff;
+       
+    border-top: 0.15vh solid #888;
+    border-left: 0.15vh solid #888;
+    border-bottom: 0.15vh solid #eee;
+    border-right: 0.15vh solid #eee;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+
+    background: rgba(209,209,209,1);
+    background: -moz-linear-gradient(45deg, rgba(209,209,209,1) 0%, rgba(227,227,227,1) 22%, rgba(219,219,219,1) 49%, rgba(232,229,232,1) 77%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(209,209,209,1)), color-stop(22%, rgba(227,227,227,1)), color-stop(49%, rgba(219,219,219,1)), color-stop(77%, rgba(232,229,232,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(45deg, rgba(209,209,209,1) 0%, rgba(227,227,227,1) 22%, rgba(219,219,219,1) 49%, rgba(232,229,232,1) 77%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(209,209,209,1) 0%, rgba(227,227,227,1) 22%, rgba(219,219,219,1) 49%, rgba(232,229,232,1) 77%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(209,209,209,1) 0%, rgba(227,227,227,1) 22%, rgba(219,219,219,1) 49%, rgba(232,229,232,1) 77%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(45deg, rgba(209,209,209,1) 0%, rgba(227,227,227,1) 22%, rgba(219,219,219,1) 49%, rgba(232,229,232,1) 77%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#ededed', GradientType=1 );
+}*/
+
+.SubControlPOSKeyPad .LCDPanel a
+{
+    display: block;
+    float:left;
+    text-decoration: none;
+    width: 25vw;
+    height: 6vh;    
+    overflow: hidden;
+    margin-bottom: 0.5vh;
+    padding: 1.5vh 2vw;
+    color:#fff;
+    text-shadow:0.15vh 0.15vh #888;
+    text-align:center;
+
+    -webkit-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    -moz-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    box-shadow: 0.3vh 0.3vh 0.3vh #888;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background: rgba(76,76,76,1);
+    background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(56%, rgba(115,115,115,1)), color-stop(100%, rgba(19,19,19,1)));
+    background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+
+.SubControlPOSKeyPad .LCDPanel a img
+{
+    width:3vh;
+    height:auto;
+}
+
+.SubControlPOSKeyPad .LCDPanel .LCDScreen
+{
+    position:relative;
+
+    text-align: right;
+    font-size: 3vh;
+    line-height: 160%;
+    padding-top: 0;
+    color: #888;
+    text-shadow: none;
+
+    background: #fff;
+    border-top: 0.15vh solid #888;
+    border-left: 0.15vh solid #888;
+    border-bottom: 0.15vh solid #ddd;
+    border-right: 0.15vh solid #ddd;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 39vw;
+    height: 5vh;
+    margin-top: 0.5vh;
+}
+
+.SubControlPOSKeyPad[ea-language=myanmar] .LCDPanel .LCDScreen
+{
+    line-height :140%;
+}
+
+.SubControlPOSKeyPad .LCDPanel .LCDScreen::after {
+    position:absolute;
+    top:0;
+    right:0;
+  color: #2E3D48;
+    font-size: 2.5vh;
+    line-height: 180%;
+  text-shadow:none;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+  content:"|";
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #888;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #888;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #888;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #888;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #888;
+  }
+}
+
+
+.SubControlPOSKeyPad .TopKeyPanel,
+.SubControlPOSKeyPad .BottomKeyPanel
+{
+    width:100vw;
+    height:4vh;
+}
+
+
+.SubControlPOSKeyPad .TopKeyDiv,
+.SubControlPOSKeyPad .BottomKeyDiv
+{
+    width:100vw;
+    height:4vh;
+}
+
+.SubControlPOSKeyPad .TopKeyDiv  a,
+.SubControlPOSKeyPad .BottomKeyDiv  a
+{
+    float:left;
+    display: block;
+    text-decoration: none;
+    width: 23vw;
+    height: 4vh;    
+    overflow: hidden;
+    margin-right:1vw;
+    padding: 0.5vh 2vw;
+    color:#fff;
+    text-shadow:0.15vh 0.15vh #888;
+    text-align:center;
+
+    -webkit-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    -moz-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    box-shadow: 0.3vh 0.3vh 0.3vh #888;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+background: rgba(0,86,97,1);
+background: -moz-linear-gradient(top, rgba(0,86,97,1) 0%, rgba(0,187,212,1) 50%, rgba(0,86,97,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,86,97,1)), color-stop(50%, rgba(0,187,212,1)), color-stop(100%, rgba(0,86,97,1)));
+background: -webkit-linear-gradient(top, rgba(0,86,97,1) 0%, rgba(0,187,212,1) 50%, rgba(0,86,97,1) 100%);
+background: -o-linear-gradient(top, rgba(0,86,97,1) 0%, rgba(0,187,212,1) 50%, rgba(0,86,97,1) 100%);
+background: -ms-linear-gradient(top, rgba(0,86,97,1) 0%, rgba(0,187,212,1) 50%, rgba(0,86,97,1) 100%);
+background: linear-gradient(to bottom, rgba(0,86,97,1) 0%, rgba(0,187,212,1) 50%, rgba(0,86,97,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005661', endColorstr='#005661', GradientType=0 );
+
+}
+
+.SubControlPOSKeyPad .BottomKeyDiv  a
+{
+    width: 47vw;
+}
+
+.SubControlPOSKeyPad .TopKeyDiv  a img,
+.SubControlPOSKeyPad .BottomKeyDiv  a img
+{
+    width:3vh;
+    height:auto;
+}
+
+.SubControlPOSKeyPad .KeyPadPanel
+{
+    width: 100vw;
+    height: 38vh;
+    overflow: hidden;
+    background: #ddd;
+    padding-top:0.5vh;
+}
+
+.SubControlPOSKeyPad .SideKeyDiv
+{
+    float:left;
+    width:25vw;
+    height:100%;    
+}
+
+
+.SubControlPOSKeyPad .SideKeyDiv a
+{
+    float:left;
+    display: block;
+    text-decoration: none;
+    width: 25vw;
+    height: 7vh;    
+    overflow: hidden;
+    margin-bottom: 0.5vh;
+    padding: 1.7vh 2vw;
+    color:#fff;
+    text-shadow:0.15vh 0.15vh #888;
+    text-align:center;
+
+    -webkit-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    -moz-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    box-shadow: 0.3vh 0.3vh 0.3vh #888;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background: rgba(76,76,76,1);
+    background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(56%, rgba(115,115,115,1)), color-stop(100%, rgba(19,19,19,1)));
+    background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+
+
+.SubControlPOSKeyPad .MiddleKeyDiv
+{
+    float:left;
+    width:49vw;
+    height:100%;    
+}
+
+.SubControlPOSKeyPad .MiddleKeyDiv a
+{
+    float:left;
+    display: block;
+    margin-left:1vw;
+    text-decoration: none;
+    width: 15vw;
+    font-size:3vh;
+    height: 7vh;    
+    overflow: hidden;
+    margin-bottom: 0.5vh;
+    padding: 1vh 2vw;
+    color:#737373;
+    text-shadow:0.15vh 0.15vh #f7f7f7;
+    text-align:center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    -moz-box-shadow: 0.3vh 0.3vh 0.3vh #888;
+    box-shadow: 0.3vh 0.3vh 0.3vh #888;
+
+    background: rgba(226,226,226,1);
+    background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+    background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+}
+
+.SubControlPOSKeyPad a.SmallFont
+{
+    padding-top:2.3vh;
+    font-size : 1.5vh;
+
+    color:#fff;
+    text-shadow:0.15vh 0.15vh #888;
+
+    background: rgba(76,76,76,1);
+    background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(56%, rgba(115,115,115,1)), color-stop(100%, rgba(19,19,19,1)));
+    background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(115,115,115,1) 56%, rgba(19,19,19,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+
+.SubControlPOSKeyPad .LCDPanel a:active,
+.SubControlPOSKeyPad .SideKeyDiv a:active,
+.SubControlPOSKeyPad .MiddleKeyDiv a:active,
+.SubControlPOSKeyPad .TopKeyDiv  a:active,
+.SubControlPOSKeyPad .BottomKeyDiv  a:active
+{
+    background: rgba(242,246,248,1)!important;
+    background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%)!important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(51%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)))!important;
+    background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%)!important;
+    background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%)!important;
+    background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%)!important;
+    background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 )!important;
+}
+
+.SubControlPOSKeyPad a.SmallKey
+ {
+    width: 15vw;
+ }
+
+.SubControlPOSKeyPad a.BigKey
+ {
+    width: 25vw;
+ }
+
+.SubControlPOSKeyPad .Hidden
+{
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+}
+
+.SubControlPOSKeyPad a.DoubleHeight
+{
+    height:14.5vh;
+    padding-top:5.5vh;
+}
+
+.SubControlPOSKeyPad a.DoubleHeight img
+{
+    height:4vh;    
+}
+
+.SubControlPOSKeyPad a.Fontawesome
+{
+    font:3vh fontawesome;
+}
+.SubControlPOSKeyPad a.Green
+{
+    background: rgba(81,112,55,1);
+    background: -moz-linear-gradient(top, rgba(81,112,55,1) 0%, rgba(79,163,6,1) 52%, rgba(31,59,8,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(81,112,55,1)), color-stop(52%, rgba(79,163,6,1)), color-stop(100%, rgba(31,59,8,1)));
+    background: -webkit-linear-gradient(top, rgba(81,112,55,1) 0%, rgba(79,163,6,1) 52%, rgba(31,59,8,1) 100%);
+    background: -o-linear-gradient(top, rgba(81,112,55,1) 0%, rgba(79,163,6,1) 52%, rgba(31,59,8,1) 100%);
+    background: -ms-linear-gradient(top, rgba(81,112,55,1) 0%, rgba(79,163,6,1) 52%, rgba(31,59,8,1) 100%);
+    background: linear-gradient(to bottom, rgba(81,112,55,1) 0%, rgba(79,163,6,1) 52%, rgba(31,59,8,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#517037', endColorstr='#1f3b08', GradientType=0 );
+}
+
+.SubControlPOSKeyPad a.Red
+{
+    background: rgba(143,17,0,1);
+    background: -moz-linear-gradient(top, rgba(143,17,0,1) 0%, rgba(255,75,59,1) 50%, rgba(150,13,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(143,17,0,1)), color-stop(50%, rgba(255,75,59,1)), color-stop(100%, rgba(150,13,0,1)));
+    background: -webkit-linear-gradient(top, rgba(143,17,0,1) 0%, rgba(255,75,59,1) 50%, rgba(150,13,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(143,17,0,1) 0%, rgba(255,75,59,1) 50%, rgba(150,13,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(143,17,0,1) 0%, rgba(255,75,59,1) 50%, rgba(150,13,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(143,17,0,1) 0%, rgba(255,75,59,1) 50%, rgba(150,13,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f1100', endColorstr='#960d00', GradientType=0 );
+}
+
+.SubControlPOSKeyPad a.Blue
+{
+    background: rgba(0,116,158,1);
+    background: -moz-linear-gradient(top, rgba(0,116,158,1) 0%, rgba(44,168,206,1) 51%, rgba(0,116,158,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,116,158,1)), color-stop(51%, rgba(44,168,206,1)), color-stop(100%, rgba(0,116,158,1)));
+    background: -webkit-linear-gradient(top, rgba(0,116,158,1) 0%, rgba(44,168,206,1) 51%, rgba(0,116,158,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,116,158,1) 0%, rgba(44,168,206,1) 51%, rgba(0,116,158,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,116,158,1) 0%, rgba(44,168,206,1) 51%, rgba(0,116,158,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,116,158,1) 0%, rgba(44,168,206,1) 51%, rgba(0,116,158,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00749e', endColorstr='#00749e', GradientType=0 );
+}
+
+.SubControlPOSKeyPad a[fa-disabled=true],
+.SubControlPOSKeyPad a.Disable
+{
+    color: #888;
+    text-shadow: 0.15vh 0.15vh #ddd;
+
+    background: rgba(150,150,150,1);
+    background: -moz-linear-gradient(top, rgba(150,150,150,1) 0%, rgba(186,184,186,1) 51%, rgba(148,148,148,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,150,150,1)), color-stop(51%, rgba(186,184,186,1)), color-stop(100%, rgba(148,148,148,1)));
+    background: -webkit-linear-gradient(top, rgba(150,150,150,1) 0%, rgba(186,184,186,1) 51%, rgba(148,148,148,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,150,150,1) 0%, rgba(186,184,186,1) 51%, rgba(148,148,148,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,150,150,1) 0%, rgba(186,184,186,1) 51%, rgba(148,148,148,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,150,150,1) 0%, rgba(186,184,186,1) 51%, rgba(148,148,148,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969696', endColorstr='#949494', GradientType=0 );
+}
+
+
+.SubControlPOSKeyPad a.LCDScreen[fa-contentsize="9"]
+{
+    font-size : 2.2vh;
+    padding-top:0.6vh;
+}
+
+.SubControlPOSKeyPad a.LCDScreen[fa-contentsize="12"]
+{
+    font-size : 1.8vh;
+    padding-top:1vh;
+}
+
+.SubControlPOSKeyPad a[ea-command="@poskey%togglekeypad"]
+{
+    position:relative;
+}
+
+.SubControlPOSKeyPad a[ea-command="@poskey%togglekeypad"]::after
+{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    font:3vh fontawesome;
+    padding-top:0.25vh;
+    content:'\f078';   
+}
+
+.SubControlPOSKeyPad[fa-hidekeypad=true] a[ea-command="@poskey%togglekeypad"]::after
+{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    font:3vh fontawesome;
+    padding-top:0.25vh;
+    content:'\f077';   
+}
+
+.SubControlPOSKeyPad[fa-hidekeypad=true] .PrimaryPanel
+{
+    height:0vh;
+}

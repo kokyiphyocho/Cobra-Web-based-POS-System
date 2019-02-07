@@ -1,0 +1,52 @@
+﻿.SubControlWidgetIcon *,
+.SubControlWidgetIcon *:after,
+.SubControlWidgetIcon *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.SubControlWidgetIcon 
+{
+    width : 13vh;
+    height : 13vh;
+    float : left;
+    text-align:center;
+    margin-bottom: 2vh!important;
+    margin-top: 2vh!important;
+}
+
+.SubControlWidgetIcon .WidgetIcon
+{
+    width: 9vh;
+    height:9vh;
+    margin-top:1vh;
+    display:inline-block;
+        
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    -moz-box-shadow: 0.5vh 0.5vh 0.5vh rgba(50,50,50,0.5);
+	-webkit-box-shadow: 0.5vh 0.5vh 0.5vh rgba(50,50,50,0.5);
+	box-shadow: 0.5vh 0.5vh 0.5vh rgba(50,50,50,0.5);
+}
+
+.SubControlWidgetIcon .WidgetLabel
+{
+    font : 1.4vh cobrasystemfont;     
+    color : #fff;
+    width : 11vh;
+    height: 4.5vh;
+    overflow : hidden;
+    text-align:center;    
+    display:inline-block;    
+    text-shadow:0.1vh 0.1vh 0.1vh #000;
+}

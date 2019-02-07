@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55996836-871E-4C44-ABA5-F27B607693EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CobraResources</RootNamespace>
+    <AssemblyName>CobraResources</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassResourceManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Foundation\Base64.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Foundation\CobraFoundationScript.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Widget\_System\WidControlLogIn.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Foundation\jquery-3.1.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Foundation\jquery.md5.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StyleSheets\Foundation\CobraStyle.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlLogIn.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CobraFrame\CobraFrame.csproj">
+      <Project>{dcd4246b-aca7-4d61-8c16-b32963ecc635}</Project>
+      <Name>CobraFrame</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_Mobile\WidControlUpdatePriceList.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Widget\GShop_Mobile\WidControlUpdatePriceList.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Arrows.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_BarCircle.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Bert.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_BertRound.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_BigCircleBall.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_BigRoller.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_BigSnake.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_BouncingBall.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_CircleBall.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_CircleThickBox.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Clock.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_CyclyingBall.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_DarkBar.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_DripCircle.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_ExpandingCircle.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_FaceBook.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Flower.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_FlowerBig.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Hypnotize.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Indicator.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_IndicatorBig.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_IndicatorBigCircle.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_IndicatorLite.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Kit.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_LightBar.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_PacMan.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Pik.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Pk.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Radar.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Refresh.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Roller.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Rotation.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_ShortBar.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_SmallWait.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Snake.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_SquareCircle.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Squares.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_Wheel.gif" />
+    <EmbeddedResource Include="Images\AjaxLoader\AJAX_WheelThrobber.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Foundation\CobraUIFunctions.js" />
+    <EmbeddedResource Include="StyleSheets\Foundation\CobraUIStyle.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlWidgetPanel.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Widget\_System\WidControlWidgetPanel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Widget\_System\SubControlWidgetIcon.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlWidgetIcon.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Widget\_System\WidControlImageUploader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlImageUploader.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Widget\_System\WidControlSubscription.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlSubscription.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Widget\_System\SubControlImageUploader.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlImageUploader.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSGeneralSetting.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSLanguageSetting.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSReceiptLayoutSetting.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSStaffPermissionSetting.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSTransactionSetting.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSGeneralSetting.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSLanguageSetting.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSReceiptLayoutSetting.css" />
+    <EmbeddedResource Include="Images\Language\MMFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\MYFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\UKFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\CNFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\IDFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\JPFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\KRFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\THFlag.jpg" />
+    <EmbeddedResource Include="Images\Language\VNFlag.jpg" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSStaffPermissionSetting.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSTransactionSetting.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSControlPanel.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSControlPanel.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSPrinterSetting.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSPrinterSetting.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\SubControlPOSPaymentPanel.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\SubControlPOSPaymentPanel.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\SubControlPOSReceiptOutput.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\SubControlPOSReceiptOutput.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSTableManager.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSTableManager.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSAddAdjustTable.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSAddAdjustTable.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSTableList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSTableList.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSStaticCostEditor.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSStaticCostEditor.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSStaticCostList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSStaticCostList.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSMonthlyTransaction.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSMonthlyTransaction.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSQRCode.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSQRCode.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSWidgetRestriction.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSWidgetRestriction.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSAppearanceSetting.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSAppearanceSetting.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSUpdateSubscriberInfo.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSUpdateSubscriberInfo.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSSubscriptionInfo.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSSubscriptionInfo.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\SubControlWidgetGroup.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlWidgetGroup.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSChangePassword.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSChangePassword.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSResetPassword.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSResetPassword.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSLogIn.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSLogIn.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSAddAdjustUser.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSAddAdjustUser.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSUserList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSUserList.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\SubControlPOSPopUpReceiptDetail.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\SubControlPOSPopUpReceiptDetail.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSDailyReceipt.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSDailyReceipt.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSDailyStockBalance.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSDailyStockBalance.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSReceiptList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSReceiptList.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\SubControlCalendar.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlCalendar.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\SubControlPopUpInput.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlPopUpInput.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\SubControlPOSItemPanel.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\SubControlPOSItemPanel.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSTransaction.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSTransaction.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\SubControlPOSTransactionList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\SubControlPOSTransactionList.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\SubControlPOSKeyPad.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\SubControlPOSKeyPad.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\_TestComposite.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSAddAdjustUnit.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSAddAdjustUnit.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSUnitList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSUnitList.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSAddAdjustItem.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSItemList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSAddAdjustItem.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSItemList.css" />
+    <EmbeddedResource Include="StyleSheets\Polymorphic\FormUpdateInstallerSetting.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\WidControlQRCode.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlQRCode.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\SubControlSelectionPanel.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_Mobile\WidControlMobileStoreAddAdjustInventory.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_Mobile\WidControlMobileStoreInventoryList.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlSelectionPanel.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_Mobile\WidControlMobileStoreAddAdjustInventory.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_Mobile\WidControlMobileStoreInventoryList.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_Mobile\SubControlMobileStoreFrontStoreInfo.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_Mobile\SubControlMobileStoreFrontStoreInfo.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_Mobile\SubControlMobileStoreFrontGridItem.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_Mobile\SubControlMobileStoreFrontOptionPanel.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_Mobile\SubControlMobileStoreFrontGridItem.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_Mobile\SubControlMobileStoreFrontOptionPanel.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_Mobile\WidControlMobileStoreFront.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_Mobile\WidControlMobileStoreFront.css" />
+    <EmbeddedResource Include="StyleSheets\Polymorphic\FormChangePinCode.css" />
+    <EmbeddedResource Include="StyleSheets\Polymorphic\FormUpdateUserAccountInfo.css" />
+    <EmbeddedResource Include="StyleSheets\Polymorphic\FormUpdateSubscriberInfo.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_General\WidControlBEOrderList.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_General\WidControlFEOrderList.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_General\WidControlFEBasicStoreLocation.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_General\WidControlFEBasicStoreLocation.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_General\WidControlFEBasicStore.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_General\WidControlBEAddAdjustItem.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_General\WidControlBEAddAdjustItem.css" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_General\WidControlBEItemList.css" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Cart.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Girl.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Home.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Location.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Man.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Person.png" />
+    <EmbeddedResource Include="Scripts\ToolBar\ToolBarScript.js" />
+    <EmbeddedResource Include="StyleSheets\ToolBar\ToolBarStyle.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\WidControlCreateUser.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_General\WidControlBEItemList.js" />
+    <EmbeddedResource Include="Icons\Foundation\list_detail.png" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_General\WidControlFEBasicStore.js" />
+    <EmbeddedResource Include="Icons\Foundation\ellipsis_button.png" />
+    <EmbeddedResource Include="Icons\Foundation\minus_button.png" />
+    <EmbeddedResource Include="Icons\Foundation\plus_button.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Order.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Setting.png" />
+    <EmbeddedResource Include="Icons\Foundation\2upchevron.png" />
+    <EmbeddedResource Include="Icons\Foundation\carticon.png" />
+    <EmbeddedResource Include="Icons\Foundation\downchevron.png" />
+    <EmbeddedResource Include="Icons\Foundation\upchevron.png" />
+    <EmbeddedResource Include="Icons\Foundation\cross_button.png" />
+    <EmbeddedResource Include="Icons\Foundation\edit_pencil.png" />
+    <EmbeddedResource Include="Icons\Foundation\tick_button.png" />
+    <EmbeddedResource Include="Scripts\Foundation\googlemap.interface.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_General\WidControlBEOrderList.js" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_General\WidControlFEOrderList.js" />
+    <EmbeddedResource Include="Icons\Foundation\back.png" />
+    <EmbeddedResource Include="Icons\Foundation\bin.png" />
+    <EmbeddedResource Include="Icons\Foundation\delivered.png" />
+    <EmbeddedResource Include="Icons\Foundation\processing.png" />
+    <EmbeddedResource Include="Icons\Foundation\shipping.png" />
+    <EmbeddedResource Include="Icons\Foundation\refresh.png" />
+    <EmbeddedResource Include="Icons\Foundation\ltchevron.png" />
+    <EmbeddedResource Include="Icons\Foundation\rtchevron.png" />
+    <EmbeddedResource Include="Icons\Foundation\1_gray.png" />
+    <EmbeddedResource Include="Icons\Foundation\1_green.png" />
+    <EmbeddedResource Include="Icons\Foundation\3_gray.png" />
+    <EmbeddedResource Include="Icons\Foundation\3_green.png" />
+    <EmbeddedResource Include="Icons\Foundation\5_green.png" />
+    <EmbeddedResource Include="Icons\Foundation\5_gray.png" />
+    <EmbeddedResource Include="Icons\Foundation\icon_envalope.png" />
+    <EmbeddedResource Include="Icons\Foundation\icon_process.png" />
+    <EmbeddedResource Include="Icons\Foundation\icon_reject.png" />
+    <EmbeddedResource Include="Icons\Foundation\icon_shipping.png" />
+    <EmbeddedResource Include="Icons\Foundation\openpopup.png" />
+    <EmbeddedResource Include="Icons\Foundation\openpopup_gray.png" />
+    <EmbeddedResource Include="Icons\Foundation\icon_delivered.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Edit.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Recycle.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Add.png" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlCreateUser.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\WidControlUpdateContent.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlUpdateContent.css" />
+    <EmbeddedResource Include="Scripts\Foundation\moment.min.js" />
+    <EmbeddedResource Include="Scripts\Foundation\modernizr.js" />
+    <EmbeddedResource Include="Icons\Foundation\edit_button.png" />
+    <EmbeddedResource Include="Icons\Foundation\rtchevronplain.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_ChangePIN.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_EditUserInfo.png" />
+    <EmbeddedResource Include="Images\System\NoImage.png" />
+    <EmbeddedResource Include="Images\System\NoPhoneImage.jpg" />
+    <EmbeddedResource Include="Images\System\NoPhoto01.png" />
+    <EmbeddedResource Include="Images\System\NoPhoto02.png" />
+    <EmbeddedResource Include="Images\System\dash.png" />
+    <EmbeddedResource Include="Icons\Foundation\ellipseorange.png" />
+    <EmbeddedResource Include="Images\System\Error.png" />
+    <EmbeddedResource Include="Icons\Foundation\logout.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_GeoLocation.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_ShopOwner.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Customers.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_AndriodBackEnd.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_AndriodFrontEnd.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_iOSBackEnd.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_iOSFrontEnd.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_QRCode.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddCategory.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddItem.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddService.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSEditItem.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSEditUnit.png" />
+    <EmbeddedResource Include="Icons\Foundation\backspace_black.png" />
+    <EmbeddedResource Include="Icons\Foundation\backspace_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\cross_black.png" />
+    <EmbeddedResource Include="Icons\Foundation\cross_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\downarrow_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\recycle_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\save_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\toparrow_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\uparrow_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\bottomarrow_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\enter_white.png" />
+    <EmbeddedResource Include="Icons\Foundation\goto_white.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSPurchase.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSSale.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSStockIn.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSStockOut.png" />
+    <EmbeddedResource Include="Icons\Foundation\recycle_bin.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddBaseUnit.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddUnit.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_UserListAddUser.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_UserListEditUser.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_AndriodLogo.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_iOSLogo.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddStaticItem.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddStaticCost.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddTable.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_POSAddTableGroup.png" />
+    <EmbeddedResource Include="Icons\Foundation\cash.png" />
+    <EmbeddedResource Include="Scripts\Foundation\jquery.touchSwipe.min.js" />
+    <EmbeddedResource Include="Scripts\Foundation\Canvas.js" />
+    <EmbeddedResource Include="Scripts\Foundation\epos-2.9.0.js" />
+    <EmbeddedResource Include="Scripts\Foundation\epos-interface.js" />
+    <EmbeddedResource Include="Scripts\Foundation\PrinterManager.js" />
+    <EmbeddedResource Include="Icons\Foundation\printericon.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_PrinterConnection.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_ResetSetting.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Save.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_RevertSetting.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_Appearance.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_Language.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_ReceiptLayout.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_StaffPermission.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_Transaction.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_Printer.png" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_Printer.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_General.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_User.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_Widget.png" />
+    <EmbeddedResource Include="Icons\Foundation\printericon2.png" />
+    <Content Include="Scripts\Foundation\XORCipher.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

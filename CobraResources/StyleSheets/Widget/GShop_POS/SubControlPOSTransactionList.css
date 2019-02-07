@@ -1,0 +1,382 @@
+﻿.SubControlPOSTransactionList *,
+.SubControlPOSTransactionList *:after,
+.SubControlPOSTransactionList *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2vh cobrasystemfont;     
+}
+
+.SubControlPOSTransactionList
+{       
+    position:relative;
+    width:100vw;
+    height:36.8vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    /*background: rgba(209,209,209,1);
+    background: -moz-linear-gradient(45deg, rgba(209,209,209,0.5) 0%, rgba(227,227,227,0.5) 22%, rgba(219,219,219,0.5) 49%, rgba(232,229,232,0.5) 77%, rgba(237,237,237,0.5) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(209,209,209,0.5)), color-stop(22%, rgba(227,227,227,0.5)), color-stop(49%, rgba(219,219,219,0.5)), color-stop(77%, rgba(232,229,232,0.5)), color-stop(100%, rgba(237,237,237,0.5)));
+    background: -webkit-linear-gradient(45deg, rgba(209,209,209,0.5) 0%, rgba(227,227,227,0.5) 22%, rgba(219,219,219,0.5) 49%, rgba(232,229,232,0.5) 77%, rgba(237,237,237,0.5) 100%);
+    background: -o-linear-gradient(45deg, rgba(209,209,209,0.5) 0%, rgba(227,227,227,0.5) 22%, rgba(219,219,219,0.5) 49%, rgba(232,229,232,0.5) 77%, rgba(237,237,237,0.5) 100%);
+    background: -ms-linear-gradient(45deg, rgba(209,209,209,0.5) 0%, rgba(227,227,227,0.5) 22%, rgba(219,219,219,0.5) 49%, rgba(232,229,232,0.5) 77%, rgba(237,237,237,0.5) 100%);
+    background: linear-gradient(45deg, rgba(209,209,209,0.5) 0%, rgba(227,227,227,0.5) 22%, rgba(219,219,219,0.5) 49%, rgba(232,229,232,0.5) 77%, rgba(237,237,237,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#ededed', GradientType=1 );*/
+
+    background: rgba(209,209,209,0.6);
+    background: -moz-linear-gradient(45deg, rgba(209,209,209,0.6) 0%, rgba(227,227,227,0.6) 22%, rgba(219,219,219,0.6) 49%, rgba(232,229,232,0.6) 77%, rgba(237,237,237,0.6) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(209,209,209,0.6)), color-stop(22%, rgba(227,227,227,0.6)), color-stop(49%, rgba(219,219,219,0.6)), color-stop(77%, rgba(232,229,232,0.6)), color-stop(100%, rgba(237,237,237,0.6)));
+    background: -webkit-linear-gradient(45deg, rgba(209,209,209,0.6) 0%, rgba(227,227,227,0.6) 22%, rgba(219,219,219,0.6) 49%, rgba(232,229,232,0.6) 77%, rgba(237,237,237,0.6) 100%);
+    background: -o-linear-gradient(45deg, rgba(209,209,209,0.6) 0%, rgba(227,227,227,0.6) 22%, rgba(219,219,219,0.6) 49%, rgba(232,229,232,0.6) 77%, rgba(237,237,237,0.6) 100%);
+    background: -ms-linear-gradient(45deg, rgba(209,209,209,0.6) 0%, rgba(227,227,227,0.6) 22%, rgba(219,219,219,0.6) 49%, rgba(232,229,232,0.6) 77%, rgba(237,237,237,0.6) 100%);
+    background: linear-gradient(45deg, rgba(209,209,209,0.6) 0%, rgba(227,227,227,0.6) 22%, rgba(219,219,219,0.6) 49%, rgba(232,229,232,0.6) 77%, rgba(237,237,237,0.6) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#ededed', GradientType=1 );
+
+    -webkit-transition: height 0.5s;
+    -moz-transition:    height 0.5s;
+    -o-transition:      height 0.5s;
+    -ms-transition:     height 0.5s;
+    transition:         height 0.5s; 
+}
+
+.SubControlPOSTransactionList[fa-fullscreenmode=true]
+{
+    height:85.5vh;
+}
+
+.SubControlPOSTransactionList .ItemList
+{
+    height:auto;
+    max-height:30vh;
+    overflow:scroll;        
+
+    -webkit-transition: max-height 0.5s;
+    -moz-transition:    max-height 0.5s;
+    -o-transition:      max-height 0.5s;
+    -ms-transition:     max-height 0.5s;
+    transition:         max-height 0.5s; 
+}
+
+.SubControlPOSTransactionList[fa-overalldiscount] .ItemList
+{
+    max-height:23vh;
+}
+
+.SubControlPOSTransactionList[fa-fullscreenmode=true] .ItemList
+{
+    max-height:78vh;
+}
+
+.SubControlPOSTransactionList[fa-overalldiscount][fa-fullscreenmode=true] .ItemList
+{
+    max-height:71vh;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item]
+{    
+    position:relative;
+    width:100vw;
+    height:9vh;
+
+    overflow: hidden;    
+    padding: 0.25vh 2vw;
+    border-bottom : 0.15vh dashed #d0d0d0;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item][fa-discountmode=percent]
+{
+    height:11vh;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item][fa-active=true],
+.SubControlPOSTransactionList .SummaryBar[fa-active=true]
+{
+    background: rgba(170,235,240,0.5);
+    background: -moz-linear-gradient(top, rgba(170,235,240,0.5) 0%, rgba(181,253,255,0.5) 5%, rgba(140,247,255,0.5) 95%, rgba(0,167,173,0.5) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(170,235,240,0.5)), color-stop(5%, rgba(181,253,255,0.5)), color-stop(95%, rgba(140,247,255,0.5)), color-stop(100%, rgba(0,167,173,0.5)));
+    background: -webkit-linear-gradient(top, rgba(170,235,240,0.5) 0%, rgba(181,253,255,0.5) 5%, rgba(140,247,255,0.5) 95%, rgba(0,167,173,0.5) 100%);
+    background: -o-linear-gradient(top, rgba(170,235,240,0.5) 0%, rgba(181,253,255,0.5) 5%, rgba(140,247,255,0.5) 95%, rgba(0,167,173,0.5) 100%);
+    background: -ms-linear-gradient(top, rgba(170,235,240,0.5) 0%, rgba(181,253,255,0.5) 5%, rgba(140,247,255,0.5) 95%, rgba(0,167,173,0.5) 100%);
+    background: linear-gradient(to bottom, rgba(170,235,240,0.5) 0%, rgba(181,253,255,0.5) 5%, rgba(140,247,255,0.5) 95%, rgba(0,167,173,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaebf0', endColorstr='#00a7ad', GradientType=0 );
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item][fa-active=true][gpos-itemstatus=cancel]
+{
+    background: rgba(222,222,222,0.5);
+    background: -moz-linear-gradient(top, rgba(222,222,222,0.5) 0%, rgba(191,191,191,0.5) 5%, rgba(204,204,204,0.5) 95%, rgba(92,92,92,0.5) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(222,222,222,0.5)), color-stop(5%, rgba(191,191,191,0.5)), color-stop(95%, rgba(204,204,204,0.5)), color-stop(100%, rgba(92,92,92,0.5)));
+    background: -webkit-linear-gradient(top, rgba(222,222,222,0.5) 0%, rgba(191,191,191,0.5) 5%, rgba(204,204,204,0.5) 95%, rgba(92,92,92,0.5) 100%);
+    background: -o-linear-gradient(top, rgba(222,222,222,0.5) 0%, rgba(191,191,191,0.5) 5%, rgba(204,204,204,0.5) 95%, rgba(92,92,92,0.5) 100%);
+    background: -ms-linear-gradient(top, rgba(222,222,222,0.5) 0%, rgba(191,191,191,0.5) 5%, rgba(204,204,204,0.5) 95%, rgba(92,92,92,0.5) 100%);
+    background: linear-gradient(to bottom, rgba(222,222,222,0.5) 0%, rgba(191,191,191,0.5) 5%, rgba(204,204,204,0.5) 95%, rgba(92,92,92,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#5c5c5c', GradientType=0 );
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item][fa-active=true]::before,
+.SubControlPOSTransactionList .SummaryBar[fa-active=true]::before
+{
+    content:'\f0da';
+    color:#800;
+    position:absolute;
+    left:1vw;
+    top:0.5vh;
+    font:3vh fontawesome;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item][fa-active=true][gpos-itemstatus=cancel]::before
+{
+    content:'\f06a';
+    color:#800;
+    position:absolute;
+    left:1vw;
+    top:1vh;
+    font:2.5vh fontawesome;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item][ea-type=template]
+{
+    display:none;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element]
+{
+    float:left;
+    position:relative;
+    text-align:right;
+    height:4vh;
+    color:#787878;
+}
+
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=serial]
+{
+    text-align:right;
+    width:8vw; 
+    margin-right:1vw;   
+    overflow:hidden;    
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item][fa-unconfirm=true] [sa-elementtype=element][ea-type=serial]::before
+{
+    content:'*';
+    line-height:220%;
+}
+
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=description]
+{
+    text-align:left;
+    width:85vw;    
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=quantity]
+{
+    width:20vw;
+    padding-right:4vw;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=unitprice]
+{
+    width:22vw;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=discount]
+{
+    width:22vw;
+    color:#9a6868
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=discount][fa-discountmode=percent]:not([fa-overflow])::after
+{
+    content: attr(fa-displaytext);
+    position: absolute;
+    right: -0vw;
+    font-size: 1.2vh;
+    text-align: center;
+    bottom: -2.2vh;
+    color: #ffffff;
+    background: #ff7171;
+    height: 2vh;
+    width: 10vw;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=subtotal]
+{
+    width:30vw;
+    padding-left:4vw;
+    color:#000;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=quantity]::after
+{
+    position:absolute;
+    top:0;
+    right:0;
+    width: 7vw;
+    height: 4vh;
+    padding-top:0.2vh;    
+    content:'\00d7';
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type=subtotal]::before
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 7vw;
+    height: 4vh;
+    padding-top:0.2vh;    
+    content:'=';
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type][fa-fontsizemode='small']
+{
+    font-size : 1.8vh;
+    line-height:230%;
+}
+
+.SubControlPOSTransactionList .ItemList [sa-elementtype=item] [sa-elementtype=element][ea-type][fa-overflow='true']::after
+{    
+    content: '#####';
+    color: #c00;
+}
+
+
+
+.SubControlPOSTransactionList .MessageBar
+{
+    position:absolute;
+    left:0;
+    bottom:0;
+    height:0vh;
+    width:100vw;
+    background:#ffffe6; 
+    color:#c00;      
+    border-top:0.15vh solid #ddd;
+    padding : 0.0vh 2vw;
+    overflow:hidden;
+    line-height : 220%;
+    font-size : 1.8vh;
+    
+    -webkit-transition: height 0.2s;
+    -moz-transition:    height 0.2s;
+    -o-transition:      height 0.2s;
+    -ms-transition:     height 0.2s;
+    transition:         height 0.2s; 
+}
+
+.SubControlPOSTransactionList[fa-showmessage] .MessageBar
+{
+    height:5vh;    
+}
+
+.SubControlPOSTransactionList .SummaryBar
+{
+    padding-top:0.7vh;
+    position:relative;
+    max-height:22vh;    
+    height:auto;
+    padding-bottom:1vh;
+    display:none;
+}
+
+.SubControlPOSTransactionList[fa-entrycount] .SummaryBar
+{
+    display:block;
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Subtotal2::after,
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Subtotal::after,
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Total::before
+{
+    position: absolute;
+    top: 0vh;
+    right: 2vw;
+    height: 0.15vh;
+    width: 30vw;
+    border-top: 0.15vh solid #888;
+    content: ' ';
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row]
+{
+    position:relative;
+    text-align:right;    
+    padding:0 4vw; 
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Quantity
+{
+    position:absolute;
+    top:1vh;
+    left:0;
+    text-align:left;
+}
+
+
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row] [sa-elementtype=label]
+{    
+    display: inline-block;
+    font: 2vh cobrasystemfont;
+    width: 40vw;
+    text-align: right;
+    color: #555;
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row] [sa-elementtype=figure]
+{
+    position:relative;
+    display:inline-block;
+    font:2.3vh cobrasystemfont;   
+    width: 35vw;    
+    text-align:right;
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Quantity [sa-elementtype=label]
+{
+    font: 2.5vh fontawesome;
+    width: 5vw;
+    color: #888;
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Quantity [sa-elementtype=figure]
+{
+    width: 15vw;
+    text-align: left;
+    padding-left: 4vw;
+    color:#888;
+}
+
+.SubControlPOSTransactionList:not([fa-overalldiscount]) .SummaryBar [sa-elementtype=row].Subtotal,
+.SubControlPOSTransactionList:not([fa-overalldiscount]) .SummaryBar [sa-elementtype=row].Discount
+{
+    display:none;
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Total [sa-elementtype=figure]
+{
+    font-size : 2.7vh;    
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row] [sa-elementtype=figure]:empty::after
+{
+    content:'-';
+}
+
+.SubControlPOSTransactionList .SummaryBar [sa-elementtype=row].Discount [sa-elementtype=figure]::before
+{
+    position:absolute;
+    left:0;
+    top:0;
+    line-height:190%;
+    font-size:2vh;
+    content:attr(fa-displaytext);
+}

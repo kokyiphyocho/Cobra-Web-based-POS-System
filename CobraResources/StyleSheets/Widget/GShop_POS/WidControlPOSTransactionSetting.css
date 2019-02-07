@@ -1,0 +1,201 @@
+﻿.POSTransactionSetting
+{    
+    background: rgba(216,208,239,1);
+    background: -moz-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(216,208,239,1)), color-stop(18%, rgba(235,233,249,1)), color-stop(40%, rgba(219,213,245,1)), color-stop(61%, rgba(238,235,250,1)), color-stop(89%, rgba(214,209,235,1)), color-stop(100%, rgba(216,215,242,1)));
+    background: -webkit-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d0ef', endColorstr='#d8d7f2', GradientType=1 );
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting *,
+.POSTransactionSetting .WidControlPOSTransactionSetting *:after,
+.POSTransactionSetting .WidControlPOSTransactionSetting *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting
+{
+    width:100vw;
+    height:85vh;
+    overflow:auto;               
+}
+
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .Container
+{
+    width:100vw;
+    height:83vh;
+    overflow-y : auto;
+    overflow-x : hidden;  
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .SettingGroup
+{
+    width:100vw;
+    height:auto;
+    background:rgba(255, 255, 255, 0.25);
+
+    -moz-box-shadow: 0vh 0vh 2vh rgba(180,180,180,0.25);
+	-webkit-box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+	box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .SettingGroup .SectionHeader
+{
+    width:100vw;
+    height:6vh;
+    padding : 0.75vh 2vw;
+    color: #646464;
+    text-shadow: 0.1vh 0.1vh #fff;
+    overflow:hidden;
+    margin-bottom:0.5vh;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(212,212,212,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,128,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#808080', GradientType=0 );
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch
+{
+    position:relative;
+    width:5vh;
+    height:3vh;
+    background:#fff;
+    margin-top:0.5vh;
+    border:0.15vh solid #ccc;
+
+     -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    overflow:hidden;    
+
+    float:right;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch div[ea-type=leftbar]
+{
+    width:0vh;
+    height:3vh;
+    float:left;
+    
+    background:#008aff;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting:not([notransition]) .ToggleSwitch div[ea-type=leftbar]
+{
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;  
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch[value=true] div[ea-type=leftbar]
+{
+    width:5vh;    
+    background:#008aff;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch div[ea-type=key]
+{
+    position:absolute;
+    left:0.2vh;
+    top:0.18vh;
+    width:2.3vh;
+    height:2.3vh;
+
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    border:0.15vh solid #ddd;
+
+    background:#fff;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting:not([notransition]) .ToggleSwitch div[ea-type=key]
+{    
+    -webkit-transition: left 0.5s;
+    -moz-transition:    left 0.5s;
+    -o-transition:      left 0.5s;
+    -ms-transition:     left 0.5s;
+    transition:         left 0.5s;  
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch[value=true] div[ea-type=key]
+{    
+    left:2.2vh;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch[disabled] div[ea-type=key]
+{
+    background : #eee;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch[disabled],
+.POSTransactionSetting .WidControlPOSTransactionSetting .ToggleSwitch[disabled] div[ea-type=leftbar]
+{
+    background : #ccc;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .SettingGroup div[sa-elementtype=inputrow]
+{
+    width:100vw;
+    padding:0vh 2vw;
+    height:6vh;
+    color:#555;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .SettingGroup div[sa-elementtype=inputrow][disabled]
+{
+    color:#ccc;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting .SettingGroup div[sa-elementtype=inputrow] div[sa-elementtype=inputlabel]
+{
+    width:65vw;
+    float:left;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting div[sa-elementtype=inputrow] input[sa-elementtype=inputbox]
+{
+    width:6vh;
+    text-align:right;  
+    float:right;
+    border:0.15vh solid #ccc;
+    padding:0vh 0.75vh;
+}
+
+.POSTransactionSetting .WidControlPOSTransactionSetting div[sa-elementtype=inputrow] [sa-elementtype=inputbox]:focus
+{
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+

@@ -1,0 +1,160 @@
+﻿.MobileStoreInventoryList
+{    
+    background: url('images/background/blue_wave_white.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList *,
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList *:after,
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.1vh cobrasystemfont;     
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList
+{
+    width:100vw;
+    height:90vh;
+    overflow:auto;       
+    padding : 2vh 2vw 2vh 2vw;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FilterSelection
+{    
+    width : 94vw;
+    height : 4vh;       
+    cursor : default;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FilterSelection .SumoSelect 
+{
+    width : 94vw;
+    height : 4vh;       
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FilterSelection .SumoSelect > .CaptionCont
+{
+    height : 4.5vh;    
+    padding : 0.5vh 1vw;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FilterSelection .SumoSelect.open > .optWrapper
+{
+    top:4.5vh;
+    font-size    : 2px;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FilterSelection .SumoSelect > .optWrapper > .options li.opt
+{
+    padding : 0.5vh 1vw;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FilterSelection .SumoSelect > .CaptionCont > label
+{
+    width:4vh;
+    height:4vh;    
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FilterSelection .SumoSelect > .CaptionCont > label > i
+{
+    width:4vh;
+    height:4vh;
+    background-size:2vh 2vh;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FieldContainer
+{
+    margin-top:2vh;
+    width:94vw;
+    height:75vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background:rgba(255,255,255,0.3);
+
+    -webkit-box-shadow: 1.5vw 1vh 0vh rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1.5vw 1vh 0vh rgba(50, 50, 50, 0.5);
+    box-shadow:         1.5vw 1vh 0vh rgba(50, 50, 50, 0.5);
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FieldContainer .Field
+{
+    display:none;
+    height:auto;
+    margin-bottom:1.5vh;
+    background:rgba(255,255,255,0.7);
+    white-space:nowrap;    
+    overflow:hidden;
+    padding:0.5vh 0vw;
+    line-height:100%;
+    
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FieldContainer .Field .DescriptionDiv
+{
+    display: inline-block;
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 80vw;
+    padding: 0vh 2vw;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FieldContainer .Field .DescriptionDiv .Label
+{
+    display:inline-block;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FieldContainer .Field .ButtonDiv
+{
+    display:inline-block;
+    width:auto;
+    height:4vh;
+    overflow:hidden;
+    margin-left:15vw;
+
+    -webkit-transition: margin-left 0.125s;
+    -moz-transition:    margin-left 0.125s;
+    -o-transition:      margin-left 0.125s;
+    -ms-transition:     margin-left 0.125s;
+    transition:         margin-left 0.125s;   
+    
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FieldContainer .Field .ButtonDiv img
+{   
+    display:none; 
+    height : 4vh;
+    width : auto;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList[fa-controlmode=editmode] .FieldContainer .Field .ButtonDiv img[href="@cmd%edititem"]
+{
+    display:block;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList[fa-controlmode=deletemode] .FieldContainer .Field .ButtonDiv img[href="@cmd%deleteitem"]
+{
+    display:block;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList[fa-controlmode] .FieldContainer .Field .ButtonDiv
+{
+    margin-left:4vw;
+}
+
+.MobileStoreInventoryList .WidControlMobileStoreInventoryList .FieldContainer .Field[fa-show]
+{
+    display:block;
+}
+
+

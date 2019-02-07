@@ -1,0 +1,67 @@
+﻿.POSQRCode
+{    
+    background: rgba(172,207,230,1);
+    background: -moz-linear-gradient(45deg, rgba(172,207,230,1) 0%, rgba(158,210,240,1) 11%, rgba(170,205,230,1) 23%, rgba(180,217,240,1) 47%, rgba(154,201,230,1) 66%, rgba(178,211,232,1) 83%, rgba(159,200,230,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(172,207,230,1)), color-stop(11%, rgba(158,210,240,1)), color-stop(23%, rgba(170,205,230,1)), color-stop(47%, rgba(180,217,240,1)), color-stop(66%, rgba(154,201,230,1)), color-stop(83%, rgba(178,211,232,1)), color-stop(100%, rgba(159,200,230,1)));
+    background: -webkit-linear-gradient(45deg, rgba(172,207,230,1) 0%, rgba(158,210,240,1) 11%, rgba(170,205,230,1) 23%, rgba(180,217,240,1) 47%, rgba(154,201,230,1) 66%, rgba(178,211,232,1) 83%, rgba(159,200,230,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(172,207,230,1) 0%, rgba(158,210,240,1) 11%, rgba(170,205,230,1) 23%, rgba(180,217,240,1) 47%, rgba(154,201,230,1) 66%, rgba(178,211,232,1) 83%, rgba(159,200,230,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(172,207,230,1) 0%, rgba(158,210,240,1) 11%, rgba(170,205,230,1) 23%, rgba(180,217,240,1) 47%, rgba(154,201,230,1) 66%, rgba(178,211,232,1) 83%, rgba(159,200,230,1) 100%);
+    background: linear-gradient(45deg, rgba(172,207,230,1) 0%, rgba(158,210,240,1) 11%, rgba(170,205,230,1) 23%, rgba(180,217,240,1) 47%, rgba(154,201,230,1) 66%, rgba(178,211,232,1) 83%, rgba(159,200,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#accfe6', endColorstr='#9fc8e6', GradientType=1 );
+}
+
+.POSQRCode .WidControlPOSQRCode *,
+.POSQRCode .WidControlPOSQRCode *:after,
+.POSQRCode .WidControlPOSQRCode *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.1vh cobrasystemfont;     
+}
+
+.POSQRCode .WidControlPOSQRCode
+{
+    width:100vw;
+    height:75vh;
+    overflow:auto;       
+    padding : 2vh 2vw 2vh 2vw;
+}
+
+.POSQRCode .WidControlPOSQRCode .ElementDiv
+{
+    width       : 96vw;
+    display     : none;
+    overflow    : hidden;
+}
+
+.POSQRCode .WidControlPOSQRCode .TextDiv
+{
+    width: 100%;
+    height: 6vh;
+    text-align: center;
+    background: #ddd;    
+    font-size: 3vh;
+    padding-top: 0.5vh;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.POSQRCode .WidControlPOSQRCode .Image
+{
+    width       : 96vw;
+}
+
+.POSQRCode .WidControlPOSQRCode[ea-attribute=andriod] .ElementDiv[ea-type=andriod],
+.POSQRCode .WidControlPOSQRCode[ea-attribute=ios] .ElementDiv[ea-type=ios]
+{
+    display : block;
+}

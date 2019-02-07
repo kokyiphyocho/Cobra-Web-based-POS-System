@@ -1,0 +1,266 @@
+﻿.POSUpdateSubscriberInfo
+{    
+    /*background: url('images/background/blue_butterfly_3_sparkling.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/    
+
+    background: rgba(147,206,222,1);
+    background: -moz-linear-gradient(45deg, rgba(147,206,222,1) 0%, rgba(145,205,222,1) 18%, rgba(154,220,237,1) 34%, rgba(129,203,222,1) 53%, rgba(156,214,230,1) 70%, rgba(135,209,230,1) 86%, rgba(173,224,237,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(18%, rgba(145,205,222,1)), color-stop(34%, rgba(154,220,237,1)), color-stop(53%, rgba(129,203,222,1)), color-stop(70%, rgba(156,214,230,1)), color-stop(86%, rgba(135,209,230,1)), color-stop(100%, rgba(173,224,237,1)));
+    background: -webkit-linear-gradient(45deg, rgba(147,206,222,1) 0%, rgba(145,205,222,1) 18%, rgba(154,220,237,1) 34%, rgba(129,203,222,1) 53%, rgba(156,214,230,1) 70%, rgba(135,209,230,1) 86%, rgba(173,224,237,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(147,206,222,1) 0%, rgba(145,205,222,1) 18%, rgba(154,220,237,1) 34%, rgba(129,203,222,1) 53%, rgba(156,214,230,1) 70%, rgba(135,209,230,1) 86%, rgba(173,224,237,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(147,206,222,1) 0%, rgba(145,205,222,1) 18%, rgba(154,220,237,1) 34%, rgba(129,203,222,1) 53%, rgba(156,214,230,1) 70%, rgba(135,209,230,1) 86%, rgba(173,224,237,1) 100%);
+    background: linear-gradient(45deg, rgba(147,206,222,1) 0%, rgba(145,205,222,1) 18%, rgba(154,220,237,1) 34%, rgba(129,203,222,1) 53%, rgba(156,214,230,1) 70%, rgba(135,209,230,1) 86%, rgba(173,224,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#ade0ed', GradientType=1 );
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo *,
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo *:after,
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo
+{
+    width:100vw;
+    height:94vh;
+    overflow:auto;               
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup
+{
+    width:100vw;
+    height:auto;
+    background:rgba(255, 255, 255, 0.25);
+
+    -moz-box-shadow: 0vh 0vh 2vh rgba(180,180,180,0.25);
+	-webkit-box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+	box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup .SectionHeader
+{
+    width:100vw;
+    height:6vh;
+    padding : 0.75vh 2vw;
+    color: #646464;
+    text-shadow: 0.1vh 0.1vh #fff;
+    overflow:hidden;
+    margin-bottom:0.5vh;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(212,212,212,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,128,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#808080', GradientType=0 );
+}
+
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup div[sa-elementtype=inputrow]
+{
+    width:100vw;
+    padding:0vh 2vw;
+    height:6vh;
+    color:#555;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup div[sa-elementtype=inputrow][ea-mode=textarea]
+{
+    height:16.5vh;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup div[sa-elementtype=inputrow] div[sa-elementtype=inputlabel]
+{
+    width:35vw;
+    float:left;
+    white-space:nowrap;
+    overflow-y:hidden;
+    overflow-x:auto;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup div[sa-elementtype=inputrow] input[sa-elementtype=inputbox]
+{
+    width:60vw;
+    height:4.5vh;
+    text-align:left;  
+    float:right;    
+    padding:0vh 2vw;
+    white-space:nowrap;
+    overflow-y:hidden;
+    overflow-x:auto;
+    background:#fff;
+
+     -moz-box-shadow:0vh 0vh 1vh #ccc;
+	-webkit-box-shadow:0vh 0vh 1vh #ccc;
+	box-shadow:0vh 0vh 1vh #ccc;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup div[sa-elementtype=inputrow] textarea[sa-elementtype=inputbox]
+{
+    width:60vw;
+    height:15vh;
+    text-align:left;  
+    float:right;    
+    padding:0vh 2vw;
+    white-space:nowrap;
+    overflow-y:hidden;
+    overflow-x:auto;
+    background:#fff;
+
+     -moz-box-shadow:0vh 0vh 1vh #ccc;
+	-webkit-box-shadow:0vh 0vh 1vh #ccc;
+	box-shadow:0vh 0vh 1vh #ccc;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup div[sa-elementtype=inputrow] input[sa-elementtype=inputbox]:focus,
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .SectionGroup div[sa-elementtype=inputrow] textarea[sa-elementtype=inputbox]:focus
+{
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .ButtonPanel
+{
+    width:100vw;
+    height:8vh;
+    margin-top:2vh;
+    text-align:center;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .UpdateButton 
+{    
+    display:inline-block;
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;	
+
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;	
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .UpdateButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .UpdateButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .CloseButton
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .CloseButton:hover
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.POSUpdateSubscriberInfo .WidControlPOSUpdateSubscriberInfo .CloseButton:active
+{
+	position:relative;
+	top:0.2vh;
+}

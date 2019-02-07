@@ -1,0 +1,871 @@
+﻿.FEOrderList
+{    
+    background: url('images/background/grey_wave.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.FEOrderList .WidControlFEOrderList *,
+.FEOrderList .WidControlFEOrderList *:after,
+.FEOrderList .WidControlFEOrderList *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 1.8vh cobrasystemfont;     
+}
+
+.FEOrderList .WidControlFEOrderList
+{
+    width:100vw;
+    height:84vh;
+    overflow:auto;           
+    margin-top:0.5vh;
+}
+
+.FEOrderList .WidControlFEOrderList .RefreshBar
+{
+    position:relative;
+    text-align:center;
+    height: 7vh;
+    overflow: hidden;
+    border-bottom: 0.25vw solid #e1e1e1;
+    white-space: nowrap;
+    margin-bottom: 0.5vh;
+
+    background: rgba(196,235,255,1);
+    background: -moz-linear-gradient(top, rgba(196,235,255,1) 0%, rgba(50,166,243,0.54) 8%, rgba(168,223,255,0.81) 92%, rgba(176,226,255,0.83) 93%, rgba(130,205,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(196,235,255,1)), color-stop(8%, rgba(50,166,243,0.54)), color-stop(92%, rgba(168,223,255,0.81)), color-stop(93%, rgba(176,226,255,0.83)), color-stop(100%, rgba(130,205,255,1)));
+    background: -webkit-linear-gradient(top, rgba(196,235,255,1) 0%, rgba(50,166,243,0.54) 8%, rgba(168,223,255,0.81) 92%, rgba(176,226,255,0.83) 93%, rgba(130,205,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(196,235,255,1) 0%, rgba(50,166,243,0.54) 8%, rgba(168,223,255,0.81) 92%, rgba(176,226,255,0.83) 93%, rgba(130,205,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(196,235,255,1) 0%, rgba(50,166,243,0.54) 8%, rgba(168,223,255,0.81) 92%, rgba(176,226,255,0.83) 93%, rgba(130,205,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(196,235,255,1) 0%, rgba(50,166,243,0.54) 8%, rgba(168,223,255,0.81) 92%, rgba(176,226,255,0.83) 93%, rgba(130,205,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4ebff', endColorstr='#82cdff', GradientType=0 );
+}
+
+.FEOrderList .WidControlFEOrderList .RefreshBar .Button
+{
+    position:absolute;
+    display: block;    
+    width: 13vw;
+    top:0.3vh;
+    right:0vh;
+    text-align: center;    
+    white-space: nowrap;
+    text-decoration: none;
+    padding-top: 1vh;
+}
+
+.FEOrderList .WidControlFEOrderList .RefreshBar .Button img
+{    
+    display : inline-block;
+    width: 4.5vh;
+    height:auto;    
+}
+
+
+.FEOrderList .WidControlFEOrderList .RefreshBar .StatusDiv
+{
+    width: 47vw;    
+    margin-left: 2vw;
+    display: inline-block;    
+    height: 5vh;
+    margin-top: 1vh;
+    text-align: center;
+    background: #dfdfdf;
+    border-top: 0.15vh solid #656565;
+    border-left: 0.15vh solid #656565;
+    border-right: 0.15vh solid #ebebeb;
+    border-bottom: 0.15vh solid #ebebeb;
+    white-space: nowrap
+}
+
+.FEOrderList .WidControlFEOrderList .RefreshBar .StatusDiv .TimerDiv
+{
+    width: 15vw;
+    display: block;
+    float: left;
+    line-height: 200%;
+    font-size:2.5vh;
+}
+
+.FEOrderList .WidControlFEOrderList .RefreshBar .StatusDiv .AjaxImage
+{    
+    display: none;
+    width: 4vh;        
+    margin-top: 0.8vh;
+}
+
+.FEOrderList .WidControlFEOrderList .RefreshBar .StatusDiv .LastUpdateDiv
+{
+    position:relative;
+    width: 15vw;
+    display: block;
+    float: right;
+    line-height: 200%;
+    font-size:2.5vh;
+}
+
+.FEOrderList .WidControlFEOrderList[fa-refreshing] .RefreshBar .StatusDiv .AjaxImage
+{
+    display:inline-block;
+}
+
+.FEOrderList .WidControlFEOrderList[fa-refreshfail] .RefreshBar .StatusDiv .LastUpdateDiv
+{
+   color:#c41b1b;
+}
+
+.FEOrderList .WidControlFEOrderList[fa-refreshfail] .RefreshBar .StatusDiv .LastUpdateDiv::after
+{
+    position:absolute;
+    left:-3vw;
+    padding-top:1.2vh;
+    font : 2.5vh fontawesome;
+    content:'\f06a';
+}
+
+.FEOrderList .WidControlFEOrderList[fa-editing] .RefreshBar
+{
+    display:none;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel
+{    
+    width: 100vw;
+    height: 84vh;
+    overflow: auto;        
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv
+{
+    width  : 100vw;
+    height : auto;    
+    background:#eee;
+    margin-bottom:2vh;
+    border-bottom:0.2vh solid #888;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv
+{
+    width  : 100vw;
+    height : 5vh;    
+    padding:1vh 2vw;    
+    background : #fcfcfc;
+    color:#666;    
+    text-shadow: 0.15vh 0.15vh #fff;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv .IconDiv
+{
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv .HeadingText
+{
+    display:inline-block;
+    float:left;
+    font:2vh cobrasystemfont;    
+    width:22vw;
+    height:auto;  
+    white-space:nowrap;
+    overflow:hidden;          
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv .EditButtonPanel
+{
+    display: none;
+    float: right;    
+    width: 4vh;
+    height: 4vh;
+    overflow: hidden;
+    margin-top: -0.5vh;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv[ea-status="0"] .OrderHeadingDiv .EditButtonPanel,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv[ea-status="1"] .OrderHeadingDiv .EditButtonPanel
+{
+    display:block;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv .EditButtonPanel img
+{
+    width: 4vh;
+    height: auto;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv::before
+{   
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    content:'\f0a9';
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=cancel]::before
+{   
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    content:'\f057';
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=reject]::before
+{   
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    content:'\f05e';
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=cancel],
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=reject]
+{
+    color:#c41b1b;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=cancel] div[ea-type=status],
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=reject] div[ea-type=status],
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=cancel] .EditButtonPanel,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderHeadingDiv[ea-appearance=reject] .EditButtonPanel
+{
+    display:none;
+} 
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv[ea-readonlymode] .OrderHeadingDiv .EditButtonPanel
+{
+    display : none;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv[fa-statuschanging] .OrderHeadingDiv div[ea-type=status]
+{
+    color:#ff6b6b;
+    animation: blinker 1s linear infinite;
+    -webkit-animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv
+{
+    display:block;    
+    padding:1vh 4vw 0vh 4vw;    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow
+{
+    position : relative;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ItemName
+{
+    display:inline-block;    
+    width:65vw;
+    overflow:hidden;
+    white-space:nowrap;
+    margin-right:2vw;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .Quantity
+{
+    position:relative;
+    display:inline-block;    
+    width:8vw;
+    overflow:hidden;
+    white-space:nowrap;
+    text-align:right;
+}
+
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .Price
+{
+    position:relative;
+    display:inline-block;    
+    width:17vw;
+    overflow:hidden;
+    white-space:nowrap;
+    text-align:right;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ItemRemark
+{
+    display:block;    
+    width:60vw;
+    color:#628846;
+    overflow:hidden;
+    overflow-x:auto;
+    white-space:nowrap;
+    margin-right:2vw;
+    margin-left:5vw;
+    margin-top:0vh;
+}
+
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .RejectReason
+{
+    display:block;    
+    width:60vw;
+    color:#ab8700;
+    overflow:hidden;
+    overflow-x:auto;
+    white-space:nowrap;
+    margin-right:2vw;
+    margin-left:5vw;
+    margin-top:-1vh;
+    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .TotalSummary
+{
+    position : relative;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .TotalSummary .TotalQuantity
+{    
+    clear:left;
+    display:inline-block;        
+    font-size:2.1vh;
+    width:8vw;
+    overflow:hidden;
+    margin-left:67vw;
+    white-space:nowrap;
+    text-align:right;
+    font-weight:bold;
+    border-top:0.1vh solid #888;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .TotalSummary .TotalPrice
+{    
+    display:inline-block;    
+    font-size:2.1vh;
+    width:17vw;
+    overflow:hidden;
+    white-space:nowrap;
+    text-align:right;
+    font-weight:bold;
+    border-top:0.1vh solid #888;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .OrderRemark
+{
+    margin-left  : -4vw;
+    width        : 100vw;
+    background   : #ddd;
+    height      : 4vh;
+    padding : 0.5vh 4vw;
+    overflow : auto;
+    white-space:nowrap;
+    color : #628846;
+
+     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BriefDescriptionDiv .OrderRemark
+{
+    color:#c41b1b;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ItemName::before
+{
+    display:block;    
+    clear:left;
+    float:left;
+    font:2.2vh fontawesome;
+    width:5vw;    
+    line-height:130%;
+    content:'\f101';
+    overflow:hidden;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=cancel] .ItemName::before
+{
+    display:block;    
+    clear:left;
+    float:left;
+    font:2.2vh fontawesome;
+    width:5vw;    
+    line-height:130%;
+    content:'\f00d';
+    overflow:hidden;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=reject] .ItemName::before
+{
+    display:block;    
+    clear:left;
+    float:left;
+    font:2.2vh fontawesome;
+    width:5vw;    
+    line-height:130%;
+    content:'\f05e';
+    overflow:hidden;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=cancel] .Bullet,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=cancel] .ItemName,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=cancel] .Quantity,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=cancel] .Price,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=reject] .Bullet,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=reject] .ItemName,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=reject] .Quantity,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=reject] .Price
+{
+    color : #c41b1b;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=cancel]::before,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-appearance=reject]::before
+{
+    display : block;
+    position:absolute;
+    width:100%;
+    border-bottom:0.15vh solid #888;
+    content:'';
+    left:0;
+    top:1.6vh;
+    height:1px;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel
+{    
+    display:none;    
+    overflow:hidden;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ButtonBar
+{
+    min-width: 120vw; /* Prevent Wrapping */    
+    height: 7vh;
+    background: #888;
+    padding-top: 0.8vh;
+    color: #fff;
+    margin-bottom: 0.5vh;
+    border-bottom: 0.2vh solid #fff;
+    border-top: 0.2vh solid #ddd;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ButtonBar .EditingButton
+{
+    float: left;
+    margin-left: 2vw;
+    margin-right: 1vw;    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ButtonBar .EditingButton img
+{
+    width:5vh;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ButtonBar .EditingButtonText
+{
+   float: left;
+   width: 21vw;
+   line-height: 220%;
+   font-size:2.5vh;
+   color:#eee;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer
+{
+    width:100vw;
+    max-height:70vh;
+    overflow:auto;
+    margin-bottom:0.5vh
+}
+
+/*.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .Overlay
+{    
+    top:0;
+    left:0;
+    position:fixed;
+    z-index:1;
+    background:#000;
+    width:100vw;
+    height:100vh;
+}*/
+
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock:nth-child(even)
+{
+    background:#fcfcfc;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock:nth-child(odd)
+{
+    background:#eee;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock
+{
+    position:relative;    
+    display : block;
+    margin-left:3vw;
+    width:94vw;    
+    height:auto;
+    max-height : 30vh;
+    margin-bottom:0vh;
+    background:#eee;
+    padding:0.8vh 2vw;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock::after
+{
+    position:absolute;
+    content:'';
+    width:94vw;
+    height:2vh;
+    left:0;
+    bottom:0;
+    border-bottom:0.2vh solid #cdcdcd;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .ItemName
+{
+    display:inline-block;
+    position:relative;
+    width:80vw;
+    height:4.5vh; 
+    margin:0;        
+    overflow:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    color:#666;    
+    text-shadow:0.15vh 0.15vh #eee;
+    font-size:2vh;
+    line-height:150%;      
+     
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .RemarkButton 
+{    
+    float:right;
+    width:auto;
+    height:auto;
+    margin-top:-0.5vh;    
+    overflow:hidden;    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .RemarkButton img[href="@cmd%showremark"],
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .RemarkButton img[href="@cmd%hideremark"]
+{    
+    margin-top:0.2vh;
+    width:4vh;
+    height:auto;
+    float:right;  
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock[fa-remarkopen] .RemarkButton img[href="@cmd%hideremark"],
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .RemarkButton img[href="@cmd%showremark"]
+{
+    display:block;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock[fa-remarkopen] .RemarkButton img[href="@cmd%showremark"],
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .RemarkButton img[href="@cmd%hideremark"]
+{
+    display:none;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .RemarkBox
+{    
+    display:none;
+    height: 4vh;
+    margin-bottom: 2vh;
+    width: 90vw;
+    margin-top: -0.5vh;
+    padding:0vh 2vw;
+    background : #f9f9f9;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock[fa-remarkopen] .RemarkBox
+{
+    display:block;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .ItemButtonPanel
+{
+    display:inline-block;    
+    width:auto;
+    height:auto;
+    margin-top:-0.5vh;    
+    overflow:hidden;    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .ItemButtonPanel img
+{    
+    width:4vh;
+    height:auto;
+    float:right;  
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .ItemButtonPanel input[type=text]
+{
+    width:10vw;
+    height:4vh;
+    float:right;
+    font:inherit;
+    font-size:3vh;
+    padding:0vh 1vw;
+    margin:-0.2vh 2vw;    
+    text-align:right;
+    background:#f8f8f8;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .PricePanel
+{
+    float:right; 
+    width : 58vw;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .UnitPricePanel 
+{
+    float:left;
+    color:#666;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .PricePanel .TotalPanel
+{   
+    float:right;    
+    color:#ff2f00;    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .PricePanel .PrefixSymbol,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .PricePanel .Suffixymbol,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .TotalPanel .PrefixSymbol,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .TotalPanel .Suffixymbol
+{
+    display:inline-block;
+    width:8vw;
+    height:3vh;
+    font-size:1.5vh;    
+    padding-top:1vh;
+    
+    line-height:100%;  
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .PricePanel .Price,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .TotalPanel .Price
+{
+    display:inline-block;
+    width:auto;
+    height:3vh;
+    font-size:3vh;        
+    line-height:100%;  
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar
+{    
+    width: 94vw;
+    height: auto;
+    min-height:8vh;
+    margin-left: 3vw;
+    padding: 1vh 2vw;
+    border-top : 1vh solid rgba(255,255,255,0.5);
+    border-bottom: 1vh solid rgba(155,155,155,0.5);
+    background: rgba(143,143,143,1);
+    background: -moz-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(143,143,143,1)), color-stop(10%, rgba(255,255,255,1)), color-stop(90%, rgba(230,230,230,1)), color-stop(100%, rgba(84,84,84,1)));
+    background: -webkit-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: -o-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: -ms-linear-gradient(top, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    background: linear-gradient(to bottom, rgba(143,143,143,1) 0%, rgba(255,255,255,1) 10%, rgba(230,230,230,1) 90%, rgba(84,84,84,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f8f8f', endColorstr='#545454', GradientType=0 );
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalQuantityDiv
+{
+    width: 35vw;
+    float: left;
+    color:#666;    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalQuantityDiv .TotalQuantityLabel
+{
+    display: inline-block;
+    font-size: 2vh;
+    max-width: 25vw;
+    overflow: hidden;
+    height:4vh;         
+    line-height:200%;   
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalQuantityDiv .TotalQuantityBox
+{
+    display: block;    
+    float:right;
+    font-size: 3vh;
+    width: 8vw;
+    height: 4vh;
+    line-height:150%;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalPriceDiv
+{    
+    width: 50vw;
+    float: right;  
+    color:#666;          
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalPriceDiv .TotalPriceLabel
+{
+    display: inline-block;    
+    height:4vh;    
+    font-size: 2vh;
+    max-width: 28vw;
+    overflow: hidden;   
+    line-height:200%;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalPriceDiv .PricePanel
+{
+    display: block;    
+    float:right;
+    color:#ff2f00;    
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalPriceDiv .PricePanel .Price
+{
+    display:inline-block;
+    font-size: 3vh;    
+    height: 4vh;        
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalPriceDiv .PricePanel .PrefixSymbol,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .TotalPriceDiv .PricePanel .SuffixSymbol
+{
+    display:inline-block;
+    text-align:left;
+    width:8vw;
+    height:3vh;
+    font-size:1.5vh;    
+    padding-top:1vh;
+    
+    line-height:100%;  
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;    
+
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .SummaryBar .OrderNote
+{
+    clear: both;
+    color: #800;
+    text-align: center;
+    text-shadow: 0.15vh 0.15vh #fff;
+    font: 1.8vh cobrasystemfont;
+    margin-bottom:0.5vh;
+}
+
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .OrderRemarkPanel
+{    
+    margin-top:2vh;
+    width:94vw;
+    margin-left :3vw;
+    height:auto;
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .OrderRemarkPanel .OrderRemarkTitle
+{
+    width: 94vw;
+    height: 5vh;
+    padding: 0.5vh 2vw;
+    text-align: left;
+    text-shadow:0.2vh 0.2vh #eee;    
+    line-height:220%;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(5%, rgba(219,219,219,1)), color-stop(95%, rgba(209,209,209,1)), color-stop(100%, rgba(138,138,138,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 5%, rgba(209,209,209,1) 95%, rgba(138,138,138,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#8a8a8a', GradientType=0 );
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .OrderRemarkPanel .OrderRemarkBox
+{
+    height:5vh;
+    width: 94vw;
+    padding: 0.5vh 2vw;
+    background:#eee;
+}
+
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .RemarkBox:focus,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock .ItemButtonPanel input[type=text]:focus,
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .OrderRemarkPanel .OrderRemarkBox:focus
+{    
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+
+
+.FEOrderList .WidControlFEOrderList[fa-editing] .ListPanel .OrderDiv[fa-editing] .OrderHeadingDiv .EditButtonPanel,
+.FEOrderList .WidControlFEOrderList[fa-editing] .ListPanel .OrderDiv[fa-editing] .BriefDescriptionDiv,
+.FEOrderList .WidControlFEOrderList[fa-editing] .ListPanel .OrderDiv:not([fa-editing])
+{
+    display:none;
+}
+
+.FEOrderList .WidControlFEOrderList[fa-editing] .ListPanel .OrderDiv[fa-editing] .OrderEditingPanel
+{
+    display:block;
+}
+
+.FEOrderList .WidControlFEOrderList[fa-editing] .ListPanel .OrderDiv[fa-editing]
+{
+    background : rgba(0,0,0,0);
+}
+
+.FEOrderList .WidControlFEOrderList .ListPanel .OrderDiv .OrderEditingPanel .ItemContainer .ItemBlock[fa-cancelled] .ItemName
+{
+   text-decoration : line-through;
+   color : #c41b1b;
+}

@@ -1,0 +1,400 @@
+﻿.POSAddAdjustItem 
+{    
+    /*background: url('images/background/blue_butterfly_3_sparkling.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/    
+    /*background: rgba(183,214,235,1);
+    background: -moz-linear-gradient(45deg, rgba(183,214,235,1) 0%, rgba(205,235,250,1) 22%, rgba(202,223,235,1) 45%, rgba(220,240,250,1) 67%, rgba(202,223,235,1) 82%, rgba(224,239,249,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(183,214,235,1)), color-stop(22%, rgba(205,235,250,1)), color-stop(45%, rgba(202,223,235,1)), color-stop(67%, rgba(220,240,250,1)), color-stop(82%, rgba(202,223,235,1)), color-stop(100%, rgba(224,239,249,1)));
+    background: -webkit-linear-gradient(45deg, rgba(183,214,235,1) 0%, rgba(205,235,250,1) 22%, rgba(202,223,235,1) 45%, rgba(220,240,250,1) 67%, rgba(202,223,235,1) 82%, rgba(224,239,249,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(183,214,235,1) 0%, rgba(205,235,250,1) 22%, rgba(202,223,235,1) 45%, rgba(220,240,250,1) 67%, rgba(202,223,235,1) 82%, rgba(224,239,249,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(183,214,235,1) 0%, rgba(205,235,250,1) 22%, rgba(202,223,235,1) 45%, rgba(220,240,250,1) 67%, rgba(202,223,235,1) 82%, rgba(224,239,249,1) 100%);
+    background: linear-gradient(45deg, rgba(183,214,235,1) 0%, rgba(205,235,250,1) 22%, rgba(202,223,235,1) 45%, rgba(220,240,250,1) 67%, rgba(202,223,235,1) 82%, rgba(224,239,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7d6eb', endColorstr='#e0eff9', GradientType=1 );*/
+
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem *,
+.POSAddAdjustItem .WidControlPOSAddAdjustItem *:after,
+.POSAddAdjustItem .WidControlPOSAddAdjustItem *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem
+{
+    width:100vw;
+    height:94vh;
+    overflow:auto;               
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=category]
+{
+    background: rgba(125,229,255,0.5);
+    background: -moz-linear-gradient(45deg, rgba(125,229,255,0.5) 0%, rgba(191,241,255,0.5) 24%, rgba(133,221,245,0.5) 50%, rgba(171,238,255,0.5) 77%, rgba(84,218,255,0.5) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(125,229,255,0.5)), color-stop(24%, rgba(191,241,255,0.5)), color-stop(50%, rgba(133,221,245,0.5)), color-stop(77%, rgba(171,238,255,0.5)), color-stop(100%, rgba(84,218,255,0.5)));
+    background: -webkit-linear-gradient(45deg, rgba(125,229,255,0.5) 0%, rgba(191,241,255,0.5) 24%, rgba(133,221,245,0.5) 50%, rgba(171,238,255,0.5) 77%, rgba(84,218,255,0.5) 100%);
+    background: -o-linear-gradient(45deg, rgba(125,229,255,0.5) 0%, rgba(191,241,255,0.5) 24%, rgba(133,221,245,0.5) 50%, rgba(171,238,255,0.5) 77%, rgba(84,218,255,0.5) 100%);
+    background: -ms-linear-gradient(45deg, rgba(125,229,255,0.5) 0%, rgba(191,241,255,0.5) 24%, rgba(133,221,245,0.5) 50%, rgba(171,238,255,0.5) 77%, rgba(84,218,255,0.5) 100%);
+    background: linear-gradient(45deg, rgba(125,229,255,0.5) 0%, rgba(191,241,255,0.5) 24%, rgba(133,221,245,0.5) 50%, rgba(171,238,255,0.5) 77%, rgba(84,218,255,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7de5ff', endColorstr='#54daff', GradientType=1 );
+}
+
+/*.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=category]
+{
+    background: rgba(193,191,234,1);
+    background: -moz-linear-gradient(45deg, rgba(193,191,234,1) 0%, rgba(216,208,239,1) 21%, rgba(203,199,237,1) 41%, rgba(216,208,239,1) 59%, rgba(216,208,239,1) 70%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(193,191,234,1)), color-stop(21%, rgba(216,208,239,1)), color-stop(41%, rgba(203,199,237,1)), color-stop(59%, rgba(216,208,239,1)), color-stop(70%, rgba(216,208,239,1)), color-stop(82%, rgba(206,199,236,1)), color-stop(100%, rgba(193,191,234,1)));
+    background: -webkit-linear-gradient(45deg, rgba(193,191,234,1) 0%, rgba(216,208,239,1) 21%, rgba(203,199,237,1) 41%, rgba(216,208,239,1) 59%, rgba(216,208,239,1) 70%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(193,191,234,1) 0%, rgba(216,208,239,1) 21%, rgba(203,199,237,1) 41%, rgba(216,208,239,1) 59%, rgba(216,208,239,1) 70%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(193,191,234,1) 0%, rgba(216,208,239,1) 21%, rgba(203,199,237,1) 41%, rgba(216,208,239,1) 59%, rgba(216,208,239,1) 70%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    background: linear-gradient(45deg, rgba(193,191,234,1) 0%, rgba(216,208,239,1) 21%, rgba(203,199,237,1) 41%, rgba(216,208,239,1) 59%, rgba(216,208,239,1) 70%, rgba(206,199,236,1) 82%, rgba(193,191,234,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1bfea', endColorstr='#c1bfea', GradientType=1 );
+}*/
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=item]
+{
+    background: rgba(255,156,230,0.5);
+    background: -moz-linear-gradient(45deg, rgba(255,156,230,0.5) 0%, rgba(255,209,245,0.5) 20%, rgba(255,186,238,0.5) 48%, rgba(255,209,245,0.5) 74%, rgba(255,156,230,0.5) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,156,230,0.5)), color-stop(20%, rgba(255,209,245,0.5)), color-stop(48%, rgba(255,186,238,0.5)), color-stop(74%, rgba(255,209,245,0.5)), color-stop(100%, rgba(255,156,230,0.5)));
+    background: -webkit-linear-gradient(45deg, rgba(255,156,230,0.5) 0%, rgba(255,209,245,0.5) 20%, rgba(255,186,238,0.5) 48%, rgba(255,209,245,0.5) 74%, rgba(255,156,230,0.5) 100%);
+    background: -o-linear-gradient(45deg, rgba(255,156,230,0.5) 0%, rgba(255,209,245,0.5) 20%, rgba(255,186,238,0.5) 48%, rgba(255,209,245,0.5) 74%, rgba(255,156,230,0.5) 100%);
+    background: -ms-linear-gradient(45deg, rgba(255,156,230,0.5) 0%, rgba(255,209,245,0.5) 20%, rgba(255,186,238,0.5) 48%, rgba(255,209,245,0.5) 74%, rgba(255,156,230,0.5) 100%);
+    background: linear-gradient(45deg, rgba(255,156,230,0.5) 0%, rgba(255,209,245,0.5) 20%, rgba(255,186,238,0.5) 48%, rgba(255,209,245,0.5) 74%, rgba(255,156,230,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9ce6', endColorstr='#ff9ce6', GradientType=1 );
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=service]
+{
+    background: rgba(110,227,0,0.5);
+    background: -moz-linear-gradient(45deg, rgba(110,227,0,0.5) 0%, rgba(72,255,0,0.5) 18%, rgba(101,237,47,0.5) 32%, rgba(148,250,108,0.5) 52%, rgba(105,230,55,0.5) 77%, rgba(62,204,6,0.5) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(110,227,0,0.5)), color-stop(18%, rgba(72,255,0,0.5)), color-stop(32%, rgba(101,237,47,0.5)), color-stop(52%, rgba(148,250,108,0.5)), color-stop(77%, rgba(105,230,55,0.5)), color-stop(100%, rgba(62,204,6,0.5)));
+    background: -webkit-linear-gradient(45deg, rgba(110,227,0,0.5) 0%, rgba(72,255,0,0.5) 18%, rgba(101,237,47,0.5) 32%, rgba(148,250,108,0.5) 52%, rgba(105,230,55,0.5) 77%, rgba(62,204,6,0.5) 100%);
+    background: -o-linear-gradient(45deg, rgba(110,227,0,0.5) 0%, rgba(72,255,0,0.5) 18%, rgba(101,237,47,0.5) 32%, rgba(148,250,108,0.5) 52%, rgba(105,230,55,0.5) 77%, rgba(62,204,6,0.5) 100%);
+    background: -ms-linear-gradient(45deg, rgba(110,227,0,0.5) 0%, rgba(72,255,0,0.5) 18%, rgba(101,237,47,0.5) 32%, rgba(148,250,108,0.5) 52%, rgba(105,230,55,0.5) 77%, rgba(62,204,6,0.5) 100%);
+    background: linear-gradient(45deg, rgba(110,227,0,0.5) 0%, rgba(72,255,0,0.5) 18%, rgba(101,237,47,0.5) 32%, rgba(148,250,108,0.5) 52%, rgba(105,230,55,0.5) 77%, rgba(62,204,6,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ee300', endColorstr='#3ecc06', GradientType=1 );
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=staticitem]
+{
+    background: rgba(252,205,77,0.5);
+    background: -moz-linear-gradient(45deg, rgba(252,205,77,0.5) 0%, rgba(255,220,130,0.5) 26%, rgba(250,204,97,0.5) 51%, rgba(250,217,150,0.5) 78%, rgba(255,213,105,0.5) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(252,205,77,0.5)), color-stop(26%, rgba(255,220,130,0.5)), color-stop(51%, rgba(250,204,97,0.5)), color-stop(78%, rgba(250,217,150,0.5)), color-stop(100%, rgba(255,213,105,0.5)));
+    background: -webkit-linear-gradient(45deg, rgba(252,205,77,0.5) 0%, rgba(255,220,130,0.5) 26%, rgba(250,204,97,0.5) 51%, rgba(250,217,150,0.5) 78%, rgba(255,213,105,0.5) 100%);
+    background: -o-linear-gradient(45deg, rgba(252,205,77,0.5) 0%, rgba(255,220,130,0.5) 26%, rgba(250,204,97,0.5) 51%, rgba(250,217,150,0.5) 78%, rgba(255,213,105,0.5) 100%);
+    background: -ms-linear-gradient(45deg, rgba(252,205,77,0.5) 0%, rgba(255,220,130,0.5) 26%, rgba(250,204,97,0.5) 51%, rgba(250,217,150,0.5) 78%, rgba(255,213,105,0.5) 100%);
+    background: linear-gradient(45deg, rgba(252,205,77,0.5) 0%, rgba(255,220,130,0.5) 26%, rgba(250,204,97,0.5) 51%, rgba(250,217,150,0.5) 78%, rgba(255,213,105,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fccd4d', endColorstr='#ffd569', GradientType=1 );
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem [sa-elementtype=container]
+{
+    height:71vh;
+    overflow:auto;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=category] [sa-elementtype=container]
+{
+    height:23vh;
+    overflow:auto;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=service] [sa-elementtype=container]
+{
+    height:28vh;
+    overflow:auto;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[ea-controlmode=staticitem] [sa-elementtype=container]
+{
+    height:43vh;
+    overflow:auto;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem [sa-elementtype=container] [sa-elementtype=inputblock]
+{
+    overflow:hidden;
+    margin-bottom:0.5vh;
+    padding-bottom:2vh;    
+   background:rgba(255,255,255,0.5);
+
+    -moz-box-shadow:0vh 0vh 2vh #a6a6a6;
+	-webkit-box-shadow:0vh 0vh 2vh #a6a6a6;
+	box-shadow:0vh 0vh 2vh #a6a6a6;
+    /*background: rgba(216,225,231,0.95);
+    background: -moz-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(216,225,231,0.95)), color-stop(93%, rgba(181,198,208,0.9)), color-stop(100%, rgba(130,130,130,0.9)));
+    background: -webkit-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -o-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: -ms-linear-gradient(top, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    background: linear-gradient(to bottom, rgba(216,225,231,0.95) 0%, rgba(181,198,208,0.9) 93%, rgba(130,130,130,0.9) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e1e7', endColorstr='#828282', GradientType=0 );*/
+}
+
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=inputtitle]
+{
+    width:100vw;
+    height:4.5vh;
+    margin-bottom:0.5vh;
+    text-shadow:0.15vh 0.15vh 0vh #fff;
+    padding:0vh 2vw;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(6%, rgba(222,222,222,1)), color-stop(92%, rgba(204,204,204,1)), color-stop(100%, rgba(133,133,133,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 6%, rgba(204,204,204,1) 92%, rgba(133,133,133,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#858585', GradientType=0 );
+}
+
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=inputtitle],
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=inputrow]
+{
+    width:100vw;
+    min-height:4.5vh;
+    margin-bottom:0.5vh;
+    padding:0vh 2vw;    
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem input[type=text],
+.POSAddAdjustItem .WidControlPOSAddAdjustItem input[type=password]
+{
+    width:50vw;
+    height:4.5vh;          
+    float:left;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:0vh 2vw;
+    border:0.1vh solid #ddd;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem textarea
+{
+    padding:0vh 2vw;
+    width:50vw;
+    height:15vh;          
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem [sa-elementtype=inputrow]>input[type=text][readonly],
+.POSAddAdjustItem .WidControlPOSAddAdjustItem [sa-elementtype=inputrow]>input[type=password][readonly],
+.POSAddAdjustItem .WidControlPOSAddAdjustItem [sa-elementtype=inputrow]>textarea[readonly]
+{
+    background:#e5e5e5;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=inputlabel]
+{
+    width:45vw;    
+    height:4.5vh;
+    float:left;
+    white-space:nowrap;    
+    overflow-x:auto;
+    overflow-y:hidden;        
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=slideselectioncontrol]
+{
+    position:relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 50vw;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=slideselectioncontrol] input[type=text]
+{
+    
+    width:50vw;
+    border:0.15vh solid #ddd;
+    padding:0.25vh 2vw;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=slideselectioncontrol]::after
+{
+    position: absolute;
+    display: block;
+    right: 2vw;
+    top: 0.8vh;
+    padding-top: 0.35vh;
+    width: 6vw;
+    height: 3vh;
+    text-align: center;
+    background: #ddd;
+    color: #888;    
+    font: 2.2vh fontawesome;
+    content: '\f141';
+    -moz-box-shadow:0vh 0vh 0.3vh #555;
+	-webkit-box-shadow:0vh 0vh 0.3vh #555;
+	box-shadow:0vh 0vh 0.3vh #555;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem div[sa-elementtype=slideselectioncontrol][fa-disable] input[type=text]
+{
+    background:#e5e5e5;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem [sa-elementtype=inputblock][ea-appearance=hidden]
+{
+    display : none;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem input[type=text]:focus,
+.POSAddAdjustItem .WidControlPOSAddAdjustItem textarea:focus
+{
+ background: rgba(150,231,255,1);
+background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem .ButtonPanel
+{
+    width:100vw;
+    height:8vh;
+    margin-top:1vh;
+    text-align:center;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem .AddButton 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;	
+
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem .AddButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem .AddButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem .CloseButton
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem .CloseButton:hover
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.POSAddAdjustItem .WidControlPOSAddAdjustItem .CloseButton:active
+{
+	position:relative;
+	top:0.2vh;
+}
+
+
+/*.POSAddAdjustItem .WidControlPOSAddAdjustItem[fa-showpanel=baseunit] [sa-elementtype=popup][ea-type=baseunit] [sa-elementtype=overlay],
+.POSAddAdjustItem .WidControlPOSAddAdjustItem[fa-showpanel=unittype] [sa-elementtype=popup][ea-type=unittype] [sa-elementtype=overlay]
+{
+    width:100vw;
+}*/

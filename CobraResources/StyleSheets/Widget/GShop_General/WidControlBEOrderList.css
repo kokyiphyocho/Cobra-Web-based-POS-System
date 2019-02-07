@@ -1,0 +1,1056 @@
+﻿.BEOrderList
+{    
+    background: url('images/background/grey_wave.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.BEOrderList .WidControlBEOrderList *,
+.BEOrderList .WidControlBEOrderList *:after,
+.BEOrderList .WidControlBEOrderList *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 1.8vh cobrasystemfont;     
+}
+
+.BEOrderList .WidControlBEOrderList
+{
+    width:100vw;
+    height:93vh;
+    margin-top:0.5vh;
+    overflow:auto;           
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar
+{
+    
+    height: 7vh;
+    overflow: hidden;
+    border-bottom: 0.25vw solid #e1e1e1;
+    white-space: nowrap;
+    margin-bottom: 0.5vh;
+
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,0.7) 10%, rgba(255,255,255,0.9) 90%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(10%, rgba(255,255,255,0.7)), color-stop(90%, rgba(255,255,255,0.9)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,0.7) 10%, rgba(255,255,255,0.9) 90%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,0.7) 10%, rgba(255,255,255,0.9) 90%, rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,0.7) 10%, rgba(255,255,255,0.9) 90%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(255,255,255,0.7) 10%, rgba(255,255,255,0.9) 90%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar .Button
+{
+    display: inline-block;
+    float: left;
+    width: 13vw;
+    text-align: center;    
+    white-space: nowrap;
+    text-decoration: none;
+    padding-top: 1vh;
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar .Button img
+{    
+    display : inline-block;
+    width: 4.5vh;
+    height:auto;    
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar .Button[href]
+{
+    display:none;
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar .StatusDiv
+{
+    width: 47vw;
+    float: left;
+    height: 5vh;
+    margin-top: 0.6vh;
+    text-align: center;
+    background: #dfdfdf;
+    border-top: 0.15vh solid #656565;
+    border-bottom: 0.15vh solid #ebebeb;
+    white-space: nowrap;
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar .StatusDiv .TimerDiv
+{
+    width: 15vw;
+    display: block;
+    float: left;
+    line-height: 200%;
+    font-size:2.5vh;
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar .StatusDiv .AjaxImage
+{    
+    display: none;
+    width: 4vh;        
+    margin-top: 0.8vh;
+}
+
+.BEOrderList .WidControlBEOrderList .RefreshBar .StatusDiv .LastUpdateDiv
+{
+    position:relative;
+    width: 15vw;
+    display: block;
+    float: right;
+    line-height: 200%;
+    font-size:2.5vh;
+}
+
+
+.BEOrderList .WidControlBEOrderList[ea-timeout="1"] .RefreshBar .Button[ea-timeout="1"]:not([href]),
+.BEOrderList .WidControlBEOrderList[ea-timeout="3"] .RefreshBar .Button[ea-timeout="3"]:not([href]),
+.BEOrderList .WidControlBEOrderList[ea-timeout="5"] .RefreshBar .Button[ea-timeout="5"]:not([href]),
+.BEOrderList .WidControlBEOrderList[ea-timeout="1"] .RefreshBar .Button:not([ea-timeout="1"])[href],
+.BEOrderList .WidControlBEOrderList[ea-timeout="3"] .RefreshBar .Button:not([ea-timeout="3"])[href],
+.BEOrderList .WidControlBEOrderList[ea-timeout="5"] .RefreshBar .Button:not([ea-timeout="5"])[href]
+
+{
+    display:block;
+}
+
+.BEOrderList .WidControlBEOrderList[ea-timeout="1"] .RefreshBar .Button[ea-timeout="1"][href],
+.BEOrderList .WidControlBEOrderList[ea-timeout="3"] .RefreshBar .Button[ea-timeout="3"][href],
+.BEOrderList .WidControlBEOrderList[ea-timeout="5"] .RefreshBar .Button[ea-timeout="5"][href],
+.BEOrderList .WidControlBEOrderList[ea-timeout="1"] .RefreshBar .Button:not([ea-timeout="1"]):not([href]),
+.BEOrderList .WidControlBEOrderList[ea-timeout="3"] .RefreshBar .Button:not([ea-timeout="3"]):not([href]),
+.BEOrderList .WidControlBEOrderList[ea-timeout="5"] .RefreshBar .Button:not([ea-timeout="5"]):not([href])
+{
+    display:none;
+}
+
+.BEOrderList .WidControlBEOrderList[fa-refreshing] .RefreshBar .StatusDiv .AjaxImage
+{
+    display:inline-block;
+}
+
+.BEOrderList .WidControlBEOrderList[fa-refreshfail] .RefreshBar .StatusDiv .LastUpdateDiv
+{
+   color:#c41b1b;
+}
+
+.BEOrderList .WidControlBEOrderList[fa-refreshfail] .RefreshBar .StatusDiv .LastUpdateDiv::after
+{
+    position:absolute;
+    left:-3vw;
+    padding-top:1.2vh;
+    font : 2.5vh fontawesome;
+    content:'\f06a';
+}
+
+.BEOrderList .WidControlBEOrderList .FilterBar
+{
+    background: #fff;
+    height: 7vh;
+    overflow: hidden;
+    border-bottom: 0.25vw solid #e1e1e1;
+    white-space: nowrap;
+    margin-bottom: 0.5vh;
+}
+
+.BEOrderList .WidControlBEOrderList .FilterBar .Button
+{
+    display:inline-block;
+    float: left;
+    width: 20vw;
+    height:100%;
+    text-align: center;
+    border-right: 0.25vw solid #e1e1e1;
+    white-space:nowrap;
+    text-decoration:none;
+}
+
+.BEOrderList .WidControlBEOrderList .FilterBar .Button img
+{
+    display : inline-block;
+    width: 7vh;
+    height:auto;    
+}
+
+.BEOrderList .WidControlBEOrderList[ea-status="1"] .FilterBar .Button[ea-status="1"],
+.BEOrderList .WidControlBEOrderList[ea-status="2"] .FilterBar .Button[ea-status="2"],
+.BEOrderList .WidControlBEOrderList[ea-status="3"] .FilterBar .Button[ea-status="3"],
+.BEOrderList .WidControlBEOrderList[ea-status="4"] .FilterBar .Button[ea-status="4"],
+.BEOrderList .WidControlBEOrderList[ea-status="-2"] .FilterBar .Button[ea-status="-2"]
+ {
+    background: rgba(163,234,255,1);
+    background: -moz-linear-gradient(top, rgba(163,234,255,1) 0%, rgba(155,232,255,0.5) 5%, rgba(8,198,255,0.8) 95%, rgba(0,196,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(163,234,255,1)), color-stop(5%, rgba(155,232,255,0.5)), color-stop(95%, rgba(8,198,255,0.8)), color-stop(100%, rgba(0,196,255,1)));
+    background: -webkit-linear-gradient(top, rgba(163,234,255,1) 0%, rgba(155,232,255,0.5) 5%, rgba(8,198,255,0.8) 95%, rgba(0,196,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(163,234,255,1) 0%, rgba(155,232,255,0.5) 5%, rgba(8,198,255,0.8) 95%, rgba(0,196,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(163,234,255,1) 0%, rgba(155,232,255,0.5) 5%, rgba(8,198,255,0.8) 95%, rgba(0,196,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(163,234,255,1) 0%, rgba(155,232,255,0.5) 5%, rgba(8,198,255,0.8) 95%, rgba(0,196,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3eaff', endColorstr='#00c4ff', GradientType=0 );
+ }
+
+.BEOrderList .WidControlBEOrderList .BufferDiv
+{
+    display:none;
+    height:0;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel
+{    
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    overflow: auto;
+    overflow-x: hidden;
+    border-top: 0.5vh solid #868686;
+    padding: 1vh 0vw 8vh 0vw;
+    background: #c4c4c4;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv
+{
+    display:none;
+    width  : 100vw;
+    height : auto;    
+    background:#eee;
+    margin-bottom:2vh;
+    border-bottom:0.2vh solid #888;
+
+    -webkit-transition: opacity 0.5s;
+    -moz-transition:    opacity 0.5s;
+    -o-transition:      opacity 0.5s;
+    -ms-transition:     opacity 0.5s;
+    transition:         opacity 0.5s; 
+}
+
+.BEOrderList .WidControlBEOrderList[ea-status="-2"] .ListPanel .OrderDiv[ea-status="-2"],
+.BEOrderList .WidControlBEOrderList[ea-status="-2"] .ListPanel .OrderDiv[ea-status="-1"],
+.BEOrderList .WidControlBEOrderList[ea-status="1"]  .ListPanel .OrderDiv[ea-status="0"],
+.BEOrderList .WidControlBEOrderList[ea-status="1"]  .ListPanel .OrderDiv[ea-status="1"],
+.BEOrderList .WidControlBEOrderList[ea-status="2"]  .ListPanel .OrderDiv[ea-status="2"],
+.BEOrderList .WidControlBEOrderList[ea-status="3"]  .ListPanel .OrderDiv[ea-status="3"],
+.BEOrderList .WidControlBEOrderList[ea-status="4"]  .ListPanel .OrderDiv[ea-status="4"]
+{
+    display:block;
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .OrderHeadingDiv
+{
+    width  : 100vw;
+    height : 5vh;    
+    padding:1vh 2vw;    
+    background : #fcfcfc;
+    color:#666;    
+    text-shadow: 0.15vh 0.15vh #fff;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .OrderHeadingDiv .IconDiv
+{
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .OrderHeadingDiv .HeadingText
+{
+    display:inline-block;
+    float:left;
+    font:2vh cobrasystemfont;    
+    width:24vw;
+    height:auto;  
+    white-space:nowrap;
+    overflow:hidden;          
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .OrderHeadingDiv .AjaxImage
+{
+    display : none;
+    width: 3vh;
+    height: auto;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .OrderHeadingDiv::before
+{   
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    content:'\f0a9';
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .OrderHeadingDiv::before
+{   
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    content:'\f057';
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .OrderHeadingDiv::before
+{   
+    display:inline-block;
+    float:left;    
+    font:2.8vh fontawesome;
+    width:7vw;
+    line-height:120%;    
+    content:'\f05e';
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .OrderHeadingDiv,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .OrderHeadingDiv
+{
+    color:#c41b1b;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .OrderHeadingDiv div[ea-type=status]
+{
+    color:#ff6b6b;
+    animation: blinker 1s linear infinite;
+    -webkit-animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/*.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .OrderHeadingDiv div[ea-type=status],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .OrderHeadingDiv div[ea-type=status],*/
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .OrderHeadingDiv div[ea-type=status]
+{
+    display:none;
+} 
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .OrderHeadingDiv .AjaxImage
+{
+    display:block;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel
+{
+    width   : 100vw;
+    height  :   auto;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv
+{
+    width: 100vw;
+    height: 4.5vh;
+    background: #dcdcdc;
+    overflow: hidden;
+    padding: 0.5vh 2vw;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv div
+{    
+    display:inline-block;   
+    font-size    : 1.8vh;
+    white-space: nowrap;
+    overflow: auto;
+    height: 3.5vh;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv .NameDiv
+{    
+    width        : 28vw;
+    font-size:2vh;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv .ContactNoDiv
+{    
+    width        : 20vw;
+    font-size:2vh;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv .ShortAddressDiv
+{    
+    width        : 40vw;
+    line-height  : 180%;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv .ButtonDiv
+{
+    float:right;
+    display:block;
+    margin-top:-0.2vh;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv .ButtonDiv img
+{
+    width:3.5vh;
+    height:auto;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .CompleteInfoDiv
+{
+    border-bottom: 0.25vh solid #fff;
+    border-top: 0.25vh solid #888;
+       
+    width: 100vw;            
+    height: 0vh;
+    overflow: hidden;
+
+    background : #fdfdfd;
+        
+    -webkit-transition: height 0.5s;
+    -moz-transition:    height 0.5s;
+    -o-transition:      height 0.5s;
+    -ms-transition:     height 0.5s;
+    transition:         height 0.5s;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .CompleteInfoDiv span
+{
+    margin-top: 0.5vh;
+    margin-left: 2vw;
+    display: block;
+    line-height: 200%;
+
+    font-size: 2.1vh;
+    color: #555;
+    text-shadow: 0.1vh 0.1vh #fff;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .CustomerInfoPanel .BriefInfoDiv .ButtonDiv img[href="@cmd%hidedetail"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-fullinfo] .CustomerInfoPanel .BriefInfoDiv .ButtonDiv img[href="@cmd%showdetail"]
+{
+    display:none;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-fullinfo] .CustomerInfoPanel .BriefInfoDiv .ButtonDiv img[href="@cmd%hidedetail"]
+{
+    display:block;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-fullinfo] .CustomerInfoPanel .CompleteInfoDiv
+{    
+    height : 15vh;    
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv
+{
+    display:block;    
+    position:relative;
+    padding:1vh 4vw 0vh 4vw;    
+    white-space:nowrap;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow
+{
+    position : relative;
+    margin-bottom:0.5vh;    
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ItemName
+{
+    display:inline-block;    
+    width:65vw;
+    overflow:hidden;
+    white-space:nowrap;
+    margin-right:2vw;
+    line-height:185%;
+    
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .Quantity
+{
+    position:relative;
+    display:inline-block;    
+    width:8vw;
+    overflow:hidden;
+    line-height:185%;
+
+    white-space:nowrap;
+    text-align:right;
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .Price
+{
+    position:relative;
+    display:inline-block;    
+    width:17vw;
+    overflow:hidden;
+    line-height:185%;
+    white-space:nowrap;
+    text-align:right;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ButtonDiv
+{
+    display:inline-block;
+    margin-left:5vw;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ButtonDiv img
+{
+    width : 3.5vh;
+    height : auto;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ItemRemark
+{
+    display:block;    
+    width:60vw;
+    color:#628846;
+    overflow:hidden;
+    overflow-x:auto;
+    white-space:nowrap;
+    margin-right:2vw;
+    margin-left:5vw;
+    margin-top:0vh;
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .RejectReason
+{
+    display:block;    
+    width:60vw;
+    color:#ab8700;
+    overflow:hidden;
+    overflow-x:auto;
+    white-space:nowrap;
+    margin-right:2vw;
+    margin-left:5vw;
+    margin-top:-1vh;
+    
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow:not([ea-status="-2"]) .RejectReason,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-2"] .ItemRemark
+{
+    display:none;
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .TotalQuantity
+{    
+    clear:left;
+    display:inline-block;        
+    font-size:2.1vh;
+    width:8vw;
+    overflow:hidden;
+    margin-left:67vw;
+    white-space:nowrap;
+    text-align:right;
+    font-weight:bold;
+    border-top:0.1vh solid #888;
+    
+    -webkit-transition: margin-left 0.5s;
+    -moz-transition:    margin-left 0.5s;
+    -o-transition:      margin-left 0.5s;
+    -ms-transition:     margin-left 0.5s;
+    transition:         margin-left 0.5s;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .TotalPrice
+{    
+    display:inline-block;    
+    font-size:2.1vh;
+    width:17vw;
+    overflow:hidden;
+    white-space:nowrap;
+    text-align:right;
+    font-weight:bold;
+    border-top:0.1vh solid #888;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .FloatButtonBar
+{    
+    width:100vw;
+    height:0.15vh;    
+    margin-left:-4vw;
+    overflow:hidden;       
+    border-top:0.5vh solid #fff;
+    background:rgba(100,100,100,0.5);
+    
+    -webkit-transition: height 0.5s;
+    -moz-transition:    height 0.5s;
+    -o-transition:      height 0.5s;
+    -ms-transition:     height 0.5s;
+    transition:         height 0.5s;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .FloatButtonBar img
+{
+    position:relative;
+    width: 6vh;
+    margin-right:12vw;    
+    margin-left:0vw;   
+    margin-top : 0.25vh;    
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .FloatButtonBar img:first-child
+{
+    margin-left:10vw;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-floatbuttonbar] .BriefDescriptionDiv .FloatButtonBar
+{
+    height:7vh;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-floatbuttonbar] .BriefDescriptionDiv .EntryRow
+{
+    border-bottom : 0.15vh solid #ddd;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-floatbuttonbar] .BriefDescriptionDiv .EntryRow .ItemName
+{
+    width:55vw;
+}
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-floatbuttonbar] .BriefDescriptionDiv .TotalQuantity
+{
+    margin-left:57vw;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow .ItemName::before
+{
+    display:block;    
+    clear:left;
+    float:left;
+    font:2.2vh fontawesome;
+    width:5vw;    
+    line-height:130%;
+    content:'\f101';    
+    overflow:hidden;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BriefDescriptionDiv .EntryRow .ItemName::before,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-1"] .ItemName::before
+{
+    display:block;    
+    clear:left;
+    float:left;
+    font:2.2vh fontawesome;
+    width:5vw;    
+    line-height:130%;
+    content:'\f00d';
+    overflow:hidden;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BriefDescriptionDiv .EntryRow .ItemName::before,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-2"] .ItemName::before
+{
+    display:block;    
+    clear:left;
+    float:left;
+    font:2.2vh fontawesome;
+    width:5vw;    
+    line-height:130%;
+    content:'\f05e';
+    overflow:hidden;
+}
+
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BriefDescriptionDiv .EntryRow .Bullet,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BriefDescriptionDiv .EntryRow .ItemName,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BriefDescriptionDiv .EntryRow .Quantity,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BriefDescriptionDiv .EntryRow .Price,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BriefDescriptionDiv .EntryRow .Bullet,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BriefDescriptionDiv .EntryRow .ItemName,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BriefDescriptionDiv .EntryRow .Quantity,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BriefDescriptionDiv .EntryRow .Price,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-1"] .Bullet,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-1"] .ItemName,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-1"] .Quantity,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-1"] .Price,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-2"] .Bullet,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-2"] .ItemName,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-2"] .Quantity,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-2"] .Price
+{
+    color : #c41b1b;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BriefDescriptionDiv .EntryRow::before,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BriefDescriptionDiv .EntryRow::before,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-1"]::before,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BriefDescriptionDiv .EntryRow[ea-status="-2"]::before
+{
+    display : block;
+    position:absolute;
+    width:100%;
+    border-bottom:0.15vh solid #888;
+    content:'';
+    left:0;
+    top:1.6vh;
+    height:1px;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .BriefDescriptionDiv .TotalQuantity,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .BriefDescriptionDiv .TotalQuantity
+{
+    margin-left:67vw;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .BriefDescriptionDiv .FloatButtonBar,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .BriefDescriptionDiv .FloatButtonBar
+{
+    height:0.15vh;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .BriefDescriptionDiv .EntryRow,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .BriefDescriptionDiv .EntryRow
+{
+    border-bottom : none;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .BriefDescriptionDiv .EntryRow .ItemName,
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .BriefDescriptionDiv .EntryRow .ItemName
+{
+    width:65vw;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseBarPanel
+{
+    display: block;
+    width: 100vw;
+    height: 4.5vh;
+    background: #ddd;
+    color: #fff;
+    text-shadow: 0.151vh 0.15vh #000;        
+    
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseBarPanel .ButtonDiv
+{
+    width: auto;
+    float: left;    
+    margin-top:0.25vh;
+    margin-left:2vw;
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseBarPanel .ButtonDiv img
+{
+    display : block;
+    width : 4vh;
+    height  : auto;    
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseBarPanel .OrderRemarkDiv
+{
+    display:none;
+    margin-left: 4vw;
+    margin-top: 0.2vh;
+    color: #036000;
+    text-shadow: none;
+    background: rgba(244, 244, 244, 0.8);
+    height: 4vh;    
+    width: 80vw;
+    float: right;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    overflow: auto;
+    white-space:nowrap;
+    margin-right: 2vw;
+    border-top: 0.15vh solid #888;
+    border-left: 0.15vh solid #888;
+    border-right: 0.15vh solid #fff;
+    border-bottom: 0.15vh solid #fff;
+    line-height: 180%;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BaseBarPanel .OrderRemarkDiv
+{    
+    color : #c41b1b;    
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseBarPanel .OrderRemarkDiv[ea-hasvalue]
+{
+    display:block;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseBarPanel .ButtonDiv img[href="@cmd%hidebuttonbar"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-floatbuttonbar] .BaseBarPanel .ButtonDiv img[href="@cmd%showbuttonbar"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BaseBarPanel .ButtonDiv img[href="@cmd%showbuttonbar"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BaseBarPanel .ButtonDiv img[href="@cmd%showbuttonbar"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseBarPanel .ButtonDiv img:not([href])
+{
+    display:none;
+}
+
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .BaseBarPanel .ButtonDiv img:not([href]),
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-2"] .BaseBarPanel .ButtonDiv img:not([href]),
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[ea-status="-1"] .BaseBarPanel .ButtonDiv img:not([href]),
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .BaseBarPanel .ButtonDiv img:not([href])
+{
+    display:block;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-floatbuttonbar] .BaseBarPanel .ButtonDiv img[href="@cmd%hidebuttonbar"]
+{
+    display:block;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .BaseBarPanel .ButtonDiv img[href="@cmd%showbuttonbar"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .BaseBarPanel .ButtonDiv img[href="@cmd%showbuttonbar"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-statuschanging] .BaseBarPanel .ButtonDiv img[href="@cmd%hidebuttonbar"],
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv[fa-ajaxrunning] .BaseBarPanel .ButtonDiv img[href="@cmd%hidebuttonbar"]
+{
+    display:none;
+}
+
+/*.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseButtonPanel .ButtonDiv
+{    
+    width:20vw;        
+    float:left;
+    margin-top:0.25vh;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseButtonPanel .ButtonDiv img
+{
+    display:inline-block;
+    width:4vh;    
+    height:auto;
+}
+
+.BEOrderList .WidControlBEOrderList .ListPanel .OrderDiv .BaseButtonPanel .ButtonTextDiv
+{
+    display:inline-block;    
+    width:15vw;
+}*/
+
+
+.BEOrderList .WidControlBEOrderList[fa-focus] .ListPanel .OrderDiv:not([fa-focus])
+{
+    opacity:0.2;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp
+{    
+    position: absolute;
+    z-index:200;    
+    top: 20vh;
+    left:-120vw;
+
+    width: 100vw;
+    height: auto;    
+    max-height: 60vh;    
+    background: #fff;    
+        
+    
+    overflow: hidden;
+    box-shadow: 1vh 1vh 1vh rgba(100,100,100,0.5);
+    
+    -webkit-transition: left 0.2s;
+    -moz-transition:    left 0.2s;
+    -o-transition:      left 0.2s;
+    -ms-transition:     left 0.2s;
+    transition:         left 0.2s;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectTitleDiv
+{
+    width: 100%;
+    height: 6vh;
+    background: #87042d;
+    color: #fff;
+    margin-bottom: 3vh;
+    font-size: 2.5vh;
+    text-align: center;
+    line-height: 220%;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp input[type=radio]
+{
+    width: 2vh;
+    height: 2vh;
+    margin-right: 1vh;
+    margin-left: 4vw;
+    display: block;
+    float: left;
+    clear: left;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp label
+{
+    font-size: 2.2vh;
+    line-height: 100%;
+    display: block;
+    float: left;
+    width: 80vw;
+    height: 6vw;
+    margin-bottom: 3vh;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectButtonPanel
+{
+    width: 100%;
+    text-align:center;
+    margin-bottom:2vh;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectButtonPanel .CancelButton 
+{   
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f9eca0;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f9eca0;
+	box-shadow:inset 0 0.3vh 0 0 #f9eca0;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e));
+	background:-moz-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-webkit-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+	background-color:#f0c911;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #e65f44;
+	display:inline-block;
+	cursor:pointer;
+	color:#c92200;
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:0.5vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #ded17c;
+    margin:0 10vw;
+    min-width:23vw;
+    
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectButtonPanel .CancelButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911));
+	background:-moz-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-webkit-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-o-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-ms-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911',GradientType=0);
+	background-color:#f2ab1e;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectButtonPanel .CancelButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectButtonPanel .RejectButton 
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:0.5vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 10vw;
+    min-width:23vw;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectButtonPanel .RejectButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.BEOrderList .WidControlBEOrderList .RejectPopUp .RejectButtonPanel .RejectButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+
+.BEOrderList .WidControlBEOrderList .OverlayDiv
+{   
+    z-index:100;    
+    position:fixed;
+    left:-120vw;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(255,255,255,0.8);
+    
+    -webkit-transition: left 0.2s;
+    -moz-transition:    left 0.2s;
+    -o-transition:      left 0.2s;
+    -ms-transition:     left 0.2s;
+    transition:         left 0.2s;
+}
+
+.BEOrderList .WidControlBEOrderList[fa-popup] .OverlayDiv
+{
+    left:0;
+}
+
+.BEOrderList .WidControlBEOrderList[fa-popup=reject] .RejectPopUp
+{    
+    left:0;
+}
+

@@ -1,0 +1,614 @@
+﻿.POSPrinterSetting
+{    
+    /*background: url('images/background/blue_butterfly_3_sparkling.jpg') no-repeat center center fixed;
+    background-size : 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/    
+
+    background: rgba(177,216,242,0.5);
+    background: -moz-linear-gradient(45deg, rgba(177,216,242,0.5) 0%, rgba(120,175,214,0.5) 18%, rgba(149,191,219,0.5) 39%, rgba(127,178,212,0.5) 60%, rgba(158,195,219,0.5) 81%, rgba(134,174,204,0.5) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(177,216,242,0.5)), color-stop(18%, rgba(120,175,214,0.5)), color-stop(39%, rgba(149,191,219,0.5)), color-stop(60%, rgba(127,178,212,0.5)), color-stop(81%, rgba(158,195,219,0.5)), color-stop(100%, rgba(134,174,204,0.5)));
+    background: -webkit-linear-gradient(45deg, rgba(177,216,242,0.5) 0%, rgba(120,175,214,0.5) 18%, rgba(149,191,219,0.5) 39%, rgba(127,178,212,0.5) 60%, rgba(158,195,219,0.5) 81%, rgba(134,174,204,0.5) 100%);
+    background: -o-linear-gradient(45deg, rgba(177,216,242,0.5) 0%, rgba(120,175,214,0.5) 18%, rgba(149,191,219,0.5) 39%, rgba(127,178,212,0.5) 60%, rgba(158,195,219,0.5) 81%, rgba(134,174,204,0.5) 100%);
+    background: -ms-linear-gradient(45deg, rgba(177,216,242,0.5) 0%, rgba(120,175,214,0.5) 18%, rgba(149,191,219,0.5) 39%, rgba(127,178,212,0.5) 60%, rgba(158,195,219,0.5) 81%, rgba(134,174,204,0.5) 100%);
+    background: linear-gradient(45deg, rgba(177,216,242,0.5) 0%, rgba(120,175,214,0.5) 18%, rgba(149,191,219,0.5) 39%, rgba(127,178,212,0.5) 60%, rgba(158,195,219,0.5) 81%, rgba(134,174,204,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d8f2', endColorstr='#86aecc', GradientType=1 );
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting *,
+.POSPrinterSetting .WidControlPOSPrinterSetting *:after,
+.POSPrinterSetting .WidControlPOSPrinterSetting *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting
+{
+    width:100vw;
+    height:85vh;
+    overflow:auto;               
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .TitleBar
+{   
+    text-align: center;
+    width: 100vw;
+    height: 6vh;
+    padding: 0.75vh 2vw;
+    color: #646464;
+    text-shadow: 0.1vh 0.1vh #fff;
+    overflow: hidden;
+    margin-bottom: 0.5vh;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(212,212,212,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,128,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#808080', GradientType=0 );
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row
+{
+    width: 100vw;
+    height: 6vh;
+    overflow: hidden;
+    padding: 0.5vh 2vw;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row .InputDiv
+{
+    position : relative;        
+    width    : 48vw;
+    float    : right;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row div[sa-elementtype=inputlabel]
+{
+    height: 5vh;
+    width: 48vw;    
+    float: left;
+    line-height: 200%;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row input[type=text][sa-elementtype=inputbox]
+{
+    width: 20vw;
+    height: 5vh;
+    text-align:right;
+    padding:0vh 2vw;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row input[type=text][sa-elementtype=inputbox]:focus
+{
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=DeviceID]
+{
+    height: 7vh;
+    border-bottom: 0.2vh solid #eee;
+    margin-bottom: 1vh;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=ReconnectInterval]
+{
+    height: 7vh;
+    border-bottom: 0.2vh solid #eee;
+    margin-bottom: 1vh;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=PrinterName] input[sa-elementtype=inputbox]
+{    
+    width: 32.5vw;
+    text-align:left;
+    float:left;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=PrinterName] [sa-elementtype=button]
+{   
+    width: 4vh;
+    height: 4vh;
+    background: #eee;
+/*    content: '\f141'; */
+    font: 3vh fontawesome;
+    color: #888;
+    text-align: center;
+    margin-left: 2vw;
+    line-height: 120%;
+    border-width: 0.2vh;
+    border-style: outset;
+    border-color: #fff;
+    margin-top:0.5vh;
+    float:left;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=IPAddress] input[sa-elementtype=inputbox],
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=DeviceID] input[sa-elementtype=inputbox]
+{
+   width: 43vw;
+   text-align:left;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=Port] input[sa-elementtype=inputbox]
+{
+    text-align:left;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=Darkness] .InputDiv::after
+{
+    position:absolute;
+    content:'%';
+    line-height: 230%;
+    margin-left: 2vw;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=MonitorInterval] .InputDiv::after,
+.POSPrinterSetting .WidControlPOSPrinterSetting .ContentContainer .Row[ea-type=ReconnectInterval] .InputDiv::after
+{
+    position    :   absolute;
+    content     :   'ms';
+    line-height :   230%;
+    margin-left :   2vw;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ConnectionOverlay
+{
+    top             : 0;
+    left            : 0;
+    width           : 100vw;
+    height          : 100vh;
+    background      : rgba(0,0,0,0.8);
+    position        : fixed;
+    display         : none;
+    text-align      : center;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting[fa-connecting] .ConnectionOverlay
+{
+    display:block;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ConnectionOverlay img
+{
+    display : inline-block;
+    width   : 4vh;
+    height  : 4vh;
+    margin-top : 35vh;    
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ConnectionOverlay [sa-elementtype=label]
+{
+    font-size : 2.2vh;
+    margin-top : 1vh;
+    width:100%;
+    height : 7vh;
+    text-align:center;
+    color:#fff;
+}
+
+/*.POSPrinterSetting .WidControlPOSPrinterSetting .ButtonPanel
+{
+    width:100vw;
+    height:8vh;
+    margin-top:3vh;
+    text-align:center;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .UpdateButton 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;	
+
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .UpdateButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .UpdateButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ResetButton
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ResetButton:hover
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ResetButton:active
+{
+	position:relative;
+	top:0.2vh;
+}*/
+
+
+
+/*.POSPrinterSetting .WidControlPOSPrinterSetting .SettingGroup
+{
+    width:100vw;
+    height:auto;
+    background:rgba(255, 255, 255, 0.25);
+
+    -moz-box-shadow: 0vh 0vh 2vh rgba(180,180,180,0.25);
+	-webkit-box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+	box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .SettingGroup .SectionHeader
+{
+    width:100vw;
+    height:6vh;
+    padding : 0.75vh 2vw;
+    color: #646464;
+    text-shadow: 0.1vh 0.1vh #fff;
+    overflow:hidden;
+    margin-bottom:0.5vh;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(212,212,212,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,128,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#808080', GradientType=0 );
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch
+{
+    position:relative;
+    width:5vh;
+    height:3vh;
+    background:#fff;
+    margin-top:0.5vh;
+    border:0.15vh solid #ccc;
+
+     -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    overflow:hidden;    
+
+    float:right;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch div[ea-type=leftbar]
+{
+    width:0vh;
+    height:3vh;
+    float:left;
+
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s;  
+
+    background:#008aff;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch[value=true] div[ea-type=leftbar]
+{
+    width:5vh;    
+    background:#008aff;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch div[ea-type=key]
+{
+    position:absolute;
+    left:0.2vh;
+    top:0.18vh;
+    width:2.3vh;
+    height:2.3vh;
+
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
+    border-radius: 2vh;
+
+    border:0.15vh solid #ddd;
+
+    background:#fff;
+
+    -webkit-transition: left 0.5s;
+    -moz-transition:    left 0.5s;
+    -o-transition:      left 0.5s;
+    -ms-transition:     left 0.5s;
+    transition:         left 0.5s;  
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch[value=true] div[ea-type=key]
+{    
+    left:2.2vh;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch[disabled] div[ea-type=key]
+{
+    background : #eee;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch[disabled],
+.POSPrinterSetting .WidControlPOSPrinterSetting .ToggleSwitch[disabled] div[ea-type=leftbar]
+{
+    background : #ccc;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .SettingGroup div[sa-elementtype=inputrow]
+{
+    width:100vw;
+    padding:0vh 2vw;
+    height:6vh;
+    color:#555;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .SettingGroup div[sa-elementtype=inputrow][disabled]
+{
+    color:#ccc;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .SettingGroup div[sa-elementtype=inputrow] div[sa-elementtype=inputlabel]
+{
+    width:65vw;
+    float:left;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting div[sa-elementtype=inputrow] input[sa-elementtype=inputbox]
+{
+    width:5vh;
+    text-align:right;  
+    float:right;
+    border:0.15vh solid #ccc;
+    padding:0vh 0.75vh;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting div[sa-elementtype=inputrow] [sa-elementtype=inputbox]:focus
+{
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .ButtonPanel
+{
+    width:100vw;
+    height:8vh;
+    margin-top:3vh;
+    text-align:center;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .UpdateButton 
+{    
+	-moz-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	box-shadow:inset 0 0.3vh 0 0 #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;	
+
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #528009;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .UpdateButton:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .UpdateButton:active 
+{
+	position:relative;
+	top:0.2vh;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .CloseButton
+{
+	-moz-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	-webkit-box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	box-shadow:inset 0 0.3vh 0 0 #f5978e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24537;
+	
+    -webkit-border-radius: 0.5vh;
+    -moz-border-radius: 0.5vh;
+    -ms-border-radius: 0.5vh;
+    -o-border-radius: 0.5vh;
+    border-radius: 0.5vh;
+
+	border:0.1vh solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;	
+	font-size:2.5vh;
+	font-weight:bold;
+	padding:1vh 4vw;
+	text-decoration:none;
+	text-shadow:0 0.3vh 0 #810e05;
+    margin:0 5vw;
+    min-width:23vw;
+    min-height:6vh;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;        
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .CloseButton:hover
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color:#c62d1f;
+}
+
+.POSPrinterSetting .WidControlPOSPrinterSetting .CloseButton:active
+{
+	position:relative;
+	top:0.2vh;
+}*/
+

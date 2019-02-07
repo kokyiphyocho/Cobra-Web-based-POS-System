@@ -1,0 +1,231 @@
+﻿.MobileStoreFront .WidControlMobileStoreFront .FormTitleArea
+{
+    width:100vw;
+    height:13vh;
+    background : #ff5000;   
+    padding-top:1vh;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .FormTitleArea .Title
+{
+    display:inline-block;
+    color:#fff;       
+    font-weight:bold;
+    font: 2.5vh cobrasystemfont;   
+    
+    height:5vh;
+    width:90vw;    
+    padding-left:5vw;
+    
+    text-shadow : 2px 2px 1px #aaa;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .FormTitleArea .CloseButton
+{
+    float: right;
+    width: 10vw;
+    height: 5vh;
+    display: block;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .FormTitleArea .CloseButton a
+{
+    font: 3vh fontawesome;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    line-height: 120%;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .FormTitleArea .SearchBox
+{
+    border      : none;    
+    height      : 4.5vh;
+    font        : 2vh cobrasystemfont;
+    padding-left: 5vw;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .FormTitleArea .SearchBox .InputBox
+{
+    border      : none;
+    background  : #fff;
+    height      : 4.5vh;
+    font        : 2vh cobrasystemfont;
+    width       : 80vw;    
+    float       : left;    
+      
+    -webkit-border-radius: 0.7vh 0vh 0vh 0.7vh; 
+    -moz-border-radius: 0.7vh 0vh 0vh 0.7vh; 
+    border-radius: 0.7vh 0vh 0vh 0.7vh; 
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left:2vw;
+    padding-right:2vw;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .FormTitleArea .SearchBox .SearchButton
+{
+    height      : 4.5vh;
+    width      : 10vw;
+    background  : #fff;
+    color : #ff5000; 
+    font : 3vh fontawesome;
+    
+    float       : left;
+    display     : block;
+    
+    padding-top:0.5vh;    
+    text-align:center;
+    border-left : 0.1vh solid #ddd;
+    
+    -webkit-border-radius: 0vh 0.7vh 0.7vh 0vh; 
+    -moz-border-radius: 0vh 0.7vh 0.7vh 0vh; 
+    border-radius: 0vh 0.7vh 0.7vh 0vh; 
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    
+    text-decoration:none;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ToolBar
+{
+    width:100vw;
+    height:6vh;    
+    border-bottom:0.1vh solid #ddd;
+    background : rgba(255,180,0,0.1);
+
+        -moz-box-shadow: 0.2vh 0.2vh 0.5vh #ccc;
+	-webkit-box-shadow: 0.2vh 0.2vh 0.5vh #ccc;
+	box-shadow: 0.2vh 0.2vh 0.5vh #ccc;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ToolBar .InfoBox
+{
+    float:left;
+    color:#888;
+    margin-top:2vh;
+    margin-left:2vw;
+    width:50vw;
+    text-align:left;
+    display:block;
+    line-height:100%;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ToolBar .ToolButton
+{
+    width:15vw;
+    height:6vh;
+    display:block;
+    float:right;
+    padding-top:1vh;
+
+    text-shadow:0.2vh 0.2vh 0.1vh #ffffff;
+    
+    background:rgba(0,0,0,0);
+    border-left:0.1vh solid #ddd;    
+    
+    color : #545454; 
+    font : 4vh fontawesome;
+    text-align:center;
+    text-decoration:none;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ItemContainer {
+    height : 80vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background:#fff;
+}
+
+
+
+.MobileStoreFront .WidControlMobileStoreFront .ItemContainer .GridPanel
+{
+    height : auto;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ItemContainer .AjaxLoaderDiv
+{   
+    width  : 100vw;
+    height : 8vh;
+    text-align:center;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ItemContainer .AjaxLoaderDiv img
+{
+    display:none;    
+    height:5vh;
+    width:auto;
+    margin-top:2vh;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront[fa-lazyloading] .ItemContainer .AjaxLoaderDiv .AjaxLoaderImage
+{
+    display:inline-block;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront[fa-ajaxerror] .ItemContainer .AjaxLoaderDiv .AjaxErrorImage
+{
+    display:inline-block;
+}
+
+
+.MobileStoreFront .WidControlMobileStoreFront .ItemContainer .DetailOverlayDiv
+{    
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    width: 0vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(100,100,100,0.5);
+
+    -webkit-transition: width 0.5s;
+    -moz-transition:    width 0.5s;
+    -o-transition:      width 0.5s;
+    -ms-transition:     width 0.5s;
+    transition:         width 0.5s; 
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ItemContainer .DetailOverlayDiv[fa-showdetailinfo]
+{
+    width:100vw;
+}
+
+.MobileStoreFront .WidControlMobileStoreFront .ItemContainer .ItemGridPanel .NoDataDiv
+{
+    font-size: 3vh;
+    text-align: center;
+    color: #aaa;
+}
+
+
+
+
