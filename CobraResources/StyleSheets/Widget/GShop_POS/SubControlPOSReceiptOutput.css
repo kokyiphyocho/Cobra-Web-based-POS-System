@@ -24,9 +24,17 @@
 
 .SubControlPOSReceiptOutput canvas[ea-type=receiptcanvas]
 {
+    /*position:fixed;
+    top:0;
+    left:0;
+    width:100vw;*/
     display : none;
     background : #aaa;
 }
+/*.SubControlPOSReceiptOutput canvas[ea-type=receiptcanvas][fa-show]
+{
+    display:block;
+}*/
 
 
 .SubControlPOSReceiptOutput div[sa-elementtype=panel][ea-type=preview]
@@ -75,6 +83,8 @@
     width: 100vw;
     text-align: center;
     color: #eee; 
+
+    text-shadow : 0.2vmin 0.2vmin #888;
 }
 
 .SubControlPOSReceiptOutput div[sa-elementtype=panel][ea-type=preview] .TitleBar a

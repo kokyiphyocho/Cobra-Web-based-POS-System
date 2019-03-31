@@ -614,10 +614,22 @@ var AjaxRequestManager = function (paAjaxRequest, paSuccessMessageCode, paFailMe
     var clCompleteHandler;
     var clConfirmationResultHandler;
     var clResponseDictionaryParsingHandler;
-
+    var clFormData                  = new FormData();
+    var clAjaxMode                  = 'normal';
+    
     return {
-                AddAjaxParam: function (paKey, paValue) {
-                    clAjaxData[paKey] = paValue;
+                SwitchFormDataMode : function()
+                {
+                    clAjaxMode = 'formdata';
+                    clFormData.append("CobraAjaxRequest", paAjaxRequest);
+                },                
+                AddAjaxParam: function (paKey, paValue, paFileName) {
+                    if (clAjaxMode !== 'formdata') clAjaxData[paKey] = paValue;
+                    else
+                    {
+                        if (paFileName) clFormData.append(paKey, paValue, paFileName);
+                        else clFormData.append(paKey, paValue);
+                    }
                 },
                 AddObjectDataBlock: function (paKey, paValue, paAppendSysInfo) {
                     if (paValue) 
@@ -625,12 +637,14 @@ var AjaxRequestManager = function (paAjaxRequest, paSuccessMessageCode, paFailMe
                         if (paAppendSysInfo)
                             paValue['accessinfo'] = window.__SYSVAR_CurrentGeoLocation || '';
 
-                        clAjaxData[paKey] = Base64.encode(JSON.stringify(paValue));
+                        if (clAjaxMode !== 'formdata') clAjaxData[paKey] = Base64.encode(JSON.stringify(paValue));
+                        else clFormData.append(paKey, Base64.encode(JSON.stringify(paValue)));
                     }
                 },
                 AddStringDataBlock: function (paKey, paValue) {
                     if (paValue) {
-                        clAjaxData[paKey] = Base64.encode(paValue);
+                        if (clAjaxMode !== 'formdata') clAjaxData[paKey] = Base64.encode(paValue);
+                        clFormData.append(paKey, Base64.encode(paValue));
                     }
                 },
                 AddMessagePlaceHolder : function(paKey, paValue)
@@ -692,7 +706,7 @@ var AjaxRequestManager = function (paAjaxRequest, paSuccessMessageCode, paFailMe
                     
                     GlobalAjaxHandler.SetAjaxLoaderStatusText(MessageHandler.GetMessage(clAjaxLoaderStatusCode));
                     
-                    DoPostBack(clAjaxData, function (paResponseData) {                        
+                    DoPostBack(clAjaxMode === 'formdata' ? clFormData : clAjaxData, function (paResponseData) {
                         var lcRespondStruct = jQuery.parseJSON(paResponseData);
                         if (lcRespondStruct.Success) {                            
                             lcActiveObject.ShowCompleteMessage(true, clSuccessMessageCode, lcRespondStruct);
@@ -706,6 +720,7 @@ var AjaxRequestManager = function (paAjaxRequest, paSuccessMessageCode, paFailMe
                         }
                     });
                 }
+
     }
 };
 

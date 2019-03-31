@@ -8,22 +8,63 @@
     var     clTextPaddingRatio;
     var     clFontHeightFactor;
     var     clDrawMode;
+    var     clScaledCanvas;
 
     return {
                 InitializeCanvas : function()
                 {
                     clContext               = clCanvasElement[0].getContext('2d');
+                    clContext.imageSmoothingEnabled = true;
                     clContext.textBaseline  = 'top';
                     clYCord                 = 0;
                     clSavedStateCount       = 0;
                     clYMarginBefore         = 0;
                     clYMarginAfter          = 0;
                     clDrawMode              = true;
+                    clScaledCanvas          = null;
                 },
                 GetCanvas : function()
                 {
                     return (clCanvasElement[0]);
                 },
+                //ScaleCanvas : function(paScaleFactor)
+                //{
+                //    paScaleFactor = CastDecimal(paScaleFactor, 1);
+
+                //    if (paScaleFactor < 1)
+                //    {   
+                //        clCanvasElement[0].width = clCanvasElement[0].width * paScaleFactor;
+                //        clCanvasElement[0].height = clCanvasElement[0].height * paScaleFactor;
+                //    }
+                //},
+                //GetScaledCanvas : function(paScaleFactor)
+                //{                    
+                //    paScaleFactor = paScaleFactor || 1;
+
+                //    if (paScaleFactor < 2) {
+
+                //        if (clScaledCanvas == null) clScaledCanvas = document.createElement("canvas");
+
+                //        clScaledCanvas.width = Math.floor(clCanvasElement[0].width * paScaleFactor);
+                //        clScaledCanvas.height = Math.floor(clCanvasElement[0].height * paScaleFactor);
+
+                //        var lcScaledCanvasContext = clScaledCanvas.getContext('2d');
+                //        lcScaledCanvasContext.imageSmoothingEnabled = true;
+                //        lcScaledCanvasContext.clearRect(0, 0, clScaledCanvas.width, clScaledCanvas.height);
+                //        //lcScaledCanvasContext.fillStyle = "white";
+                //        //lcScaledCanvasContext.fillRect(0, 0, lcScaledCanvas.width, lcScaledCanvas.height);
+
+                //        lcScaledCanvasContext.drawImage(clCanvasElement[0], 0, 0, clCanvasElement[0].width, clCanvasElement[0].height, 0, 0, clScaledCanvas.width, clScaledCanvas.height);
+                //        //  $(lcScaledCanvas).css('display', 'none');
+                //        //$(clScaledCanvas).css('position', 'fixed');
+                //        //$(clScaledCanvas).css('top', '0');
+
+                //        //$('body').append($(clScaledCanvas));
+
+                //        return (clScaledCanvas);
+                //    }
+                //    else return (clCanvasElement[0]);                    
+                //},
                 SetDrawMode : function(paDrawMode)
                 {
                     clDrawMode = paDrawMode;

@@ -1,0 +1,201 @@
+﻿.POSReceiptCustomizationSetting
+{    
+    background: rgba(216,208,239,1);
+    background: -moz-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(216,208,239,1)), color-stop(18%, rgba(235,233,249,1)), color-stop(40%, rgba(219,213,245,1)), color-stop(61%, rgba(238,235,250,1)), color-stop(89%, rgba(214,209,235,1)), color-stop(100%, rgba(216,215,242,1)));
+    background: -webkit-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    background: linear-gradient(45deg, rgba(216,208,239,1) 0%, rgba(235,233,249,1) 18%, rgba(219,213,245,1) 40%, rgba(238,235,250,1) 61%, rgba(214,209,235,1) 89%, rgba(216,215,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d0ef', endColorstr='#d8d7f2', GradientType=1 );
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting *,
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting *:after,
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting *:before 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font             : 2.3vh cobrasystemfont;     
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting
+{
+    width:100vw;
+    height:85vh;
+    overflow:auto;               
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup
+{
+    width:100vw;
+    height:auto;
+    background:rgba(255, 255, 255, 0.25);
+
+    -moz-box-shadow: 0vh 0vh 2vh rgba(180,180,180,0.25);
+	-webkit-box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+	box-shadow:0vh 0vh 2vh rgba(180,180,180,0.25);
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup .SectionHeader
+{
+    width:100vw;
+    height:6vh;
+    padding : 0.75vh 2vw;
+    color: #646464;
+    text-shadow: 0.1vh 0.1vh #fff;
+    overflow:hidden;
+    margin-bottom:0.5vh;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(10%, rgba(212,212,212,1)), color-stop(90%, rgba(209,209,209,1)), color-stop(100%, rgba(128,128,128,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 10%, rgba(209,209,209,1) 90%, rgba(128,128,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#808080', GradientType=0 );
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow]
+{
+    width:100vw;
+    padding:0vh 2vw;
+    height : 6vh;    
+    color:#555;
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textinputrow],
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textarearow],
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow]
+{
+    height:auto;    
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow]
+{
+    padding-bottom : 1vh;
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][disabled]
+{
+    color:#ccc;
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textinputrow] div[sa-elementtype=inputlabel],
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textarearow] div[sa-elementtype=inputlabel],
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] div[sa-elementtype=inputlabel]
+{
+    width:95vw;
+    height:4.5vh;    
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textinputrow] input[sa-elementtype=inputbox]
+{
+    width:95vw;
+    text-align:left;      
+    border:0.15vh solid #ccc;
+    padding:0vh 0.75vh;    
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textarearow] textarea
+{
+    height: 12vh;
+    width: 95vw;
+    margin-bottom: 1vh;
+    border:0.15vh solid #ccc;
+    padding:0vh 0.75vh;
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv
+{
+    width: 100%;
+    height: auto;
+    height: 20vmin;    
+}
+
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv .ImageWrapperDiv
+{
+    position:relative;
+    width   : 60vmin;
+    height  : 20vmin;
+    border : 0.2vmin solid #888;
+    background : #fff;
+    float:left;
+    overflow:hidden;
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv[value=false] .ImageWrapperDiv::after
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    color: #888;
+    font: 15vmin fontawesome;
+    content: '\f05e';
+    line-height: 20vmin;
+    text-align: center;
+    text-shadow: 0.2vmin 0.2vmin #fff;
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv .ImageWrapperDiv img
+{
+    float:left;
+    display:block;
+    width  : 60vmin;
+    height: 20vmin;    
+}
+
+
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv [sa-elementtype=button]
+{   
+    float:left;
+    display:block;
+    width: 4vh;
+    height: 4vh;
+    background: #eee;    
+    font: 3vh fontawesome;
+    color: #888;
+    text-align: center;
+    margin-left: 8vmin;
+    line-height: 120%;
+    border-width: 0.2vh;
+    border-style: outset;
+    border-color: #fff;
+    margin-top:0.5vh;
+    
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv [sa-elementtype=button]:active
+{
+    background:#000;
+    color:#fff;
+}
+
+.POSReceiptCustomizationSetting .WidControlPOSReceiptCustomizationSetting div[sa-elementtype=inputrow] [sa-elementtype=inputbox]:focus
+{
+    background: rgba(150,231,255,1);
+    background: -moz-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,231,255,1)), color-stop(11%, rgba(184,247,255,1)), color-stop(88%, rgba(138,228,255,1)), color-stop(100%, rgba(71,206,255,1)));
+    background: -webkit-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
+}
+
+.POSReceiptCustomizationSetting [sa-elementtype=popup][ea-type=imageuploader]
+{
+    position:fixed
+}
+

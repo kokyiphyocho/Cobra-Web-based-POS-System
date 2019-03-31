@@ -144,8 +144,10 @@
     <EmbeddedResource Include="StyleSheets\Widget\_System\WidControlSubscription.css" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\Widget\_System\SubControlImageUploader.js" />
-    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlImageUploader.css" />
+    <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSReceiptCustomizationSetting.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\GShop_POS\WidControlPOSReceiptCustomizationSetting.css" />
+    <EmbeddedResource Include="Scripts\Widget\_System\SubControlImageProcessor.js" />
+    <EmbeddedResource Include="StyleSheets\Widget\_System\SubControlImageProcessor.css" />
     <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSGeneralSetting.js" />
     <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSLanguageSetting.js" />
     <EmbeddedResource Include="Scripts\Widget\GShop_POS\WidControlPOSReceiptLayoutSetting.js" />
@@ -394,6 +396,12 @@
     <EmbeddedResource Include="Images\Widget\Setting_User.png" />
     <EmbeddedResource Include="Images\Widget\Setting_Widget.png" />
     <EmbeddedResource Include="Icons\Foundation\printericon2.png" />
+    <EmbeddedResource Include="Scripts\Foundation\star-interface.js" />
+    <EmbeddedResource Include="Scripts\Foundation\StarWebPrintBuilder.js" />
+    <EmbeddedResource Include="Scripts\Foundation\StarWebPrintTrader.js" />
+    <EmbeddedResource Include="Images\ToolBar\ToolBar_ImageUpload.png" />
+    <EmbeddedResource Include="Images\Widget\Setting_ReceiptCustomization.png" />
+    <EmbeddedResource Include="Images\System\NoLogo.png" />
     <Content Include="Scripts\Foundation\XORCipher.js" />
   </ItemGroup>
   <ItemGroup />

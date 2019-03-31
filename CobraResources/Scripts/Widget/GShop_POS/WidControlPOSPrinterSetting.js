@@ -23,6 +23,7 @@ var POSPrinterSettingManager = (function () {
             clExternalComponentContainer    = clForm.find('[sa-elementtype=container][ea-type=externalcomponent]');
             clPrinterNameTextBox            = clContentContainer.find('[ea-type=PrinterName] .InputDiv input[type=text]');            
 
+            clControl.find('[ea-inputmode=decimal]').ForceDecimalInput();
             clControl.find('[ea-inputmode=number]').ForceIntegerInput();
             clControl.find('[ea-inputmode=ipaddress]').ForceIPAddressInput();
             POSPrinterSettingManager.RetrivePrinterInfo();
@@ -109,27 +110,64 @@ var POSPrinterSettingManager = (function () {
         RetreiveConfig: function (paUpdateOriginalValue)
         {
             var lcInputBoxes = clControl.find('input[type=text][ea-columnname][ea-name],textarea[ea-columnname][ea-name]');
+            var lcDefaultSetting = POSPrinterSettingManager.GetPrinterSetting(clPrimaryPrinterSetting.PrinterName);
+            var lcVisibleOptions = (lcDefaultSetting.VisibleOptions || '').split(',');
 
             clControl.attr('notransition', 'true');
                         
-            lcInputBoxes.each(function () {
-                var lcValue = clPrimaryPrinterSetting[$(this).attr('ea-name')] || '';
+            lcInputBoxes.each(function () {                
+                var lcName = $(this).attr('ea-name');
+                var lcRow = $(this).closest('[sa-elementtype=row]');
+                var lcValue = clPrimaryPrinterSetting[lcName] || '';
+
+                if (lcVisibleOptions.indexOf(lcName) == -1) lcRow.attr('fa-hidden', true);
+                else lcRow.removeAttr('fa-hidden');
+
                 $(this).attr('value', lcValue);
                 $(this).val(lcValue);
             });
+
+            POSPrinterSettingManager.SetHiddenSetting(clPrimaryPrinterSetting);
 
             if (paUpdateOriginalValue) POSPrinterSettingManager.UpdateOriginalValues();
 
             setTimeout(function () { clControl.removeAttr('notransition'); }, 1000);
         },
+        SetHiddenSetting: function (paSetting)
+        {
+            if (paSetting) {
+                var lcHiddenOptions = (paSetting.HiddenOptions || '').split(',');
+                var lcHiddenConfig = {};
+
+                $.each(lcHiddenOptions, function (paIndex, paValue) {
+                    lcHiddenConfig[paValue] = paSetting[paValue];
+                });
+                clControl.data('POS.PrimaryPrinterSetting', lcHiddenConfig);
+            }
+            else clControl.data('POS.PrimaryPrinterSetting', {});
+        },
         PopulateNewSetting: function (paCurrentSetting, paNewSetting)
         {
             var lcInputBoxes = clControl.find('input[type=text][ea-columnname][ea-name],textarea[ea-columnname][ea-name]');
-
+            var lcVisibleOptions = (paNewSetting.VisibleOptions || '').split(',');
+            
             clControl.attr('notransition', 'true');
-
+            
             lcInputBoxes.each(function () {
+                var lcRow = $(this).closest('[sa-elementtype=row]');
                 var lcName = $(this).attr('ea-name');
+                var lcReadOnly = $(this).attr('readonly') || '';
+
+                if (lcVisibleOptions.indexOf(lcName) == -1) lcRow.attr('fa-hidden', true);
+                else lcRow.removeAttr('fa-hidden');                
+
+                if (lcReadOnly.length > 0)
+                {
+                    if (paNewSetting[lcName]) {
+                        $(this).val(paNewSetting[lcName]);
+                    }
+                }
+                else
                 if ((!paCurrentSetting) || (!paCurrentSetting[lcName]) || (paCurrentSetting[lcName].trim() == $(this).val().trim()))
                 {                    
                     if (paNewSetting[lcName])
@@ -138,9 +176,13 @@ var POSPrinterSettingManager = (function () {
                     }
                 }                                
             });
-
+            POSPrinterSettingManager.SetHiddenSetting(paNewSetting);
             setTimeout(function () { clControl.removeAttr('notransition'); }, 1000);
-        },      
+        },
+        GetPrinterSetting : function(paPrinterName)
+        {
+            return (clPrinterList[paPrinterName] || {});
+        },
         SetPrinterSetting : function(paPrinterName)
         {
             var lcCurrentSetting = clPrinterList[clPrinterNameTextBox.val()];
@@ -194,10 +236,10 @@ var POSPrinterSettingManager = (function () {
                 var lcSettingData = {};
                 var lcControlList = clControl.find('[ea-columnname="' + paColumnName + '"]');
                 var lcValue;
-
+                
                 if (paMultiDataMode) {
-                    var lcValueObject = JSON.parse(Base64.decode(clControl.attr(paColumnName) || 'e30='));;
-
+                    var lcValueObject = clControl.data(paColumnName) || {};
+                    
                     lcControlList.each(function () {
                         var lcName = $(this).attr('ea-name');
                         var lcResult = POSPrinterSettingManager.GetControlValue($(this));
@@ -234,25 +276,25 @@ var POSPrinterSettingManager = (function () {
             for (var lcColumn in lcColumnNameList) {
                 if (POSPrinterSettingManager.IsControlValueChanged(lcColumn))
                     lcDataBlock = $.extend(lcDataBlock, POSPrinterSettingManager.CompileSettingKey(lcColumn, lcColumnNameList[lcColumn]));
-            }
-            
+            }           
             return (lcDataBlock);
         },
         GetInterimPrinterSetting : function()
         {
-            var lcNewSetting = lcNewSetting = $.extend({}, clPrimaryPrinterSetting);            
+            var lcNewSetting = $.extend({}, clPrimaryPrinterSetting);            
             var lcRows = clContentContainer.find('.Row');
 
-            lcRows.each(function () {
-                var lcColumnName = $(this).attr('ea-columnname');
-                var lcInputBox = $(this).find('input[type=text]');                                
+            lcNewSetting = $.extend(lcNewSetting, (clControl.data('POS.PrimaryPrinterSetting') || {}));
+            
+            lcRows.each(function () {                                
+                var lcInputBox = $(this).find('input[type=text]');
+                var lcColumnName = lcInputBox.attr('ea-name');                
                 lcNewSetting[lcColumnName] = lcInputBox.val();                
             });
-
             return (lcNewSetting);
         },
         TestPrinter : function()
-        {
+        {            
             POSReceiptPrintingManager.ConnectPrinter(POSPrinterSettingManager.GetInterimPrinterSetting(), true);            
         },
         ShowPrinterError : function(paErrorCode, paErrorParam)
@@ -369,8 +411,7 @@ var POSPrinterSettingManager = (function () {
         },
 
         HandlerOnClick : function(paEvent)
-        {
-            
+        {            
             paEvent.preventDefault();
 
             var lcCommand = $(this).attr('ea-command');
@@ -397,9 +438,9 @@ var POSPrinterSettingManager = (function () {
                 }
 
                 case 'testconnection':
-                {
-                    POSPrinterSettingManager.TestPrinter();
-                    break;
+                {                    
+                   POSPrinterSettingManager.TestPrinter();
+                   break;
                 }
 
                 case 'savesetting':

@@ -30,7 +30,7 @@
                     return (lcDeferred);
                 },
                 Connect : function(paPrinterSetting, paSuppressReconnect)
-                {
+                {                    
                     clSuppressReconnect = paSuppressReconnect || false;
                     ePOSPrinterManager.SetPrinterSetting(paPrinterSetting);
 
@@ -95,7 +95,7 @@
                         clePOSDevice.createDevice(clPrinterSetting.DeviceID, clePOSDevice.DEVICE_TYPE_PRINTER, { 'crypto': clPrinterSetting.Crypto, 'buffer': clPrinterSetting.Buffer }, ePOSPrinterManager.HandlerOnCreateDevice);
                     }
                     else
-                    {                 
+                    {                        
                         clStatus = 'fail';
                     //    clMessage = paData;                        
                         ePOSPrinterManager.NotifyStatus({ event : 'initfail', errorcode: 'err_printer_connectionfail' });
@@ -219,7 +219,7 @@
                     {
                         clPrinter.brightness    = CastDecimal(10 - (clPrinterSetting.Darkness * 0.1) + 0.1, 1);
                         clPrinter.halftone      = clPrinter.HALFTONE_DITHER;
-                        clPrinter.addImage(paCanvas.getContext('2d'), 0, 0, paCanvas.width, paCanvas.height, clPrinter.COLOR_1, clPrinter.MODE_MONO);
+                        clPrinter.addImage(paCanvas.getContext('2d'), 0, 0, paCanvas.width, paCanvas.height, clPrinter.COLOR_1, clPrinter.MODE_MONO);                        
                         clPrinter.addCut(clPrinter.CUT_FEED);
                         clPrinter.send();
                     }

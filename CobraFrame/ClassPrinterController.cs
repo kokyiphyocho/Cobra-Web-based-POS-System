@@ -9,11 +9,12 @@ namespace CobraFrame
 {
     public class PrinterController
     {
-        const String ctSETPrinterList       = "POS.PrinterList";
-        
         public enum KeyName { DisplayName, DefaultIP, DefaultPort, DefaultDeviceID, ScriptFileList };
 
-        const char ctDelimiter             = ',';
+        String[] clPrinterControllerScriptList = new String[] { "PrinterManager.js", "epos-interface.js", "star-interface.js" };
+        
+        const String ctSETPrinterList       = "POS.PrinterList";
+        const char ctDelimiter             = ',';                
 
         public String                       clPrinterListBase64JSON;        
         public Dictionary<String,dynamic>   clPrinterList;
@@ -37,8 +38,7 @@ namespace CobraFrame
             lcPrinterListJSON       = ApplicationFrame.GetInstance().ActiveSubscription.ActiveSetting.GetSettingValue(ctSETPrinterList, "{}");
             clPrinterListBase64JSON = General.Base64Encode(lcPrinterListJSON);
 
-            clPrinterList = General.JSONDeserialize<Dictionary<String, dynamic>>(lcPrinterListJSON);
-           
+            clPrinterList = General.JSONDeserialize<Dictionary<String, dynamic>>(lcPrinterListJSON);           
         }
 
         public Dictionary<String, String> GetPrinterNameDictionary()
@@ -63,6 +63,11 @@ namespace CobraFrame
             return(String.Empty);
         }
 
+        public String[] GetPrinterControllerScriptList()
+        {
+            return (clPrinterControllerScriptList);
+        }
+
         public String[] GetDeviceScriptList(String paPrinterName)
         {
             if (!String.IsNullOrEmpty(paPrinterName))
@@ -70,6 +75,21 @@ namespace CobraFrame
                 return (GetValue(paPrinterName, KeyName.ScriptFileList).Split(ctDelimiter));
             }
             else return (null);            
+        }
+
+        public String[] GetAllDeviceScriptList()
+        {
+            String[]  lcAllDeviceList;
+
+            lcAllDeviceList = null;
+
+            foreach (String lcKey in clPrinterList.Keys)
+            {
+                if (lcAllDeviceList == null) lcAllDeviceList = GetDeviceScriptList(lcKey);
+                else lcAllDeviceList = lcAllDeviceList.Concat(GetDeviceScriptList(lcKey)).ToArray();                
+            }
+
+            return(lcAllDeviceList);
         }
 
         //public JObject GetPrinterSetting(Dictionary<String, dynamic> paPrinterSetting, PrinterType paPrinterType)

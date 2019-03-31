@@ -22,7 +22,7 @@ namespace CobraStandardControls
         const String ctSubControlPOSReceiptOutputStyle      = "SubControlPOSReceiptOutput.css";
         const String ctSubControlPOSReceiptOutputScript     = "SubControlPOSReceiptOutput.js";
         const String ctCanvasScript                         = "Canvas.js";
-        const String ctPrinterManagerScript                 = "PrinterManager.js";
+       // const String ctPrinterManagerScript                 = "PrinterManager.js";
 
         const String ctCLSSubControlPOSReceiptOutput        = "SubControlPOSReceiptOutput";
 
@@ -30,24 +30,27 @@ namespace CobraStandardControls
         const String ctCLSButtonBar                         = "ButtonBar";
         const String ctCLSButtonIcon                        = "ButtonIcon";
         const String ctCLSButtonIconImage                   = "ButtonIconImage";
-        
-        const String ctSETReceiptLayout                     = "POS.ReceiptLayoutInfo.Layout";
+
+        const String ctSETReceiptLayout                     = "POS.ReceiptLayoutInfo.Layout"; // Virutal Setting.
+        const String ctSETReceiptLayoutSetting              = "POS.ReceiptLayoutInfo.LayoutSetting";
         const String ctSETReceiptCustomization              = "POS.ReceiptLayoutInfo.Customization";
         const String ctSETPrimaryPrinterSetting             = "POS.PrimaryPrinterSetting";
 
-        const String ctDICWidth                             = "Width";
+        const String ctDYTPreviewTitle                      = "@@POS.ReceiptOutput.PreviewTitle";
+
+        const String ctKEYLayoutName                        = "LayoutName";
+        const String ctKEYReceiptWidth                      = "ReceiptWidth";
+        const String ctKEYPrinterWidth                      = "PrinterWidth";
 
         const String ctDynamicTextPrefix                    = "@@";
-        const String ctUploadPathPlaceHolder                = "$UPLOADPATH";
+        
         const String ctPrinterName                          = "PrinterName";
 
         const String ctTYPReceiptBaseInfo                   = "receiptbaseinfo";
         const String ctTYPReceiptCanvas                     = "receiptcanvas";
         const String ctTYPPreviewPanel                      = "preview";
         const String ctTYPReceiptLogo                       = "receiptlogo";
-
-        const String ctPTHUploadPath                        = "upload/$SUBSCRIPTIONID";
-
+        
         const String ctICOPrinter                           = "ToolBar_Printer.png";
 
         const String ctCMDPopUpClose                        = "@cmd%popupclose";
@@ -58,7 +61,8 @@ namespace CobraStandardControls
  
         LanguageManager                         clLanguageManager;
         SettingManager                          clSetting;        
-        Dictionary<String, dynamic>             clReceiptLayout;
+        Dictionary<String, dynamic>             clReceiptLayoutSetting;
+        Dictionary<String, dynamic>             clReceiptActiveLayout;
         Dictionary<String, dynamic>             clReceiptCustomization;
         Dictionary<String, dynamic>             clPrimaryPrinterSetting;        
         String                                  clPrimaryPrinterName;
@@ -77,20 +81,24 @@ namespace CobraStandardControls
         {
             List<String>            lcKeyList;            
             
-            clReceiptLayout         = General.JSONDeserialize<Dictionary<String,dynamic>>(clSetting.GetSettingValue(ctSETReceiptLayout, "{}"));
+            clReceiptLayoutSetting  = General.JSONDeserialize<Dictionary<String,dynamic>>(clSetting.GetSettingValue(ctSETReceiptLayoutSetting, "{}"));
             clReceiptCustomization  = General.JSONDeserialize<Dictionary<String,dynamic>>(clSetting.GetSettingValue(ctSETReceiptCustomization, "{}"));
             clPrimaryPrinterSetting = General.JSONDeserialize<Dictionary<String, dynamic>>(clSetting.GetSettingValue(ctSETPrimaryPrinterSetting, "{}"));
             clPrimaryPrinterName    = clPrimaryPrinterSetting.GetData(ctPrinterName, String.Empty);
+            
+            if (clReceiptLayoutSetting.Keys.Contains(ctKEYLayoutName))            
+                clReceiptActiveLayout = General.JSONDeserialize<Dictionary<String, dynamic>>(clSetting.GetSettingValue(clReceiptLayoutSetting[ctKEYLayoutName], "{}"));            
+            else clReceiptActiveLayout = new Dictionary<String, dynamic>();
 
-            lcKeyList = clReceiptLayout.Keys.ToList();
+            lcKeyList = clReceiptActiveLayout.Keys.ToList();
 
             foreach (String lcKey in lcKeyList)
             {
-                if (clReceiptLayout[lcKey].GetType() == typeof(JObject)) ReplaceDynamicText(clReceiptLayout[lcKey]);
+                if (clReceiptActiveLayout[lcKey].GetType() == typeof(JObject)) ReplaceDynamicText(clReceiptActiveLayout[lcKey]);
                 else
                 {
-                    if (clReceiptLayout[lcKey].ToString().StartsWith(ctDynamicTextPrefix))
-                        clReceiptLayout[lcKey] = clLanguageManager.GetText(clReceiptLayout[lcKey].ToString());
+                    if (clReceiptActiveLayout[lcKey].ToString().StartsWith(ctDynamicTextPrefix))
+                        clReceiptActiveLayout[lcKey] = clLanguageManager.GetText(clReceiptActiveLayout[lcKey].ToString());
                 }
             }
 
@@ -98,8 +106,8 @@ namespace CobraStandardControls
 
             foreach(String lcKey in lcKeyList)
             {
-                if (clReceiptCustomization[lcKey].ToString().StartsWith(ctUploadPathPlaceHolder))
-                    clReceiptCustomization[lcKey] = GetFullFileName(clReceiptCustomization[lcKey].ToString());
+               // if (clReceiptCustomization[lcKey].ToString().StartsWith(ctUploadPathPlaceHolder))
+              clReceiptCustomization[lcKey] = UploadManager.GetInstance().ReplaceUploadPath(clReceiptCustomization[lcKey].ToString());
             }
         }
 
@@ -129,9 +137,26 @@ namespace CobraStandardControls
 
             lcCSSStyleManager.IncludeExternalStyleSheet(ResourceManager.GetInstance().GetWidgetStyleSheetUrl(ResourceManager.WidgetCategory.GShop_POS, ctSubControlPOSReceiptOutputStyle));
             lcJavaScriptmanager.IncludeExternalJavaScript(ResourceManager.GetInstance().GetWidgetScriptUrl(ResourceManager.WidgetCategory.GShop_POS, ctSubControlPOSReceiptOutputScript));
-            lcJavaScriptmanager.IncludeExternalJavaScript(ResourceManager.GetInstance().GetFoundationScriptUrl(ctPrinterManagerScript));
+            // lcJavaScriptmanager.IncludeExternalJavaScript(ResourceManager.GetInstance().GetFoundationScriptUrl(ctPrinterManagerScript));
 
+            IncludePrinterControllerScriptList(paComponentController, lcJavaScriptmanager);
             IncludeDeviceScriptList(paComponentController, lcJavaScriptmanager);
+        }
+
+        private void IncludePrinterControllerScriptList(ComponentController paComponentController, JavaScriptManager paJavaScriptManager)
+        {
+            String[] lcScriptList;
+
+            lcScriptList = PrinterController.GetInstance().GetPrinterControllerScriptList();
+
+            if (lcScriptList != null)
+            {
+                for (int lcCount = 0; lcCount < lcScriptList.Length; lcCount++)
+                {
+                    if (!String.IsNullOrEmpty(lcScriptList[lcCount]))
+                        paJavaScriptManager.IncludeExternalJavaScript(ResourceManager.GetInstance().GetFoundationScriptUrl(lcScriptList[lcCount]));
+                }
+            }
         }
 
         private void IncludeDeviceScriptList(ComponentController paComponentController, JavaScriptManager paJavaScriptManager)
@@ -148,24 +173,19 @@ namespace CobraStandardControls
                         paJavaScriptManager.IncludeExternalJavaScript(ResourceManager.GetInstance().GetFoundationScriptUrl(lcScriptList[lcCount]));
                 }
             }
-        }
-
-        private String GetFullFileName(String paFileName)
-        {
-            if (!String.IsNullOrEmpty(paFileName))
-            {
-                return (paFileName.Replace(ctUploadPathPlaceHolder, ctPTHUploadPath).Replace("$SUBSCRIPTIONID", ApplicationFrame.GetInstance().ActiveSubscription.ActiveRow.SubscriptionID));
-            }
-            else return (String.Empty);
-        }
+        }       
 
         private void RenderCanvas(ComponentController paComponentController)
         {
-            String  lcWidth;
+            int  lcReceiptWidth;
+            
 
-            lcWidth = clReceiptLayout.GetData(ctDICWidth, ctDEFCanvasWidth).ToString();
-
-            paComponentController.AddAttribute(HtmlAttribute.Width, lcWidth);           
+            if ((lcReceiptWidth = Convert.ToInt32(clReceiptLayoutSetting.GetData(ctKEYReceiptWidth, ctDEFCanvasWidth))) == 0)
+            {
+                lcReceiptWidth = Convert.ToInt32(clPrimaryPrinterSetting.GetData(ctKEYPrinterWidth, ctDEFCanvasWidth));
+            }
+            
+            paComponentController.AddAttribute(HtmlAttribute.Width, lcReceiptWidth.ToString());           
             paComponentController.AddAttribute(HtmlAttribute.Height, ctDEFCanvasHeight.ToString());
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctTYPReceiptCanvas);
             paComponentController.RenderBeginTag(HtmlTag.Canvas);
@@ -178,7 +198,8 @@ namespace CobraStandardControls
             paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSTitleBar);
             paComponentController.RenderBeginTag(HtmlTag.Div);
                         
-            paComponentController.RenderBeginTag(HtmlTag.Span);            
+            paComponentController.RenderBeginTag(HtmlTag.Span);
+            paComponentController.Write(clLanguageManager.GetText(ctDYTPreviewTitle));
             paComponentController.RenderEndTag();
 
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Command, ctCMDPopUpClose);
@@ -230,20 +251,24 @@ namespace CobraStandardControls
 
         private void RenderBrowserMode(ComponentController paComponentController)
         {   
+            String                  lcReceiptLayoutSetting;
             String                  lcReceiptLayout;
             String                  lcReceiptCustomization;
 
             //if (!String.IsNullOrEmpty(clPrimaryPrinterName))
             //{
-            lcReceiptLayout = General.Base64Encode(General.JSONSerialize(clReceiptLayout));
-            lcReceiptCustomization = General.Base64Encode(General.JSONSerialize(clReceiptCustomization));
+            lcReceiptLayoutSetting  = General.Base64Encode(General.JSONSerialize(clReceiptLayoutSetting));
+            lcReceiptCustomization  = General.Base64Encode(General.JSONSerialize(clReceiptCustomization));
+            lcReceiptLayout         = General.Base64Encode(General.JSONSerialize(clReceiptActiveLayout));
 
             IncludeExternalLinkFiles(paComponentController);
 
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Decimal, clSetting.CurrencyDecimalPlace.ToString());
-            paComponentController.AddElementAttribute(ctSETReceiptLayout, lcReceiptLayout);
+            paComponentController.AddElementAttribute(ctSETReceiptLayoutSetting, lcReceiptLayoutSetting);
             paComponentController.AddElementAttribute(ctSETReceiptCustomization, lcReceiptCustomization);
+            paComponentController.AddElementAttribute(ctSETReceiptLayout, lcReceiptLayout);
             paComponentController.AddElementAttribute(ctSETPrimaryPrinterSetting, General.Base64Encode(clSetting.GetSettingValue(ctSETPrimaryPrinterSetting, "{}")));
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Path, UploadManager.GetInstance().UploadPath);
 
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctTYPReceiptBaseInfo);
             paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSSubControlPOSReceiptOutput);

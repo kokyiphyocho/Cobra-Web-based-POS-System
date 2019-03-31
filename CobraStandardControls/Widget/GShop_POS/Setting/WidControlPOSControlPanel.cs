@@ -32,34 +32,39 @@ namespace CobraStandardControls
 
         const String ctCMDOpenForm                                  = "@cmd%openform";
 
-        const int ctSLIName                                         = 0;
-        const int ctSLILabel                                        = 1;
-        const int ctSLIFormName                                     = 2;
-        const int ctSLIIcon                                         = 3;
+        const String ctKEYLabel                                     = "Label";
+        const String ctKEYForm                                      = "Form";
+        const String ctKEYIcon                                      = "Icon";
 
-        String[,] ctSettingList = new String[,] { {"GeneralSetting",            "@@POS.Setting.GeneralSetting",         "FormPOSGeneralSetting",            "Setting_General.png" }, 
-                                                  {"AppearanceSetting",         "@@POS.Setting.AppearanceSetting",      "FormPOSAppearanceSetting",         "Setting_Appearance.png" }, 
-                                                  {"LanguageSetting",           "@@POS.Setting.LanguageSetting",        "FormPOSLanguageSetting",           "Setting_Language.png" }, 
-                                                  {"StaffPermissionSetting",    "@@POS.Setting.StaffPermissionSetting", "FormPOSStaffPermissionSetting",    "Setting_StaffPermission.png" }, 
-                                                  {"TransactionSetting",        "@@POS.Setting.TransactionSetting",     "FormPOSTransactionSetting",        "Setting_Transaction.png" }, 
-                                                  {"PrinterSetting",            "@@POS.Setting.PrinterSetting",         "FormPOSPrinterSetting",            "Setting_Printer.png" }, 
-                                                  {"ReceiptLayoutSetting",      "@@POS.Setting.ReceiptLayoutSetting",   "FormPOSReceiptLayoutSetting",      "Setting_ReceiptLayout.png" }, 
-                                                  {"UserSetting",               "@@POS.Setting.UserSetting",            "FormPOSUserList",                  "Setting_User.png" }, 
-                                                  {"WidgetSetting",             "@@POS.Setting.WidgetSetting",          "FormPOSWidgetRestriction",         "Setting_Widget.png" }};
+        //const int ctSLIName                                         = 0;
+        //const int ctSLILabel                                        = 1;
+        //const int ctSLIFormName                                     = 2;
+        //const int ctSLIIcon                                         = 3;
+
+        //String[,] ctSettingList = new String[,] { {"GeneralSetting",                "@@POS.Setting.GeneralSetting",         "FormPOSGeneralSetting",            "Setting_General.png" }, 
+        //                                          {"AppearanceSetting",             "@@POS.Setting.AppearanceSetting",      "FormPOSAppearanceSetting",         "Setting_Appearance.png" }, 
+        //                                          {"LanguageSetting",               "@@POS.Setting.LanguageSetting",        "FormPOSLanguageSetting",           "Setting_Language.png" }, 
+        //                                          {"StaffPermissionSetting",        "@@POS.Setting.StaffPermissionSetting", "FormPOSStaffPermissionSetting",    "Setting_StaffPermission.png" }, 
+        //                                          {"TransactionSetting",            "@@POS.Setting.TransactionSetting",     "FormPOSTransactionSetting",        "Setting_Transaction.png" }, 
+        //                                          {"PrinterSetting",                "@@POS.Setting.PrinterSetting",         "FormPOSPrinterSetting",            "Setting_Printer.png" }, 
+        //                                          {"ReceiptLayoutSetting",          "@@POS.Setting.ReceiptLayoutSetting",   "FormPOSReceiptLayoutSetting",      "Setting_ReceiptLayout.png" }, 
+        //                                          {"ReceiptCustomizationSetting",   "@@POS.Setting.ReceiptLayoutSetting",   "FormPOSReceiptLayoutSetting",      "Setting_ReceiptLayout.png" }, 
+        //                                          {"UserSetting",                   "@@POS.Setting.UserSetting",            "FormPOSUserList",                  "Setting_User.png" }, 
+        //                                          {"WidgetSetting",                 "@@POS.Setting.WidgetSetting",          "FormPOSWidgetRestriction",         "Setting_Widget.png" }};
         
         public CompositeFormInterface       SCI_ParentForm          { get; set; }
                 
         LanguageManager                     clLanguageManager;
         SettingManager                      clSettingManager;
         
-        String[]                            clSettingOptions;
+        Dictionary<String,dynamic>           clSettingOptions;
 
         public WidControlPOSControlPanel()
         {
             clLanguageManager               = ApplicationFrame.GetInstance().ActiveSubscription.ActiveLanguage;
             clSettingManager                = ApplicationFrame.GetInstance().ActiveSubscription.ActiveSetting;
 
-            clSettingOptions                = General.SplitString(clSettingManager.GetSettingValue(ctSETSettingOptions));
+            clSettingOptions                = General.JSONDeserialize<Dictionary<String,dynamic>>(clSettingManager.GetSettingValue(ctSETSettingOptions));
         }
 
         private void IncludeExternalLinkFiles(ComponentController paComponentController)
@@ -109,29 +114,34 @@ namespace CobraStandardControls
         }
 
 
-        private int GetSettingIndex(String paSettingName)
-        {
-            for (int lcCount = 0; lcCount < ctSettingList.GetLength(0); lcCount++)
-                if (string.Equals(ctSettingList[lcCount, ctSLIName], paSettingName, StringComparison.InvariantCultureIgnoreCase)) return (lcCount);
+        //private int GetSettingIndex(String paSettingName)
+        //{
+        //    for (int lcCount = 0; lcCount < ctSettingList.GetLength(0); lcCount++)
+        //        if (string.Equals(ctSettingList[lcCount, ctSLIName], paSettingName, StringComparison.InvariantCultureIgnoreCase)) return (lcCount);
 
-            return (-1);
-        }
+        //    return (-1);
+        //}
 
         private void RenderSettingConatiner(ComponentController paComponentController)
         {
-            int   lcIndex;
-
             paComponentController.AddElementType(ComponentController.ElementType.Container);
             paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSSettingList);
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
-            for (int lcCount = 0; lcCount < clSettingOptions.Length; lcCount++)
+            foreach(String lcKey in clSettingOptions.Keys)
             {
-                if ((lcIndex = GetSettingIndex(clSettingOptions[lcCount])) != -1)
-                {
-                    RenderSettingRow(paComponentController, ctSettingList[lcIndex, ctSLIIcon], ctSettingList[lcIndex, ctSLILabel], ctSettingList[lcIndex, ctSLIFormName]);
-                }                
+
+                RenderSettingRow(paComponentController, clSettingOptions[lcKey][ctKEYIcon].ToString(), clSettingOptions[lcKey][ctKEYLabel].ToString(), clSettingOptions[lcKey][ctKEYForm].ToString());
+               // General.GetJValueStr()
             }
+
+            //for (int lcCount = 0; lcCount < clSettingOptions.Length; lcCount++)
+            //{
+            //    if ((lcIndex = GetSettingIndex(clSettingOptions[lcCount])) != -1)
+            //    {
+            //        RenderSettingRow(paComponentController, ctSettingList[lcIndex, ctSLIIcon], ctSettingList[lcIndex, ctSLILabel], ctSettingList[lcIndex, ctSLIFormName]);
+            //    }                
+            //}
                 
             paComponentController.RenderEndTag();
         }

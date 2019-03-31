@@ -20,7 +20,8 @@ namespace CobraFrame
             AjaxLoaderPopUp, AjaxLoaderStatusDisplay, Grid, GridRow, GridCell, GridItem, Item, Info, 
             InputBlock, InputTitle, InputRow, InputLabel, InputBox, InputTabBar, ToolBar, Button, Box,
             UnitPrice, Quantity, Discount, Subtotal, Total, Summary, Overlay, GoogleMap, Row, PopUp, Timer, Buffer, SearchBox, Panel, List,
-            SlideSelectionControl, ImageSlideSelectionControl, ColorSlideSelectionControl, CalendarControl, LoadingOverlay, Block, Title, Label, Figure, DateBox,         
+            SlideSelectionControl, ImageSlideSelectionControl, ColorSlideSelectionControl, CalendarControl, LoadingOverlay, Block, Title, Label, Figure, DateBox,   
+            Wrapper,
         }
 
         public enum ElementAttribute
@@ -90,6 +91,11 @@ namespace CobraFrame
             ea_Hidden,
             ea_Dynamic,
             ea_AdminMode,
+            ea_List,
+            ea_Path,
+            ea_PlaceHolder,
+            ea_FileName,
+            ea_Error,
 
             gpos_SystemItemLimit,
             gpos_SystemTableLimit,

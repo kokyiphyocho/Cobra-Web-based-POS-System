@@ -207,15 +207,41 @@ function AppendPostBackWebState(paData) {
     }    
 }
 
+function AppendFormPostBackWebState(paFormData) {
+    if ($('#__WEBSTATE').length > 0) {
+        var lcWebState = $('#__WEBSTATE').val();
+        paFormData.append(lcWebState.substring(0, 3),lcWebState.substring(4));
+    }
+}
+
 function DoPostBack(paData, paResponseHandler) {    
-        AppendPostBackWebState(paData);
-        $.post(document.URL, paData, paResponseHandler);
+    if (paData instanceof FormData) AppendFormPostBackWebState(paData);
+    else AppendPostBackWebState(paData);
+
+    if (paData instanceof FormData)
+    {        
+        $.ajax({
+            url: document.URL,
+            data: paData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            type: 'POST',
+            success: paResponseHandler
+        });
+    }
+    else $.post(document.URL, paData, paResponseHandler);
         
 }
 
 function DoPostBackReadMode(paData, paResponseHandler) {    
-        AppendPostBackWebState(paData);
+        if (paData instanceof FormData) AppendFormPostBackWebState(paData);
+        else AppendPostBackWebState(paData);
         $.post(document.URL, paData, paResponseHandler);    
+}
+
+function DoFormPostBack(paData, paResponseHandler) {
+    $.post(document.URL, paData, paResponseHandler);
 }
 
 //function IsDemoMode()

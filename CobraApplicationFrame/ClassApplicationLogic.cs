@@ -112,6 +112,8 @@ namespace CobraApplicationFrame
 
             ExternalLinkManager.InitializeInstance();
 
+            paHttpContext.Response.AppendHeader("Access-Control-Allow-Origin", "*");
+
             if ((lcCobraAjaxServiceController = CobraAjaxServiceController.CreateInstance()) != null)
                 paHttpContext.Response.Write(lcCobraAjaxServiceController.ExecuteService());
             else

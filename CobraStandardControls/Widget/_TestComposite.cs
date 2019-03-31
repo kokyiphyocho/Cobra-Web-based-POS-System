@@ -204,9 +204,9 @@ namespace CobraStandardControls
             //lcOptionPanel = new SubControlOptionPanel("abc", "TEST", new String[] { "EPSON", "STAR", "BIXOLON" });
             //lcOptionPanel.RenderChildMode(paComponentController);
 
-            SubControlImageUploader lcImageUploader;
+            SubControlImageProcessor lcImageUploader;
 
-            lcImageUploader = new SubControlImageUploader();
+            lcImageUploader = new SubControlImageProcessor("");
             lcImageUploader.RenderChildMode(paComponentController);
         }        
 

@@ -121,13 +121,14 @@ namespace CobraWebFrame
         const String ctFontFaceTemplate = "@font-face" +
                                              "{ " +
                                                  "font-family: '$ALIAS'; " +
-                                                 "src: url('/fonts/$FONTNAME.eot'); " +
-                                                 "src: local('$FONTNAME')," +                                                      
-                                                      "url('/fonts/$FONTNAME.eot?#iefix') format('embedded-opentype'), " +                                                      
-                                                      "url('/fonts/$FONTNAME.svg#$FONTNAME') format('svg'), " +
-                                                      "url('/fonts/$FONTNAME.ttf') format('truetype'), " +
-                                                      "url('/fonts/$FONTNAME.woff') format('woff'), " +
-                                                      "url('/fonts/$FONTNAME.woff2') format('woff2'); " +
+                                                 "src: url('/fonts/$FONTFILENAME.eot'); " +
+                                                 "src: " +
+                                                // "src: local('$FONTNAME'), local('$FONTFILENAME')," +
+                                                      "url('/fonts/$FONTFILENAME.eot?#iefix') format('embedded-opentype'), " +
+                                                      "url('/fonts/$FONTFILENAME.svg#$FONTFILENAME') format('svg'), " +
+                                                      "url('/fonts/$FONTFILENAME.ttf') format('truetype'), " +
+                                                      "url('/fonts/$FONTFILENAME.woff') format('woff'), " +
+                                                      "url('/fonts/$FONTFILENAME.woff2') format('woff2'); " +
                                                  "font-weight: normal; " +
                                                  "font-style: normal; " +
                                              "} ";
@@ -253,13 +254,15 @@ namespace CobraWebFrame
         public static String GetEmbeddedWebFontStyle(String[] paEmbeddedFont)
         {
             String lcFontName;
+            String lcFontFileName;
             String lcAlias;
 
             if ((paEmbeddedFont != null) && (paEmbeddedFont.Length > 0))
             {
                 lcFontName  = paEmbeddedFont[0];
+                lcFontFileName = paEmbeddedFont[0].Replace(" ", "");
                 lcAlias     = paEmbeddedFont.Length > 1 ? paEmbeddedFont[1] : lcFontName;
-                return (ctFontFaceTemplate.Replace("$FONTNAME", lcFontName).Replace("$ALIAS", lcAlias));
+                return (ctFontFaceTemplate.Replace("$FONTNAME", lcFontName).Replace("$FONTFILENAME", lcFontFileName).Replace("$ALIAS", lcAlias));
             } else return (String.Empty);            
         }
 

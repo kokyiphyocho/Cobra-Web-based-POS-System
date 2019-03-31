@@ -28,9 +28,8 @@ var POSItemEditingManager = (function () {
 
     return {
                 Init : function()
-                {
-                    clForm                      = FormManager.GetForm();
-                    clToolBar                   = ToolBarManager.GetToolBar();
+                {                    
+                    clForm                      = FormManager.GetForm();                    
                     clControl                   = clForm.find('[sa-elementtype=control].WidControlPOSAddAdjustItem');
                     clControlMode               = clControl.attr('ea-controlmode');
                     clAllSlideControls          = clControl.find('[sa-elementtype=slideselectioncontrol]');
@@ -48,15 +47,18 @@ var POSItemEditingManager = (function () {
 
                     clUnitType                  = clControl.find('input[ea-columnname="unitname"]');
                     clRelationshipTextLabel     = clControl.find('[ea-columnname="#unitrelationshiptext"]').parent().find('[sa-elementtype=inputlabel]');
-                    
-                    POSItemEditingManager.SetInputBehaviour();
-                    POSItemEditingManager.BindEvents();
+                                       
 
                     POSItemEditingManager.WaitForDependencies().done(function () {
+                        clToolBar = ToolBarManager.GetToolBar();
+
+                        POSItemEditingManager.SetInputBehaviour();
+                        POSItemEditingManager.BindEvents();
+
                         clSelectionPopUpList.each(function () {
                             $(this).data(new SelectionPanelController($(this), clControl));                            
                             $(this).data().Init();
-                        });
+                        });                        
                     });
                 },
                 SetInputBehaviour : function()
@@ -78,8 +80,8 @@ var POSItemEditingManager = (function () {
                 WaitForDependencies: function () {
                     var lcDeferred = $.Deferred();
 
-                    var lcWaitTimer = setInterval(function () {
-                        if (typeof SelectionPanelController !== 'undefined') {
+                    var lcWaitTimer = setInterval(function () {                        
+                        if (((clControlMode == 'category') || (typeof SelectionPanelController !== 'undefined')) && (typeof ToolBarManager !== 'undefined')) {
                             if (lcDeferred.state() == 'pending') {
                                 lcDeferred.resolve();
                                 clearInterval(lcWaitTimer);
@@ -109,7 +111,7 @@ var POSItemEditingManager = (function () {
 
                     clToolBar.find('[ea-command^="@cmd%"]').unbind('click');
                     clToolBar.find('[ea-command^="@cmd%"]').click(POSItemEditingManager.HandlerOnClick);
-
+                    
                     //clControl.find('a[ea-command="@cmd%update"]').unbind('click');
                     //clControl.find('a[ea-command="@cmd%update"]').click(POSItemEditingManager.HandlerOnClick);
   
@@ -414,7 +416,7 @@ var POSItemEditingManager = (function () {
                 HandlerOnClick : function(paEvent)
                 {
                     paEvent.preventDefault();
-            
+                
                     var lcCommand = $(this).attr('ea-command');
                     lcCommand = lcCommand.substring(lcCommand.indexOf('%') + 1);
                     

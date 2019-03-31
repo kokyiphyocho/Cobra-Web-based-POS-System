@@ -31,7 +31,9 @@ namespace CobraStandardControls
         const String ctDYTIPAddressLabel                            = "@@POS.PrinterSetting.IPAddress";
         const String ctDYTPortLabel                                 = "@@POS.PrinterSetting.Port";
         const String ctDYTDeviceIDLabel                             = "@@POS.PrinterSetting.DeviceID";
-        const String ctDYTDarknessLabel                             = "@@POS.PrinterSetting.Darkness";
+   //     const String ctDYTPrinterDriverLabel                        = "@@POS.PrinterSetting.PrinterDriver";
+   //     const String ctDYTPrinterWidthLabel                         = "@@POS.PrinterSetting.PrinterWidth";     
+    //    const String ctDYTDarknessLabel                             = "@@POS.PrinterSetting.Darkness";
         const String ctDYTMonitorInterval                           = "@@POS.PrinterSetting.MonitorInterval";
         const String ctDYTReconnectInterval                         = "@@POS.PrinterSetting.ReconnectInterval";
         const String ctDYTPanelTitle                                = "@@POS.PrinterSetting.PrinterListTitle";
@@ -47,13 +49,15 @@ namespace CobraStandardControls
         
         const String ctINPIPAddress                                 = "ipaddress";
         const String ctINPNumber                                    = "number";
+        const String ctINPDecimal                                   = "decimal";
+        const String ctINPCustom                                    = "custom";
 
         const String ctPanelType                                    = "printerlist";
         const String ctPanelAppearance                              = "wide";
 
         const String ctCMDPrinterList                               = "@cmd%printerlist";
 
-        private enum PrinterSettingKey { PrinterName, IPAddress, Port, DeviceID, Darkness, MonitorInterval, ReconnectInterval };
+        private enum PrinterSettingKey { PrinterName, IPAddress, Port, PrinterDriver, PrinterWidth,  DeviceID, MonitorInterval, ReconnectInterval };
         
         public CompositeFormInterface SCI_ParentForm { get; set; }
 
@@ -80,7 +84,24 @@ namespace CobraStandardControls
 
             lcCSSStyleManager.IncludeExternalStyleSheet(ResourceManager.GetInstance().GetWidgetStyleSheetUrl(ResourceManager.WidgetCategory.GShop_POS, ctWidControlPOSPrinterSettingStyle));
             lcJavaScriptmanager.IncludeExternalJavaScript(ResourceManager.GetInstance().GetWidgetScriptUrl(ResourceManager.WidgetCategory.GShop_POS, ctWidControlPOSPrinterSettingScript));
-        }        
+            IncludeDeviceScriptList(paComponentController, lcJavaScriptmanager);
+        }
+
+        private void IncludeDeviceScriptList(ComponentController paComponentController, JavaScriptManager paJavaScriptManager)
+        {
+            String[] lcScriptList;
+
+            lcScriptList = PrinterController.GetInstance().GetAllDeviceScriptList();
+
+            if (lcScriptList != null)
+            {
+                for (int lcCount = 0; lcCount < lcScriptList.Length; lcCount++)
+                {
+                    if (!String.IsNullOrEmpty(lcScriptList[lcCount]))
+                        paJavaScriptManager.IncludeExternalJavaScript(ResourceManager.GetInstance().GetFoundationScriptUrl(lcScriptList[lcCount]));
+                }
+            }
+        }
 
         private void RenderTitle(ComponentController paComponentController)
         {
@@ -155,7 +176,7 @@ namespace CobraStandardControls
             paComponentController.RenderBeginTag(HtmlTag.Input);
             paComponentController.RenderEndTag();
 
-            if (paMaxLength == 0)
+            if (paInputMode == ctINPCustom)
             {
                 paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Command, paCommand);            
                 paComponentController.AddElementType(ComponentController.ElementType.Button);
@@ -176,11 +197,13 @@ namespace CobraStandardControls
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctCTNContent);
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
-            RenderRow(paComponentController, ctDYTPrinterNameLabel, PrinterSettingKey.PrinterName, String.Empty, 0, ctCMDPrinterList);
+            RenderRow(paComponentController, ctDYTPrinterNameLabel, PrinterSettingKey.PrinterName, ctINPCustom, 0, ctCMDPrinterList);            
             RenderRow(paComponentController, ctDYTIPAddressLabel, PrinterSettingKey.IPAddress, ctINPIPAddress, 15);
             RenderRow(paComponentController, ctDYTPortLabel, PrinterSettingKey.Port, ctINPNumber, 5);
             RenderRow(paComponentController, ctDYTDeviceIDLabel, PrinterSettingKey.DeviceID, String.Empty, 20);
-//             RenderRow(paComponentController, ctDYTDarknessLabel, PrinterSettingKey.Darkness, ctINPNumber, 3);
+   //         RenderRow(paComponentController, ctDYTPrinterDriverLabel, PrinterSettingKey.PrinterDriver, String.Empty, 0);
+ //           RenderRow(paComponentController, ctDYTPrinterWidthLabel, PrinterSettingKey.PrinterWidth, ctINPNumber, 0);
+            // RenderRow(paComponentController, ctDYTDarknessLabel, PrinterSettingKey.Darkness, ctINPNumber, 0);
             RenderRow(paComponentController, ctDYTMonitorInterval, PrinterSettingKey.MonitorInterval,ctINPNumber, 5);
             RenderRow(paComponentController, ctDYTReconnectInterval, PrinterSettingKey.ReconnectInterval, ctINPNumber, 5);
 

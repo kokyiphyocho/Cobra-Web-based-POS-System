@@ -231,8 +231,11 @@ namespace CobraApplicationFrame
                 {
                     if ((lcResult = DynamicQueryManager.GetInstance().GetStringResult(DynamicQueryManager.ExecuteMode.Scalar, lcQueryName, General.Base64Decode(lcDataBlock))) != null)
                     {
-                        clServiceResponse.AddResponse(CobraServiceResponse.RSP_Result.ToString(), lcResult);
-                        clServiceResponse.Success = true;                
+                        if (UploadManager.GetInstance().UploadFiles())
+                        {
+                            clServiceResponse.AddResponse(CobraServiceResponse.RSP_Result.ToString(), lcResult);
+                            clServiceResponse.Success = true;
+                        }                        
                     }
                 }
                 catch (Exception paException)

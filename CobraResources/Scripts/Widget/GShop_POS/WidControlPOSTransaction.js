@@ -326,12 +326,12 @@ var POSTransactionManager = (function () {
             var lcDeferred      = $.Deferred();
             var lcPaymentCash   = clMasterBlock.find('[ea-columnname=paymentcash]');
             var lcTotalAmount   = CastDecimal(lcPaymentCash.val(), 0);
-
-            if ((clMode == 'sale') && (lcTotalAmount > 0) && (clShowPaymentForm)) {
+            
+            if ((clMode == 'sale') && (clTransactionState != 'pending') && (lcTotalAmount > 0) && (clShowPaymentForm)) {
                 POSPaymentManager.ShowPaymentPopUp(lcTotalAmount).done(function (paSuccess, paPaymentInfo) {
                     if ((paSuccess) && (paPaymentInfo)) {                        
                         $.each(paPaymentInfo, function (paKey, paValue) {
-                            POSTransactionManager.SetMasterBlockElement(paKey, paValue);
+                            POSTransactionManager.SetMasterBlockElement(paKey, paValue);                            
                         });
                         lcDeferred.resolve(true);                        
                     }
@@ -394,7 +394,9 @@ var POSTransactionManager = (function () {
                                     if (clReceiptPrintMode) {
                                         lcReceiptPrintingInfo = JSON.parse(paResponseStruct.ResponseData.RSP_Result);
                                         lcCurrentReceiptNo = lcReceiptPrintingInfo.receiptmaster[0].receiptno;
-                                        POSReceiptPrintingManager.PrintLoadedReceipt(lcReceiptPrintingInfo);
+
+                                        if (clTransactionState != 'pending')
+                                            POSReceiptPrintingManager.PrintLoadedReceipt(lcReceiptPrintingInfo);
                                     }
                                     else
                                     {
@@ -714,12 +716,12 @@ var POSTransactionManager = (function () {
 
                     case 'printfail':
                         {
-                            Messagehandler.ShowMessage(paNotificationInfo.errorcode);
+                            MessageHandler.ShowMessage(paNotificationInfo.errorcode);
                             break;
                         }
 
                     case 'statuschanged':
-                        {
+                        {                            
                             POSTransactionManager.SetPrinterStatus(paNotificationInfo.errorcode, paNotificationInfo.errorparam);
                             break;
                         }

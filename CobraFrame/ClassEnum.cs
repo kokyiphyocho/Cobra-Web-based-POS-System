@@ -471,7 +471,12 @@ namespace CobraFrame
         cube = 0xf1b2,
         cubes = 0xf1b3,
         user_md = 0xf200,
-        ellipsis_h = 0xf141
+        ellipsis_h = 0xf141,
+
+        angle_left = 0xf104,
+        angle_right = 0xf105,
+        angle_up = 0xf106,
+        angle_down = 0xf107,        
     };
 }
 

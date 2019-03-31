@@ -91,53 +91,6 @@
 
 };
 
-//$(document).ready(function () {
-//    $('.SelectionPanel[sa-elementtype=panel]').BindSelectionPanelEvents();
-//});
-
-//$.fn.BindSelectionPanelEvents = function () {  
-
-//    $(this).find('[sa-elementtype=list] a.Item').unbind('click');
-//    $(this).find('[sa-elementtype=list] a.Item').click(function (paEvent) {
-//        paEvent.preventDefault();
-
-//        $(this).siblings('.Item').removeAttr('fa-selected');
-//        $(this).attr('fa-selected', true);
-//    });
-
-//    $(this).find('a[href="@cmd%selectionclose"]').unbind('click');
-//    $(this).find('a[href="@cmd%selectionclose"]').click(function (paEvent) {
-
-//        paEvent.preventDefault();
-
-//        var lcControl = $(this).closest('[sa-elementtype=control]');
-
-//        lcControl.removeAttr('fa-showpanel');
-//    });
-
-//    $(this).find('a[href="@cmd%selectioncancel"]').unbind('click');
-//    $(this).find('a[href="@cmd%selectioncancel"]').click(function (paEvent) {
-
-//        paEvent.preventDefault();
-
-//        var lcControl = $(this).closest('[sa-elementtype=control]');
-
-//        lcControl.removeAttr('fa-showpanel');
-//    });
-
-//    $(this).find('a[href="@cmd%selectionchoose"]').unbind('click');
-//    $(this).find('a[href="@cmd%selectionchoose"]').click(function (paEvent) {
-
-//        paEvent.preventDefault();
-
-//        var lcControl = $(this).closest('[sa-elementtype=control]');
-//        var lcPanel = $(this).closest('[sa-elementtype=panel]');
-
-//        lcPanel.trigger('change');
-
-//        lcControl.removeAttr('fa-showpanel');
-//    });
-//}
 
 
 

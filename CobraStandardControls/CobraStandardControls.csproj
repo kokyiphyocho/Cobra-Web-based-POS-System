@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Widget\Admin\WidControlActivateSubscription.cs" />
     <Compile Include="Widget\GShop_POS\Setting\WidControlPOSLanguageSetting.cs" />
+    <Compile Include="Widget\GShop_POS\Setting\WidControlPOSReceiptCustomizationSetting.cs" />
     <Compile Include="Widget\GShop_POS\Setting\WidControlPOSReceiptLayoutSetting.cs" />
     <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSItemPanel.cs" />
     <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSPaymentPanel.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="Widget\GShop_POS\WidControlPOSStaticCostEditor.cs" />
     <Compile Include="Widget\GShop_POS\Setting\WidControlPOSControlPanel.cs" />
     <Compile Include="Widget\_System\SubControlCalendar.cs" />
-    <Compile Include="Widget\_System\SubControlImageUploader.cs" />
+    <Compile Include="Widget\_System\SubControlImageProcessor.cs" />
     <Compile Include="Widget\_System\SubControlPopUpInput.cs" />
     <Compile Include="Widget\GShop_POS\SubControl\SubControlPOSTransactionList.cs" />
     <Compile Include="Widget\GShop_POS\WidControlPOSAddAdjustItem.cs" />

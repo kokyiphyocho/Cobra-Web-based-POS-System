@@ -24,65 +24,59 @@ namespace CobraStandardControls
         const String ctCLSContainer                                         = "Container";
         const String ctCLSSettingGroup                                      = "SettingGroup";
         const String ctCLSSectionHeader                                     = "SectionHeader";
-        const String ctCLSToggleSwitch                                      = "ToggleSwitch";    
-        const String ctCLSLogoImageDiv                                      = "LogoImageDiv";
+        const String ctCLSToggleSwitch                                      = "ToggleSwitch";
+        const String ctCLSInputDiv                                          = "InputDiv";
 
         const String ctDYTReceiptLayoutTitle                                = "@@POS.ReceiptLayoutSetting.ReceiptLayoutTitle";
+        const String ctDYTLayoutName                                        = "@@POS.ReceiptLayoutSetting.LayoutName";
         const String ctDYTReceiptWidth                                      = "@@POS.ReceiptLayoutSetting.ReceiptWidth";
         const String ctDYTDarkness                                          = "@@POS.ReceiptLayoutSetting.Darkness";
         const String ctDYTLocalNumberMode                                   = "@@POS.ReceiptLayoutSetting.LocalNumberMode";
-        const String ctDYTHeaderTextTitle                                   = "@@POS.ReceiptLayoutSetting.HeaderTextTitle";
-        const String ctDYTBusinessName                                      = "@@POS.ReceiptLayoutSetting.BusinessName";
-        const String ctDYTAddress                                           = "@@POS.ReceiptLayoutSetting.Address";
-        const String ctDYTFootNoteTitle                                     = "@@POS.ReceiptLayoutSetting.FootNoteTitle";
-        const String ctDYTFootNote                                          = "@@POS.ReceiptLayoutSetting.FootNote";
-        const String ctDYTReceiptLogoTitle                                  = "@@POS.ReceiptLayoutSetting.ReceiptLogoTitle";
-        const String ctDYTReceiptLogo                                       = "@@POS.ReceiptLayoutSetting.ReceiptLogo";
+        const String ctDYTCopies                                            = "@@POS.ReceiptLayoutSetting.Copies";
+
+        const String ctDYTReceiptScaleTitle                                 = "@@POS.ReceiptLayoutSetting.ReceiptScaleTitle";   
+        const String ctDYTLayoutScaleX                                      = "@@POS.ReceiptLayoutSetting.LayoutScaleX";
+        const String ctDYTLayoutScaleY                                      = "@@POS.ReceiptLayoutSetting.LayoutScaleY";
+        const String ctDYTFontScale                                         = "@@POS.ReceiptLayoutSetting.FontScale";
+
+        const String ctDYTPanelTitle                                        = "@@POS.ReceiptLayoutSetting.LayoutListTitle";
         
         const String ctBLKReceiptLayout                                     = "receiptlayout";
-        const String ctBLKHeaderText                                        = "headertext";
-        const String ctBLKReceiptLogo                                       = "receiptlogo";
-        const String ctBLKFootNote                                          = "footnote";
-
-        const String ctSETReceiptCustomization                              = "POS.ReceiptLayoutInfo.Customization";
-        const String ctSETReceiptLayout                                     = "POS.ReceiptLayoutInfo.Layout";
-        const String ctSETPrimaryPrinterSetting                             = "POS.PrimaryPrinterSetting";
+        const String ctBLKReceiptScale                                      = "receiptscale";
+                
+        const String ctSETReceiptLayoutSetting                              = "POS.ReceiptLayoutInfo.LayoutSetting";        
         const String ctSETTestPrintReceipt                                  = "POS.TestPrintReceipt";
-
-        const String ctKEYBusinessName                                      = "BusinessName";
-        const String ctKEYAddress                                           = "Address";
-        const String ctKEYFootNote                                          = "FootNote";
-        const String ctKEYWidth                                             = "Width";
+        const String ctSETReceiptLayoutList                                 = "POS.ReceiptLayoutInfo.LayoutList";        
+        
+        const String ctKEYLayoutName                                        = "LayoutName";
+        const String ctKEYReceiptWidth                                      = "ReceiptWidth";
+        const String ctKEYCopies                                            = "Copies";
         const String ctKEYDarkness                                          = "Darkness";
-        const String ctKEYNumberMode                                        = "LocalNumberMode";
-        const String ctKEYLogoName                                          = "LogoName";
-
-        const String ctTYPBusinessName                                      = "businessname";
-        const String ctTYPAddress                                           = "address";
-        const String ctTYPLogoName                                          = "logoname";
-        const String ctTYPFootNote                                          = "footnote";
+        const String ctKEYLocalNumberMode                                   = "LocalNumberMode";
+        const String ctKEYLayoutScaleX                                      = "LayoutScaleX";
+        const String ctKEYLayoutScaleY                                      = "LayoutScaleY";
+        const String ctKEYFontScale                                         = "FontScale";
 
         const String ctCTNContent                                           = "content";
         const String ctCTNExternalComponent                                 = "externalcomponent";
 
         const String ctCMDToggle                                            = "@cmd%toggle";
+        const String ctCMDLayoutList                                        = "@cmd%layoutlist";
 
-        const String ctLogoFileName                                         = "System/ReceiptLogo.png";
+        const String ctPanelType                                            = "layoutlist";
+        const String ctPanelAppearance                                      = "wide";
 
-        const int   ctTextBoxMaxLength                                      = 300;
         const int   ctNumberBoxMaxLength                                    = 3;
 
         public CompositeFormInterface SCI_ParentForm { get; set; }
 
         LanguageManager     clLanguageManager;
         SettingManager      clSettingManager;
-        String              clTestPrintTemplate;
-
+        
         public WidControlPOSReceiptLayoutSetting()
         {
             clLanguageManager       = ApplicationFrame.GetInstance().ActiveSubscription.ActiveLanguage;
-            clSettingManager        = ApplicationFrame.GetInstance().ActiveSubscription.ActiveSetting;
-            clTestPrintTemplate     = General.Base64Encode(clSettingManager.GetSettingValue(ctSETTestPrintReceipt, "{}"));
+            clSettingManager        = ApplicationFrame.GetInstance().ActiveSubscription.ActiveSetting;            
         }
 
         private void IncludeExternalLinkFiles(ComponentController paComponentController)
@@ -136,7 +130,7 @@ namespace CobraStandardControls
             paComponentController.Write(clLanguageManager.GetText(paLabel));
             paComponentController.RenderEndTag();
 
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, ctSETReceiptLayout);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, ctSETReceiptLayoutSetting);
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Name, paName);            
             paComponentController.AddElementType(ComponentController.ElementType.Button);
             RenderToggleButton(paComponentController);
@@ -144,7 +138,7 @@ namespace CobraStandardControls
             paComponentController.RenderEndTag();
         }
 
-        private void RenderNumberInputBoxRow(ComponentController paComponentController, String paColumnName, String paName, String paLabel, String paType, int paMaxLength, int paLowerBound, int paUpperBound)
+        private void RenderNumberInputBoxRow(ComponentController paComponentController, String paName, String paLabel, String paInputMode, String paSuffix, int paMaxLength, int paLowerBound, int paUpperBound)
         {
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "numberinputrow");
             paComponentController.AddElementType(ComponentController.ElementType.InputRow);
@@ -158,20 +152,19 @@ namespace CobraStandardControls
 
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "unit");
             paComponentController.RenderBeginTag(HtmlTag.Div);
-            paComponentController.Write(paType == "pixel" ? "px" : "%");
+            paComponentController.Write(paSuffix);
             paComponentController.RenderEndTag();
 
             paComponentController.AddElementType(ComponentController.ElementType.InputBox);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, paColumnName);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, ctSETReceiptLayoutSetting);
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Name, paName);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_InputMode, "number");
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, paType);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_InputMode, paInputMode);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, paSuffix);
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_UpperBound, paUpperBound.ToString());
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_LowerBound, paLowerBound.ToString());
             paComponentController.AddAttribute(HtmlAttribute.Maxlength, paMaxLength.ToString());
             paComponentController.AddAttribute(HtmlAttribute.Type, "text");
             paComponentController.RenderBeginTag(HtmlTag.Input);
-
             
 
             paComponentController.RenderEndTag();
@@ -179,9 +172,9 @@ namespace CobraStandardControls
             paComponentController.RenderEndTag();
         }
 
-        private void RenderTextInputBoxRow(ComponentController paComponentController, String paType, String paName, String paLabel, int paMaxLength)
+        private void RenderSelectionInputRow(ComponentController paComponentController, String paName, String paLabel, String paCommand = null)
         {
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "textinputrow");
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "selectioninputrow");            
             paComponentController.AddElementType(ComponentController.ElementType.InputRow);
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
@@ -190,73 +183,40 @@ namespace CobraStandardControls
             paComponentController.Write(clLanguageManager.GetText(paLabel));
             paComponentController.RenderEndTag();
 
-            paComponentController.AddElementType(ComponentController.ElementType.InputBox);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, paType);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, ctSETReceiptCustomization);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Name, paName);
-            paComponentController.AddAttribute(HtmlAttribute.Maxlength, paMaxLength.ToString());
-            paComponentController.AddAttribute(HtmlAttribute.Type, "text");
-            paComponentController.RenderBeginTag(HtmlTag.Input);
-
-            paComponentController.RenderEndTag();
-
-            paComponentController.RenderEndTag();
-        }
-
-        private void RenderTextAreaRow(ComponentController paComponentController, String paType, String paName, String paLabel, int paMaxLength)
-        {
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "textarearow");
-            paComponentController.AddElementType(ComponentController.ElementType.InputRow);
+            paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSInputDiv);
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
-            paComponentController.AddElementType(ComponentController.ElementType.InputLabel);
-            paComponentController.RenderBeginTag(HtmlTag.Div);
-            paComponentController.Write(clLanguageManager.GetText(paLabel));
-            paComponentController.RenderEndTag();
-
-            paComponentController.AddElementType(ComponentController.ElementType.InputBox);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, paType);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, ctSETReceiptCustomization);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Name, paName);
-            paComponentController.AddAttribute(HtmlAttribute.Maxlength, paMaxLength.ToString());            
-            paComponentController.RenderBeginTag(HtmlTag.Textarea);
-
-            paComponentController.RenderEndTag();
-
-            paComponentController.RenderEndTag();
-        }
-
-        private void RenderLogoImageInput(ComponentController paComponentController)
-        {
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "imagerow");
-            paComponentController.AddElementType(ComponentController.ElementType.InputRow);
-            paComponentController.RenderBeginTag(HtmlTag.Div);
-
-            paComponentController.AddElementType(ComponentController.ElementType.InputLabel);
-            paComponentController.RenderBeginTag(HtmlTag.Div);
-            paComponentController.Write(clLanguageManager.GetText(ctDYTReceiptLogo));
-            paComponentController.RenderEndTag();
-
-            paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSLogoImageDiv);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "logoimage");
-            paComponentController.RenderBeginTag(HtmlTag.Div);
-
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, ctSETReceiptCustomization);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Name, ctKEYLogoName);            
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctTYPLogoName);                        
-            paComponentController.RenderBeginTag(HtmlTag.Img);            
-            paComponentController.RenderEndTag();
-
-
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Command, "");
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Command, paCommand);
             paComponentController.AddElementType(ComponentController.ElementType.Button);
             paComponentController.RenderBeginTag(HtmlTag.Div);
             paComponentController.Write(ComponentController.UnicodeStr((int)Fontawesome.ellipsis_h));
+            paComponentController.RenderEndTag();            
+
+            paComponentController.AddAttribute(HtmlAttribute.ReadOnly, HtmlAttribute.ReadOnly.ToString());
+            paComponentController.AddElementType(ComponentController.ElementType.InputBox);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "selection");
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Command, paCommand);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_ColumnName, ctSETReceiptLayoutSetting);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Name, paName);
+            paComponentController.AddAttribute(HtmlAttribute.Type, "text");
+            paComponentController.RenderBeginTag(HtmlTag.Input);
+            paComponentController.RenderEndTag();
+            
             paComponentController.RenderEndTag();
 
             paComponentController.RenderEndTag();
+        }       
 
-            paComponentController.RenderEndTag();
+        private void RenderSelectionPanel(ComponentController paComponentController)
+        {
+            Dictionary<String, String> lcReceiptLayoutList;
+            SubControlSelectionPanel    lcSubControlSelectionPanel;
+
+            lcReceiptLayoutList = General.JSONDeserialize<Dictionary<String, String>>(clSettingManager.GetSettingValue(ctSETReceiptLayoutList, "{}"));
+
+            lcSubControlSelectionPanel = new SubControlSelectionPanel(ctPanelType, ctPanelAppearance, ctDYTPanelTitle, lcReceiptLayoutList);
+
+            lcSubControlSelectionPanel.RenderChildMode(paComponentController);
         }
 
         private void RenderReceiptOutput(ComponentController paComponentController)
@@ -276,49 +236,26 @@ namespace CobraStandardControls
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
             RenderSectionHeader(paComponentController, ctDYTReceiptLayoutTitle);
-            RenderNumberInputBoxRow(paComponentController,ctSETReceiptLayout, ctKEYWidth, ctDYTReceiptWidth,"pixel", ctNumberBoxMaxLength,-1,-1);
-            RenderNumberInputBoxRow(paComponentController,ctSETPrimaryPrinterSetting, ctKEYDarkness, ctDYTDarkness,"percent", ctNumberBoxMaxLength,1,100);
-            RenderToggleButtonRow(paComponentController, ctKEYNumberMode, ctDYTLocalNumberMode);
+            RenderSelectionInputRow(paComponentController, ctKEYLayoutName,ctDYTLayoutName,ctCMDLayoutList);
+            RenderNumberInputBoxRow(paComponentController, ctKEYCopies, ctDYTCopies, "number", "", ctNumberBoxMaxLength, 0, 10);
+            RenderNumberInputBoxRow(paComponentController,ctKEYReceiptWidth, ctDYTReceiptWidth,"number", "px", ctNumberBoxMaxLength,-1,-1);
+            RenderNumberInputBoxRow(paComponentController, ctKEYDarkness, ctDYTDarkness, "number", "%", ctNumberBoxMaxLength, 0, 100);
+            RenderToggleButtonRow(paComponentController, ctKEYLocalNumberMode, ctDYTLocalNumberMode);
 
             paComponentController.RenderEndTag();            
         }
 
-        private void RenderHeaderTextPanel(ComponentController paComponentController)
+        private void RenderReceiptScalePanel(ComponentController paComponentController)
         {
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctBLKHeaderText);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctBLKReceiptScale);
             paComponentController.AddElementType(ComponentController.ElementType.Block);
             paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSSettingGroup);
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
-            RenderSectionHeader(paComponentController, ctDYTHeaderTextTitle);
-            RenderTextInputBoxRow(paComponentController, ctTYPBusinessName, ctKEYBusinessName, ctDYTBusinessName, ctTextBoxMaxLength);
-            RenderTextAreaRow(paComponentController, ctTYPAddress, ctKEYAddress, ctDYTAddress, ctTextBoxMaxLength);
-            
-            paComponentController.RenderEndTag();  
-        }
-
-        private void RenderReceiptLogoPanel(ComponentController paComponentController)
-        {
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctBLKReceiptLogo);
-            paComponentController.AddElementType(ComponentController.ElementType.Block);
-            paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSSettingGroup);
-            paComponentController.RenderBeginTag(HtmlTag.Div);
-
-            RenderSectionHeader(paComponentController, ctDYTReceiptLogoTitle);
-            RenderLogoImageInput(paComponentController);
-
-            paComponentController.RenderEndTag();
-        }
-
-        private void RenderFootNotePanel(ComponentController paComponentController)
-        {
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctBLKFootNote);
-            paComponentController.AddElementType(ComponentController.ElementType.Block);
-            paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSSettingGroup);
-            paComponentController.RenderBeginTag(HtmlTag.Div);
-
-            RenderSectionHeader(paComponentController, ctDYTFootNoteTitle);
-            RenderTextAreaRow(paComponentController, ctTYPFootNote, ctKEYFootNote, ctDYTFootNote, ctTextBoxMaxLength);            
+            RenderSectionHeader(paComponentController, ctDYTReceiptScaleTitle);
+            RenderNumberInputBoxRow(paComponentController, ctKEYLayoutScaleX, ctDYTLayoutScaleX, "decimal", "", ctNumberBoxMaxLength, 1, 10);
+            RenderNumberInputBoxRow(paComponentController, ctKEYLayoutScaleY, ctDYTLayoutScaleY, "decimal", "", ctNumberBoxMaxLength, 1, 10);
+            RenderNumberInputBoxRow(paComponentController, ctKEYFontScale, ctDYTFontScale, "decimal", "", ctNumberBoxMaxLength, 1, 10);            
 
             paComponentController.RenderEndTag();
         }
@@ -331,15 +268,14 @@ namespace CobraStandardControls
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
             RenderReceiptLayoutPanel(paComponentController);
-            RenderHeaderTextPanel(paComponentController);
-     //       RenderReceiptLogoPanel(paComponentController);
-            RenderFootNotePanel(paComponentController);           
+            RenderReceiptScalePanel(paComponentController);             
 
             paComponentController.RenderEndTag();
         }
 
         private void RenderExternalComponents(ComponentController paComponentController)
-        {            
+        {
+            RenderSelectionPanel(paComponentController);
             RenderReceiptOutput(paComponentController);
         }
 
@@ -352,22 +288,21 @@ namespace CobraStandardControls
         }
 
         private void RenderBrowserMode(ComponentController paComponentController)
-        {
-            String lcBase64ReceiptCustomization;
-            String lcBase64ReceiptLayout;
-            String lcBase64PrimaryPrinterSetting;
+        {            
+            String lcBase64ReceiptLayoutSetting;
+            String lcBase64TestPrintTemplate;
+            String lcBase64ReceiptLayoutList;
 
-            lcBase64ReceiptCustomization    = General.Base64Encode(clSettingManager.GetSettingValue(ctSETReceiptCustomization));
-            lcBase64ReceiptLayout           = General.Base64Encode(clSettingManager.GetSettingValue(ctSETReceiptLayout));
-            lcBase64PrimaryPrinterSetting   = General.Base64Encode(clSettingManager.GetSettingValue(ctSETPrimaryPrinterSetting));
-
+            lcBase64ReceiptLayoutSetting    = General.Base64Encode(clSettingManager.GetSettingValue(ctSETReceiptLayoutSetting, "{}"));
+            lcBase64TestPrintTemplate       = General.Base64Encode(clSettingManager.GetSettingValue(ctSETTestPrintReceipt, "{}"));
+            lcBase64ReceiptLayoutList       = General.Base64Encode(clSettingManager.GetSettingValue(ctSETReceiptLayoutList, "{}"));
+                        
             IncludeExternalLinkFiles(paComponentController);
 
-            paComponentController.AddElementType(ComponentController.ElementType.Control);
-            paComponentController.AddElementAttribute(ctSETReceiptCustomization, lcBase64ReceiptCustomization);
-            paComponentController.AddElementAttribute(ctSETReceiptLayout, lcBase64ReceiptLayout);
-            paComponentController.AddElementAttribute(ctSETPrimaryPrinterSetting, lcBase64PrimaryPrinterSetting);
-            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Template, clTestPrintTemplate);
+            paComponentController.AddElementType(ComponentController.ElementType.Control);            
+            paComponentController.AddElementAttribute(ctSETReceiptLayoutSetting, lcBase64ReceiptLayoutSetting);
+            paComponentController.AddElementAttribute(ctSETReceiptLayoutList, lcBase64ReceiptLayoutList);
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Template, lcBase64TestPrintTemplate);            
             paComponentController.AddAttribute(HtmlAttribute.Class, ctCLSWidControlPOSReceiptLayoutSetting);
             paComponentController.RenderBeginTag(HtmlTag.Div);
             RenderContainer(paComponentController);

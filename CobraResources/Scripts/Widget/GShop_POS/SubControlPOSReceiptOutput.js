@@ -19,18 +19,24 @@
             POSReceiptPrintingManager.WaitForDependicies().done(function () {            
                 PrinterManager.Init(clControl);                
             });            
-
+            
             clReceiptRenderer = new RenderingController(clComposite);
-            clReceiptRenderer.Init();
+            clReceiptRenderer.Init(clPrinterSetting);
 
             POSReceiptPrintingManager.BindEvents();
         },
 
         ConnectPrinter: function (paPrinterSetting, paSuppressReconnect)
         {
+            if (paPrinterSetting)
+            {                
+                clPrinterSetting = paPrinterSetting;
+                clReceiptRenderer.Init(clPrinterSetting);
+            }            
+
             POSReceiptPrintingManager.WaitForDependicies().done(function () {
-                paPrinterSetting = paPrinterSetting || clPrinterSetting;
-                PrinterManager.Connect(paPrinterSetting, paSuppressReconnect);
+            //    paPrinterSetting = paPrinterSetting || clPrinterSetting;
+                PrinterManager.Connect(clPrinterSetting, paSuppressReconnect);
             });
         },
         
@@ -252,6 +258,7 @@ var ReceiptDataManager  = function(paComposite, paReceiptData) {
                         case 'discount'             : return(clReceiptMaster.discount);
                         case 'tendercash'           : return(clReceiptMaster.paymentcash + clReceiptMaster.change);
                         case 'tenderchange'         : return(clReceiptMaster.change);
+
                     }                    
                 },
                 GetReceiptDetail : function()
@@ -314,95 +321,130 @@ var RenderingController = function (paComposite) {
     var clComposite = paComposite;
     var clCanvasPainter;
     var clCurrencyDecimal;
-    var clReceiptLayout = {};
-    var clReceiptCustomization = {};
-        
+    var clReceiptLayout             = {};
+    var clReceiptLayoutSetting      = {};    
+    var clReceiptCustomization      = {};
+    var clActivePrinterSetting      = {};
+            
     var clImage;
 
     return {
-                Init : function()
+                Init : function(paPrinterSetting)
                 {
+                    clActivePrinterSetting = paPrinterSetting;
                     clCurrencyDecimal = clComposite.attr('ea-decimal');
-
+                    
                     clCanvasPainter = new CanvasPainter(clComposite.find('canvas'));
-                    clCanvasPainter.InitializeCanvas();
-                                        
+                    clCanvasPainter.InitializeCanvas();                    
+
                     this.LoadLayoutInfo();
 
-                    clImage                         = this.LoadImage();
-                    
+                    clImage                     = this.LoadImage();                                        
                     clCanvasPainter.SetLineFeed(0, clReceiptLayout.LineFeedAfter);
                     clCanvasPainter.SetContextParam(clReceiptLayout.TextBaseLine, clReceiptLayout.TextPaddingRatio, clReceiptLayout.FontHeightFactor);
+                },
+                ApplyLayoutScaleX : function(paFigure)
+                {
+                    if (paFigure) { return (CastInteger(paFigure * clReceiptLayoutSetting.LayoutScaleX)); }
+                    else return (0);                    
+                },
+                ApplyLayoutScaleY: function (paFigure) {
+                    if (paFigure) { return (CastInteger(paFigure * clReceiptLayoutSetting.LayoutScaleY)); }
+                    else return (0);                    
+                },
+                ApplyFontScale : function(paFontStr)
+                {
+                    paFontStr = paFontStr || '';
+                    
+                    var lcMatches = paFontStr.match(/((\d{1,3})px)/igm);
+
+                    for (lcCount = 0; lcCount < lcMatches.length; lcCount++)
+                    {
+                        var lcScaledSizeStr = CastInteger(parseInt(lcMatches[lcCount]) * clReceiptLayoutSetting.FontScale) + 'px';                         
+                        paFontStr = paFontStr.replace(lcMatches[lcCount], lcScaledSizeStr);
+                    }
+
+                    return (paFontStr || '');                    
                 },
                 LoadLayoutInfo : function()
                 {                    
                     clReceiptLayout         = JSON.parse(Base64.decode(clComposite.attr('pos.receiptlayoutinfo.layout') || '') || "{}");
-                    clReceiptCustomization  = JSON.parse(Base64.decode(clComposite.attr('pos.receiptlayoutinfo.customization') || '') || "{}");
-
-                    clReceiptLayout.Width                   = CastInteger(clReceiptLayout.Width, 500);                                        
-                    clReceiptLayout.LineFeedAfter           = CastInteger(clReceiptLayout.LineFeedAfter, 5);
+                    clReceiptLayoutSetting  = JSON.parse(Base64.decode(clComposite.attr('pos.receiptlayoutinfo.layoutsetting') || '') || "{}");
+                    clReceiptCustomization  = JSON.parse(Base64.decode(clComposite.attr('pos.receiptlayoutinfo.customization') || '') || "{}");                    
+                                       
+                    clReceiptLayoutSetting.LayoutScaleX     = CastDecimal(clReceiptLayoutSetting.LayoutScaleX,1);
+                    clReceiptLayoutSetting.LayoutScaleY     = CastDecimal(clReceiptLayoutSetting.LayoutScaleY,1);
+                    clReceiptLayoutSetting.FontScale        = CastDecimal(clReceiptLayoutSetting.FontScale, 1);
+                    clReceiptLayoutSetting.ReceiptWidth     = CastInteger(clReceiptLayoutSetting.ReceiptWidth || clActivePrinterSetting.PrinterWidth, 500);
+                    clReceiptLayoutSetting.LocalNumberMode  = clReceiptLayoutSetting.LocalNumberMode == 'false' ? false : true;
+                    clReceiptLayoutSetting.Copies           = CastInteger(clReceiptLayoutSetting.Copies, 2);
+                    
+                    clReceiptLayout.LineFeedAfter           = this.ApplyLayoutScaleY(CastInteger(clReceiptLayout.LineFeedAfter, 5));
                     clReceiptLayout.TextBaseLine            = clReceiptLayout.TextBaseLine || 'top';
                     clReceiptLayout.TextPaddingRatio        = CastDecimal(clReceiptLayout.TextPaddingRatio,1);                    
-                    clReceiptLayout.FontHeightFactor        = CastDecimal(clReceiptLayout.FontHeightFactor, 1);
-                    clReceiptLayout.NumberMode              = clReceiptLayout.NumberMode || 'LOCAL';
-
-                    clReceiptCustomization.LogoName         = clReceiptCustomization.LogoName || '';
-                    clReceiptCustomization.LogoMarginBefore = CastInteger(clReceiptCustomization.LogoMarginBefore, 0);
-                    clReceiptCustomization.LogoMarginAfter  = CastInteger(clReceiptCustomization.LogoMarginAfter, 0);
-                    clReceiptCustomization.LogoWidth        = CastInteger(clReceiptCustomization.LogoWidth, 100);
-                    clReceiptCustomization.LogoHeight       = CastInteger(clReceiptCustomization.LogoHeight, 50);
+                    clReceiptLayout.FontHeightFactor        = CastDecimal(clReceiptLayout.FontHeightFactor, 1);                    
+                                        
+                    clReceiptCustomization.LogoName         = clReceiptCustomization.LogoName ? (clComposite.attr('ea-path') || '') + '/' + clReceiptCustomization.LogoName : '';
+                    clReceiptCustomization.RenderLogo       = clReceiptLayoutSetting.RenderLogo == 'false' ? false : true;
+                    clReceiptCustomization.LogoMarginBefore = this.ApplyLayoutScaleY(CastInteger(clReceiptCustomization.LogoMarginBefore, 0));
+                    clReceiptCustomization.LogoMarginAfter  = this.ApplyLayoutScaleY(CastInteger(clReceiptCustomization.LogoMarginAfter, 0));
+                    clReceiptCustomization.LogoSize         = this.ApplyLayoutScaleX(CastDecimal(clReceiptCustomization.LogoSize, 80));
+                    clReceiptCustomization.LogoAspectRatio  = CastDecimal(clReceiptCustomization.LogoAspectRatio, 3);
                     clReceiptCustomization.BusinessName     = (clReceiptCustomization.BusinessName || '');
                     clReceiptCustomization.Address          = (clReceiptCustomization.Address || '').split('\n');
                     clReceiptCustomization.FootNote         = (clReceiptCustomization.FootNote || '').split('\n');
-                    
-                    clReceiptLayout.HeadingFont             = (clReceiptLayout.HeadingFont || '').split(';;');
-                    clReceiptLayout.HeadingLineSpacing      = CastDecimal(clReceiptLayout.HeadingLineSpacing, 1);
-                    clReceiptLayout.HeadingLineStyle        = CastIntArray(clReceiptLayout.HeadingLineStyle);
-                    
-                    clReceiptLayout.InfoFont                = clReceiptLayout.InfoFont || '';
-                    clReceiptLayout.InfoLineSpacing         = CastDecimal(clReceiptLayout.InfoLineSpacing, 1);
-                    clReceiptLayout.InfoLabelWidth          = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.InfoLabelWidth, 50));                    
 
-                    clReceiptLayout.EntryFont               = clReceiptLayout.EntryFont || '';
+                    clReceiptCustomization.LogoWidth        = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptCustomization.LogoSize)));
+                    clReceiptCustomization.LogoHeight       = CastInteger(clReceiptCustomization.LogoWidth / clReceiptCustomization.LogoAspectRatio);
+                    
+                    clReceiptLayout.HeadingFont             = this.ApplyFontScale(clReceiptLayout.HeadingFont).split(';;');
+                    clReceiptLayout.HeadingLineSpacing      = CastDecimal(clReceiptLayout.HeadingLineSpacing, 1);
+                    clReceiptLayout.HeadingLineStyle        = CastInteger(CastIntArray(clReceiptLayout.HeadingLineStyle));
+                    
+                    clReceiptLayout.InfoFont                = this.ApplyFontScale(clReceiptLayout.InfoFont);
+                    clReceiptLayout.InfoLineSpacing         = CastDecimal(clReceiptLayout.InfoLineSpacing, 1);
+                    clReceiptLayout.InfoLabelWidth          = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.InfoLabelWidth, 50)));
+
+                    clReceiptLayout.EntryFont               = this.ApplyFontScale(clReceiptLayout.EntryFont);
                     clReceiptLayout.EntryLineSpacing        = CastDecimal(clReceiptLayout.EntryLineSpacing, 1);
                     clReceiptLayout.EntryRowSpacing         = CastInteger(clReceiptLayout.EntryRowSpacing, 3);
-                    clReceiptLayout.EntryColumnGap          = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryColumnGap, 3));
-                    clReceiptLayout.EntryDescriptionWidth   = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryDescriptionWidth, 0));
-                    clReceiptLayout.EntryQuantityWidth      = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryQuantityWidth, 0));
-                    clReceiptLayout.EntryUnitPriceWidth     = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryUnitPriceWidth, 0));
-                    clReceiptLayout.EntryDiscountWidth      = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryDiscountWidth, 0));
-                    clReceiptLayout.EntrySubtotalWidth      = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntrySubtotalWidth, 0));
+                    clReceiptLayout.EntryColumnGap          = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryColumnGap, 3)));
+                    clReceiptLayout.EntryDescriptionWidth   = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryDescriptionWidth, 0)));
+                    clReceiptLayout.EntryQuantityWidth      = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryQuantityWidth, 0)));
+                    clReceiptLayout.EntryUnitPriceWidth     = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryUnitPriceWidth, 0)));
+                    clReceiptLayout.EntryDiscountWidth      = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntryDiscountWidth, 0)));
+                    clReceiptLayout.EntrySubtotalWidth      = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntrySubtotalWidth, 0)));
 
-                    clReceiptLayout.SummaryFont             = clReceiptLayout.SummaryFont || '';                    
+                    clReceiptLayout.SummaryFont             = this.ApplyFontScale(clReceiptLayout.SummaryFont);                    
                     clReceiptLayout.SummaryLineSpacing      = CastDecimal(clReceiptLayout.HeadingLineSpacing, 1);
                     clReceiptLayout.SummaryTotalFont        = clReceiptLayout.SummaryTotalFont || '';
                     clReceiptLayout.SummaryLineStyle        = CastIntArray(clReceiptLayout.SummaryLineStyle);                                          
-                    clReceiptLayout.SummaryLabelWidth       = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.SummaryLabelWidth, 0));               
-                    clReceiptLayout.SummaryColumnGap        = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.SummaryColumnGap, 0));
+                    clReceiptLayout.SummaryLabelWidth       = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.SummaryLabelWidth, 0)));               
+                    clReceiptLayout.SummaryColumnGap        = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.SummaryColumnGap, 0)));
 
                     clReceiptLayout.SummaryTotalLabel           = clReceiptLayout.SummaryTotalLabel || '';
 
-                    clReceiptLayout.TenderTitleFont             = clReceiptLayout.TenderTitleFont || '';
-                    clReceiptLayout.TenderTextFont              = clReceiptLayout.TenderTextFont || '';
-                    clReceiptLayout.TenderLabelWidth            = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.TenderLabelWidth, 0));
-                    clReceiptLayout.TenderFigureWidth           = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.TenderFigureWidth, 0));
-                    clReceiptLayout.TenderColumnGap             = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.TenderColumnGap, 3));
+                    clReceiptLayout.TenderTitleFont             = this.ApplyFontScale(clReceiptLayout.TenderTitleFont);
+                    clReceiptLayout.TenderTextFont              = this.ApplyFontScale(clReceiptLayout.TenderTextFont);
+                    clReceiptLayout.TenderLabelWidth            = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.TenderLabelWidth, 0)));
+                    clReceiptLayout.TenderFigureWidth           = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.TenderFigureWidth, 0)));
+                    clReceiptLayout.TenderColumnGap             = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.TenderColumnGap, 3)));
                     clReceiptLayout.TenderLineSpacing           = CastDecimal(clReceiptLayout.TenderLineSpacing, 1);
                     
                     clReceiptLayout.TenderTitleLabel            = clReceiptLayout.TenderTitleLabel || '';
 
-                    clReceiptLayout.FootNoteFont                = (clReceiptLayout.FootNoteFont || '').split(';;');
+                    clReceiptLayout.FootNoteFont                = this.ApplyFontScale(clReceiptLayout.FootNoteFont).split(';;');
                     clReceiptLayout.FootNoteLineStyle           = CastIntArray(clReceiptLayout.FootNoteLineStyle);
                     clReceiptLayout.FootNoteLineSpacing         = CastDecimal(clReceiptLayout.FootNoteLineSpacing, 1);
                     
-                    clReceiptLayout.RenderCommand = (clReceiptLayout.RenderCommand || '').split(';');                    
+                    clReceiptLayout.RenderCommand               = (clReceiptLayout.RenderCommand || '').split(';');
                 },
                 SetReceiptWidth : function(paNewWidth)
                 {
                     if (paNewWidth)
                     {
-                        clReceiptLayout.Width = CastInteger(paNewWidth);
-                        clCanvasPainter.GetCanvas().width = clReceiptLayout.Width;
+                        clReceiptLayoutSetting.ReceiptWidth = CastInteger(paNewWidth);
+                        clCanvasPainter.GetCanvas().width = clReceiptLayoutSetting.ReceiptWidth;
                     }
                 },
                 SetReceiptLayoutParameter : function(paKey, paValue)
@@ -418,12 +460,16 @@ var RenderingController = function (paComposite) {
                 LoadImage : function()
                 {                    
                     var lcImage = $(document.createElement('img'));
-                    
-                    lcImage.attr('fa-loadstate','loading');
-                    lcImage.bind('load',function ()  { $(this).attr('fa-loadstate','success');  } );
-                    lcImage.bind('error',function () { $(this).attr('fa-loadstate','fail');  } );
 
-                    lcImage.attr('src', clReceiptCustomization.LogoName);
+                    if (clReceiptCustomization.RenderLogo) {
+                        lcImage.attr('fa-loadstate', 'loading');
+
+                        lcImage.bind('load', function () { $(this).attr('fa-loadstate', 'success'); });
+                        lcImage.bind('error', function () { $(this).attr('fa-loadstate', 'fail'); });
+             
+                        lcImage.attr('src', clReceiptCustomization.LogoName + "?t=" + moment().format('YYYYMMDDHHmmss'));
+                    }
+                    else lcImage.attr('fa-loadstate', 'suppress');
 
                     return (lcImage);
                 },                
@@ -456,7 +502,7 @@ var RenderingController = function (paComposite) {
                 {
                     paNumber = paNumber || 0;
                     
-                    if ((clReceiptLayout.NumberMode) && (clReceiptLayout.NumberMode.toLowerCase() == 'local'))
+                    if (clReceiptLayoutSetting.LocalNumberMode)
                         return(FormManager.ConvertToFormLanguage(paNumber));
                     else return(paNumber);
                 },
@@ -500,7 +546,7 @@ var RenderingController = function (paComposite) {
                                                       Font          : clReceiptLayout.InfoFont,
                                                       Alignment     : 'left',
                                                       LineSpacing   : clReceiptLayout.InfoLineSpacing,
-                                                      ClipRectangle : this.GetTextLineClipRectangle(lcLabelWidth, clReceiptLayout.Width - lcLabelWidth, clReceiptLayout.InfoFont)
+                                                      ClipRectangle: this.GetTextLineClipRectangle(lcLabelWidth, clReceiptLayoutSetting.ReceiptWidth - lcLabelWidth, clReceiptLayout.InfoFont)
                                                    });                                            
                     }
                 },
@@ -526,7 +572,7 @@ var RenderingController = function (paComposite) {
                     if ((paText) && (paText.length > 0))
                     {                        
                         lcLabelWidth    = clReceiptLayout.SummaryLabelWidth;
-                        lcFigureWidth = clReceiptLayout.Width - (clReceiptLayout.SummaryLabelWidth + clReceiptLayout.SummaryColumnGap);
+                        lcFigureWidth = clReceiptLayoutSetting.ReceiptWidth - (clReceiptLayout.SummaryLabelWidth + clReceiptLayout.SummaryColumnGap);
                         
                         lcColumnGap     = clReceiptLayout.SummaryColumnGap;
 
@@ -554,7 +600,7 @@ var RenderingController = function (paComposite) {
 
                     if ((paText) && (paText.length > 0)) {                        
                         lcLabelWidth    = clReceiptLayout.SummaryLabelWidth;
-                        lcFigureWidth   = clReceiptLayout.Width - (clReceiptLayout.SummaryLabelWidth + clReceiptLayout.SummaryColumnGap);
+                        lcFigureWidth   = clReceiptLayoutSetting.ReceiptWidth - (clReceiptLayout.SummaryLabelWidth + clReceiptLayout.SummaryColumnGap);
                         lcColumnGap     = clReceiptLayout.SummaryColumnGap;
 
                         clCanvasPainter.DrawText({
@@ -640,6 +686,7 @@ var RenderingController = function (paComposite) {
                     {
                         case 'receiptlogo':
                             {
+
                                 if (clImage.attr('fa-loadstate') == 'success')
                                 {
                                         clCanvasPainter.DrawImage({ Image: clImage[0],
@@ -882,7 +929,7 @@ var RenderingController = function (paComposite) {
                                 break;
                             }
                     }
-                },
+                },                
                 GetRenderedReceiptImage: function (paReceiptDataManager)
                 {
                     this.RenderReceipt(paReceiptDataManager, false);
@@ -892,14 +939,17 @@ var RenderingController = function (paComposite) {
                 },
                 PrintCanvasImage : function()
                 {
-                    PrinterManager.Print(clCanvasPainter.GetCanvas());
-                },
+                    for (lcCount = 0; lcCount < clReceiptLayoutSetting.Copies; lcCount++)
+                    {                        
+                        PrinterManager.Print(clCanvasPainter.GetCanvas());
+                    }
+                },                
                 PrintReceipt : function(paReceiptDataManager)
                 {                    
                     this.RenderReceipt(paReceiptDataManager, false);
                     clCanvasPainter.GetCanvas().height = clCanvasPainter.CurrentY();
                     this.RenderReceipt(paReceiptDataManager, true);
-                    PrinterManager.Print(clCanvasPainter.GetCanvas());
+                    this.PrintCanvasImage();
                 },
                 RenderReceipt: function (paReceiptDataManager, paDrawMode) {
                     var lcRenderData;

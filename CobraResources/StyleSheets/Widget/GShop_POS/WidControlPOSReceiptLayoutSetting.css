@@ -159,16 +159,9 @@
     color:#555;
 }
 
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textinputrow],
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textarearow],
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow]
+.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=selectioninputrow] 
 {
-    height:auto;    
-}
-
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow]
-{
-    padding-bottom : 1vh;
+    margin-top: 1vh;
 }
 
 .POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][disabled]
@@ -177,18 +170,17 @@
 }
 
 .POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=togglebutton] div[sa-elementtype=inputlabel],
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=numberinputrow] div[sa-elementtype=inputlabel]
+.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=numberinputrow] div[sa-elementtype=inputlabel],
+.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=selectioninputrow] div[sa-elementtype=inputlabel]
 {
     width:65vw;
     float:left;
+    line-height : 200%;
 }
 
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textinputrow] div[sa-elementtype=inputlabel],
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textarearow] div[sa-elementtype=inputlabel],
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] div[sa-elementtype=inputlabel]
+.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=selectioninputrow] div[sa-elementtype=inputlabel]
 {
-    width:95vw;
-    height:4.5vh;    
+    width:45vw;    
 }
 
 .POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting div[sa-elementtype=inputrow][ea-type=numberinputrow] input[sa-elementtype=inputbox]
@@ -198,58 +190,39 @@
     float:right;
     border:0.15vh solid #ccc;
     padding:0vh 0.75vh;
+    height : 5vh;
 }
 
 .POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting div[sa-elementtype=inputrow][ea-type=numberinputrow] div[ea-type=unit]
 {
     float:right;
     margin-left:2vw;
-    width:7vw;    
+    width:7vw;   
+    height:5vh; 
+    line-height:220%;
 }
 
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textinputrow] input[sa-elementtype=inputbox]
+.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting div[sa-elementtype=inputrow][ea-type=selectioninputrow] .InputDiv
 {
-    width:95vw;
-    text-align:left;      
+    width:50vw;
+    float:right;
+}
+
+.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting div[sa-elementtype=inputrow][ea-type=selectioninputrow] .InputDiv input[sa-elementtype=inputbox]
+{
+    width:35vw;
+    text-align:right;  
+    float:right;
     border:0.15vh solid #ccc;
     padding:0vh 0.75vh;    
+    height : 5vh;
 }
 
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=textarearow] textarea
-{
-    height: 12vh;
-    width: 95vw;
-    margin-bottom: 1vh;
-    border:0.15vh solid #ccc;
-    padding:0vh 0.75vh;
-}
-
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv
-{
-    width: 100%;
-    height: auto;
-    min-height: 20vw;    
-}
-
-
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv img
-{
-    float:left;
-    display:block;
-    width  : 60vw;
-    min-height: 20vw;
-    height : auto;
-    border : 0.2vh solid #888;
-}
-
-
-.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting .SettingGroup div[sa-elementtype=inputrow][ea-type=imagerow] .LogoImageDiv [sa-elementtype=button]
+.POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting div[sa-elementtype=inputrow][ea-type=selectioninputrow] .InputDiv [sa-elementtype=button]
 {   
-    float:left;
-    display:block;
     width: 4vh;
     height: 4vh;
-    background: #eee;    
+    background: #eee;
     font: 3vh fontawesome;
     color: #888;
     text-align: center;
@@ -259,8 +232,9 @@
     border-style: outset;
     border-color: #fff;
     margin-top:0.5vh;
-    
+    float:right;
 }
+
 
 .POSReceiptLayoutSetting .WidControlPOSReceiptLayoutSetting div[sa-elementtype=inputrow] [sa-elementtype=inputbox]:focus
 {
@@ -273,9 +247,3 @@
     background: linear-gradient(to bottom, rgba(150,231,255,1) 0%, rgba(184,247,255,1) 11%, rgba(138,228,255,1) 88%, rgba(71,206,255,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96e7ff', endColorstr='#47ceff', GradientType=0 );
 }
-
-.POSReceiptLayoutSetting [sa-elementtype=popup][ea-type=imageuploader]
-{
-    position:fixed
-}
-

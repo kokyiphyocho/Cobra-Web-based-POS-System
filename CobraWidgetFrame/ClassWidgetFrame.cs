@@ -71,6 +71,7 @@ namespace CobraWidgetFrame
                 case "POSSTAFFPERMISSIONSETTING"            : WidgetRenderingEngine<WidControlPOSStaffPermissionSetting>.CreateInstance(clCompositeForm, clFormInfoManager, clComponentController).RenderWidget(paRenderMode); break;
                 case "POSTRANSACTIONSETTING"                : WidgetRenderingEngine<WidControlPOSTransactionSetting>.CreateInstance(clCompositeForm, clFormInfoManager, clComponentController).RenderWidget(paRenderMode); break;
                 case "POSRECEIPTLAYOUTSETTING"              : WidgetRenderingEngine<WidControlPOSReceiptLayoutSetting>.CreateInstance(clCompositeForm, clFormInfoManager, clComponentController).RenderWidget(paRenderMode); break;
+                case "POSRECEIPTCUSTOMIZATIONSETTING"       : WidgetRenderingEngine<WidControlPOSReceiptCustomizationSetting>.CreateInstance(clCompositeForm, clFormInfoManager, clComponentController).RenderWidget(paRenderMode); break;
                 case "POSGENERALSETTING"                    : WidgetRenderingEngine<WidControlPOSGeneralSetting>.CreateInstance(clCompositeForm, clFormInfoManager, clComponentController).RenderWidget(paRenderMode); break;                
                 case "_TESTCOMPOSITE"                       : WidgetRenderingEngine<_TestComposite>.CreateInstance(clCompositeForm, clFormInfoManager, clComponentController).RenderWidget(paRenderMode); break;
             }

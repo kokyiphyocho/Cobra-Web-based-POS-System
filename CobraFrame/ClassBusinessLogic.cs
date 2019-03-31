@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.IO;
 
 namespace CobraFrame
 {
@@ -670,6 +671,102 @@ namespace CobraFrame
         //}
     }
 
+
+    public class UploadManager
+    {
+        const String ctReceiptLogoFileName      = "ReceiptLogo.png";
+        const String ctUploadPathPlaceHolder    = "$UPLOADPATH";
+        const String ctPTHUploadPath            = "upload/$SUBSCRIPTIONID";
+
+        const String ctUploadManagerInstance    = "__UploadManagerInstance";       
+
+        public String LastError                     { get; set; }
+        public String UploadPath                    { get; set; }
+        public String UploadPathPlaceHolder         { get { return (ctUploadPathPlaceHolder); } }
+        public String ReceiptLogoFileName           { get { return (ctReceiptLogoFileName); } }
+
+        public static UploadManager GetInstance()
+        {
+            if (HttpContext.Current.Items[ctUploadManagerInstance] == null) HttpContext.Current.Items[ctUploadManagerInstance] = new UploadManager();
+            return ((UploadManager) HttpContext.Current.Items[ctUploadManagerInstance]);
+        }
+
+        public UploadManager()
+        {
+            UploadPath = ctPTHUploadPath.Replace("$SUBSCRIPTIONID", ApplicationFrame.GetInstance().ActiveSubscription.ActiveRow.SubscriptionID);
+        }
+
+        public bool UploadFiles()
+        {
+            if (HttpContext.Current.Request.Files.Count > 0)
+            {
+                for (int lcCount = 0; lcCount < HttpContext.Current.Request.Files.Count; lcCount++)
+                {
+                    if (!SaveFile(HttpContext.Current.Request.Files[0]))
+                        return(false);
+                }
+            }
+
+            return (true);
+        }
+
+        private bool CreateUploadPath()
+        {
+            String   lcPhysicalPath;
+
+            lcPhysicalPath = HttpContext.Current.Server.MapPath(UploadPath);
+
+            try
+            {
+                if (!Directory.Exists(lcPhysicalPath))
+                {
+                    Directory.CreateDirectory(lcPhysicalPath);
+                }
+            }
+            catch(Exception paException)
+            {
+                LastError = paException.Message;
+
+                return (false);
+            }
+
+            return (true);
+        }
+
+        private bool SaveFile(HttpPostedFile paHttpPostedFile)
+        {
+            try
+            {
+                LastError = null;
+
+                if ((paHttpPostedFile != null) && (CreateUploadPath()))
+                {                    
+                    if (!String.IsNullOrEmpty(paHttpPostedFile.FileName))
+                    {                        
+                        paHttpPostedFile.SaveAs(HttpContext.Current.Server.MapPath(UploadPath + "/" + paHttpPostedFile.FileName));
+
+                        return (true);
+                    }
+                }
+            }
+            catch (Exception paException) 
+            {
+                LastError = paException.Message;
+            }            
+
+            return (false);
+        }
+
+        public String ReplaceUploadPath(String paFilePath)
+        {
+            if ((!String.IsNullOrEmpty(paFilePath)) && (paFilePath.StartsWith(ctUploadPathPlaceHolder)))
+            {
+                return (paFilePath.Replace(ctUploadPathPlaceHolder, ctPTHUploadPath).Replace("$SUBSCRIPTIONID", ApplicationFrame.GetInstance().ActiveSubscription.ActiveRow.SubscriptionID));
+            }
+            else return (paFilePath);
+        }
+    }
+
     public class WidgetManager
     {
         WidgetRow       clWidgetRow;
@@ -1143,7 +1240,7 @@ namespace CobraFrame
         //const String ctSETLocalNumberMode           = "_LOCALNUMBERMODE";
         //const String ctSETLanguage                  = "_LANGUAGE";          
 
-        const String ctSETFormProtocolList          = "__FORMPROTOCOLLIST";
+        const String ctSETFormProtocolList          = "__FORMPROTOCOLLI1ST";
         const String ctSETDateFormatOptions         = "_DATEFORMATOPTIONS";          
         const String ctSETSystemConfig              = "_SYSTEMCONFIG";
         const String ctSETRegionalConfig            = "_REGIONALCONFIG";
