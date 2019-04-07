@@ -24,17 +24,17 @@
 
 .SubControlPOSReceiptOutput canvas[ea-type=receiptcanvas]
 {
-    /*position:fixed;
+    position:fixed;
     top:0;
     left:0;
-    width:100vw;*/
+    width:100vw;
     display : none;
     background : #aaa;
 }
-/*.SubControlPOSReceiptOutput canvas[ea-type=receiptcanvas][fa-show]
+.SubControlPOSReceiptOutput canvas[ea-type=receiptcanvas][fa-show]
 {
     display:block;
-}*/
+}
 
 
 .SubControlPOSReceiptOutput div[sa-elementtype=panel][ea-type=preview]

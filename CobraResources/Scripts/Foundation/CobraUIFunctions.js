@@ -79,8 +79,7 @@ var FormManager = (function () {
                     clPasswordDiv = clForm.find('[sa-elementtype=container].PasswordDiv');
                     clLocalDigits = clForm.attr('ea-localdigits');
                     clLocalNumberMode = clForm.attr('ea-localnumbermode');
-                    clFormProtocolList = JSON.parse(Base64.decode(clForm.attr('ea-formprotocollist') || 'e30='));                   
-                    
+                    clFormProtocolList = JSON.parse(Base64.decode(clForm.attr('ea-formprotocollist') || 'e30='));                                       
                     FormManager.BindFormEvents();
                     FormManager.InitializeMessageControls();
                 },
@@ -214,7 +213,7 @@ var FormManager = (function () {
                             GlobalAjaxHandler.DisplayAjaxLoaderImage('false');
                             if (paLink.indexOf('?') == 0)                                
                                 paLink = paLink + GetWebState(true);
-
+                            
                             if (paLink[0] == '?')
                                 paLink = FormManager.GetEffectiveURL(FormManager.ExtractBase64FormName(paLink)) + paLink;
                             
@@ -229,7 +228,7 @@ var FormManager = (function () {
                         var lcLinkArray = paBase64Link.split('=');
 
                         if (lcLinkArray.length > 1)
-                        {
+                        {   
                             return(FormManager.ExtractFormName(Base64.decode(decodeURIComponent(lcLinkArray[1]))));
                         }
                     }
@@ -244,16 +243,14 @@ var FormManager = (function () {
                     return ('');
                 },
                 GetEffectiveURL : function(paFormName)
-                {
-                    
-                    paFormName = paFormName || '*';
+                {                    
+                    paFormName = (paFormName || '*').trim();                    
 
                     if (clFormProtocolList)
                     {
-                        var lcProtocol = clFormProtocolList['*'] || window.location.protocol;
+                        var lcProtocol = clFormProtocolList['*'] || window.location.protocol;                        
                         
-                        if (clFormProtocolList[paFormName.toLowerCase()]) lcProtocol = clFormProtocolList[paFormName.toLowerCase()];
-                        
+                        if (clFormProtocolList[paFormName.toLowerCase()]) lcProtocol = clFormProtocolList[paFormName.toLowerCase()];                        
                         return (lcProtocol + '//' + window.location.host + '/');
                     }
 

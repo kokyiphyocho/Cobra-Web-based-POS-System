@@ -142,14 +142,27 @@
             return (lcDeferred);
         },
 
-        SetReceiptWidth: function (paNewWidth)
+        ReloadLayoutInfo : function(paLayoutScaleX, paLayoutScaleY, paFontScale)
         {
-            clReceiptRenderer.SetReceiptWidth(paNewWidth);            
+            clReceiptRenderer.LoadLayoutInfo(paLayoutScaleX, paLayoutScaleY, paFontScale);
         },
 
-        SetReceiptLayoutParameter: function (paKey, paValue)
+        ResizeReceipt : function (paWidth, paLeftMargin, paTopMargin)
         {
-            clReceiptRenderer.SetReceiptLayoutParameter(paKey, paValue);
+            clReceiptRenderer.ResizeReceipt(paWidth, paLeftMargin, paTopMargin);
+        },
+
+        SetReceiptLayoutSettingIntegerParameter: function (paKey, paValue)
+        {
+            clReceiptRenderer.SetReceiptLayoutSettingIntegerParameter(paKey, paValue);
+        },
+
+        SetReceiptLayoutSettingDecimalParameter: function (paKey, paValue) {
+            clReceiptRenderer.SetReceiptLayoutSettingDecimalParameter(paKey, paValue);
+        },
+
+        SetReceiptLayoutSettingStringParameter: function (paKey, paValue) {
+            clReceiptRenderer.SetReceiptLayoutSettingStringParameter(paKey, paValue);
         },
 
         SetReceiptCustomizationParameter: function (paKey, paValue)
@@ -335,7 +348,7 @@ var RenderingController = function (paComposite) {
                     clCurrencyDecimal = clComposite.attr('ea-decimal');
                     
                     clCanvasPainter = new CanvasPainter(clComposite.find('canvas'));
-                    clCanvasPainter.InitializeCanvas();                    
+                    clCanvasPainter.Init();                    
 
                     this.LoadLayoutInfo();
 
@@ -366,19 +379,23 @@ var RenderingController = function (paComposite) {
 
                     return (paFontStr || '');                    
                 },
-                LoadLayoutInfo : function()
+                LoadLayoutInfo : function(paLayoutScaleX, paLayoutScaleY, paFontScale)
                 {                    
                     clReceiptLayout         = JSON.parse(Base64.decode(clComposite.attr('pos.receiptlayoutinfo.layout') || '') || "{}");
                     clReceiptLayoutSetting  = JSON.parse(Base64.decode(clComposite.attr('pos.receiptlayoutinfo.layoutsetting') || '') || "{}");
                     clReceiptCustomization  = JSON.parse(Base64.decode(clComposite.attr('pos.receiptlayoutinfo.customization') || '') || "{}");                    
                                        
-                    clReceiptLayoutSetting.LayoutScaleX     = CastDecimal(clReceiptLayoutSetting.LayoutScaleX,1);
-                    clReceiptLayoutSetting.LayoutScaleY     = CastDecimal(clReceiptLayoutSetting.LayoutScaleY,1);
-                    clReceiptLayoutSetting.FontScale        = CastDecimal(clReceiptLayoutSetting.FontScale, 1);
+                    clReceiptLayoutSetting.LayoutScaleX     = CastDecimal(paLayoutScaleX || clReceiptLayoutSetting.LayoutScaleX, 1);
+                    clReceiptLayoutSetting.LayoutScaleY     = CastDecimal(paLayoutScaleY || clReceiptLayoutSetting.LayoutScaleY, 1);
+                    clReceiptLayoutSetting.FontScale        = CastDecimal(paFontScale || clReceiptLayoutSetting.FontScale, 1);
                     clReceiptLayoutSetting.ReceiptWidth     = CastInteger(clReceiptLayoutSetting.ReceiptWidth || clActivePrinterSetting.PrinterWidth, 500);
+                    clReceiptLayoutSetting.TopMargin        = CastInteger(clReceiptLayoutSetting.TopMargin  || clActivePrinterSetting.TopMargin, 0);
+                    clReceiptLayoutSetting.LeftMargin       = CastInteger(clReceiptLayoutSetting.LeftMargin || clActivePrinterSetting.LeftMargin, 0);
                     clReceiptLayoutSetting.LocalNumberMode  = clReceiptLayoutSetting.LocalNumberMode == 'false' ? false : true;
                     clReceiptLayoutSetting.Copies           = CastInteger(clReceiptLayoutSetting.Copies, 2);
                     
+                    clCanvasPainter.CreateCanvas(0, clReceiptLayoutSetting.LeftMargin, clReceiptLayoutSetting.TopMargin);
+
                     clReceiptLayout.LineFeedAfter           = this.ApplyLayoutScaleY(CastInteger(clReceiptLayout.LineFeedAfter, 5));
                     clReceiptLayout.TextBaseLine            = clReceiptLayout.TextBaseLine || 'top';
                     clReceiptLayout.TextPaddingRatio        = CastDecimal(clReceiptLayout.TextPaddingRatio,1);                    
@@ -388,23 +405,23 @@ var RenderingController = function (paComposite) {
                     clReceiptCustomization.RenderLogo       = clReceiptLayoutSetting.RenderLogo == 'false' ? false : true;
                     clReceiptCustomization.LogoMarginBefore = this.ApplyLayoutScaleY(CastInteger(clReceiptCustomization.LogoMarginBefore, 0));
                     clReceiptCustomization.LogoMarginAfter  = this.ApplyLayoutScaleY(CastInteger(clReceiptCustomization.LogoMarginAfter, 0));
-                    clReceiptCustomization.LogoSize         = this.ApplyLayoutScaleX(CastDecimal(clReceiptCustomization.LogoSize, 80));
+                    clReceiptCustomization.LogoSize         = CastDecimal(clReceiptCustomization.LogoSize, 80);
                     clReceiptCustomization.LogoAspectRatio  = CastDecimal(clReceiptCustomization.LogoAspectRatio, 3);
                     clReceiptCustomization.BusinessName     = (clReceiptCustomization.BusinessName || '');
                     clReceiptCustomization.Address          = (clReceiptCustomization.Address || '').split('\n');
                     clReceiptCustomization.FootNote         = (clReceiptCustomization.FootNote || '').split('\n');
 
-                    clReceiptCustomization.LogoWidth        = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptCustomization.LogoSize)));
+                    clReceiptCustomization.LogoWidth        = clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptCustomization.LogoSize));
                     clReceiptCustomization.LogoHeight       = CastInteger(clReceiptCustomization.LogoWidth / clReceiptCustomization.LogoAspectRatio);
                     
                     clReceiptLayout.HeadingFont             = this.ApplyFontScale(clReceiptLayout.HeadingFont).split(';;');
-                    clReceiptLayout.HeadingLineSpacing      = CastDecimal(clReceiptLayout.HeadingLineSpacing, 1);
-                    clReceiptLayout.HeadingLineStyle        = CastInteger(CastIntArray(clReceiptLayout.HeadingLineStyle));
+                    clReceiptLayout.HeadingLineSpacing      = CastDecimal(clReceiptLayout.HeadingLineSpacing, 1);                    
+                    clReceiptLayout.HeadingLineStyle        = CastIntArray(clReceiptLayout.HeadingLineStyle);
                     
                     clReceiptLayout.InfoFont                = this.ApplyFontScale(clReceiptLayout.InfoFont);
-                    clReceiptLayout.InfoLineSpacing         = CastDecimal(clReceiptLayout.InfoLineSpacing, 1);
+                    clReceiptLayout.InfoLineSpacing         = CastDecimal(clReceiptLayout.InfoLineSpacing, 1);                    
                     clReceiptLayout.InfoLabelWidth          = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.InfoLabelWidth, 50)));
-
+                    
                     clReceiptLayout.EntryFont               = this.ApplyFontScale(clReceiptLayout.EntryFont);
                     clReceiptLayout.EntryLineSpacing        = CastDecimal(clReceiptLayout.EntryLineSpacing, 1);
                     clReceiptLayout.EntryRowSpacing         = CastInteger(clReceiptLayout.EntryRowSpacing, 3);
@@ -416,7 +433,7 @@ var RenderingController = function (paComposite) {
                     clReceiptLayout.EntrySubtotalWidth      = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.EntrySubtotalWidth, 0)));
 
                     clReceiptLayout.SummaryFont             = this.ApplyFontScale(clReceiptLayout.SummaryFont);                    
-                    clReceiptLayout.SummaryLineSpacing      = CastDecimal(clReceiptLayout.HeadingLineSpacing, 1);
+                    clReceiptLayout.SummaryLineSpacing      = CastDecimal(clReceiptLayout.SummaryLineSpacing, 1);
                     clReceiptLayout.SummaryTotalFont        = clReceiptLayout.SummaryTotalFont || '';
                     clReceiptLayout.SummaryLineStyle        = CastIntArray(clReceiptLayout.SummaryLineStyle);                                          
                     clReceiptLayout.SummaryLabelWidth       = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.SummaryLabelWidth, 0)));               
@@ -439,22 +456,33 @@ var RenderingController = function (paComposite) {
                     
                     clReceiptLayout.RenderCommand               = (clReceiptLayout.RenderCommand || '').split(';');
                 },
-                SetReceiptWidth : function(paNewWidth)
+                ResizeReceipt: function (paWidth, paLeftMargin, paTopMargin)
                 {
-                    if (paNewWidth)
-                    {
-                        clReceiptLayoutSetting.ReceiptWidth = CastInteger(paNewWidth);
-                        clCanvasPainter.GetCanvas().width = clReceiptLayoutSetting.ReceiptWidth;
+                    if ((paWidth !== 'undefined') && (paLeftMargin !== 'undefined') && (paTopMargin !== 'undefined'))
+                    {                        
+                        clReceiptLayoutSetting.ReceiptWidth = CastInteger(paWidth || clActivePrinterSetting.PrinterWidth);                        
+                        this.SetReceiptLayoutSettingIntegerParameter('LeftMargin', paLeftMargin);
+                        this.SetReceiptLayoutSettingIntegerParameter('TopMargin', paTopMargin);
+
+                        clCanvasPainter.CreateCanvas(clReceiptLayoutSetting.ReceiptWidth, paLeftMargin, paTopMargin);
                     }
                 },
-                SetReceiptLayoutParameter : function(paKey, paValue)
+                SetReceiptLayoutSettingIntegerParameter : function(paKey, paValue)
                 {
-                    if (clReceiptLayout[paKey])
-                        clReceiptLayout[paKey] = paValue;
+                    if (clReceiptLayoutSetting[paKey] !== 'undefined')
+                        clReceiptLayoutSetting[paKey] = CastInteger(paValue, clReceiptLayoutSetting[paKey]);
+                },
+                SetReceiptLayoutSettingDecimalParameter: function (paKey, paValue) {
+                    if (clReceiptLayoutSetting[paKey] !== 'undefined')
+                        clReceiptLayoutSetting[paKey] = CastDecimal(paValue, clReceiptLayoutSetting[paKey]);
+                },
+                SetReceiptLayoutSettingStringParameter: function (paKey, paValue) {
+                    if (clReceiptLayoutSetting[paKey] !== 'undefined')
+                        clReceiptLayoutSetting[paKey] = paValue || '';
                 },
                 SetReceiptCustomizationParameter : function (paKey, paValue) 
                 {
-                    if (clReceiptCustomization[paKey])
+                    if (clReceiptCustomization[paKey] !== 'undefined')
                         clReceiptCustomization[paKey] = paValue;
                 },
                 LoadImage : function()
@@ -939,10 +967,11 @@ var RenderingController = function (paComposite) {
                 },
                 PrintCanvasImage : function()
                 {
-                    for (lcCount = 0; lcCount < clReceiptLayoutSetting.Copies; lcCount++)
-                    {                        
-                        PrinterManager.Print(clCanvasPainter.GetCanvas());
-                    }
+                    $(clCanvasPainter.GetCanvas()).attr('fa-show','true');
+                    //for (lcCount = 0; lcCount < clReceiptLayoutSetting.Copies; lcCount++)
+                    //{                        
+                    //    PrinterManager.Print(clCanvasPainter.GetCanvas());
+                    //}
                 },                
                 PrintReceipt : function(paReceiptDataManager)
                 {                    

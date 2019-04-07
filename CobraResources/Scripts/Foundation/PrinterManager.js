@@ -67,10 +67,10 @@
             });            
         },
         SetPrinterDarkness: function (paDarkness) {
-            clPrinterController.SetPrinterDarkness(paDarkness);
+            if (paDarkness) clPrinterController.SetPrinterDarkness(paDarkness);
         },
         Print: function (paCanvas) {            
-            if (clPrinterController) clPrinterController.Print(paCanvas);            
+            if (clPrinterController) clPrinterController.Print(paCanvas);
         },
         //WaitForConnection: function () {
         //    var lcDeferred = $.Deferred();            

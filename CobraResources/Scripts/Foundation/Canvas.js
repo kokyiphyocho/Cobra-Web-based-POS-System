@@ -5,27 +5,35 @@
     var     clSavedStateCount;
     var     clYMarginBefore;
     var     clYMarginAfter;
+    var     clLeftMargin;
+    var     clTopMargin;
     var     clTextPaddingRatio;
     var     clFontHeightFactor;
-    var     clDrawMode;
-    var     clScaledCanvas;
+    var     clDrawMode;    
 
     return {
-                InitializeCanvas : function()
-                {
-                    clContext               = clCanvasElement[0].getContext('2d');
-                    clContext.imageSmoothingEnabled = true;
-                    clContext.textBaseline  = 'top';
-                    clYCord                 = 0;
+                Init : function()
+                {                                     
                     clSavedStateCount       = 0;
                     clYMarginBefore         = 0;
                     clYMarginAfter          = 0;
-                    clDrawMode              = true;
-                    clScaledCanvas          = null;
+                    clDrawMode              = true;                    
                 },
                 GetCanvas : function()
                 {
                     return (clCanvasElement[0]);
+                },
+                CreateCanvas : function(paWidth, paLeftMargin, paTopMargin)
+                {
+                    clCanvasElement[0].width        = (paWidth || CastInteger(clCanvasElement.attr('ea-originalvalue'))) + (paLeftMargin || 0);
+                    
+                    clContext                       = clCanvasElement[0].getContext('2d');
+                    clContext.imageSmoothingEnabled = true;
+                    clContext.textBaseline          = 'top';
+
+                    clLeftMargin                = paLeftMargin || 0;
+                    clTopMargin                 = paTopMargin || 0;
+                    clYCord                     = clTopMargin;                    
                 },
                 //ScaleCanvas : function(paScaleFactor)
                 //{
@@ -77,7 +85,7 @@
                         clSavedStateCount = 0;
                     }
 
-                    clYCord = 0;                    
+                    clYCord = clTopMargin;                    
                 },
                 CurrentY : function()
                 {
@@ -113,7 +121,7 @@
                 {
                     paParameter.Image           = paParameter.Image || ''
                     paParameter.Alignment       = paParameter.Alignment || '';
-                    paParameter.X               = CastInteger(paParameter.X);
+                    paParameter.X               = CastInteger(paParameter.X) + clLeftMargin;
                     paParameter.ImageWidth      = CastInteger(paParameter.ImageWidth);
                     paParameter.ImageHeight     = CastInteger(paParameter.ImageHeight);
                     paParameter.MarginBefore    = CastInteger(paParameter.MarginBefore);
@@ -161,9 +169,9 @@
 
                     switch(paAlignment)
                     {
-                        case 'left'     : return (0);
-                        case 'center'   : return ((paContainerWidth / 2) - (paShapeWidth / 2));
-                        case 'right'    : return (paContainerWidth - paShapeWidth);
+                        case 'left'     : return (0 + clLeftMargin);
+                        case 'center'   : return (((paContainerWidth / 2) - (paShapeWidth / 2)) + (clLeftMargin / 2));
+                        case 'right'    : return ((paContainerWidth - paShapeWidth) + clLeftMargin);
                     }
                 },
                 GetTextAlignedX : function(paAlignment, paText, paClipRectangle)
@@ -180,12 +188,12 @@
                     
                     switch(paAlignment)
                     {
-                        case 'left'     : return (paClipRectangle ? paClipRectangle.X : 0);
-                        case 'center'   : return ((lcRectWidth / 2) - (lcTextWidth / 2));
-                        case 'right'    : return ((paClipRectangle ? paClipRectangle.X : 0) + (lcRectWidth - lcTextWidth));
+                        case 'left'     : return ((paClipRectangle ? paClipRectangle.X : 0) + clLeftMargin);
+                        case 'center'   : return (((lcRectWidth / 2) - (lcTextWidth / 2)) + (clLeftMargin / 2));
+                        case 'right'    : return (((paClipRectangle ? paClipRectangle.X : 0) + clLeftMargin + (lcRectWidth - lcTextWidth)));
                     }
                 },
-                GetAbsoluteWidth: function (paWidthPercent) {                    
+                GetAbsoluteWidth: function (paWidthPercent) {
                     if (paWidthPercent) return (clCanvasElement[0].width * paWidthPercent / 100);
                     else return (0);
                 },
@@ -195,7 +203,7 @@
                     
                     if (paRectangleInfo)
                     {                        
-                        paRectangleInfo.X       = paRectangleInfo.X || 0;
+                        paRectangleInfo.X       = (paRectangleInfo.X || 0) + clLeftMargin;
                         paRectangleInfo.Y       = paRectangleInfo.Y || 0;
                         paRectangleInfo.Width   = paRectangleInfo.Width || clCanvasElement[0].width;
                         paRectangleInfo.Height  = paRectangleInfo.Height || clCanvasElement[0].height;
@@ -229,8 +237,8 @@
                         clContext.setLineDash(lcDashStyle);
                         
                         clContext.beginPath();
-                        clContext.moveTo(paLineInfo.X1 || 0, paLineInfo.Y1 || 0);
-                        clContext.lineTo(paLineInfo.X2 || clCanvasElement[0].width, paLineInfo.Y2 || clCanvasElement[0].height);
+                        clContext.moveTo(paLineInfo.X1 + clLeftMargin || 0, paLineInfo.Y1 || 0);
+                        clContext.lineTo(paLineInfo.X2 + clLeftMargin || clCanvasElement[0].width, paLineInfo.Y2 || clCanvasElement[0].height);
                         clContext.stroke();
 
                         clContext.lineWidth = lcPrevLineWidth;
@@ -238,11 +246,9 @@
                     }
                 },
                 DrawSeparatorLine : function(paStyle)
-                {
+                {                    
                     if (paStyle)
                     {
-                        paStyle[0]
-                    
                         if (paStyle[0]) this.LineFeed(paStyle[0]);
 
                         if (clDrawMode) this.DrawLine({ X1: this.GetAbsoluteWidth(paStyle[3] || 0), 
@@ -253,7 +259,6 @@
                                                         DashStyle : paStyle.slice(5)
                                                      });
                     }
-
                     this.LineFeed(paStyle[1]);
                 },                
                 DrawText : function(paParameter)
@@ -261,13 +266,13 @@
                     paParameter.Text            = typeof paParameter.Text === 'undefined' ? '' : paParameter.Text;                    
                     paParameter.Font            = paParameter.Font || '12px cobrasystemfont';
                     paParameter.Alignment       = paParameter.Alignment || '';
-                    paParameter.X               = CastInteger(paParameter.X);                    
+                    paParameter.X               = CastInteger(paParameter.X) + clLeftMargin;                    
                     paParameter.LineSpacing     = CastDecimal(paParameter.LineSpacing, 1);
                               
                     clContext.font = paParameter.Font;
                     
                     // this.DrawRectangle(paParameter.ClipRectangle);
-
+                    
                     this.SetClipRectangle(paParameter.ClipRectangle);
 
                     if (paParameter.Alignment != '')
@@ -294,7 +299,7 @@
                         (typeof paClipRectangle.Height !== 'undefined')) {
                         this.SaveContext();
                         clContext.beginPath();
-                        clContext.rect(paClipRectangle.X, paClipRectangle.Y, paClipRectangle.Width, paClipRectangle.Height);
+                        clContext.rect(paClipRectangle.X + clLeftMargin, paClipRectangle.Y, paClipRectangle.Width, paClipRectangle.Height);
                         clContext.clip();
                     }                    
                 },

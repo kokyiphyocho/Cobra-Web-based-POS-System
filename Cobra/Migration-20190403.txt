@@ -1,0 +1,80 @@
+﻿Restore Fully Following Tables
+--------------------------------
+Admin_EserviceParam
+Admin_FieldInfo
+Admin_FormInfo
+Admin_InputInfo
+Admin_KeyPad
+Admin_Language (Delete Unnecessary Languages)
+Admin_Message
+Admin_Routing
+Admin_ServiceSubscription
+Admin_Text
+Admin_TimeZone
+Admin_ToolBar
+Admin_UrlRewrite
+Admin_Widget
+Data_ComponentSubscription
+Data_DynamicQuery
+
+
+Admin_Setting
+need to fix form protocol (https)
+
+Special Care Table
+-------------------
+Admin_Session
+    (No Changes)
+
+Admin_User
+	(No Changes)
+
+Data_AppManifest
+	 (No Changes)
+
+Data_EService
+	 (No Changes)
+
+Data_Subscriber
+	 (No Changes)
+
+Data_Subscription
+	DropColumn SubscriptionTitle nvarchar (1000)
+	DropColumn Wallpaper varchar (1000)
+
+
+EDAta_ItemCatalogue
+	DropColumn UPCCode varchar (50)
+
+
+EDATA_Receipt
+Add 2 columns after reference nvarchar(100)
+	[ServiceChargePercent] [decimal](18, 2) NOT NULL,
+	[ServiceCharge] [decimal](18, 2) NOT NULL,
+
+Add 2 columns after paymentcontra decimal(18,2)
+    [PaymentETransfer] [decimal](18, 2) NOT NULL,
+	[PaymentCreditCard] [decimal](18, 2) NOT NULL,
+	[Change] [decimal](18, 2) NOT NULL,
+
+EDATA_StockIncoming
+
+
+
+EDATA_StockOutgoing
+
+
+
+EDATA_TableList
+EDATA_UNIT
+ELOG_RECEIPT
+ELOG_STOCKINCOMING
+ELOG_STOCKOUTGOING
+ELOG_TABLELIST
+ELOG_UNIT
+LOG_APPManifest
+Log_Setting
+Log_Subscription
+Log_User
+TrackServiceRequestLog
+

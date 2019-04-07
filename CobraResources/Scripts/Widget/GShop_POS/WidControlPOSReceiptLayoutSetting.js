@@ -257,30 +257,39 @@ var POSReceiptLayoutSettingManager = (function () {
         },        
         SetReceiptChangesForPrinting : function()
         {
-            //var lcDataBlock = {};
-            //var lcColumnNameList = POSReceiptLayoutSettingManager.GetColumnNameList();
+            var lcDataBlock = {};
+            var lcColumnNameList = POSReceiptLayoutSettingManager.GetColumnNameList();
             
-            //for (var lcColumn in lcColumnNameList) {                
-            //    lcDataBlock = $.extend(lcDataBlock, POSReceiptLayoutSettingManager.CompileSettingKey(lcColumn, lcColumnNameList[lcColumn], true));                
-            //}
+            for (var lcColumn in lcColumnNameList) {                
+                lcDataBlock = $.extend(lcDataBlock, POSReceiptLayoutSettingManager.CompileSettingKey(lcColumn, lcColumnNameList[lcColumn], true));                
+            }
 
-            //POSReceiptPrintingManager.SetReceiptWidth(lcDataBlock['POS.ReceiptLayoutInfo.Layout'].Width);
-            //POSReceiptPrintingManager.SetReceiptLayoutParameter('LocalNumberMode', lcDataBlock['POS.ReceiptLayoutInfo.Layout'].LocalNumberMode == 'true' ? true : false);
+            //POSReceiptPrintingManager.SetReceiptLayoutSettingDecimalParameter('LayoutScaleX', lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].LayoutScaleX);
+            //POSReceiptPrintingManager.SetReceiptLayoutSettingDecimalParameter('LayoutScaleY', lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].LayoutScaleY);
+            //POSReceiptPrintingManager.SetReceiptLayoutSettingDecimalParameter('FontScale', lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].FontScale);
+
+            POSReceiptPrintingManager.ReloadLayoutInfo(lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].LayoutScaleX, lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].LayoutScaleY, lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].FontScale);
+
+            POSReceiptPrintingManager.ResizeReceipt(lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].ReceiptWidth, lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].LeftMargin || 0, lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].TopMargin || 0);
+            POSReceiptPrintingManager.SetReceiptLayoutSettingIntegerParameter('Copies', lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].Copies);
+            POSReceiptPrintingManager.SetReceiptLayoutSettingIntegerParameter('Darkness', lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].Darkness);
+            POSReceiptPrintingManager.SetReceiptLayoutSettingStringParameter('LocalNumberMode', lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].LocalNumberMode == 'true' ? true : false);
+            PrinterManager.SetPrinterDarkness(lcDataBlock['POS.ReceiptLayoutInfo.LayoutSetting'].Darkness);
+
+            
+            
+            
+
             //POSReceiptPrintingManager.SetReceiptCustomizationParameter('BusinessName', lcDataBlock['POS.ReceiptLayoutInfo.Customization'].BusinessName);
             //POSReceiptPrintingManager.SetReceiptCustomizationParameter('Address', (lcDataBlock['POS.ReceiptLayoutInfo.Customization'].Address || '').split('\n'));
             //POSReceiptPrintingManager.SetReceiptCustomizationParameter('FootNote', (lcDataBlock['POS.ReceiptLayoutInfo.Customization'].FootNote || '').split('\n'));
             //PrinterManager.SetPrinterDarkness(lcDataBlock['POS.PrimaryPrinterSetting'].Darkness);
         },       
         PrintTestPage: function () {            
-            MessageHandler.ShowMessage('confirm_printtestpage').done(function (paResult) {
-                if (paResult == 'yes') {
+                var lcTestPrintTemplate = JSON.parse(Base64.decode(clControl.attr('ea-template') || 'e30='));
 
-                    var lcTestPrintTemplate = JSON.parse(Base64.decode(clControl.attr('ea-template') || 'e30='));
-
-                    POSReceiptLayoutSettingManager.SetReceiptChangesForPrinting();                    
-                    POSReceiptPrintingManager.PrinteJSONReceipt(lcTestPrintTemplate);
-                }
-            });
+                POSReceiptLayoutSettingManager.SetReceiptChangesForPrinting();                    
+                POSReceiptPrintingManager.PrinteJSONReceipt(lcTestPrintTemplate);                            
         },
         SetPrinterStatusControlAttribute: function (paStatus, paErrorCode, paErrorParam) {
             clPrinterStatusControl.attr('fa-status', paStatus);

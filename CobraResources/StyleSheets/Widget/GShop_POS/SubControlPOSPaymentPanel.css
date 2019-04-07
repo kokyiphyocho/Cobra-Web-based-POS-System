@@ -108,11 +108,11 @@
 .SubControlPOSPaymentPanel .ContentContainer .ChangeRow [sa-elementtype=label]
 {
     height: 100%;
-    font-size: 3vh;
+    font-size: 2.2vh;
     margin-left: 10vw;
     width: 40%;
     float: left;
-    line-height: 220%;
+    line-height: 300%;
 }
 
 .SubControlPOSPaymentPanel .ContentContainer .TotalRow [sa-elementtype=figure],

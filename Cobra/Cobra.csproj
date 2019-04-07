@@ -15,8 +15,7 @@
     <AssemblyName>Cobra</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -184,6 +183,7 @@
     <Content Include="Images\Widget\GSTOCK\POS_StaticCostList.png" />
     <Content Include="Images\Widget\GSTOCK\POS_TableList.png" />
     <Content Include="Images\Widget\GSTOCK\POS_TableManager.png" />
+    <Content Include="Migration-20190403.txt" />
     <Content Include="Site.Master" />
     <Content Include="Fonts\fontawesome.eot">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

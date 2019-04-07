@@ -199,7 +199,7 @@
                     return (lcDeferred);
                 },
                 Print: function (paCanvas)
-                {                    
+                {
                     if (clStatus == 'pending') ePOSPrinterManager.WaitForConnection().done(function (paStatus)
                     {                        
                         ePOSPrinterManager.SendToPrinter(paCanvas);
@@ -209,16 +209,16 @@
                         ePOSPrinterManager.SendToPrinter(paCanvas);
                     }
                 },
-                SetPrinterDarkness : function(paDarkness)
+                SetPrinterDarkness: function (paDarkness)
                 {
                     clPrinterSetting.Darkness = paDarkness;
                 },
-                SendToPrinter: function (paCanvas)
+                SendToPrinter: function ( paCanvas)
                 {
                     if (clStatus == 'connected')
                     {
                         clPrinter.brightness    = CastDecimal(10 - (clPrinterSetting.Darkness * 0.1) + 0.1, 1);
-                        clPrinter.halftone      = clPrinter.HALFTONE_DITHER;
+                        clPrinter.halftone = clPrinter.HALFTONE_DITHER;
                         clPrinter.addImage(paCanvas.getContext('2d'), 0, 0, paCanvas.width, paCanvas.height, clPrinter.COLOR_1, clPrinter.MODE_MONO);                        
                         clPrinter.addCut(clPrinter.CUT_FEED);
                         clPrinter.send();

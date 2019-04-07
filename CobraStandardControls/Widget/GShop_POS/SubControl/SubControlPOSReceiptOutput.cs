@@ -184,7 +184,8 @@ namespace CobraStandardControls
             {
                 lcReceiptWidth = Convert.ToInt32(clPrimaryPrinterSetting.GetData(ctKEYPrinterWidth, ctDEFCanvasWidth));
             }
-            
+
+            paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_OriginalValue, lcReceiptWidth.ToString());     
             paComponentController.AddAttribute(HtmlAttribute.Width, lcReceiptWidth.ToString());           
             paComponentController.AddAttribute(HtmlAttribute.Height, ctDEFCanvasHeight.ToString());
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, ctTYPReceiptCanvas);

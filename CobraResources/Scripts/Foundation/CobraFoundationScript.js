@@ -1,13 +1,13 @@
-﻿String.prototype.trim = function () {
-    return this.replace(/(^\s*)|(\s*$)/g, '');
+﻿String.prototype.trim = function () {    
+    return this.replace('\0','').replace(/(^\s*)|(\s*$)/g, '');
 };
 
 String.prototype.ltrim = function () {
-    return this.replace(/^\s*/g, '');
+    return this.replace('\0', '').replace(/^\s*/g, '');
 };
 
 String.prototype.rtrim = function () {
-    return this.replace(/\s*$/g, '');
+    return this.replace('\0', '').replace(/\s*$/g, '');
 };
 
 function ConvertToThousandSeparatorStr(paValue) {    

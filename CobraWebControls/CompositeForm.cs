@@ -114,7 +114,7 @@ namespace CobraWebControls
         {
             String  lcApplicationTitle;
 
-            if ((lcApplicationTitle = clSettingManager.ApplicationTitle.GetData(clLanguageManager.ActiveRow.Language)) == null)
+            if ((lcApplicationTitle = clSettingManager.ApplicationTitle.GetData(clLanguageManager.ActiveRow.Language.ToLower())) == null)
                 return (clFormInfoManager.TranslateString(clSettingManager.ApplicationTitle.GetData(ctDefaultApplicationTitle, String.Empty)));
             else return (lcApplicationTitle);
         }

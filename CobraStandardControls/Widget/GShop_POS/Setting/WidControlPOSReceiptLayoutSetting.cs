@@ -30,6 +30,8 @@ namespace CobraStandardControls
         const String ctDYTReceiptLayoutTitle                                = "@@POS.ReceiptLayoutSetting.ReceiptLayoutTitle";
         const String ctDYTLayoutName                                        = "@@POS.ReceiptLayoutSetting.LayoutName";
         const String ctDYTReceiptWidth                                      = "@@POS.ReceiptLayoutSetting.ReceiptWidth";
+        const String ctDYTTopMagin                                          = "@@POS.ReceiptLayoutSetting.TopMargin";
+        const String ctDYTLeftMagin                                         = "@@POS.ReceiptLayoutSetting.LeftMargin";
         const String ctDYTDarkness                                          = "@@POS.ReceiptLayoutSetting.Darkness";
         const String ctDYTLocalNumberMode                                   = "@@POS.ReceiptLayoutSetting.LocalNumberMode";
         const String ctDYTCopies                                            = "@@POS.ReceiptLayoutSetting.Copies";
@@ -51,6 +53,8 @@ namespace CobraStandardControls
         const String ctKEYLayoutName                                        = "LayoutName";
         const String ctKEYReceiptWidth                                      = "ReceiptWidth";
         const String ctKEYCopies                                            = "Copies";
+        const String ctKEYTopMargin                                         = "TopMargin";
+        const String ctKEYLeftMargin                                        = "LeftMargin";
         const String ctKEYDarkness                                          = "Darkness";
         const String ctKEYLocalNumberMode                                   = "LocalNumberMode";
         const String ctKEYLayoutScaleX                                      = "LayoutScaleX";
@@ -239,6 +243,8 @@ namespace CobraStandardControls
             RenderSelectionInputRow(paComponentController, ctKEYLayoutName,ctDYTLayoutName,ctCMDLayoutList);
             RenderNumberInputBoxRow(paComponentController, ctKEYCopies, ctDYTCopies, "number", "", ctNumberBoxMaxLength, 0, 10);
             RenderNumberInputBoxRow(paComponentController,ctKEYReceiptWidth, ctDYTReceiptWidth,"number", "px", ctNumberBoxMaxLength,-1,-1);
+            RenderNumberInputBoxRow(paComponentController, ctKEYTopMargin, ctDYTTopMagin, "number", "px", ctNumberBoxMaxLength, -1, -1);
+            RenderNumberInputBoxRow(paComponentController, ctKEYLeftMargin, ctDYTLeftMagin, "number", "px", ctNumberBoxMaxLength, -1, -1);
             RenderNumberInputBoxRow(paComponentController, ctKEYDarkness, ctDYTDarkness, "number", "%", ctNumberBoxMaxLength, 0, 100);
             RenderToggleButtonRow(paComponentController, ctKEYLocalNumberMode, ctDYTLocalNumberMode);
 

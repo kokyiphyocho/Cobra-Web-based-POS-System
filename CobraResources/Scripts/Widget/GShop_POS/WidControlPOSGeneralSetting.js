@@ -135,8 +135,7 @@ var POSGeneralSettingManager = (function () {
             });
 
             lcImageBoxes.each(function () {
-                var lcValue = clRegionalConfig[$(this).attr('ea-name')] || clAppManifestConfig[$(this).attr('ea-name')] || '';
-                alert(lcValue);
+                var lcValue = clRegionalConfig[$(this).attr('ea-name')] || clAppManifestConfig[$(this).attr('ea-name')] || '';                
                 $(this).attr('src', lcValue);
             });
 

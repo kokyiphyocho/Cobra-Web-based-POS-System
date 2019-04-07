@@ -1240,7 +1240,7 @@ namespace CobraFrame
         //const String ctSETLocalNumberMode           = "_LOCALNUMBERMODE";
         //const String ctSETLanguage                  = "_LANGUAGE";          
 
-        const String ctSETFormProtocolList          = "__FORMPROTOCOLLI1ST";
+        const String ctSETFormProtocolList          = "__FORMPROTOCOLLIST";
         const String ctSETDateFormatOptions         = "_DATEFORMATOPTIONS";          
         const String ctSETSystemConfig              = "_SYSTEMCONFIG";
         const String ctSETRegionalConfig            = "_REGIONALCONFIG";
