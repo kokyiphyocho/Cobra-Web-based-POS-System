@@ -388,7 +388,8 @@ var RenderingController = function (paComposite) {
                     clReceiptLayoutSetting.LayoutScaleX     = CastDecimal(paLayoutScaleX || clReceiptLayoutSetting.LayoutScaleX, 1);
                     clReceiptLayoutSetting.LayoutScaleY     = CastDecimal(paLayoutScaleY || clReceiptLayoutSetting.LayoutScaleY, 1);
                     clReceiptLayoutSetting.FontScale        = CastDecimal(paFontScale || clReceiptLayoutSetting.FontScale, 1);
-                    clReceiptLayoutSetting.ReceiptWidth     = CastInteger(clReceiptLayoutSetting.ReceiptWidth || clActivePrinterSetting.PrinterWidth, 500);
+                    clReceiptLayoutSetting.ReceiptWidth     = CastInteger(clReceiptLayoutSetting.ReceiptWidth || clActivePrinterSetting.PrinterWidth || 500, 500);
+                                        
                     clReceiptLayoutSetting.TopMargin        = CastInteger(clReceiptLayoutSetting.TopMargin  || clActivePrinterSetting.TopMargin, 0);
                     clReceiptLayoutSetting.LeftMargin       = CastInteger(clReceiptLayoutSetting.LeftMargin || clActivePrinterSetting.LeftMargin, 0);
                     clReceiptLayoutSetting.LocalNumberMode  = clReceiptLayoutSetting.LocalNumberMode == 'false' ? false : true;
@@ -434,7 +435,7 @@ var RenderingController = function (paComposite) {
 
                     clReceiptLayout.SummaryFont             = this.ApplyFontScale(clReceiptLayout.SummaryFont);                    
                     clReceiptLayout.SummaryLineSpacing      = CastDecimal(clReceiptLayout.SummaryLineSpacing, 1);
-                    clReceiptLayout.SummaryTotalFont        = clReceiptLayout.SummaryTotalFont || '';
+                    clReceiptLayout.SummaryTotalFont        = this.ApplyFontScale(clReceiptLayout.SummaryTotalFont);
                     clReceiptLayout.SummaryLineStyle        = CastIntArray(clReceiptLayout.SummaryLineStyle);                                          
                     clReceiptLayout.SummaryLabelWidth       = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.SummaryLabelWidth, 0)));               
                     clReceiptLayout.SummaryColumnGap        = this.ApplyLayoutScaleX(clCanvasPainter.GetAbsoluteWidth(CastInteger(clReceiptLayout.SummaryColumnGap, 0)));
@@ -460,7 +461,7 @@ var RenderingController = function (paComposite) {
                 {
                     if ((paWidth !== 'undefined') && (paLeftMargin !== 'undefined') && (paTopMargin !== 'undefined'))
                     {                        
-                        clReceiptLayoutSetting.ReceiptWidth = CastInteger(paWidth || clActivePrinterSetting.PrinterWidth);                        
+                        clReceiptLayoutSetting.ReceiptWidth = CastInteger(paWidth || clActivePrinterSetting.PrinterWidth || 500, 500);                        
                         this.SetReceiptLayoutSettingIntegerParameter('LeftMargin', paLeftMargin);
                         this.SetReceiptLayoutSettingIntegerParameter('TopMargin', paTopMargin);
 
@@ -598,10 +599,9 @@ var RenderingController = function (paComposite) {
                     var lcColumnGap;
 
                     if ((paText) && (paText.length > 0))
-                    {                        
+                    {
                         lcLabelWidth    = clReceiptLayout.SummaryLabelWidth;
-                        lcFigureWidth = clReceiptLayoutSetting.ReceiptWidth - (clReceiptLayout.SummaryLabelWidth + clReceiptLayout.SummaryColumnGap);
-                        
+                        lcFigureWidth = clReceiptLayoutSetting.ReceiptWidth - (clReceiptLayout.SummaryLabelWidth + clReceiptLayout.SummaryColumnGap);                        
                         lcColumnGap     = clReceiptLayout.SummaryColumnGap;
 
                         clCanvasPainter.DrawText({
@@ -627,7 +627,7 @@ var RenderingController = function (paComposite) {
                     var lcColumnGap;
 
                     if ((paText) && (paText.length > 0)) {                        
-                        lcLabelWidth    = clReceiptLayout.SummaryLabelWidth;
+                        lcLabelWidth = clReceiptLayout.SummaryLabelWidth;                        
                         lcFigureWidth   = clReceiptLayoutSetting.ReceiptWidth - (clReceiptLayout.SummaryLabelWidth + clReceiptLayout.SummaryColumnGap);
                         lcColumnGap     = clReceiptLayout.SummaryColumnGap;
 
@@ -638,7 +638,7 @@ var RenderingController = function (paComposite) {
                             LineSpacing: clReceiptLayout.SummaryLineSpacing,
                             ClipRectangle: this.GetTextLineClipRectangle(0, lcLabelWidth, clReceiptLayout.SummaryTotalFont)
                         });
-
+                        
                         clCanvasPainter.DrawTextLn({
                             Text: paText,
                             Font: clReceiptLayout.SummaryTotalFont,
@@ -898,7 +898,7 @@ var RenderingController = function (paComposite) {
                             }
 
                         case 'total':
-                            {                             
+                            {
                                 var lcTotal = paParameter.GetAggregateFigure('total');                                
                                 this.RenderTotalText(this.GetLabelText(paElement), this.ConvertNumber(lcTotal.toString()));                                
                                 break;
@@ -967,11 +967,11 @@ var RenderingController = function (paComposite) {
                 },
                 PrintCanvasImage : function()
                 {
-                    $(clCanvasPainter.GetCanvas()).attr('fa-show','true');
-                    //for (lcCount = 0; lcCount < clReceiptLayoutSetting.Copies; lcCount++)
-                    //{                        
-                    //    PrinterManager.Print(clCanvasPainter.GetCanvas());
-                    //}
+                   // $(clCanvasPainter.GetCanvas()).attr('fa-show','true');
+                    for (lcCount = 0; lcCount < clReceiptLayoutSetting.Copies; lcCount++)
+                    {                        
+                        PrinterManager.Print(clCanvasPainter.GetCanvas());
+                    }
                 },                
                 PrintReceipt : function(paReceiptDataManager)
                 {                    

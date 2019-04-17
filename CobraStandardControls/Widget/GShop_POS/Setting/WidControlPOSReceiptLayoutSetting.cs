@@ -142,7 +142,7 @@ namespace CobraStandardControls
             paComponentController.RenderEndTag();
         }
 
-        private void RenderNumberInputBoxRow(ComponentController paComponentController, String paName, String paLabel, String paInputMode, String paSuffix, int paMaxLength, int paLowerBound, int paUpperBound)
+        private void RenderNumberInputBoxRow(ComponentController paComponentController, String paName, String paLabel, String paInputMode, String paSuffix, int paMaxLength, decimal paLowerBound, decimal paUpperBound)
         {
             paComponentController.AddElementAttribute(ComponentController.ElementAttribute.ea_Type, "numberinputrow");
             paComponentController.AddElementType(ComponentController.ElementType.InputRow);
@@ -259,9 +259,9 @@ namespace CobraStandardControls
             paComponentController.RenderBeginTag(HtmlTag.Div);
 
             RenderSectionHeader(paComponentController, ctDYTReceiptScaleTitle);
-            RenderNumberInputBoxRow(paComponentController, ctKEYLayoutScaleX, ctDYTLayoutScaleX, "decimal", "", ctNumberBoxMaxLength, 1, 10);
-            RenderNumberInputBoxRow(paComponentController, ctKEYLayoutScaleY, ctDYTLayoutScaleY, "decimal", "", ctNumberBoxMaxLength, 1, 10);
-            RenderNumberInputBoxRow(paComponentController, ctKEYFontScale, ctDYTFontScale, "decimal", "", ctNumberBoxMaxLength, 1, 10);            
+            RenderNumberInputBoxRow(paComponentController, ctKEYLayoutScaleX, ctDYTLayoutScaleX, "decimal", "", ctNumberBoxMaxLength, 0.1M, 10);
+            RenderNumberInputBoxRow(paComponentController, ctKEYLayoutScaleY, ctDYTLayoutScaleY, "decimal", "", ctNumberBoxMaxLength, 0.1M, 10);
+            RenderNumberInputBoxRow(paComponentController, ctKEYFontScale, ctDYTFontScale, "decimal", "", ctNumberBoxMaxLength, 0.1M, 10);            
 
             paComponentController.RenderEndTag();
         }
